@@ -66,3 +66,4 @@ create trigger CONTROLLO_PUNTEGGI
 before insert on risultati
 for each row
 execute procedure CONTROLLO_PUNTEGGI();
+

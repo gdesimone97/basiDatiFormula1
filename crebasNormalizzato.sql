@@ -214,3 +214,4 @@ alter table RISULTATI
       references PILOTI (CODICE_PILOTA)
       on delete restrict on update restrict;
 
+-- provo

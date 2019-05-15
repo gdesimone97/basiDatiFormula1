@@ -1,0 +1,600 @@
+FD020892:Filomena:De Santo:CN:02-08-1992:ingegnere:
+CD100383:Ciccio:Di Marzio:US:10-03-1983:ingegnere:
+MB021188:Mariano:Battiato:DA:02-11-1988:ingegnere:
+MV211294:Marco:Vietri:CN:21-12-1994:ingegnere:
+TM160954:Tiziana:Marcelli:CN:16-09-1954:ingegnere:
+LV090371:Luigi:Vietri:US:09-03-1971:ingegnere:
+PD221040:Pietro:De Santo:DZ:22-10-1940:ingegnere:
+FP130827:Fiorella:Picariello:US:13-08-1927:ingegnere:
+AW260969:Augusto:Wesson:ID:26-09-1969:ingegnere:
+PC260123:Pietro:Cipriano:MA:26-01-1923:ingegnere:
+RE181224:Roberto:Esposito:DA:18-12-1924:ingegnere:
+AD051065:Angelo:De Masi:GR:05-10-1965:ingegnere:
+EF140366:Ettore:Faruolo:DE:14-03-1966:ingegnere:
+GF170341:Gianna:Faruolo:KO:17-03-1941:ingegnere:
+PM290675:Pietro:Marcelli:DE:29-06-1975:ingegnere:
+AW131093:Angelo:Wesson:ZA:13-10-1993:ingegnere:
+MI280926:Mariano:Iandolo:DZ:28-09-1926:ingegnere:
+NE270729:Nicola:Esposito:PT:27-07-1929:ingegnere:
+NF170365:Nicola:Faruolo:US:17-03-1965:ingegnere:
+VD020656:Vincenzo:De Masi:MA:02-06-1956:ingegnere:
+FF220966:Filomena:Faggiano:IT:22-09-1966:ingegnere:
+TW170242:Tiziano:Wesson:IR:17-02-1942:ingegnere:
+GC151190:Giovanni:Canonico:CA:15-11-1990:ingegnere:
+PD210496:Pietro:Di Marzio:PL:21-04-1996:ingegnere:
+VW231099:Valentina:Wesson:ID:23-10-1999:ingegnere:
+EB110637:Ettore:Bennato:DA:11-06-1937:ingegnere:
+EP070779:Ettore:Paolino:DE:07-07-1979:ingegnere:
+VP040335:Vito:Picariello:TN:04-03-1935:ingegnere:
+GC051040:Giuseppe:Cappella:CN:05-10-1940:ingegnere:
+FF070931:Federico:Faruolo:DA:07-09-1931:ingegnere:
+VW210940:Vittorio:Wesson:PT:21-09-1940:ingegnere:
+ED140896:Enzo:Di Marzio:TN:14-08-1996:ingegnere:
+AD171141:Angelo:De Simone:IR:17-11-1941:ingegnere:
+RB110452:Roberto:Barrasso:ZA:11-04-1952:ingegnere:
+FB041064:Fiorella:Bennato:ID:04-10-1964:ingegnere:
+RS160682:Rosa:Smith:ZA:16-06-1982:ingegnere:
+SL011195:Sergio:Lionetti:DZ:01-11-1995:ingegnere:
+PF070746:Pietro:Faruolo:PL:07-07-1946:ingegnere:
+MP120168:Marco:Paolino:DZ:12-01-1968:ingegnere:
+SD250965:Stefano:De Simone:GR:25-09-1965:ingegnere:
+AR270625:Alfonso:Russo:ES:27-06-1925:ingegnere:
+SB110826:Stefano:Bianchi:ZA:11-08-1926:ingegnere:
+MC220721:Massimo:Canonico:US:22-07-1921:ingegnere:
+TR310530:Tiziana:Rossi:FR:31-05-1930:ingegnere:
+CR140187:Ciccio:Russo:DZ:14-01-1987:ingegnere:
+MD211135:Mario:De Santo:IN:21-11-1935:ingegnere:
+MG040237:Mariano:Giaquinto:US:04-02-1937:ingegnere:
+NB240973:Nicola:Battiato:IT:24-09-1973:ingegnere:
+FC150853:Francesco:Caio:DE:15-08-1953:ingegnere:
+CL050743:Carmine:Lionetti:MA:05-07-1943:ingegnere:
+RF040163:Roberto:Faruolo:EN:04-01-1963:ingegnere:
+FD210934:Filomena:De Simone:EN:21-09-1934:ingegnere:
+SB310888:Simone:Battiato:ES:31-08-1988:ingegnere:
+AB151250:Angelo:Bianchi:DA:15-12-1950:ingegnere:
+EE080445:Ettore:Esposito:DZ:08-04-1945:ingegnere:
+CR240590:Carmine:Rossi:DA:24-05-1990:ingegnere:
+SV271223:Salvatore:Vietri:EG:27-12-1923:ingegnere:
+VC251276:Vito:Cappella:PT:25-12-1976:ingegnere:
+MC041260:Mario:Coppola:DZ:04-12-1960:ingegnere:
+SL110620:Salvatore:Lionetti:ID:11-06-1920:ingegnere:
+SB220529:Stefano:Bennato:TN:22-05-1929:ingegnere:
+SD070376:Stefano:De Simone:ES:07-03-1976:ingegnere:
+AS160947:Anna:Sempronio:DE:16-09-1947:ingegnere:
+SE050625:Stefano:Esposito:GR:05-06-1925:ingegnere:
+AW210871:Angelo:Wesson:ZA:21-08-1971:ingegnere:
+SG120868:Sergio:Guccini:TN:12-08-1968:ingegnere:
+CD021245:Ciccio:De Simone:KO:02-12-1945:ingegnere:
+AB100268:Alfonso:Bianchi:CN:10-02-1968:ingegnere:
+CC230840:Ciccio:Coppola:DA:23-08-1940:ingegnere:
+PD210355:Paolo:Di Marzio:CN:21-03-1955:ingegnere:
+FD070950:Fiorella:Di Marzio:ZA:07-09-1950:ingegnere:
+FD040144:Fiorella:d'Acierno:CN:04-01-1944:ingegnere:
+TV290268:Tiziano:Vietri:ID:29-02-1968:ingegnere:
+CD110689:Carmine:d'Acierno:CN:11-06-1989:ingegnere:
+RE271196:Rossella:Esposito:MA:27-11-1996:ingegnere:
+CR040873:Carmine:Rossi:MA:04-08-1973:ingegnere:
+PW181192:Pietro:Wesson:IR:18-11-1992:ingegnere:
+VG261056:Vito:Giaquinto:IN:26-10-1956:ingegnere:
+GC300820:Gennaro:Cappella:DA:30-08-1920:ingegnere:
+RC061058:Roberto:Canonico:GR:06-10-1958:ingegnere:
+VL241251:Vincenzo:Lionetti:GR:24-12-1951:ingegnere:
+TE031027:Tiziano:Esposito:PT:03-10-1927:ingegnere:
+SE300991:Stefano:Esposito:PL:30-09-1991:ingegnere:
+VE141099:Vincenzo:Esposito:DE:14-10-1999:ingegnere:
+GG260796:Giovanni:Galdi:IR:26-07-1996:ingegnere:
+VG200944:Valerio:Giaquinto:PL:20-09-1944:ingegnere:
+SB221277:Sergio:Bennato:FR:22-12-1977:ingegnere:
+EB021149:Ettore:Bianchi:CH:02-11-1949:ingegnere:
+MS250690:Massimo:Smith:IT:25-06-1990:ingegnere:
+ES110874:Enzo:Smith:US:11-08-1974:ingegnere:
+MG170360:Michele:Guccini:TN:17-03-1960:ingegnere:
+MP031269:Massimo:Paolino:CN:03-12-1969:ingegnere:
+PF090922:Pietro:Faruolo:CH:09-09-1922:ingegnere:
+AM270950:Alfonso:Moscato:CH:27-09-1950:ingegnere:
+MW131271:Massimo:Wesson:ES:13-12-1971:ingegnere:
+CD040138:Clelia:d'Acierno:MA:04-01-1938:ingegnere:
+MD240639:Mario:Di Marzio:CH:24-06-1939:ingegnere:
+ER220220:Ettore:Rossi:ZA:22-02-1920:ingegnere:
+GG181175:Giovanni:Galdi:KO:18-11-1975:ingegnere:
+LC121230:Luigi:Canonico:JN:12-12-1930:ingegnere:
+FC081262:Filomena:Coppola:ES:08-12-1962:ingegnere:
+GG151099:Giovanni:Galdi:DZ:15-10-1999:ingegnere:
+MB080759:Massimo:Bianchi:IN:08-07-1959:ingegnere:
+TD240757:Tiziano:Di Marzio:ID:24-07-1957:ingegnere:
+RG100561:Roberto:Galdi:CA:10-05-1961:ingegnere:
+RB230326:Roberto:Bianchi:US:23-03-1926:ingegnere:
+VG210934:Valerio:Galdi:ID:21-09-1934:ingegnere:
+MV290991:Mariano:Vietri:ID:29-09-1991:ingegnere:
+MI061060:Mariano:Iandolo:ID:06-10-1960:ingegnere:
+VS290529:Valerio:Sempronio:EN:29-05-1929:ingegnere:
+SC221084:Stefano:Cipriano:TN:22-10-1984:ingegnere:
+VV121245:Valerio:Vietri:ES:12-12-1945:ingegnere:
+SP120785:Stefano:Paolino:ID:12-07-1985:ingegnere:
+PD310525:Paola:De Masi:IT:31-05-1925:ingegnere:
+GC040166:Giovanni:Caio:PL:04-01-1966:ingegnere:
+MG300691:Mario:Giaquinto:DZ:30-06-1991:ingegnere:
+VG270480:Vito:Giaquinto:DZ:27-04-1980:ingegnere:
+VP230375:Valerio:Paoli:JN:23-03-1975:ingegnere:
+MB150864:Mariano:Bennato:IT:15-08-1964:ingegnere:
+MR240724:Marco:Russo:ID:24-07-1924:ingegnere:
+LD230938:Luigi:Di Marzio:US:23-09-1938:ingegnere:
+PD200157:Paolo:De Simone:DA:20-01-1957:ingegnere:
+CE130561:Carmine:Esposito:DE:13-05-1961:ingegnere:
+GD081195:Giuseppe:De Santo:PL:08-11-1995:ingegnere:
+CV101065:Ciccio:Vietri:TN:10-10-1965:ingegnere:
+VF190351:Vincenzo:Faruolo:IT:19-03-1951:ingegnere:
+AC100836:Antonio:Chianese:DA:10-08-1936:ingegnere:
+RB081235:Rossella:Bennato:IN:08-12-1935:ingegnere:
+LP021279:Luigi:Paolino:PT:02-12-1979:ingegnere:
+RG031162:Roberto:Galdi:IN:03-11-1962:ingegnere:
+GS250357:Gianna:Sempronio:EG:25-03-1957:ingegnere:
+RF020760:Roberto:Faruolo:CH:02-07-1960:ingegnere:
+MV220548:Marco:Vietri:DZ:22-05-1948:ingegnere:
+CD070538:Clelia:De Simone:KO:07-05-1938:ingegnere:
+MC181026:Mario:Chianese:US:18-10-1926:ingegnere:
+NC060177:Nicola:Caio:GR:06-01-1977:ingegnere:
+VF070222:Valerio:Faggiano:PT:07-02-1922:ingegnere:
+VC200960:Vittorio:Coppola:FR:20-09-1960:ingegnere:
+FP230920:Filomena:Picariello:CN:23-09-1920:ingegnere:
+MW280434:Marco:Wesson:FR:28-04-1934:ingegnere:
+VP050131:Valerio:Picariello:CH:05-01-1931:ingegnere:
+LC260595:Luigi:Caio:EN:26-05-1995:ingegnere:
+VB180723:Valerio:Bianchi:US:18-07-1923:ingegnere:
+MF150790:Mario:Faruolo:MA:15-07-1990:ingegnere:
+PB280171:Pietro:Barrasso:IN:28-01-1971:ingegnere:
+PR190846:Pietro:Russo:PL:19-08-1946:ingegnere:
+EG240955:Enzo:Guccini:GR:24-09-1955:ingegnere:
+GM270847:Giuseppe:Moscato:EN:27-08-1947:ingegnere:
+PD271061:Paolo:De Masi:IN:27-10-1961:ingegnere:
+CC120650:Ciccio:Cappella:CA:12-06-1950:ingegnere:
+VD061056:Vittorio:d'Acierno:ES:06-10-1956:ingegnere:
+SC110461:Stefano:Coppola:EN:11-04-1961:ingegnere:
+AV230781:Alfonso:Vietri:PL:23-07-1981:ingegnere:
+FC070188:Francesco:Chianese:DA:07-01-1988:ingegnere:
+GE041142:Giuseppe:Esposito:FR:04-11-1942:ingegnere:
+SC050990:Salvatore:Cappella:FR:05-09-1990:ingegnere:
+PB230769:Pietro:Battiato:DE:23-07-1969:ingegnere:
+RD060167:Rossella:De Simone:DZ:06-01-1967:ingegnere:
+GD131034:Giovanni:Di Marzio:IT:13-10-1934:ingegnere:
+FB130488:Francesco:Battiato:EG:13-04-1988:ingegnere:
+RE150642:Roberto:Esposito:JN:15-06-1942:ingegnere:
+AD040920:Alfonso:d'Acierno:DE:04-09-1920:ingegnere:
+ML280293:Marco:Lionetti:EG:28-02-1993:ingegnere:
+TG191040:Tiziano:Giaquinto:GR:19-10-1940:ingegnere:
+EM071046:Enzo:Marcelli:KO:07-10-1946:ingegnere:
+AG170651:Alfonso:Galdi:GR:17-06-1951:ingegnere:
+GB170942:Gianna:Barrasso:PL:17-09-1942:ingegnere:
+RW250263:Rosa:Wesson:DZ:25-02-1963:ingegnere:
+VL060622:Vincenzo:Lionetti:IN:06-06-1922:ingegnere:
+AB070172:Anna:Bennato:PT:07-01-1972:ingegnere:
+NC160321:Nicola:Chianese:EG:16-03-1921:ingegnere:
+VC260665:Valerio:Caio:PT:26-06-1965:ingegnere:
+LE121229:Loredana:Esposito:IT:12-12-1929:ingegnere:
+MW290184:Mariano:Wesson:JN:29-01-1984:ingegnere:
+AC160126:Anna:Cipriano:IT:16-01-1926:ingegnere:
+VD150167:Valerio:De Masi:EN:15-01-1967:ingegnere:
+PC290182:Pietro:Chianese:IN:29-01-1982:ingegnere:
+SS150970:Sergio:Smith:ES:15-09-1970:ingegnere:
+ER180969:Enzo:Rossi:KO:18-09-1969:ingegnere:
+RS080127:Rosa:Sempronio:MA:08-01-1927:ingegnere:
+MP120256:Marco:Picariello:JN:12-02-1956:ingegnere:
+CC170967:Ciccio:Coppola:IR:17-09-1967:ingegnere:
+SR160231:Simone:Rossi:IR:16-02-1931:ingegnere:
+FD220423:Fiorella:Di Marzio:PL:22-04-1923:ingegnere:
+TL130443:Tiziana:Lionetti:ID:13-04-1943:ingegnere:
+GM060620:Gennaro:Moscato:DA:06-06-1920:ingegnere:
+GD070956:Gennaro:De Simone:FR:07-09-1956:ingegnere:
+LF050178:Loredana:Faggiano:DE:05-01-1978:ingegnere:
+FG070975:Federico:Galdi:US:07-09-1975:ingegnere:
+SF130624:Simone:Faruolo:CH:13-06-1924:ingegnere:
+MF010556:Mariano:Faruolo:CA:01-05-1956:ingegnere:
+AG151144:Augusto:Guccini:DZ:15-11-1944:ingegnere:
+FR181155:Fiorella:Rossi:EG:18-11-1955:ingegnere:
+RD290971:Rossella:De Masi:EG:29-09-1971:ingegnere:
+AS041229:Angelo:Sempronio:FR:04-12-1929:ingegnere:
+FD230946:Federico:d'Acierno:ID:23-09-1946:ingegnere:
+SG150193:Sergio:Giaquinto:ID:15-01-1993:ingegnere:
+MD300880:Michele:d'Acierno:ES:30-08-1980:ingegnere:
+FS201227:Francesco:Sempronio:IN:20-12-1927:ingegnere:
+PD200666:Paolo:De Masi:MA:20-06-1966:ingegnere:
+VE260564:Valentina:Esposito:PL:26-05-1964:ingegnere:
+ME210254:Mariano:Esposito:FR:21-02-1954:ingegnere:
+CS080485:Ciccio:Smith:EG:08-04-1985:ingegnere:
+EB240557:Enzo:Bianchi:PT:24-05-1957:ingegnere:
+GD131228:Giuseppe:De Masi:FR:13-12-1928:ingegnere:
+MD300922:Michele:d'Acierno:GR:30-09-1922:ingegnere:
+PB010284:Pietro:Bennato:FR:01-02-1984:ingegnere:
+TE051033:Tiziano:Esposito:DE:05-10-1933:ingegnere:
+RR070635:Roberto:Russo:KO:07-06-1935:ingegnere:
+PR191097:Paola:Rossi:TN:19-10-1997:ingegnere:
+LD281285:Loredana:Di Marzio:DA:28-12-1985:ingegnere:
+PE190228:Pietro:Esposito:PT:19-02-1928:ingegnere:
+VG160848:Valentina:Guccini:MA:16-08-1948:ingegnere:
+AC210237:Alfonso:Caio:EG:21-02-1937:ingegnere:
+PD231174:Pietro:Di Marzio:JN:23-11-1974:ingegnere:
+SD040128:Sergio:d'Acierno:DZ:04-01-1928:ingegnere:
+TB210450:Tiziana:Barrasso:PT:21-04-1950:ingegnere:
+GC250628:Giovanni:Cappella:IR:25-06-1928:ingegnere:
+FF080244:Francesco:Faggiano:DA:08-02-1944:ingegnere:
+AV070171:Antonio:Vietri:DE:07-01-1971:ingegnere:
+MB161030:Mario:Bennato:GR:16-10-1930:ingegnere:
+AF010943:Antonio:Faruolo:KO:01-09-1943:ingegnere:
+SB080220:Stefano:Battiato:KO:08-02-1920:ingegnere:
+GP020846:Giuseppe:Paoli:ES:02-08-1946:ingegnere:
+SD021239:Salvatore:Di Marzio:ES:02-12-1939:ingegnere:
+MP081241:Marco:Picariello:CH:08-12-1941:ingegnere:
+VB120424:Vincenzo:Battiato:CN:12-04-1924:ingegnere:
+PD040831:Pietro:Di Marzio:IN:04-08-1931:ingegnere:
+FB210157:Francesco:Battiato:EG:21-01-1957:ingegnere:
+SC210668:Stefano:Cappella:EG:21-06-1968:ingegnere:
+TF020940:Tiziana:Faggiano:ES:02-09-1940:ingegnere:
+SB170559:Simone:Bianchi:EG:17-05-1959:ingegnere:
+NI060456:Nicola:Iandolo:EN:06-04-1956:ingegnere:
+SS080785:Simone:Sempronio:FR:08-07-1985:ingegnere:
+MD120196:Marco:Di Marzio:PT:12-01-1996:ingegnere:
+AI230328:Augusto:Iandolo:CH:23-03-1928:ingegnere:
+VD140731:Vincenzo:De Masi:MA:14-07-1931:ingegnere:
+EV110393:Enzo:Vietri:EG:11-03-1993:ingegnere:
+RG061152:Rossella:Giaquinto:US:06-11-1952:ingegnere:
+VC040382:Vincenzo:Canonico:US:04-03-1982:ingegnere:
+RF120497:Rosa:Faruolo:DA:12-04-1997:ingegnere:
+AC110381:Augusto:Caio:FR:11-03-1981:ingegnere:
+PD131055:Paolo:De Masi:ES:13-10-1955:ingegnere:
+VB011238:Vittorio:Bianchi:US:01-12-1938:ingegnere:
+TC251240:Tiziana:Canonico:FR:25-12-1940:ingegnere:
+LS111187:Loredana:Sempronio:DA:11-11-1987:ingegnere:
+CG120231:Clelia:Guccini:ZA:12-02-1931:ingegnere:
+GL050639:Gianna:Lionetti:TN:05-06-1939:ingegnere:
+RI120829:Rosa:Iandolo:DA:12-08-1929:ingegnere:
+FP290394:Francesco:Paoli:PT:29-03-1994:ingegnere:
+VL260865:Valerio:Lionetti:TN:26-08-1965:ingegnere:
+VF071179:Vincenzo:Faggiano:CN:07-11-1979:ingegnere:
+TS010573:Tiziano:Smith:ES:01-05-1973:ingegnere:
+GR010470:Gianna:Rossi:IN:01-04-1970:ingegnere:
+VD050399:Vittorio:d'Acierno:CA:05-03-1999:ingegnere:
+TL080887:Tiziana:Lionetti:TN:08-08-1987:ingegnere:
+EB100320:Enzo:Bianchi:IT:10-03-1920:ingegnere:
+ED120635:Enzo:d'Acierno:DA:12-06-1935:ingegnere:
+LS141288:Luigi:Sempronio:PT:14-12-1988:ingegnere:
+VD240256:Vincenzo:De Simone:DZ:24-02-1956:ingegnere:
+VM031021:Vito:Marcelli:EN:03-10-1921:ingegnere:
+GD161124:Giuseppe:De Masi:DA:16-11-1924:ingegnere:
+MI290590:Mariano:Iandolo:CH:29-05-1990:ingegnere:
+FR020757:Federico:Rossi:PT:02-07-1957:ingegnere:
+VC170733:Valentina:Caio:MA:17-07-1933:ingegnere:
+GS010483:Gennaro:Smith:JN:01-04-1983:ingegnere:
+AC280529:Alfonso:Chianese:US:28-05-1929:ingegnere:
+AF050572:Antonio:Faruolo:US:05-05-1972:ingegnere:
+TP301234:Tiziano:Paolino:PL:30-12-1934:ingegnere:
+VF090836:Valerio:Faruolo:IT:09-08-1936:ingegnere:
+ED280972:Ettore:De Santo:US:28-09-1972:ingegnere:
+FB311046:Francesco:Barrasso:TN:31-10-1946:ingegnere:
+SP180587:Stefano:Paoli:ES:18-05-1987:ingegnere:
+SG300838:Sergio:Galdi:ID:30-08-1938:ingegnere:
+SI130882:Simone:Iandolo:PL:13-08-1982:ingegnere:
+GC191064:Giuseppe:Canonico:TN:19-10-1964:ingegnere:
+GI190581:Gennaro:Iandolo:IN:19-05-1981:ingegnere:
+VM101175:Vito:Marcelli:IT:10-11-1975:ingegnere:
+LS120935:Loredana:Smith:GR:12-09-1935:ingegnere:
+EC250382:Enzo:Chianese:CA:25-03-1982:ingegnere:
+AP160992:Angelo:Paolino:CA:16-09-1992:ingegnere:
+SB230658:Stefano:Bennato:KO:23-06-1958:ingegnere:
+SG070839:Sergio:Galdi:EG:07-08-1939:ingegnere:
+MS140273:Massimo:Smith:IR:14-02-1973:ingegnere:
+SL130740:Simone:Lionetti:TN:13-07-1940:ingegnere:
+FD031171:Francesco:De Masi:MA:03-11-1971:ingegnere:
+AC081120:Antonio:Caio:ID:08-11-1920:ingegnere:
+MP110835:Mariano:Paoli:DA:11-08-1935:ingegnere:
+FC100153:Francesco:Chianese:US:10-01-1953:ingegnere:
+MG231252:Marco:Galdi:ZA:23-12-1952:ingegnere:
+GB270234:Giuseppe:Battiato:DE:27-02-1934:ingegnere:
+MG210375:Marco:Giaquinto:CN:21-03-1975:ingegnere:
+AR160857:Augusto:Russo:ES:16-08-1957:ingegnere:
+ND060963:Nicola:Di Marzio:PT:06-09-1963:ingegnere:
+SC290960:Salvatore:Cappella:KO:29-09-1960:ingegnere:
+CB310888:Clelia:Bianchi:MA:31-08-1988:ingegnere:
+MR190855:Mariano:Russo:CN:19-08-1955:ingegnere:
+LF010650:Luigi:Faggiano:IT:01-06-1950:ingegnere:
+AP080682:Antonio:Picariello:FR:08-06-1982:ingegnere:
+NC200487:Nicola:Cappella:ID:20-04-1987:ingegnere:
+MB261242:Marco:Bennato:JN:26-12-1942:ingegnere:
+LB100488:Luigi:Barrasso:US:10-04-1988:ingegnere:
+EG020792:Enzo:Guccini:JN:02-07-1992:ingegnere:
+VD311069:Valentina:d'Acierno:DZ:31-10-1969:ingegnere:
+AR131255:Angelo:Rossi:MA:13-12-1955:ingegnere:
+SE130897:Stefano:Esposito:DZ:13-08-1997:ingegnere:
+VE110831:Valentina:Esposito:US:11-08-1931:ingegnere:
+GS150364:Giuseppe:Smith:EG:15-03-1964:ingegnere:
+VF291186:Vito:Faggiano:TN:29-11-1986:ingegnere:
+ER310133:Enzo:Rossi:MA:31-01-1933:ingegnere:
+FM241236:Federico:Moscato:DE:24-12-1936:ingegnere:
+AD290826:Alfonso:d'Acierno:IT:29-08-1926:ingegnere:
+GP250663:Gennaro:Picariello:US:25-06-1963:ingegnere:
+AP210339:Antonio:Paolino:CN:21-03-1939:ingegnere:
+LC110846:Loredana:Caio:DE:11-08-1946:ingegnere:
+GC080574:Giovanni:Canonico:IR:08-05-1974:ingegnere:
+SF060936:Stefano:Faruolo:PL:06-09-1936:ingegnere:
+LS081226:Luigi:Smith:DA:08-12-1926:ingegnere:
+BI221097:Beatrice:Iandolo:DE:22-10-1997:ingegnere:
+FM190654:Federico:Marcelli:DZ:19-06-1954:ingegnere:
+FE060359:Filomena:Esposito:DE:06-03-1959:ingegnere:
+PR230286:Paolo:Rossi:CA:23-02-1986:ingegnere:
+AI040753:Antonio:Iandolo:CH:04-07-1953:ingegnere:
+FC250795:Filomena:Coppola:CH:25-07-1995:ingegnere:
+VC211262:Vincenzo:Canonico:CN:21-12-1962:ingegnere:
+GC240588:Gianna:Cappella:PT:24-05-1988:ingegnere:
+CD280924:Ciccio:De Masi:DA:28-09-1924:ingegnere:
+AD150255:Angelo:De Masi:CA:15-02-1955:ingegnere:
+AL241047:Anna:Lionetti:KO:24-10-1947:ingegnere:
+SC011067:Simone:Cappella:TN:01-10-1967:ingegnere:
+AR110667:Anna:Russo:JN:11-06-1967:ingegnere:
+SB211084:Sergio:Bianchi:ID:21-10-1984:ingegnere:
+MB040951:Mario:Bianchi:EG:04-09-1951:ingegnere:
+PM100547:Paolo:Moscato:CN:10-05-1947:ingegnere:
+GC150770:Gennaro:Cipriano:TN:15-07-1970:ingegnere:
+CC060373:Clelia:Canonico:CN:06-03-1973:ingegnere:
+BG051298:Beatrice:Guccini:DZ:05-12-1998:ingegnere:
+MP140671:Michele:Paoli:JN:14-06-1971:ingegnere:
+GF020944:Gennaro:Faggiano:MA:02-09-1944:ingegnere:
+RM300972:Rosa:Marcelli:IN:30-09-1972:ingegnere:
+GC090268:Gianna:Canonico:DE:09-02-1968:ingegnere:
+PR291058:Paolo:Rossi:CA:29-10-1958:ingegnere:
+CI271278:Ciccio:Iandolo:KO:27-12-1978:ingegnere:
+FE070474:Federico:Esposito:GR:07-04-1974:ingegnere:
+RP100761:Roberto:Paolino:CH:10-07-1961:ingegnere:
+FM071141:Federico:Marcelli:MA:07-11-1941:ingegnere:
+VL180125:Valentina:Lionetti:CA:18-01-1925:ingegnere:
+TD160564:Tiziana:De Santo:DZ:16-05-1964:ingegnere:
+AG270967:Augusto:Galdi:ES:27-09-1967:ingegnere:
+ML141049:Michele:Lionetti:IT:14-10-1949:ingegnere:
+AC080528:Anna:Coppola:ES:08-05-1928:ingegnere:
+RR180627:Rosa:Russo:CN:18-06-1927:ingegnere:
+MC180166:Michele:Cipriano:IR:18-01-1966:ingegnere:
+GB260231:Gianna:Battiato:PL:26-02-1931:ingegnere:
+PS231048:Paola:Smith:ES:23-10-1948:ingegnere:
+FS220594:Fiorella:Sempronio:MA:22-05-1994:ingegnere:
+AD220296:Angelo:Di Marzio:TN:22-02-1996:ingegnere:
+GR171244:Giovanni:Russo:KO:17-12-1944:ingegnere:
+GP200141:Gennaro:Picariello:US:20-01-1941:ingegnere:
+VM140971:Vito:Marcelli:FR:14-09-1971:ingegnere:
+AC210389:Alfonso:Coppola:GR:21-03-1989:ingegnere:
+PC020476:Paolo:Canonico:DA:02-04-1976:ingegnere:
+RP050723:Rosa:Picariello:KO:05-07-1923:ingegnere:
+PD200355:Paola:De Simone:KO:20-03-1955:ingegnere:
+RC091255:Rosa:Cappella:KO:09-12-1955:ingegnere:
+PP140883:Pietro:Picariello:MA:14-08-1983:ingegnere:
+VS060839:Vittorio:Smith:ID:06-08-1939:ingegnere:
+SG210844:Stefano:Giaquinto:JN:21-08-1944:ingegnere:
+RC070885:Rossella:Canonico:MA:07-08-1985:ingegnere:
+GW140830:Gennaro:Wesson:JN:14-08-1930:ingegnere:
+NP170348:Nicola:Picariello:IR:17-03-1948:ingegnere:
+VP280749:Vittorio:Picariello:CH:28-07-1949:ingegnere:
+CF110686:Clelia:Faruolo:DZ:11-06-1986:ingegnere:
+MC221294:Massimo:Cappella:US:22-12-1994:ingegnere:
+NR201246:Nicola:Rossi:JN:20-12-1946:ingegnere:
+MD141142:Michele:Di Marzio:MA:14-11-1942:ingegnere:
+BB061281:Beatrice:Bennato:JN:06-12-1981:ingegnere:
+PM241252:Paolo:Marcelli:IT:24-12-1952:ingegnere:
+FE090120:Fiorella:Esposito:DA:09-01-1920:ingegnere:
+EG191275:Enzo:Galdi:CH:19-12-1975:ingegnere:
+AI150886:Angelo:Iandolo:TN:15-08-1986:ingegnere:
+GM091158:Giuseppe:Marcelli:CN:09-11-1958:ingegnere:
+SB070292:Simone:Bianchi:DA:07-02-1992:ingegnere:
+AD090233:Anna:Di Marzio:EG:09-02-1933:ingegnere:
+VD300695:Vittorio:De Masi:ES:30-06-1995:ingegnere:
+SB150762:Sergio:Bianchi:DZ:15-07-1962:ingegnere:
+LC110867:Loredana:Caio:EG:11-08-1967:ingegnere:
+GM100771:Giovanni:Moscato:CH:10-07-1971:ingegnere:
+LC030747:Loredana:Canonico:FR:03-07-1947:ingegnere:
+AD110197:Alfonso:d'Acierno:US:11-01-1997:ingegnere:
+MD090994:Mariano:De Simone:ID:09-09-1994:ingegnere:
+BW240266:Beatrice:Wesson:US:24-02-1966:ingegnere:
+RB191298:Rossella:Bennato:JN:19-12-1998:ingegnere:
+AC040622:Augusto:Coppola:FR:04-06-1922:ingegnere:
+SE040168:Salvatore:Esposito:US:04-01-1968:ingegnere:
+RE251124:Rossella:Esposito:IT:25-11-1924:ingegnere:
+ES250676:Ettore:Sempronio:CH:25-06-1976:ingegnere:
+GR240747:Gennaro:Russo:KO:24-07-1947:ingegnere:
+PL021256:Paola:Lionetti:PT:02-12-1956:ingegnere:
+MS150885:Mariano:Sempronio:IN:15-08-1985:ingegnere:
+SG221041:Salvatore:Giaquinto:EN:22-10-1941:ingegnere:
+ME290860:Massimo:Esposito:DA:29-08-1960:ingegnere:
+GE270258:Giovanni:Esposito:CH:27-02-1958:ingegnere:
+GP020550:Gennaro:Paolino:EG:02-05-1950:ingegnere:
+FD131082:Federico:d'Acierno:MA:13-10-1982:ingegnere:
+FG010137:Federico:Giaquinto:CN:01-01-1937:ingegnere:
+SB190825:Stefano:Barrasso:IR:19-08-1925:ingegnere:
+BV310148:Beatrice:Vietri:TN:31-01-1948:ingegnere:
+CF090927:Ciccio:Faggiano:DZ:09-09-1927:ingegnere:
+EM040885:Enzo:Marcelli:KO:04-08-1985:ingegnere:
+TG090862:Tiziano:Giaquinto:ES:09-08-1962:ingegnere:
+AE160182:Alfonso:Esposito:ES:16-01-1982:ingegnere:
+SC150649:Salvatore:Chianese:FR:15-06-1949:ingegnere:
+SG201185:Sergio:Galdi:MA:20-11-1985:ingegnere:
+LC070227:Loredana:Cappella:US:07-02-1927:ingegnere:
+CE290932:Ciccio:Esposito:US:29-09-1932:ingegnere:
+RW120670:Rosa:Wesson:PL:12-06-1970:ingegnere:
+CB130860:Carmine:Barrasso:IR:13-08-1960:ingegnere:
+PB161050:Paola:Bennato:PT:16-10-1950:ingegnere:
+CV131074:Carmine:Vietri:PL:13-10-1974:ingegnere:
+LB101241:Luigi:Barrasso:DE:10-12-1941:ingegnere:
+EB090351:Enzo:Bennato:ID:09-03-1951:ingegnere:
+GD171243:Giuseppe:De Santo:CA:17-12-1943:ingegnere:
+CC290138:Carmine:Cipriano:PT:29-01-1938:ingegnere:
+FI190971:Francesco:Iandolo:CH:19-09-1971:ingegnere:
+BD121123:Beatrice:De Masi:CN:12-11-1923:ingegnere:
+AC290844:Antonio:Cappella:IT:29-08-1944:ingegnere:
+RF241178:Rosa:Faruolo:CA:24-11-1978:ingegnere:
+FC210848:Federico:Cappella:CH:21-08-1948:ingegnere:
+SR070244:Salvatore:Russo:FR:07-02-1944:ingegnere:
+PL060275:Paola:Lionetti:EG:06-02-1975:ingegnere:
+FG090457:Filomena:Giaquinto:MA:09-04-1957:ingegnere:
+SC061037:Stefano:Chianese:ZA:06-10-1937:ingegnere:
+LM200262:Loredana:Marcelli:DZ:20-02-1962:ingegnere:
+PD041042:Paolo:De Simone:DA:04-10-1942:ingegnere:
+VD151274:Vincenzo:De Masi:MA:15-12-1974:ingegnere:
+VF290643:Vito:Faruolo:DA:29-06-1943:ingegnere:
+FD140178:Francesco:De Masi:IR:14-01-1978:ingegnere:
+FI221264:Federico:Iandolo:IN:22-12-1964:ingegnere:
+VC220857:Vito:Cipriano:DE:22-08-1957:ingegnere:
+LC070188:Luigi:Cappella:US:07-01-1988:ingegnere:
+VL230894:Vittorio:Lionetti:EG:23-08-1994:ingegnere:
+VC140557:Vito:Cipriano:ZA:14-05-1957:ingegnere:
+VI080584:Vincenzo:Iandolo:CA:08-05-1984:ingegnere:
+GC220374:Giuseppe:Coppola:TN:22-03-1974:ingegnere:
+CP051299:Carmine:Paoli:MA:05-12-1999:ingegnere:
+VW150823:Valerio:Wesson:IT:15-08-1923:ingegnere:
+TS240283:Tiziano:Sempronio:JN:24-02-1983:ingegnere:
+CD071195:Clelia:De Santo:ES:07-11-1995:ingegnere:
+FF011263:Filomena:Faruolo:ZA:01-12-1963:ingegnere:
+PP210823:Pietro:Picariello:DA:21-08-1923:ingegnere:
+MD060553:Michele:De Simone:CA:06-05-1953:ingegnere:
+TM211078:Tiziano:Moscato:ID:21-10-1978:ingegnere:
+RD210870:Rosa:d'Acierno:DA:21-08-1970:ingegnere:
+RC120598:Roberto:Cipriano:PL:12-05-1998:ingegnere:
+PF290776:Paola:Faggiano:EG:29-07-1976:ingegnere:
+AC140222:Anna:Canonico:ES:14-02-1922:ingegnere:
+SM230554:Simone:Marcelli:DZ:23-05-1954:ingegnere:
+MB150628:Mario:Bennato:DZ:15-06-1928:ingegnere:
+TE040350:Tiziana:Esposito:MA:04-03-1950:ingegnere:
+GB141131:Gennaro:Bennato:MA:14-11-1931:ingegnere:
+MC290852:Mario:Canonico:PL:29-08-1952:ingegnere:
+CD280395:Ciccio:De Santo:IT:28-03-1995:ingegnere:
+CD100889:Carmine:De Simone:CA:10-08-1989:ingegnere:
+VC250228:Valerio:Canonico:ES:25-02-1928:ingegnere:
+VG190197:Vito:Giaquinto:JN:19-01-1997:ingegnere:
+EB300680:Ettore:Bianchi:US:30-06-1980:ingegnere:
+PM030462:Paolo:Moscato:ZA:03-04-1962:ingegnere:
+LG051078:Loredana:Guccini:FR:05-10-1978:ingegnere:
+FS150677:Francesco:Sempronio:DZ:15-06-1977:ingegnere:
+VC040870:Vincenzo:Caio:DZ:04-08-1970:ingegnere:
+SS310332:Simone:Smith:DE:31-03-1932:ingegnere:
+CD280679:Ciccio:d'Acierno:FR:28-06-1979:ingegnere:
+MS150767:Mariano:Smith:CN:15-07-1967:ingegnere:
+EL160878:Ettore:Lionetti:KO:16-08-1978:ingegnere:
+CM021133:Carmine:Moscato:GR:02-11-1933:ingegnere:
+PC230834:Paolo:Caio:IN:23-08-1934:ingegnere:
+LG040370:Loredana:Guccini:CA:04-03-1970:ingegnere:
+AM210770:Angelo:Moscato:ZA:21-07-1970:ingegnere:
+RS140167:Rossella:Smith:ES:14-01-1967:ingegnere:
+AF290742:Angelo:Faggiano:ZA:29-07-1942:ingegnere:
+MP100277:Massimo:Picariello:IT:10-02-1977:ingegnere:
+VC090527:Vincenzo:Chianese:EG:09-05-1927:ingegnere:
+VC130876:Vito:Cappella:US:13-08-1976:ingegnere:
+CD191070:Clelia:Di Marzio:DZ:19-10-1970:ingegnere:
+PR300472:Pietro:Russo:ZA:30-04-1972:ingegnere:
+RC200694:Roberto:Caio:KO:20-06-1994:ingegnere:
+SF261260:Stefano:Faruolo:EG:26-12-1960:ingegnere:
+VD160578:Valerio:De Masi:GR:16-05-1978:ingegnere:
+MB130964:Mario:Bennato:KO:13-09-1964:ingegnere:
+SD210973:Sergio:Di Marzio:CN:21-09-1973:ingegnere:
+CD230254:Ciccio:De Santo:FR:23-02-1954:ingegnere:
+PP290458:Paola:Paolino:KO:29-04-1958:ingegnere:
+PR040480:Paolo:Russo:DE:04-04-1980:ingegnere:
+SM191128:Sergio:Moscato:EG:19-11-1928:ingegnere:
+VB180923:Vincenzo:Bennato:IN:18-09-1923:ingegnere:
+FP140734:Francesco:Picariello:DE:14-07-1934:ingegnere:
+GB170557:Gennaro:Bennato:US:17-05-1957:ingegnere:
+FS180843:Francesco:Smith:CH:18-08-1943:ingegnere:
+FC040967:Fiorella:Cappella:EN:04-09-1967:ingegnere:
+GS120856:Giovanni:Smith:DZ:12-08-1956:ingegnere:
+VI261163:Valentina:Iandolo:PL:26-11-1963:ingegnere:
+ED290738:Enzo:d'Acierno:ID:29-07-1938:ingegnere:
+GG251051:Gennaro:Giaquinto:TN:25-10-1951:ingegnere:
+ND170236:Nicola:Di Marzio:DZ:17-02-1936:ingegnere:
+VB100790:Vincenzo:Battiato:IT:10-07-1990:ingegnere:
+AF130457:Augusto:Faggiano:IN:13-04-1957:ingegnere:
+GI240479:Giuseppe:Iandolo:JN:24-04-1979:ingegnere:
+FC171264:Fiorella:Caio:TN:17-12-1964:ingegnere:
+MB080438:Michele:Barrasso:FR:08-04-1938:ingegnere:
+MD130680:Massimo:d'Acierno:CN:13-06-1980:ingegnere:
+CG120630:Carmine:Giaquinto:DZ:12-06-1930:ingegnere:
+LW181143:Loredana:Wesson:CA:18-11-1943:ingegnere:
+RB250996:Rossella:Battiato:PL:25-09-1996:ingegnere:
+EG111061:Ettore:Giaquinto:TN:11-10-1961:ingegnere:
+VS180862:Valerio:Smith:IT:18-08-1962:ingegnere:
+AC021044:Antonio:Caio:MA:02-10-1944:ingegnere:
+VR250548:Vito:Rossi:IN:25-05-1948:ingegnere:
+VC250748:Vittorio:Cipriano:ID:25-07-1948:ingegnere:
+VR080949:Vincenzo:Russo:EG:08-09-1949:ingegnere:
+TI110340:Tiziano:Iandolo:TN:11-03-1940:ingegnere:
+BD010999:Beatrice:De Masi:KO:01-09-1999:ingegnere:
+MW051041:Marco:Wesson:EG:05-10-1941:ingegnere:
+ME131148:Michele:Esposito:CH:13-11-1948:ingegnere:
+VD230260:Valerio:De Santo:DA:23-02-1960:ingegnere:
+AM141134:Antonio:Moscato:TN:14-11-1934:ingegnere:
+SC240988:Sergio:Caio:ES:24-09-1988:ingegnere:
+MB200567:Marco:Bianchi:ZA:20-05-1967:ingegnere:
+FE280673:Francesco:Esposito:DZ:28-06-1973:ingegnere:
+VC170447:Valentina:Canonico:JN:17-04-1947:ingegnere:
+LC240275:Luigi:Cipriano:KO:24-02-1975:ingegnere:
+VD210167:Vittorio:De Simone:CN:21-01-1967:ingegnere:
+VG230698:Vito:Galdi:JN:23-06-1998:ingegnere:
+AS131181:Alfonso:Sempronio:JN:13-11-1981:ingegnere:
+PC020952:Paolo:Caio:EG:02-09-1952:ingegnere:
+VP291241:Valerio:Paoli:FR:29-12-1941:ingegnere:
+CB050846:Ciccio:Bennato:IN:05-08-1946:ingegnere:
+FS220841:Francesco:Sempronio:GR:22-08-1941:ingegnere:
+VC250349:Vito:Canonico:DZ:25-03-1949:ingegnere:
+LG100460:Luigi:Guccini:US:10-04-1960:ingegnere:
+GC010855:Giovanni:Chianese:GR:01-08-1955:ingegnere:
+LE190852:Luigi:Esposito:EG:19-08-1952:ingegnere:
+GG200337:Gianna:Galdi:DZ:20-03-1937:ingegnere:
+TD241147:Tiziana:De Santo:DA:24-11-1947:ingegnere:
+PR080647:Paolo:Russo:US:08-06-1947:ingegnere:
+MB091021:Mariano:Battiato:MA:09-10-1921:ingegnere:
+SS010179:Salvatore:Sempronio:CA:01-01-1979:ingegnere:
+VC030929:Vittorio:Coppola:GR:03-09-1929:ingegnere:
+NL221224:Nicola:Lionetti:ES:22-12-1924:ingegnere:
+VR230930:Vittorio:Russo:KO:23-09-1930:ingegnere:
+FF070822:Federico:Faruolo:CA:07-08-1922:ingegnere:
+SG180937:Simone:Galdi:CA:18-09-1937:ingegnere:
+SB021149:Stefano:Battiato:EG:02-11-1949:ingegnere:
+VR240331:Valerio:Rossi:ES:24-03-1931:ingegnere:
+LR110649:Luigi:Rossi:FR:11-06-1949:ingegnere:
+MC310583:Mario:Cipriano:JN:31-05-1983:ingegnere:
+TG150656:Tiziano:Galdi:CH:15-06-1956:ingegnere:
+CE201247:Carmine:Esposito:PL:20-12-1947:ingegnere:
+AC300991:Angelo:Chianese:US:30-09-1991:ingegnere:
+EB070160:Enzo:Bianchi:ES:07-01-1960:ingegnere:
+CM280737:Ciccio:Moscato:ZA:28-07-1937:ingegnere:
+CV270135:Ciccio:Vietri:EN:27-01-1935:ingegnere:
+AR250491:Alfonso:Rossi:TN:25-04-1991:ingegnere:
+FR080153:Francesco:Russo:DZ:08-01-1953:ingegnere:
+MS020637:Mario:Smith:EN:02-06-1937:ingegnere:
+PB110166:Paolo:Barrasso:GR:11-01-1966:ingegnere:
+SR210264:Salvatore:Rossi:IN:21-02-1964:ingegnere:
+AV160191:Angelo:Vietri:IN:16-01-1991:ingegnere:
+GI270561:Gennaro:Iandolo:DE:27-05-1961:ingegnere:
+SF041160:Stefano:Faggiano:TN:04-11-1960:ingegnere:
+AD210359:Augusto:De Simone:US:21-03-1959:ingegnere:
+SW070644:Salvatore:Wesson:TN:07-06-1944:ingegnere:
+SC061126:Salvatore:Cappella:IT:06-11-1926:ingegnere:
+NC300769:Nicola:Cipriano:DA:30-07-1969:ingegnere:
+SD190740:Stefano:De Santo:CN:19-07-1940:ingegnere:
+EB221261:Enzo:Bianchi:EG:22-12-1961:ingegnere:
+CC061176:Carmine:Chianese:TN:06-11-1976:ingegnere:
+PB061123:Paola:Bianchi:FR:06-11-1923:ingegnere:
+RD070142:Rosa:De Simone:DA:07-01-1942:ingegnere:
+SR160641:Salvatore:Russo:CH:16-06-1941:ingegnere:
+AF200321:Anna:Faruolo:PT:20-03-1921:ingegnere:
+VS011058:Valentina:Sempronio:MA:01-10-1958:ingegnere:
+RE120897:Roberto:Esposito:EG:12-08-1997:ingegnere:
+RP201023:Roberto:Picariello:DZ:20-10-1923:ingegnere:
+AC200435:Antonio:Cipriano:FR:20-04-1935:ingegnere:
+AF260788:Alfonso:Faruolo:ID:26-07-1988:ingegnere:
+CD050789:Carmine:Di Marzio:DZ:05-07-1989:ingegnere:
+SF300124:Sergio:Faruolo:CA:30-01-1924:ingegnere:
+RP201046:Roberto:Picariello:DE:20-10-1946:ingegnere:
+MB220591:Mariano:Bennato:GR:22-05-1991:ingegnere:
+ME181121:Mario:Esposito:CH:18-11-1921:ingegnere:
+GD290798:Gennaro:d'Acierno:DZ:29-07-1998:ingegnere:
+MB010930:Marco:Bianchi:EN:01-09-1930:ingegnere:
+AB100454:Antonio:Barrasso:ES:10-04-1954:ingegnere:
+CD250583:Carmine:De Masi:IR:25-05-1983:ingegnere:
+RR211030:Roberto:Russo:GR:21-10-1930:ingegnere:
+AP200461:Alfonso:Picariello:TN:20-04-1961:ingegnere:
+BB180748:Beatrice:Barrasso:EG:18-07-1948:ingegnere:
+MB011229:Mariano:Bianchi:PT:01-12-1929:ingegnere:
+TF280982:Tiziana:Faggiano:DA:28-09-1982:ingegnere:

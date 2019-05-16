@@ -8,9 +8,9 @@ create table if not exists risultati_temp(
 	RITIRATO_T             BOOL                 not null,
 	NUMERO_GIORNATA_T	   INT 					not null,
 	NUMERO_CAMPIONATO_T	   INT 					not null,
-	constraint PK_RISULTATI primary key (CODICE_PILOTA_T, NUMERO_CAMPIONATO_T, NUMERO_GIORNATA_T),
-	check(punteggio between 0 and 25),
-	check((punteggio <> 0 and not ritirato) or (punteggio = 0 and ritirato))
+	constraint PK_RISULTATI_T primary key (CODICE_PILOTA_T, NUMERO_CAMPIONATO_T, NUMERO_GIORNATA_T),
+	check(punteggio_t between 0 and 25),
+	check((punteggio_t <> 0 and not ritirato_t) or (punteggio_t = 0 and ritirato_t))
 );
 
 create or replace function INSERIMENTO_RISULTATI() returns trigger as $$
@@ -19,8 +19,8 @@ begin
 	if( (exists (
 			select * 
 			from risultati_temp 
-			where punteggio <> 0
-			group by punteggio
+			where punteggio_t <> 0
+			group by punteggio_t
 			having count(*) > 1))
 		and
 		(not exists ( 

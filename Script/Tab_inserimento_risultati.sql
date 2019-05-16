@@ -13,7 +13,6 @@ create table if not exists risultati_temp(
 	check((punteggio <> 0 and not ritirato) or (punteggio = 0 and ritirato))
 );
 
-
 create or replace function INSERIMENTO_RISULTATI() as trigger $$
 being
 	
@@ -40,14 +39,10 @@ being
 								);
 		delete * from risultati_temp;
 	end if;
-	
-	
+	return NEW;
 end $$; language plpgsql;
 
 create trigger INSERIMENTO_RISULTATI
 after insert on risultati_temp
 when ((select count(*) from risultati_temp) = 20)
 execute procedure INSERIMENTO_RISULTATI()
-
-
- 

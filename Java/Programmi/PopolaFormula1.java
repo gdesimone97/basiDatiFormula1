@@ -110,9 +110,8 @@ public class PopolaFormula1 {
             Scanner scStaffMuretto = new Scanner(new BufferedReader(new FileReader("staffmuretto.txt")));
             scStaffMuretto.useDelimiter(":");
 
-            
             conn.setAutoCommit(false);
-            
+
 //******INSERIMENTO PISTE
             Piste.insert(conn, "piste 2019.txt");
             System.out.println("Piste Inserite");
@@ -131,26 +130,37 @@ public class PopolaFormula1 {
             System.out.println("Calendario Inserito");
 
 //******INSERIMENTO RISULTATI
-            Risultati.insert(conn, "risultati.txt");
-            System.out.println("Risultati Inseriti");
+            Scanner scRisultati = new Scanner(System.in);
+            System.out.print("Caricare risultati da file? [S/N] : ");
+            String risposta = scRisultati.nextLine();
+            while (true) {
+                if (risposta.toUpperCase().compareTo("S") == 0) {
+                    Risultati_temp.insert(conn, "risultati.txt");
+                    System.out.print("Risultati Inseriti, vuoi caricare un'altra giornata? [S/N]: ");
+                    risposta = scRisultati.nextLine();
+                } else if (risposta.toUpperCase().compareTo("N") == 0) {
+                    break;
+                } else {
+                    System.out.print("Risposta non valida, reinserisci: ");
+                }
+            }
 
 //******INSERIMENTO AFFERENZA PILOTI
             AfferenzaPiloti.insert(conn, "afferenzapiloti.txt");
             System.out.println("Afferenze Piloti Inserite");
-            
+
             conn.commit();
 
             System.out.println();
             System.out.println();
-            
-            
-            
+
 //******INSERIMENTO DI SCUDERIE E PERSONALE
             System.out.print("INSERISCI NUMERO DI CAMPIONATO (69 per il 2019): ");
             Scanner sc = new Scanner(System.in);
             int numCampionato = Integer.parseInt(sc.nextLine());
+            
 
-            //PER 20 SCUDERIE
+            //PER x SCUDERIE
             while (x < 20) {
                 if (conn.getAutoCommit()) {
                     conn.setAutoCommit(false);
@@ -226,7 +236,10 @@ public class PopolaFormula1 {
         } catch (FileNotFoundException ex) {
             Logger.getLogger(PopolaFormula1.class.getName()).log(Level.SEVERE, null, ex);
         } catch (FineException ex) {
-            System.out.println("IL FILE SCUDERIE NON CONTIENE ABBASTANZA SCUDERIE, MA QUELLE PRESENTI SONO STATE INSERITE TUTTE");
+            conn.rollback();
+            System.out.println("ERRORE DI FILE!");
+            System.out.println("Può dipendere da: \n1. file scuderie non contiene abbastanza scuderie\n2. file risultati non contiene tutti i risultati per la giornata");
+            ex.getMessage();
         }
     }
 

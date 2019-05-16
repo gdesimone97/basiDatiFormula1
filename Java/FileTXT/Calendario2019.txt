@@ -1,0 +1,21 @@
+Melbourne:Melbourne Grand Prix Circuit:69:2019-03-17:
+Sakhir:Barhain International Circuit:69:2019-03-31:
+Shanghai:Shanghai International Circuit:69:2019-04-14:
+Baku:Baku City Circuit:69:2019-04-28:
+Barcellona:Circuit de Barcelona-Catalunya:69:2019-05-12:
+Montecarlo:Circuit de Monaco:69:2019-05-26:
+Montreal:Circuit Gilles Villeneuve:69:2019-06-09:
+Le Castellet:Circuit Paul Ricard:69:2019-06-23:
+Spielberg:Red Bull Ring:69:2019-06-30:
+Silverstone:Silverstone Circuit:69:2019-07-14:
+Hockenheim:Hockenheimring:69:2019-07-28:
+Mogyrod:Hungaroring:69:2019-08-04:
+Francorchamps:Circuit de Spa-Francorchamps:69:2019-09-01:
+Monza:Autodromo Nazionale di Monza:69:2019-09-08:
+Singapore:Marina Bay Street Circuit:69:2019-09-22:
+Sochi:Sochi Autodrom:69:2019-09-29:
+Suzuka:Suzuka International Racing Course:69:2019-10-13:
+Città del Messico:Autodromo Hernanos Rodriguez:69:2019-10-27:
+Austin:Circuit of the Americas:69:2019-11-03:
+Interlagos:Autodromo José Carlos Pace:69:2019-11-17:
+Isola Yas:Yas Marina Circuit:69:2019-12-01:

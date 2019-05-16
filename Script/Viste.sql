@@ -13,3 +13,6 @@ create view CLASSIFICA_COSTRUTTORI (nome_scuderia, punteggio) as
 	where A.numero_campionato = NEW.numero_campionato
 	group by nome_scuderia
 	order by sum(C.punteggio) desc
+
+--fare trigger su campionato insert
+--aggiornare trigger di risultati aggiungendo le due query

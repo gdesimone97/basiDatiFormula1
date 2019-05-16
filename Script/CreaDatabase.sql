@@ -51,7 +51,9 @@ create table CALENDARIO (
    NOME_PISTA           VARCHAR(50)          not null,
    NUMERO_CAMPIONATO    INT                  not null,
    DATA                 DATE                 not null,
-   constraint PK_CALENDARIO primary key (SEDE_PISTA, NOME_PISTA, NUMERO_CAMPIONATO)
+   NUMERO_GIORNATA		INT					 not null,
+   constraint PK_CALENDARIO primary key (SEDE_PISTA, NOME_PISTA, NUMERO_CAMPIONATO),
+   check(NUMERO_GIORNATA between 1 and 21)
 );
 /*==============================================================*/
 /* Table: CAMPIONATI                                            */

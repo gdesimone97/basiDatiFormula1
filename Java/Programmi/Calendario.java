@@ -25,18 +25,20 @@ public class Calendario {
     public static void insert(Connection conn, String nomeFile) throws SQLException, FileNotFoundException {
         if (pst == null) {
             pst = conn.prepareStatement("insert into calendario "
-                    + "(Sede_Pista, Nome_Pista, Numero_Campionato, Data) "
-                    + "values (?, ?, ?, ?);");
+                    + "(Sede_Pista, Nome_Pista, Numero_Campionato, Data, Numero_Giornata) "
+                    + "values (?, ?, ?, ?, ?);");
         }
 
         Scanner sc = new Scanner(new BufferedReader(new FileReader(nomeFile)));
         sc.useDelimiter(":");
+        int cont = 0;
 
         while (sc.hasNext()) {
             pst.setString(1, sc.next());
             pst.setString(2, sc.next());
             pst.setInt(3, sc.nextInt());
-            pst.setDate(5, Date.valueOf(sc.next()));
+            pst.setDate(4, Date.valueOf(sc.next()));
+            pst.setInt(5, ++cont);
 
             sc.nextLine();
             pst.executeUpdate();

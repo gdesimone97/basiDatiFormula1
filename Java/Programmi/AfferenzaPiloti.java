@@ -23,7 +23,7 @@ public class AfferenzaPiloti {
 
     public static void insert(Connection conn, String nomeFile) throws SQLException, FileNotFoundException {
         if (pst == null) {
-            pst = conn.prepareStatement("insert into Afferenza Piloti "
+            pst = conn.prepareStatement("insert into Afferenza_Piloti "
                     + "(Codice_Pilota, Numero_Campionato, Nome_Scuderia) "
                     + "values (?, ?, ?);");
         }
@@ -33,8 +33,8 @@ public class AfferenzaPiloti {
 
         while (sc.hasNext()) {
             pst.setString(1, sc.next());
-            pst.setInt(3, sc.nextInt());
-            pst.setString(2, sc.next());
+            pst.setInt(2, sc.nextInt());
+            pst.setString(3, sc.next());
 
             sc.nextLine();
             pst.executeUpdate();

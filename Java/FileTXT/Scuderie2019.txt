@@ -1,0 +1,10 @@
+Mercedes AMG Petronas Motorsport:Tedesca:5:
+Scuderia Ferrari Mission Winnow:Italiana:16:
+Aston Martin Red Bull Racing:Austriaca:4:
+SportPesa Racing Point F1 Team:Americana:0:
+ROKiT Williams Racing:Inglese:9:
+Renault F1 Team:Francese:2:
+Red Bull Toro Rosso Honda:Italiana:0:
+Rich Energy Haas F1 Team:Americana:0:
+McLaren F1 Team:Inglese:8:
+Alfa Romeo Racing:Svizzera:0:

@@ -48,7 +48,7 @@ begin
 								where numero_campionato = NEW.numero_campionato
 								group by codice_pilota
 
-								order by sum(punteggio) desc;
+								order by sum(punteggio) desc
 						  );
 		delete from CLASSIFICA_SCUDERIE;
 		insert into CLASSIFICA_SCUDERIE(

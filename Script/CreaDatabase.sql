@@ -27,7 +27,7 @@ create domain TempoGiro as int check (value > 0);
 /* Table: AFFERENZA_PERSONALE                                   */
 /*==============================================================*/
 create table AFFERENZA_PERSONALE (
-   NOME_SCUDERIA        VARCHAR(20)          not null,
+   NOME_SCUDERIA        VARCHAR(50)          not null,
    CODICE_PERSONALE     CHAR(8)              not null,
    NUMERO_CAMPIONATO    INT                  not null,
    constraint PK_AFFERENZA_PERSONALE primary key (NOME_SCUDERIA, CODICE_PERSONALE, NUMERO_CAMPIONATO)
@@ -39,7 +39,7 @@ create table AFFERENZA_PERSONALE (
 create table AFFERENZA_PILOTI (
    CODICE_PILOTA        CHAR(8)              not null,
    NUMERO_CAMPIONATO    INT                  not null,
-   NOME_SCUDERIA        VARCHAR(20)          not null,
+   NOME_SCUDERIA        VARCHAR(50)          not null,
    constraint PK_AFFERENZA_PILOTI primary key (CODICE_PILOTA, NUMERO_CAMPIONATO, NOME_SCUDERIA)
 );
 
@@ -47,7 +47,7 @@ create table AFFERENZA_PILOTI (
 /* Table: CALENDARIO                                            */
 /*==============================================================*/
 create table CALENDARIO (
-   SEDE_PISTA           VARCHAR(20)          not null,
+   SEDE_PISTA           VARCHAR(50)          not null,
    NOME_PISTA           VARCHAR(50)          not null,
    NUMERO_CAMPIONATO    INT                  not null,
    DATA                 DATE                 not null,
@@ -59,7 +59,7 @@ create table CALENDARIO (
 /* Table: CAMPIONATI                                            */
 /*==============================================================*/
 create table CAMPIONATI (
-   NUMERO_CAMPIONATO    INT                  not null,
+   NUMERO_CAMPIONATO     INT                  not null,
    DATA_INIZIO           DATE                 not null,
    DATA_FINE            DATE                 not null,
    MOTORE               VARCHAR(60)          not null,
@@ -73,7 +73,7 @@ create table CAMPIONATI (
 create table DIRIGENZA (
    NUMERO_CAMPIONATO    INT                  not null,
    CODICE_PERSONALE     CHAR(8)              not null,
-   NOME_SCUDERIA        VARCHAR(20)          not null,
+   NOME_SCUDERIA        VARCHAR(50)          not null,
    constraint PK_DIRIGENZA primary key (NUMERO_CAMPIONATO, CODICE_PERSONALE, NOME_SCUDERIA)
 );
 
@@ -110,10 +110,10 @@ create table PILOTI (
 /* Table: PISTE                                                 */
 /*==============================================================*/
 create table PISTE (
-   SEDE_PISTA           VARCHAR(20)          not null,
+   SEDE_PISTA           VARCHAR(50)          not null,
    NOME_PISTA           VARCHAR(50)          not null,
    LUNGHEZZA            INT                  not null check(lunghezza >0),
-   NUM_CURVE           INT                  not null check(num_curve >0),
+   NUM_CURVE            INT                  not null check(num_curve >0),
    GIRO_VELOCE          TempoGiro            null,
    ANNO_INAUGURAZIONE   INT                  not null check(anno_inaugurazione>1900 and anno_inaugurazione < extract(year from current_date)),
    constraint PK_PISTE primary key (SEDE_PISTA, NOME_PISTA)
@@ -123,8 +123,8 @@ create table PISTE (
 /* Table: RISULTATI                                             */
 /*==============================================================*/
 create table RISULTATI (
-   SEDE_PISTA           VARCHAR(20)          not null,
-   NOME_PISTA           VARCHAR(20)          not null,
+   SEDE_PISTA           VARCHAR(50)          not null,
+   NOME_PISTA           VARCHAR(50)          not null,
    CODICE_PILOTA        CHAR(8)              not null,
    NUMERO_CAMPIONATO    INT                  not null,
    PUNTEGGIO            INT                  not null,
@@ -140,7 +140,7 @@ create table RISULTATI (
 /* Table: SCUDERIE                                              */
 /*==============================================================*/
 create table SCUDERIE (
-   NOME_SCUDERIA        VARCHAR(20)          not null,
+   NOME_SCUDERIA        VARCHAR(50)          not null,
    NAZIONALITA_SCUDERIA VARCHAR(20)          not null,
    NUM__CAMPIONATI_VINTI INT                  not null,
    constraint PK_SCUDERIE primary key (NOME_SCUDERIA)

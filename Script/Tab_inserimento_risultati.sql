@@ -13,8 +13,8 @@ create table if not exists risultati_temp(
 	check((punteggio <> 0 and not ritirato) or (punteggio = 0 and ritirato))
 );
 
-create or replace function INSERIMENTO_RISULTATI() as trigger $$
-being
+create or replace function INSERIMENTO_RISULTATI() returns trigger as $$
+begin
 	
 	if( (exists (
 			select * 
@@ -57,7 +57,7 @@ being
 			
 	end if;
 	return NEW;
-end $$; language plpgsql;
+end $$ language plpgsql;
 
 create trigger INSERIMENTO_RISULTATI
 after insert on risultati_temp

@@ -5128,11 +5128,11 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Column>
 <o:Column Id="o79">
 <a:ObjectID>1030C411-6C5F-4D4E-8673-D9D9A9DFB42F</a:ObjectID>
-<a:Name>Data Inzio</a:Name>
-<a:Code>DATA_INZIO</a:Code>
+<a:Name>Data Inizio</a:Name>
+<a:Code>DATA_INIZIO</a:Code>
 <a:CreationDate>1557414510</a:CreationDate>
 <a:Creator>desio</a:Creator>
-<a:ModificationDate>1557414871</a:ModificationDate>
+<a:ModificationDate>1558019982</a:ModificationDate>
 <a:Modifier>desio</a:Modifier>
 <a:DataType>DATE</a:DataType>
 <a:Column.Mandatory>1</a:Column.Mandatory>

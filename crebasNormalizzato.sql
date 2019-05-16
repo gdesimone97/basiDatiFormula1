@@ -113,7 +113,7 @@ create table PISTE (
    LUNGHEZZA            INT                  not null check(lunghezza >0),
    NUM_CURVE           INT                  not null check(num_curve >0),
    GIRO_VELOCE          TempoGiro            null,
-   ANNO_INNAGURAZIONE   INT                  not null check(anno_innagurazione>1900 and anno_innagurazione < extract(year from current_date)),
+   ANNO_INAUGURAZIONE   INT                  not null check(anno_inaugurazione>1900 and anno_inaugurazione < extract(year from current_date)),
    constraint PK_PISTE primary key (SEDE_PISTA, NOME_PISTA)
 );
 

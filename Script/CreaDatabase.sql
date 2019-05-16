@@ -62,8 +62,8 @@ create table CAMPIONATI (
    NUMERO_CAMPIONATO    INT                  not null,
    DATA_INIZIO           DATE                 not null,
    DATA_FINE            DATE                 not null,
-   MOTORE               VARCHAR(20)          not null,
-   GOMME                VARCHAR(20)          not null,
+   MOTORE               VARCHAR(60)          not null,
+   GOMME                VARCHAR(60)          not null,
    constraint PK_CAMPIONATI primary key (NUMERO_CAMPIONATO)
 );
 

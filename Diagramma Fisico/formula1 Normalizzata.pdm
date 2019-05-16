@@ -5154,10 +5154,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>MOTORE</a:Code>
 <a:CreationDate>1557414577</a:CreationDate>
 <a:Creator>desio</a:Creator>
-<a:ModificationDate>1557414871</a:ModificationDate>
+<a:ModificationDate>1558020160</a:ModificationDate>
 <a:Modifier>desio</a:Modifier>
-<a:DataType>VARCHAR(20)</a:DataType>
-<a:Length>20</a:Length>
+<a:DataType>VARCHAR(60)</a:DataType>
+<a:Length>60</a:Length>
 <a:Column.Mandatory>1</a:Column.Mandatory>
 </o:Column>
 <o:Column Id="o82">
@@ -5166,10 +5166,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>GOMME</a:Code>
 <a:CreationDate>1557414577</a:CreationDate>
 <a:Creator>desio</a:Creator>
-<a:ModificationDate>1557414871</a:ModificationDate>
+<a:ModificationDate>1558020160</a:ModificationDate>
 <a:Modifier>desio</a:Modifier>
-<a:DataType>VARCHAR(20)</a:DataType>
-<a:Length>20</a:Length>
+<a:DataType>VARCHAR(60)</a:DataType>
+<a:Length>60</a:Length>
 <a:Column.Mandatory>1</a:Column.Mandatory>
 </o:Column>
 </c:Columns>

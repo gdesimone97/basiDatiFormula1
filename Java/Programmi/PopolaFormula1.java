@@ -23,7 +23,7 @@ import java.util.logging.Logger;
  * @author 1997g
  */
 public class PopolaFormula1 {
-    
+
     private static Scuderia leggiScuderia(Scanner sc) throws FineException {
         if (!sc.hasNext()) {
             throw new FineException();
@@ -37,14 +37,14 @@ public class PopolaFormula1 {
         }
         return new Personale(sc.next(), sc.next(), sc.next(), sc.next(), sc.next(), sc.next());
     }
-    
+
     private static void inserisciScuderia(Scuderia sc, PreparedStatement pst) throws SQLException {
         pst.setString(1, sc.getNome_Scuderia());
         pst.setString(2, sc.getNazionalita_Scuderia());
         pst.setInt(3, sc.getNumero_Campionati_Vinti());
         pst.executeUpdate();
     }
-    
+
     private static void inserisciPersonale(Personale p, PreparedStatement pst) throws SQLException {
         pst.setString(1, p.getCodice_personale());
         pst.setString(2, p.getNome_personale());
@@ -54,14 +54,14 @@ public class PopolaFormula1 {
         pst.setString(6, p.getProfessione());
         pst.executeUpdate();
     }
-    
+
     private static void inserisciDirigenza(Personale p, Scuderia sc, int numCampionato, PreparedStatement pst) throws SQLException {
         pst.setInt(1, numCampionato);
         pst.setString(2, p.getCodice_personale());
         pst.setString(3, sc.getNome_Scuderia());
         pst.executeUpdate();
     }
-    
+
     private static void inserisciAfferenzaPersonale(Personale p, Scuderia sc, int numCampionato, PreparedStatement pst) throws SQLException {
         pst.setInt(1, numCampionato);
         pst.setString(2, p.getCodice_personale());
@@ -70,18 +70,17 @@ public class PopolaFormula1 {
     }
 
     public static void main(String[] args) throws SQLException {
-        String nome = "postgres";
+        String nome = "gennaro";
         String pass = "abc123";
-        Connection conn=null; 
-        
-        
+        Connection conn = null;
+
         Personale pers;
 
         int x = 0;
         int y = 0;
 
         //DATABASE
-        String url = "jdbc:postgresql://localhost:5432/prova";
+        String url = "jdbc:postgresql://localhost:5432/provaformula1";
         try {
 //******CONNESSIONE & STATEMENT
             Class.forName("org.postgresql.Driver");
@@ -94,10 +93,10 @@ public class PopolaFormula1 {
                     + "values (?, ?, ?, ?, ?, ?);");
             PreparedStatement pstInserisciDirigenza = conn.prepareStatement("insert into dirigenza"
                     + "(numero_campionato, codice_personale, nome_scuderia)"
-                    + "values (?, ?, ?);"); //MODIFICA QUI IL NUMERO_CAMPIONATO
+                    + "values (?, ?, ?);");
             PreparedStatement pstInserisciAfferenzaPersonale = conn.prepareStatement("insert into afferenza_personale"
                     + "(numero_campionato, codice_personale, nome_scuderia)"
-                    + "values (?, ?, ?);"); //MODIFICA QUI IL NUMERO_CAMPIONATO
+                    + "values (?, ?, ?);");
 
 //******FILE & SCANNER
             Scanner scScuderie = new Scanner(new BufferedReader(new FileReader("scuderie.txt")));
@@ -110,67 +109,75 @@ public class PopolaFormula1 {
             scMeccanico.useDelimiter(":");
             Scanner scStaffMuretto = new Scanner(new BufferedReader(new FileReader("staffmuretto.txt")));
             scStaffMuretto.useDelimiter(":");
+
             
+            conn.setAutoCommit(false);
             
 //******INSERIMENTO PISTE
-        Piste.insert(conn, "piste.txt");
-        System.out.println("Piste Inserite");
-        
+            Piste.insert(conn, "piste 2019.txt");
+            System.out.println("Piste Inserite");
+
 //******INSERIMENTO PILOTI
-        Piloti.insert(conn, "piloti.txt");
-        System.out.println("Piloti Inseriti");
+            Piloti.insert(conn, "piloti 2019.txt");
+            Piloti.insert(conn, "piloti 2018.txt");
+            System.out.println("Piloti Inseriti");
 
 //******INSERIMENTO CAMPIONATI
-        Campionati.insert(conn, "campionati.txt");
-        System.out.println("Campionati Inseriti");
-        
-//******INSERIMENTO CALENDARIO
-        Calendario.insert(conn, "calendario.txt");
-        System.out.println("Calendario Inserito");
-        
-//******INSERIMENTO RISULTATI
-        Risultati.insert(conn, "risultati.txt");
-        System.out.println("Risultati Inseriti");
-        
-//******INSERIMENTO AFFERENZA PILOTI
-        AfferenzaPiloti.insert(conn, "afferenzapiloti.txt");
-        System.out.println("Afferenze Piloti Inserite");
+            Campionati.insert(conn, "campionati.txt");
+            System.out.println("Campionati Inseriti");
 
-        
-        System.out.println();
-        System.out.println();
+//******INSERIMENTO CALENDARIO
+            Calendario.insert(conn, "calendario.txt");
+            System.out.println("Calendario Inserito");
+
+//******INSERIMENTO RISULTATI
+            Risultati.insert(conn, "risultati.txt");
+            System.out.println("Risultati Inseriti");
+
+//******INSERIMENTO AFFERENZA PILOTI
+            AfferenzaPiloti.insert(conn, "afferenzapiloti.txt");
+            System.out.println("Afferenze Piloti Inserite");
+            
+            conn.commit();
+
+            System.out.println();
+            System.out.println();
+            
+            
+            
 //******INSERIMENTO DI SCUDERIE E PERSONALE
             System.out.print("INSERISCI NUMERO DI CAMPIONATO (69 per il 2019): ");
             Scanner sc = new Scanner(System.in);
             int numCampionato = Integer.parseInt(sc.nextLine());
-            
+
             //PER 20 SCUDERIE
             while (x < 20) {
-                conn.setAutoCommit(false);
+                if (conn.getAutoCommit()) {
+                    conn.setAutoCommit(false);
+                }
 
                 //LEGGO 1 SCUDERIA
                 Scuderia scuderia = leggiScuderia(scScuderie);
                 inserisciScuderia(scuderia, pstInserisciScuderia);
                 System.out.println(x + " Inserita scuderia con nome: " + scuderia.getNome_Scuderia());
                 //Savepoint save1 = conn.setSavepoint();
-                
 
                 //LEGGO 5 DIRIGENTI DAL FILE
                 while (y < 5) {
                     pers = leggiPersonale(scDirigente);
                     inserisciPersonale(pers, pstInserisciPersonale);
                     inserisciAfferenzaPersonale(pers, scuderia, numCampionato, pstInserisciAfferenzaPersonale);
-                    
+
                     //SOLO IL PRIMO DIRIGENTE E' AMMINISTRATORE
-                    if(y==0) 
+                    if (y == 0) {
                         inserisciDirigenza(pers, scuderia, numCampionato, pstInserisciDirigenza);
+                    }
                     y++;
                 }
                 y = 0;
                 System.out.println(x + " Ho inserito 5 dirigenti di cui (1 amministratore) per la scuderia in Aff.Pers. e Dirigenza");
                 //Savepoint save2 = conn.setSavepoint();
-                
-                
+
                 //LEGGO 15 INGEGNERI DAL FILE
                 while (y < 15) {
                     pers = leggiPersonale(scIngegnere);
@@ -181,8 +188,7 @@ public class PopolaFormula1 {
                 y = 0;
                 System.out.println(x + " Ho inserito 15 ingegneri per la scuderia in Aff.Pers.");
                 //Savepoint save3 = conn.setSavepoint();
-                
-                
+
                 //LEGGO 20 MECCANICI DAL FILE
                 while (y < 20) {
                     pers = leggiPersonale(scMeccanico);
@@ -193,8 +199,7 @@ public class PopolaFormula1 {
                 y = 0;
                 System.out.println(x + " Ho inserito 20 meccanici per la scuderia in Aff.Pers.");
                 //Savepoint save4 = conn.setSavepoint();
-                
-                
+
                 //LEGGO 10 STAFF MURETTO DAL FILE
                 while (y < 10) {
                     pers = leggiPersonale(scStaffMuretto);
@@ -205,20 +210,19 @@ public class PopolaFormula1 {
                 y = 0;
                 System.out.println(x + " Ho inserito 10 staff muretto per la scuderia in Aff.Pers.");
                 //Savepoint save5 = conn.setSavepoint();
-                
-                
+
                 x++;
                 conn.commit();
-                conn.setAutoCommit(true);
                 System.out.println(x + " ok");
                 System.out.println();
             }
+            conn.setAutoCommit(true);
             System.out.println(x + " FINE");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(PopolaFormula1.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(PopolaFormula1.class.getName()).log(Level.SEVERE, null, ex);
-            conn.rollback(); 
+            conn.rollback();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(PopolaFormula1.class.getName()).log(Level.SEVERE, null, ex);
         } catch (FineException ex) {

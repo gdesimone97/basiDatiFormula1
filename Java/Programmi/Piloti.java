@@ -10,7 +10,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.sql.Connection;
 import java.sql.Date;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -26,7 +25,7 @@ public class Piloti {
     public static void insert(Connection conn, String nomeFile) throws SQLException, FileNotFoundException {
         if (pst == null) {
             pst = conn.prepareStatement("insert into piloti "
-                    + "(Codice Pilota, Nome Pilota, Cognome Pilota, Nazionalità, Data Nascita, Titoli Vinti, Attivo, Data Ritiro) "
+                    + "(Codice_Pilota, Nome_Pilota, Cognome_Pilota, Nazionalita, Data_Nascita, Titoli_Vinti, Attivo, Data_Ritiro) "
                     + "values (?, ?, ?, ?, ?, ?, ?, ?);");
         }
 
@@ -41,10 +40,11 @@ public class Piloti {
             pst.setDate(5, Date.valueOf(sc.next()));
             pst.setInt(6, sc.nextInt());
             pst.setBoolean(7, (sc.nextInt() == 1 ? true : false));
-            if (sc.nextInt() == 0) {
+            int x = sc.nextInt();
+            if (x == 0) {
                 pst.setNull(8, java.sql.Types.INTEGER);
             } else {
-                pst.setInt(8, sc.nextInt());
+                pst.setInt(8, x);
             }
 
             sc.nextLine();

@@ -13,8 +13,8 @@ CS010994:Carlos:Sainz:Spagnolo:1994-09-01:0:1:0:
 BH101189:Brendon:Hartley:Nuova Zelenda:1989-11-10:0:0:2018:
 PG070296:Pierre:Gasly:Francese:1996-02-07:0:1:0:
 KM051092:Kevin:Magnussen:Danese:1992-10-05:0:1:0:
-RG170486:Romain:Grosjean:Svizzero:1986-04-17-0:1:0:
+RG170486:Romain:Grosjean:Svizzero:1986-04-17:0:1:0:
 SV260392:Stoffel:Vandoorne:Belga:1992-03-26:0:0:2018:
-FA290781:Fernando:Alonso:Spagnolo:1981-07-29-2:0:2018:
+FA290781:Fernando:Alonso:Spagnolo:1981-07-29:2:0:2018:
 ME020990:Marcus:Ericsson:Svezia:1990-09-02:0:0:2018:
 KR171079:Kimi:Raikkonen:Fillandese:1979-10-17:1:1:0:

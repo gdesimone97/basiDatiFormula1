@@ -38,16 +38,18 @@ begin
 								where C.NUMERO_GIORNATA = R.NUMERO_GIORNATA_T and R.NUMERO_CAMPIONATO_T = C.NUMERO_CAMPIONATO
 								);
 			
-		delete * from risultati_temp;
+		delete from risultati_temp;
 		
-		insert into risultati(
+		delete from CLASSIFICA_PILOTI;
+		insert into CLASSIFICA_PILOTI(
 								select codice_pilota, sum(punteggio)
 								from risultati
 								where numero_campionato = NEW.numero_campionato
 								group by codice_pilota
 								order by sum(punteggio) desc;
-							  );
-		insert into scuderie(
+						  );
+		delete from CLASSIFICA_SCUDERIE;
+		insert into CLASSIFICA_SCUDERIE(
 								select nome_scuderia, sum(C.punteggio)
 								from CLASSIFICA_PILOTI as C join AFFERENZA_PILOTI as A on (C.codice_pilota = A.codice_pilota)
 								where A.numero_campionato = NEW.numero_campionato

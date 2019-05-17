@@ -37,3 +37,4 @@ create trigger CREAZIONE_VIEW_CLASSIFICA_COSTRUTTORI
 after insert on campionati
 for each statement
 execute procedure CREAZIONE_VIEW_CLASSIFICA_COSTRUTTORI();
+

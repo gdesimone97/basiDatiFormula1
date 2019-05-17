@@ -1,18 +1,3 @@
---  Tabella temporanea per caricare i risultati
-
-create table if not exists risultati_temp(
-	CODICE_PILOTA_T        CHAR(8)              not null,
-	PUNTEGGIO_T            INT                  not null,
-	MIGLIOR_TEMPO_T        TempoGiro            null,
-	TEMPO_QUALIFICA_T      TempoGiro            null,
-	RITIRATO_T             BOOL                 not null,
-	NUMERO_GIORNATA_T	   INT 					not null,
-	NUMERO_CAMPIONATO_T	   INT 					not null,
-	constraint PK_RISULTATI_T primary key (CODICE_PILOTA_T, NUMERO_CAMPIONATO_T, NUMERO_GIORNATA_T),
-	check(punteggio_t between 0 and 25),
-	check((punteggio_t <> 0 and not ritirato_t) or (punteggio_t = 0 and ritirato_t))
-);
-
 create or replace function INSERIMENTO_RISULTATI() returns trigger as $$
 begin
 	

@@ -10,7 +10,7 @@ begin
 	  or
 		(not exists ( select * from dirigenza where nome_scuderia = NEW.nome_scuderia)))
 	then
-		delete from scuderie where nome_scuderia = NEW.nome_scuderia;
+		raise exception 'Cardinalità scuderie non rispettata.';
 	end if;
 return null;
 end $$ language plpgsql;
@@ -26,7 +26,7 @@ create or replace function CONTROLLO_CARDINALITA_PERSONALE() returns trigger as 
 begin
 	if(not exists ( select * from afferenza_personale where codice_personale = NEW.codice_personale)) 
 	then
-		delete from personale where codice_personale = NEW.codice_personale;
+		raise exception 'Cardinalità personale non rispettata.';
 	end if;
 return null;
 end $$ language plpgsql;
@@ -59,11 +59,12 @@ begin
 	) <> 0) then
 	raise exception 'Punteggi sovrapposti';
 	end if;
+	
 return NEW;
 end $$ language plpgsql;
 
 create trigger CONTROLLO_PUNTEGGI
-before insert on risultati
+instead of insert on risultati
 for each row
 execute procedure CONTROLLO_PUNTEGGI();
 

@@ -2,14 +2,13 @@ create or replace function AGGIORNAMENTO_TEMPO_PISTA() returns trigger as $$
 begin
 	-- controllare che ci siano 20 risultati
 	if( 20 = (	select count(*)
-				from NUOVI_RISULTATI
+				from risultati
 				) and exists(select min( all miglior_tempo)
 			  					  from risultati r join piste p on (r.sede_pista=p.sede_pista and r.nome_pista=p.nome_pista)
 								  where miglior_tempo <= giro_veloce)
 	   )
 								  
 	then
-	          
 			  update piste
 			  set giro_veloce =  (select min( all miglior_tempo)
 			  					  from risultati r join piste p on (r.sede_pista=p.sede_pista and r.nome_pista=p.nome_pista)
@@ -28,6 +27,5 @@ drop trigger if exists AGGIORNAMENTO_TEMPO_PISTA on risultati cascade;
 
 create trigger AGGIORNAMENTO_TEMPO_PISTA
 after insert on risultati
-referencing new table as NUOVI_RISULTATI
-for each row
+for each statement
 execute procedure AGGIORNAMENTO_TEMPO_PISTA();

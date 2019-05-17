@@ -53,5 +53,5 @@ end $$ language plpgsql;
 
 create trigger INSERIMENTO_RISULTATI
 after insert on risultati_temp
-when ((select count(*) from risultati_temp) = 20) --problema grave qui
+where ((select count(*) from risultati_temp) = 20) --problema grave qui
 execute procedure INSERIMENTO_RISULTATI()

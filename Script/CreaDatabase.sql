@@ -1,23 +1,14 @@
 
- drop table if exists AFFERENZA_PERSONALE cascade;
-
- drop table if exists AFFERENZA_PILOTI cascade;
- 
- drop table if exists CALENDARIO cascade;
-
- drop table if exists  CAMPIONATI cascade;
-
- drop table if exists  DIRIGENZA cascade;
-
- drop table if exists  PERSONALE cascade;
-
- drop table if exists  PILOTI cascade;
-
- drop table if exists  PISTE cascade;
-
- drop table if exists  RISULTATI cascade;
-
- drop table if exists  SCUDERIE cascade;
+drop table if exists AFFERENZA_PERSONALE cascade;
+drop table if exists AFFERENZA_PILOTI cascade;
+drop table if exists CALENDARIO cascade;
+drop table if exists  CAMPIONATI cascade;
+drop table if exists  DIRIGENZA cascade;
+drop table if exists  PERSONALE cascade;
+drop table if exists  PILOTI cascade;
+drop table if exists  PISTE cascade;
+drop table if exists  RISULTATI cascade;
+drop table if exists  SCUDERIE cascade;
 
 drop domain if exists TempoGiro cascade;
 create domain TempoGiro as int check (value > 0);

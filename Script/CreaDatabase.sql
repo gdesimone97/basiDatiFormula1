@@ -213,4 +213,5 @@ alter table RISULTATI
    add constraint FK_RISULTAT_REFERENCE_PILOTI foreign key (CODICE_PILOTA)
       references PILOTI (CODICE_PILOTA)
       on delete restrict on update restrict;
+	  
 

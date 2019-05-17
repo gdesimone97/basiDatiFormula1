@@ -130,8 +130,8 @@ create table RISULTATI (
    TEMPO_QUALIFICA      TempoGiro            null,
    RITIRATO             BOOL               	 not null,
    constraint PK_RISULTATI primary key (SEDE_PISTA, NOME_PISTA, CODICE_PILOTA, NUMERO_CAMPIONATO),
-	check(punteggio between 0 and 25),
-	check((punteggio <> 0 and not ritirato) or (punteggio = 0 and ritirato))
+	check(punteggio between 1 and 26),
+	check((punteggio <> 0 and not ritirato) or (punteggio = 0))
 );
 
 /*==============================================================*/

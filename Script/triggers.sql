@@ -59,7 +59,7 @@ begin
 				from NUOVI_RISULTATI
 				)) 
 		then raise exception 'Numero risultati non corretto.';
-	else
+	end if;
 	-- controllare che siano tutti dello stesso campionato e sulla stessa pista
 	if ( not exists (
 			select *
@@ -67,7 +67,7 @@ begin
 			group by numero_campionato, sede_pista, nome_pista
 			having count(*) = 20 ))
 		then raise exception 'Inseriti risultati su più giornate.';
-	else
+	end if;
 	-- controllare che non ci siano punteggi ripetuti (tranne 0)
 	if( exists (
 			select *
@@ -75,7 +75,7 @@ begin
 			where punteggio <> 0
 			group by punteggio
 			having count(*) > 1))
-		than raise exception 'Inseriti punteggi ripetuti.';
+		then raise exception 'Inseriti punteggi ripetuti.';
 	end if;	
 return NULL;
 end $$ language plpgsql;

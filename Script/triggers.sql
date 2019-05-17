@@ -113,14 +113,14 @@ begin
 	if( 20 = (	select count(*)
 				from risultati) 
 			and 
-		exists (select min ( all miglior_tempo)
+		exists (select min (miglior_tempo)
 			  	from risultati r join piste p on (r.sede_pista=p.sede_pista and r.nome_pista=p.nome_pista)
 				where miglior_tempo <= giro_veloce
 			    group by p.sede_pista)
 	   )						  
 	then
 		update piste
-		set giro_veloce =  (select min( all miglior_tempo)
+		set giro_veloce =  (select min(miglior_tempo)
 			  					  from risultati r join piste p on (r.sede_pista=p.sede_pista and r.nome_pista=p.nome_pista)
 								  where miglior_tempo <= giro_veloce
 						   		  group by p.sede_pista)

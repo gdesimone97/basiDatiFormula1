@@ -10,7 +10,7 @@ begin
 	  or
 		(not exists ( select * from dirigenza where nome_scuderia = NEW.nome_scuderia)))
 	then
-		delete from scuderie where nome_scuderia = NEW.nome_scuderia;
+		raise exception 'Cardinalità scuderie non rispettata.';
 	end if;
 return null;
 end $$ language plpgsql;
@@ -26,7 +26,7 @@ create or replace function CONTROLLO_CARDINALITA_PERSONALE() returns trigger as 
 begin
 	if(not exists ( select * from afferenza_personale where codice_personale = NEW.codice_personale)) 
 	then
-		delete from personale where codice_personale = NEW.codice_personale;
+		raise exception 'Cardinalità personale non rispettata.';
 	end if;
 return null;
 end $$ language plpgsql;
@@ -54,16 +54,35 @@ execute procedure CONTROLLO_AMMINISTRATORE();
 -- trigger per controllare che i punteggi dei risultati inseriti di una giornata non siano sovrapposti
 create or replace function CONTROLLO_PUNTEGGI() returns trigger as $$
 begin
-	if((
-	select punteggio from risultati where NEW.codice_pilota <> codice_pilota and NEW.sede_pista = sede_pista and NEW.nome_pista  = nome_pista  and NEW.numero_campionato = numero_campionato and NEW.punteggio = punteggio
-	) <> 0) then
-	raise exception 'Punteggi sovrapposti';
-	end if;
-return NEW;
+	-- controllare che ci siano 20 risultati
+	if( 20 <> (	select count(*)
+				from NUOVI_RISULTATI
+				)) 
+		then raise exception 'Numero risultati non corretto.';
+	else
+	-- controllare che siano tutti dello stesso campionato e sulla stessa pista
+	if ( not exists (
+			select *
+			from NUOVI_RISULTATI
+			group by numero_campionato, sede_pista, nome_pista
+			having count(*) = 20 ))
+		then raise exception 'Inseriti risultati su più giornate.';
+	else
+	-- controllare che non ci siano punteggi ripetuti (tranne 0)
+	if( exists (
+			select *
+			from NUOVI_RISULTATI
+			where punteggio <> 0
+			group by punteggio
+			having count(*) > 1))
+		than raise exception 'Inseriti punteggi ripetuti.';
+	end if;	
+return NULL;
 end $$ language plpgsql;
 
 create trigger CONTROLLO_PUNTEGGI
-before insert on risultati
-for each row
+after insert on risultati
+referencing new table as NUOVI_RISULTATI
+for each statement
 execute procedure CONTROLLO_PUNTEGGI();
 

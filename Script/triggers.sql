@@ -2,7 +2,8 @@ drop trigger if exists CONTROLLO_CARDINALITA_PERSONALE on personale cascade;
 drop trigger if exists CONTROLLO_CARDINALITA_SCUDERIE on scuderie cascade;
 drop trigger if exists CONTROLLO_AMMINISTRATORE on dirigenza cascade;
 drop trigger if exists CONTROLLO_PUNTEGGI on risutlati cascade;
-
+drop trigger if exists AGGIORNAMENTO_TEMPO_PISTA on risultati cascade;
+drop trigger if exists CONTROLLO_RISULTATI_PILOTI on risultati cascade;
 
 -- ------------------------------------------------------------------------------- --
 
@@ -132,8 +133,6 @@ begin
 return NULL;
 end $$ language plpgsql;
 
-drop trigger if exists AGGIORNAMENTO_TEMPO_PISTA on risultati cascade;
-
 create trigger AGGIORNAMENTO_TEMPO_PISTA
 after insert on risultati
 for each statement
@@ -142,3 +141,29 @@ execute procedure AGGIORNAMENTO_TEMPO_PISTA();
 -- ------------------------------------------------------------------------------- --
 
 
+-- trigger che controlla l'esistenza dei piloti inseriti nei risultati per quel campionato
+create or replace function CONTROLLO_RISULTATI_PILOTI() returns trigger as $$
+begin
+	-- per ogni nuovo risultato, bisogna controllare che il codice pilota inserito sia presente in afferenza piloti per quel campionato
+	if ( not exists (select * 
+					from afferenza_piloti as A
+					where A.codice_pilota = NEW.codice_pilota and A.numero_campionato = NEW.numero_campionato))
+	then raise exception 'Il pilota inserito non gareggia in questo campionato.';
+	end if;
+return NEW;
+end $$ language plpgsql;
+
+create trigger CONTROLLO_RISULTATI_PILOTI
+before insert on risutlati
+for each row
+execute procedure CONTROLLO_RISULTATI_PILOTI();
+
+
+-- ------------------------------------------------------------------------------- --
+
+
+
+		
+	
+	
+	

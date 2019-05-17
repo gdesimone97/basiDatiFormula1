@@ -134,21 +134,21 @@ public class PopolaFormula1 {
             Calendario.insert(conn, "calendario2019.txt");
             System.out.println("Calendario Inserito");
 
-////******INSERIMENTO RISULTATI
-//            Scanner scRisultati = new Scanner(System.in);
-//            System.out.print("Caricare risultati da file? [S/N] : ");
-//            String risposta = scRisultati.nextLine();
-//            while (true) {
-//                if (risposta.toUpperCase().compareTo("S") == 0) {
-//                    Risultati_temp.insert(conn, "risultati.txt");
-//                    System.out.print("Risultati Inseriti, vuoi caricare un'altra giornata? [S/N]: ");
-//                    risposta = scRisultati.nextLine();
-//                } else if (risposta.toUpperCase().compareTo("N") == 0) {
-//                    break;
-//                } else {
-//                    System.out.print("Risposta non valida, reinserisci: ");
-//                }
-//            }
+//******INSERIMENTO RISULTATI
+            Scanner scRisultati = new Scanner(System.in);
+            System.out.print("Caricare risultati da file? [S/N] : ");
+            String risposta = scRisultati.nextLine();
+            while (true) {
+                if (risposta.toUpperCase().compareTo("S") == 0) {
+                    Risultati_temp.insert(conn, "risultati.txt");
+                    System.out.print("Risultati Inseriti, vuoi caricare un'altra giornata? [S/N]: ");
+                    risposta = scRisultati.nextLine();
+                } else if (risposta.toUpperCase().compareTo("N") == 0) {
+                    break;
+                } else {
+                    System.out.print("Risposta non valida, reinserisci: ");
+                }
+            }
 
 
             conn.commit();

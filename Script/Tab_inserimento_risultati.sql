@@ -40,17 +40,20 @@ begin
 			
 		delete from risultati_temp;
 		
-		delete from CLASSIFICA_PILOTI;
+		delete from CLASSIFICA_PILOTI where numero_campionato = NEW.numero_campionato;
+		
 		insert into CLASSIFICA_PILOTI(
-								select codice_pilota, sum(punteggio)
+								select numero_campionato, codice_pilota, sum(punteggio)
 								from risultati
 								where numero_campionato = NEW.numero_campionato
 								group by codice_pilota
 								order by sum(punteggio) desc;
 						  );
-		delete from CLASSIFICA_SCUDERIE;
+						  
+		delete from CLASSIFICA_SCUDERIE where numero_campionato = NEW.numero_campionato;
+		
 		insert into CLASSIFICA_SCUDERIE(
-								select nome_scuderia, sum(C.punteggio)
+								select A.numero_campionato, nome_scuderia, sum(C.punteggio)
 								from CLASSIFICA_PILOTI as C join AFFERENZA_PILOTI as A on (C.codice_pilota = A.codice_pilota)
 								where A.numero_campionato = NEW.numero_campionato
 								group by nome_scuderia

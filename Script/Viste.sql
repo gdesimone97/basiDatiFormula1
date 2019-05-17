@@ -1,37 +1,25 @@
 -- Script per la generazione e l'aggiornamento delle viste principali
 
 
--- create or replace function CREAZIONE_VIEW_CLASSIFICA_PILOTI() returns trigger as $$
--- begin
+create view CLASSIFICA_PILOTI(numero_campionato, codice_pilota, punteggio) as 
+	select numero_campionato, codice_pilota, sum(punteggio) as punti
+	from risultati
+	group by numero_campionato, codice_pilota
+	order by punti desc;
 
-	create view CLASSIFICA_PILOTI(numero_campionato, codice_pilota, punteggio) as 
-		select numero_campionato, codice_pilota, sum(punteggio)
-		from risultati
-		group by numero_campionato, codice_pilota
-		order by sum(punteggio) desc;
+
+
+create view CLASSIFICA_COSTRUTTORI (numero_campionato, nome_scuderia, punteggio) as
+	select A.numero_campionato, nome_scuderia, sum(C.punteggio) as punti
+	from CLASSIFICA_PILOTI as C join AFFERENZA_PILOTI as A on (C.codice_pilota = A.codice_pilota)
+	group by  C.numero_campionato, nome_scuderia
+	order by punti desc;
 	
--- return null;
--- end $$ language plpgsql;
+/*	
+	le viste si aggiornano in automatico, ad ogni modifica su risultati (che può avvenire solo a gruppi di 20 per via del trigger)
+	e contengono le classifiche di ogni campionato
+	-> problema => calcola ogni volta la classifica di tutto , quindi su tanti campionati è lenta (anche se viene fatta 1 V/S)
+*/
 
--- create or replace function CREAZIONE_VIEW_CLASSIFICA_COSTRUTTORI() returns trigger as $$
--- begin
 
-	create view CLASSIFICA_COSTRUTTORI (numero_campionato, nome_scuderia, punteggio) as
-		select A.numero_campionato, nome_scuderia, sum(C.punteggio)
-		from CLASSIFICA_PILOTI as C join AFFERENZA_PILOTI as A on (C.codice_pilota = A.codice_pilota)
-		group by  C.numero_campionato, nome_scuderia
-		order by sum(C.punteggio) desc;
-		
--- return null;
--- end $$ language plpgsql;
-
--- create trigger CREAZIONE_VIEW_CLASSIFICA_PILOTI 
--- after insert on campionati
--- for each statement
--- execute procedure CREAZIONE_VIEW_CLASSIFICA_PILOTI();
-
--- create trigger CREAZIONE_VIEW_CLASSIFICA_COSTRUTTORI
--- after insert on campionati
--- for each statement
--- execute procedure CREAZIONE_VIEW_CLASSIFICA_COSTRUTTORI();
-
+-- comandi DDL per definire l'accesso in sola lettura sulle viste

@@ -3,6 +3,10 @@ drop trigger if exists CONTROLLO_CARDINALITA_SCUDERIE on scuderie cascade;
 drop trigger if exists CONTROLLO_AMMINISTRATORE on dirigenza cascade;
 drop trigger if exists CONTROLLO_PUNTEGGI on risutlati cascade;
 
+
+-- ------------------------------------------------------------------------------- --
+
+
 -- trigger per esprimere la cardinalità minima 1 su scuderie
 create or replace function CONTROLLO_CARDINALITA_SCUDERIE() returns trigger as $$
 begin
@@ -20,6 +24,10 @@ after insert on scuderie
 deferrable initially deferred					
 for each row
 execute procedure CONTROLLO_CARDINALITA_SCUDERIE();
+
+
+-- ------------------------------------------------------------------------------- --
+
 					 
 -- trigger per esprimere la cardinalità minima 1 su personale
 create or replace function CONTROLLO_CARDINALITA_PERSONALE() returns trigger as $$
@@ -37,6 +45,10 @@ deferrable initially deferred
 for each row
 execute procedure CONTROLLO_CARDINALITA_PERSONALE();
 
+
+-- ------------------------------------------------------------------------------- --
+
+
 -- trigger per controllare che l'amministratore delegato sia un dirigente
 create or replace function CONTROLLO_AMMINISTRATORE() returns trigger as $$
 begin
@@ -50,7 +62,11 @@ create trigger CONTROLLO_AMMINISTRATORE
 before insert on dirigenza
 for each row
 execute procedure CONTROLLO_AMMINISTRATORE();
-				   
+
+
+-- ------------------------------------------------------------------------------- --
+
+			   
 -- trigger per controllare che i punteggi dei risultati inseriti di una giornata non siano sovrapposti
 create or replace function CONTROLLO_PUNTEGGI() returns trigger as $$
 begin
@@ -85,4 +101,42 @@ after insert on risultati
 referencing new table as NUOVI_RISULTATI
 for each statement
 execute procedure CONTROLLO_PUNTEGGI();
+
+
+-- ------------------------------------------------------------------------------- --
+
+
+create or replace function AGGIORNAMENTO_TEMPO_PISTA() returns trigger as $$
+begin
+	-- controllare che ci siano 20 risultati
+	if( 20 = (	select count(*)
+				from risultati) 
+			and 
+		exists (select min ( all miglior_tempo)
+			  	from risultati r join piste p on (r.sede_pista=p.sede_pista and r.nome_pista=p.nome_pista)
+				where miglior_tempo <= giro_veloce)
+	   )						  
+	then
+		update piste
+		set giro_veloce =  (select min( all miglior_tempo)
+			  					  from risultati r join piste p on (r.sede_pista=p.sede_pista and r.nome_pista=p.nome_pista)
+								  where miglior_tempo <= giro_veloce)
+			  where piste.sede_pista = all (select sede_pista
+									   	from risultati) and piste.nome_pista = all(select nome_pista
+									   											    from risultati);
+			-- Si potrebbe trovare un modo per non rifare la query? 
+	end if;
+			   
+return NULL;
+end $$ language plpgsql;
+
+drop trigger if exists AGGIORNAMENTO_TEMPO_PISTA on risultati cascade;
+
+create trigger AGGIORNAMENTO_TEMPO_PISTA
+after insert on risultati
+for each statement
+execute procedure AGGIORNAMENTO_TEMPO_PISTA();
+
+-- ------------------------------------------------------------------------------- --
+
 

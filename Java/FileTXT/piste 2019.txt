@@ -2,7 +2,7 @@
 Sakhir:Barhain International Circuit:5412:23:91447:2004:
 Shanghai:Shanghai International Circuit:5541:16:92238:2004:
 Baku:Baku City Circuit:6003:20:103441:2016:
-Barcellona:Circuit de Barcelona- Catalunya:4655:16:81670:1991:
+Barcellona:Circuit de Barcelona-Catalunya:4655:16:81670:1991:
 Montecarlo:Circuit de Monaco:3337:19:74820:1929:
 Montreal:Circuit Gilles Villeneuve:4361:14:73622:1978:
 Le Castellet:Circuit Paul Ricard:58421:15:0:1970:

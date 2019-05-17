@@ -6,13 +6,15 @@ begin
 			and 
 		exists (select min ( all miglior_tempo)
 			  	from risultati r join piste p on (r.sede_pista=p.sede_pista and r.nome_pista=p.nome_pista)
-				where miglior_tempo <= giro_veloce)
+				where miglior_tempo <= giro_veloce
+			    group by p.sede_pista)
 	   )						  
 	then
 		update piste
 		set giro_veloce =  (select min( all miglior_tempo)
 			  					  from risultati r join piste p on (r.sede_pista=p.sede_pista and r.nome_pista=p.nome_pista)
-								  where miglior_tempo <= giro_veloce)
+								  where miglior_tempo <= giro_veloce
+						   		  group by p.sede_pista)
 			  where piste.sede_pista = all (select sede_pista
 									   	from risultati) and piste.nome_pista = all(select nome_pista
 									   											    from risultati);

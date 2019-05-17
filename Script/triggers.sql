@@ -3,7 +3,9 @@ drop trigger if exists CONTROLLO_CARDINALITA_SCUDERIE on scuderie cascade;
 drop trigger if exists CONTROLLO_AMMINISTRATORE on dirigenza cascade;
 drop trigger if exists CONTROLLO_PUNTEGGI on risutlati cascade;
 
+
 -- ------------------------------------------------------------------------------- --
+
 
 -- trigger per esprimere la cardinalità minima 1 su scuderie
 create or replace function CONTROLLO_CARDINALITA_SCUDERIE() returns trigger as $$
@@ -22,6 +24,10 @@ after insert on scuderie
 deferrable initially deferred					
 for each row
 execute procedure CONTROLLO_CARDINALITA_SCUDERIE();
+
+
+-- ------------------------------------------------------------------------------- --
+
 					 
 -- trigger per esprimere la cardinalità minima 1 su personale
 create or replace function CONTROLLO_CARDINALITA_PERSONALE() returns trigger as $$
@@ -39,6 +45,10 @@ deferrable initially deferred
 for each row
 execute procedure CONTROLLO_CARDINALITA_PERSONALE();
 
+
+-- ------------------------------------------------------------------------------- --
+
+
 -- trigger per controllare che l'amministratore delegato sia un dirigente
 create or replace function CONTROLLO_AMMINISTRATORE() returns trigger as $$
 begin
@@ -53,7 +63,9 @@ before insert on dirigenza
 for each row
 execute procedure CONTROLLO_AMMINISTRATORE();
 
+
 -- ------------------------------------------------------------------------------- --
+
 			   
 -- trigger per controllare che i punteggi dei risultati inseriti di una giornata non siano sovrapposti
 create or replace function CONTROLLO_PUNTEGGI() returns trigger as $$
@@ -90,7 +102,9 @@ referencing new table as NUOVI_RISULTATI
 for each statement
 execute procedure CONTROLLO_PUNTEGGI();
 
+
 -- ------------------------------------------------------------------------------- --
+
 
 create or replace function AGGIORNAMENTO_TEMPO_PISTA() returns trigger as $$
 begin
@@ -122,3 +136,7 @@ create trigger AGGIORNAMENTO_TEMPO_PISTA
 after insert on risultati
 for each statement
 execute procedure AGGIORNAMENTO_TEMPO_PISTA();
+
+-- ------------------------------------------------------------------------------- --
+
+

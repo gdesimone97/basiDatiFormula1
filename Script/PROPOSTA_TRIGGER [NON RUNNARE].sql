@@ -66,7 +66,7 @@ execute procedure CONTROLLO_AMMINISTRATORE();
 
 -- ------------------------------------------------------------------------------- --
 
--- trigger per aggiornare il miglior tempo di una pista dopo l'inserimento di nuovi risultati			   
+-- procedura per aggiornare il miglior tempo di una pista dopo l'inserimento di nuovi risultati	(POTENZIALMENTE NON FUNZIONANTE)
 create or replace function AGGIORNAMENTO_TEMPO_PISTA() returns trigger as $$
 begin
 

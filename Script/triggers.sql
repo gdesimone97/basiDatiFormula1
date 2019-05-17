@@ -79,7 +79,7 @@ begin
 	end if;
 	-- controllare che siano tutti dello stesso campionato e sulla stessa pista
 	if ( not exists (
-			select *
+			select count(*)
 			from NUOVI_RISULTATI
 			group by numero_campionato, sede_pista, nome_pista
 			having count(*) = 20 ))
@@ -87,7 +87,7 @@ begin
 	end if;
 	-- controllare che non ci siano punteggi ripetuti (tranne 0)
 	if( exists (
-			select *
+			select count(*)
 			from NUOVI_RISULTATI
 			where punteggio <> 0
 			group by punteggio
@@ -154,7 +154,7 @@ return NEW;
 end $$ language plpgsql;
 
 create trigger CONTROLLO_RISULTATI_PILOTI
-before insert on risutlati
+before insert on risultati
 for each row
 execute procedure CONTROLLO_RISULTATI_PILOTI();
 

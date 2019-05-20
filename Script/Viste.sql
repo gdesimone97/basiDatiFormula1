@@ -1,42 +1,38 @@
--- Script per la generazione e l'aggiornamento delle viste principali
 
+-- le due viste "attuali" vengono aggiornate ad ogni inserimento su risultati_attuali
 
-create view CLASSIFICHE_PILOTI(numero_campionato, codice_pilota, punteggio) as 
-	select numero_campionato, codice_pilota, sum(punteggio) as punti
-	from risultati R
-	group by numero_campionato, codice_pilota
+create view CLASSIFICA_PILOTI_ATTUALE(codice_pilota, punteggio) as 
+	select codice_pilota, P.nome_pilota, P.cognome_pilota, sum(punteggio) as punti
+	from risultati_attuali as A join piloti as P on (A.codice_pilota = P.codice_pilota)
+	where numero_campionato = ( select max(numero_campionato)
+								from campionati )
+	group by codice_pilota
 	order by punti desc;
 
-
-
-create view CLASSIFICHE_COSTRUTTORI (numero_campionato, nome_scuderia, punteggio) as
-	select A.numero_campionato, nome_scuderia, sum(C.punti) as punti_scuderia
-	from CLASSIFICHE_PILOTI as C join AFFERENZA_PILOTI as A
-	where C.codice_pilota = A.codice_pilota and A.numero_campionato = C.numero_campionato
-	group by  C.numero_campionato, nome_scuderia
-	order by punti_scuderia desc;
+create view CLASSIFICA_COSTRUTTORI_ATTUALE (nome_scuderia, punteggio) as
+	select nome_scuderia, sum(C.punteggio) as punti
+	from CLASSIFICA_PILOTI_ATTUALE as C join AFFERENZA_PILOTI as A on (C.codice_pilota = A.codice_pilota)
+	where A.numero_campionato = ( select max(numero_campionato)
+								from campionati )
+	group by nome_scuderia
+	order by punti desc;
 	
-/*	
-	le viste si aggiornano in automatico, ad ogni modifica su risultati (che può avvenire solo a gruppi di 20 per via del trigger)
-	e contengono le classifiche di ogni campionato
-	-> problema => calcola ogni volta la classifica di tutto , quindi su tanti campionati è lenta (anche se viene fatta 1 V/S)
-*/
+-- le due viste "passate" vengono ricalcolate ogni volta che il campionato termina
+-- (ovvero dopo che il trigger sposta i 420 risultati_attuali in risultati_passati) (operazione costosa ma fatta 1 V/A)
 
-
--- comandi DDL per definire l'accesso in sola lettura sulle viste
-
---> queste viste servirebbero solo per le classifiche attuali (cerca automaticamente l'ultimo campionato in corso)
-create view CLASSIFICA_PILOTI_ATTUALE(numero_campionato, codice_pilota, punteggio) as 
-	select numero_campionato, codice_pilota, sum(punteggio) as punti
-	from risultati R
-	where R.numero_campionato = (select max(numero_campionato)
-								from campionati)
+create view CLASSIFICHE_PILOTI_PASSATI(numero_campionato, codice_pilota, punteggio) as 
+	select numero_campionato, codice_pilota, P.nome_pilota, P.cognome_pilota, sum(punteggio) as punti
+	from risultati_passati as A join piloti as P on (A.codice_pilota = P.codice_pilota)
 	group by numero_campionato, codice_pilota
 	order by punti desc;
+	
+create view CLASSIFICHE_COSTRUTTORI_PASSATE (numero_campionato, nome_scuderia, punteggio) as
+	select numero_campionato, nome_scuderia, sum(C.punteggio) as punti
+	from CLASSIFICHE_PILOTI_PASSATI as C join AFFERENZA_PILOTI as A on (C.codice_pilota = A.codice_pilota)
+	where A.numero_campionato = C.numero_campionato
+	group by numero_campionato, nome_scuderia
+	order by punti desc;
+	
+	
+-- aggiungere codice DCL per limitare l'accesso alle viste (SOLA LETTURA)
 
-create view CLASSIFICA_COSTRUTTORI (numero_campionato, nome_scuderia, punteggio) as
-	select A.numero_campionato, nome_scuderia, sum(C.punti) as punti_scuderia
-	from CLASSIFICA_PILOTI_ATTUALE as C join AFFERENZA_PILOTI as A
-	where C.codice_pilota = A.codice_pilota and A.numero_campionato = C.numero_campionato
-	group by  C.numero_campionato, nome_scuderia
-	order by punti_scuderia desc;

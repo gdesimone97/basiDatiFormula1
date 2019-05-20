@@ -2,11 +2,6 @@ drop trigger if exists CONTROLLO_CARDINALITA_PERSONALE on personale cascade;
 drop trigger if exists CONTROLLO_CARDINALITA_SCUDERIE on scuderie cascade;
 drop trigger if exists CONTROLLO_AMMINISTRATORE on dirigenza cascade;
 drop trigger if exists CONTROLLO_PUNTEGGI on risutlati cascade;
-drop trigger if exists AGGIORNAMENTO_TEMPO_PISTA on risultati cascade;
-drop trigger if exists CONTROLLO_RISULTATI_PILOTI on risultati cascade;
-
--- ------------------------------------------------------------------------------- --
-
 
 -- trigger per esprimere la cardinalità minima 1 su scuderie
 create or replace function CONTROLLO_CARDINALITA_SCUDERIE() returns trigger as $$
@@ -25,10 +20,6 @@ after insert on scuderie
 deferrable initially deferred					
 for each row
 execute procedure CONTROLLO_CARDINALITA_SCUDERIE();
-
-
--- ------------------------------------------------------------------------------- --
-
 					 
 -- trigger per esprimere la cardinalità minima 1 su personale
 create or replace function CONTROLLO_CARDINALITA_PERSONALE() returns trigger as $$
@@ -46,10 +37,6 @@ deferrable initially deferred
 for each row
 execute procedure CONTROLLO_CARDINALITA_PERSONALE();
 
-
--- ------------------------------------------------------------------------------- --
-
-
 -- trigger per controllare che l'amministratore delegato sia un dirigente
 create or replace function CONTROLLO_AMMINISTRATORE() returns trigger as $$
 begin
@@ -63,11 +50,7 @@ create trigger CONTROLLO_AMMINISTRATORE
 before insert on dirigenza
 for each row
 execute procedure CONTROLLO_AMMINISTRATORE();
-
-
--- ------------------------------------------------------------------------------- --
-
-			   
+				   
 -- trigger per controllare che i punteggi dei risultati inseriti di una giornata non siano sovrapposti
 create or replace function CONTROLLO_PUNTEGGI() returns trigger as $$
 begin
@@ -79,7 +62,7 @@ begin
 	end if;
 	-- controllare che siano tutti dello stesso campionato e sulla stessa pista
 	if ( not exists (
-			select count(*)
+			select *
 			from NUOVI_RISULTATI
 			group by numero_campionato, sede_pista, nome_pista
 			having count(*) = 20 ))
@@ -87,83 +70,32 @@ begin
 	end if;
 	-- controllare che non ci siano punteggi ripetuti (tranne 0)
 	if( exists (
-			select count(*)
+			select *
 			from NUOVI_RISULTATI
 			where punteggio <> 0
 			group by punteggio
 			having count(*) > 1))
 		then raise exception 'Inseriti punteggi ripetuti.';
-	end if;	
-return NULL;
-end $$ language plpgsql;
-
-create trigger CONTROLLO_PUNTEGGI
-after insert on risultati
-referencing new table as NUOVI_RISULTATI
-for each statement
-execute procedure CONTROLLO_PUNTEGGI();
-
-
--- ------------------------------------------------------------------------------- --
-
-
-create or replace function AGGIORNAMENTO_TEMPO_PISTA() returns trigger as $$
-begin
-	-- controllare che ci siano 20 risultati
-	if( 20 = (	select count(*)
-				from risultati) 
-			and 
-		exists (select min (miglior_tempo)
-			  	from risultati r join piste p on (r.sede_pista=p.sede_pista and r.nome_pista=p.nome_pista)
-				where miglior_tempo <= giro_veloce
-			    group by p.sede_pista)
+	end if;
+	
+	-- aggiornamento record della pista
+	if( (select min(miglior_tempo)
+		from NUOVI_RISULTATI) < (select giro_veloce
+								from piste
+								where sede_pista = NUOVI_RISULTATI.sede_pista and nome_pista = NUOVI_RISULTATI.nome_pista)
 	   )						  
 	then
 		update piste
 		set giro_veloce =  (select min(miglior_tempo)
-			  					  from risultati r join piste p on (r.sede_pista=p.sede_pista and r.nome_pista=p.nome_pista)
-								  where miglior_tempo <= giro_veloce
-						   		  group by p.sede_pista)
-			  where piste.sede_pista = all (select sede_pista
-									   	from risultati) and piste.nome_pista = all(select nome_pista
-									   											    from risultati);
-			-- Si potrebbe trovare un modo per non rifare la query? 
+			  				from NUOVI_RISULTATI)
+		where sede_pista = NUOVI_RISULTATI.sede_pista and nome_pista = NUOVI_RISULTATI.nome_pista;
 	end if;
 			   
 return NULL;
 end $$ language plpgsql;
 
-create trigger AGGIORNAMENTO_TEMPO_PISTA
-after insert on risultati
+create trigger CONTROLLO_PUNTEGGI
+after insert on risultati_attuali
+referencing new table as NUOVI_RISULTATI
 for each statement
-execute procedure AGGIORNAMENTO_TEMPO_PISTA();
-
--- ------------------------------------------------------------------------------- --
-
-
--- trigger che controlla l'esistenza dei piloti inseriti nei risultati per quel campionato
-create or replace function CONTROLLO_RISULTATI_PILOTI() returns trigger as $$
-begin
-	-- per ogni nuovo risultato, bisogna controllare che il codice pilota inserito sia presente in afferenza piloti per quel campionato
-	if ( not exists (select * 
-					from afferenza_piloti as A
-					where A.codice_pilota = NEW.codice_pilota and A.numero_campionato = NEW.numero_campionato))
-	then raise exception 'Il pilota inserito non gareggia in questo campionato.';
-	end if;
-return NEW;
-end $$ language plpgsql;
-
-create trigger CONTROLLO_RISULTATI_PILOTI
-before insert on risultati
-for each row
-execute procedure CONTROLLO_RISULTATI_PILOTI();
-
-
--- ------------------------------------------------------------------------------- --
-
-
-
-		
-	
-	
-	
+execute procedure CONTROLLO_PUNTEGGI();

@@ -125,9 +125,8 @@ create table RISULTATI_ATTUALI (
    TEMPO_QUALIFICA      TempoGiro            null,
    RITIRO               BOOL                 not null,
    constraint PK_RISULTATI_ATTUALI primary key (SEDE_PISTA, NOME_PISTA, CODICE_PILOTA, NUMERO_CAMPIONATO),
-   constraint PK_RISULTATI primary key (SEDE_PISTA, NOME_PISTA, CODICE_PILOTA, NUMERO_CAMPIONATO),
 	check(punteggio between 0 and 26),
-	check((punteggio <> 0 and not ritirato) or (punteggio = 0))
+	check(punteggio = 0 or not ritiro)
 );
 
 /*==============================================================*/
@@ -143,9 +142,8 @@ create table RISULTATI_PASSATI (
    TEMPO_QUALIFICA      TempoGiro            null,
    RITIRO               BOOL                 not null,
    constraint PK_RISULTATI_PASSATI primary key (SEDE_PISTA, NOME_PISTA, CODICE_PILOTA, NUMERO_CAMPIONATO),
-   constraint PK_RISULTATI primary key (SEDE_PISTA, NOME_PISTA, CODICE_PILOTA, NUMERO_CAMPIONATO),
 	check(punteggio between 0 and 26),
-	check((punteggio <> 0 and not ritirato) or (punteggio = 0))
+	check(punteggio = 0 or not ritiro)
 	);
 
 /*==============================================================*/
@@ -242,4 +240,3 @@ alter table RISULTATI_PASSATI
    add constraint FK_RISULTAT_REFERENCE_CAMPIONA foreign key (NUMERO_CAMPIONATO)
       references CAMPIONATI (NUMERO_CAMPIONATO)
       on delete restrict on update restrict;
-

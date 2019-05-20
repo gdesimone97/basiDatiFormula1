@@ -152,7 +152,7 @@ create table RISULTATI_PASSATI (
 create table SCUDERIE (
    NOME_SCUDERIA        VARCHAR(50)          not null,
    NAZIONALITA_SCUDERIA VARCHAR(50)          not null,
-   NUM__CAMPIONATI_VINTI INT                  not null,
+   NUM_CAMPIONATI_VINTI INT                  not null,
    constraint PK_SCUDERIE primary key (NOME_SCUDERIA)
 );
 

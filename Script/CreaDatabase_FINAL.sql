@@ -55,8 +55,8 @@ create table CAMPIONATI (
    NUMERO_CAMPIONATO    INT                  not null,
    DATA_INIZIO          DATE                 not null,
    DATA_FINE            DATE                 not null,
-   MOTORE               VARCHAR(60)          not null,
-   GOMME                VARCHAR(60)          not null,
+   MOTORE               VARCHAR(50)          not null,
+   GOMME                VARCHAR(50)          not null,
    constraint PK_CAMPIONATI primary key (NUMERO_CAMPIONATO)
 );
 
@@ -75,11 +75,11 @@ create table DIRIGENZA (
 /*==============================================================*/
 create table PERSONALE (
    CODICE_PERSONALE     CHAR(8)              not null,
-   NOME_PERSONALE       VARCHAR(20)          not null,
-   COGNOME_PERSONALE    VARCHAR(20)          not null,
-   NAZIONALITA_PERSONALE VARCHAR(20)          not null,
+   NOME_PERSONALE       VARCHAR(50)          not null,
+   COGNOME_PERSONALE    VARCHAR(50)          not null,
+   NAZIONALITA_PERSONALE VARCHAR(50)          not null,
    DATA_NASCITA         DATE                 not null,
-   PROFESSIONE          VARCHAR(20)          not null,
+   PROFESSIONE          VARCHAR(50)          not null,
    constraint PK_PERSONALE primary key (CODICE_PERSONALE)
 );
 
@@ -88,9 +88,9 @@ create table PERSONALE (
 /*==============================================================*/
 create table PILOTI (
    CODICE_PILOTA        CHAR(8)              not null,
-   NOME_PILOTA          VARCHAR(20)          not null,
-   COGNOME_PILOTA       VARCHAR(20)          not null,
-   NAZIONALITA          VARCHAR(20)          not null,
+   NOME_PILOTA          VARCHAR(50)          not null,
+   COGNOME_PILOTA       VARCHAR(50)          not null,
+   NAZIONALITA          VARCHAR(50)          not null,
    DATA_NASCITA         DATE                 not null,
    TITOLI_VINTI         INT                  not null,
    ATTIVO               BOOL                 not null,
@@ -151,7 +151,7 @@ create table RISULTATI_PASSATI (
 /*==============================================================*/
 create table SCUDERIE (
    NOME_SCUDERIA        VARCHAR(50)          not null,
-   NAZIONALITA_SCUDERIA VARCHAR(20)          not null,
+   NAZIONALITA_SCUDERIA VARCHAR(50)          not null,
    NUM__CAMPIONATI_VINTI INT                  not null,
    constraint PK_SCUDERIE primary key (NOME_SCUDERIA)
 );

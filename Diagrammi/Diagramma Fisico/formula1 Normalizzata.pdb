@@ -5100,10 +5100,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>NOME_PILOTA</a:Code>
 <a:CreationDate>1557414147</a:CreationDate>
 <a:Creator>desio</a:Creator>
-<a:ModificationDate>1557414387</a:ModificationDate>
+<a:ModificationDate>1558377238</a:ModificationDate>
 <a:Modifier>desio</a:Modifier>
-<a:DataType>VARCHAR(20)</a:DataType>
-<a:Length>20</a:Length>
+<a:DataType>VARCHAR(50)</a:DataType>
+<a:Length>50</a:Length>
 <a:Column.Mandatory>1</a:Column.Mandatory>
 </o:Column>
 <o:Column Id="o79">
@@ -5112,10 +5112,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>COGNOME_PILOTA</a:Code>
 <a:CreationDate>1557415936</a:CreationDate>
 <a:Creator>desio</a:Creator>
-<a:ModificationDate>1557415988</a:ModificationDate>
+<a:ModificationDate>1558377238</a:ModificationDate>
 <a:Modifier>desio</a:Modifier>
-<a:DataType>VARCHAR(20)</a:DataType>
-<a:Length>20</a:Length>
+<a:DataType>VARCHAR(50)</a:DataType>
+<a:Length>50</a:Length>
 <a:Column.Mandatory>1</a:Column.Mandatory>
 </o:Column>
 <o:Column Id="o80">
@@ -5124,10 +5124,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>NAZIONALITA</a:Code>
 <a:CreationDate>1557414147</a:CreationDate>
 <a:Creator>desio</a:Creator>
-<a:ModificationDate>1557414387</a:ModificationDate>
+<a:ModificationDate>1558377238</a:ModificationDate>
 <a:Modifier>desio</a:Modifier>
-<a:DataType>VARCHAR(20)</a:DataType>
-<a:Length>20</a:Length>
+<a:DataType>VARCHAR(50)</a:DataType>
+<a:Length>50</a:Length>
 <a:Column.Mandatory>1</a:Column.Mandatory>
 </o:Column>
 <o:Column Id="o81">
@@ -5241,10 +5241,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>MOTORE</a:Code>
 <a:CreationDate>1557414577</a:CreationDate>
 <a:Creator>desio</a:Creator>
-<a:ModificationDate>1558020160</a:ModificationDate>
+<a:ModificationDate>1558377263</a:ModificationDate>
 <a:Modifier>desio</a:Modifier>
-<a:DataType>VARCHAR(60)</a:DataType>
-<a:Length>60</a:Length>
+<a:DataType>VARCHAR(50)</a:DataType>
+<a:Length>50</a:Length>
 <a:Column.Mandatory>1</a:Column.Mandatory>
 </o:Column>
 <o:Column Id="o90">
@@ -5253,10 +5253,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>GOMME</a:Code>
 <a:CreationDate>1557414577</a:CreationDate>
 <a:Creator>desio</a:Creator>
-<a:ModificationDate>1558020160</a:ModificationDate>
+<a:ModificationDate>1558377263</a:ModificationDate>
 <a:Modifier>desio</a:Modifier>
-<a:DataType>VARCHAR(60)</a:DataType>
-<a:Length>60</a:Length>
+<a:DataType>VARCHAR(50)</a:DataType>
+<a:Length>50</a:Length>
 <a:Column.Mandatory>1</a:Column.Mandatory>
 </o:Column>
 </c:Columns>
@@ -5306,10 +5306,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>NAZIONALITA_SCUDERIA</a:Code>
 <a:CreationDate>1557415337</a:CreationDate>
 <a:Creator>desio</a:Creator>
-<a:ModificationDate>1557415438</a:ModificationDate>
+<a:ModificationDate>1558377248</a:ModificationDate>
 <a:Modifier>desio</a:Modifier>
-<a:DataType>VARCHAR(20)</a:DataType>
-<a:Length>20</a:Length>
+<a:DataType>VARCHAR(50)</a:DataType>
+<a:Length>50</a:Length>
 <a:Column.Mandatory>1</a:Column.Mandatory>
 </o:Column>
 <o:Column Id="o94">
@@ -5436,10 +5436,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>NOME_PERSONALE</a:Code>
 <a:CreationDate>1557416000</a:CreationDate>
 <a:Creator>desio</a:Creator>
-<a:ModificationDate>1557416144</a:ModificationDate>
+<a:ModificationDate>1558377256</a:ModificationDate>
 <a:Modifier>desio</a:Modifier>
-<a:DataType>VARCHAR(20)</a:DataType>
-<a:Length>20</a:Length>
+<a:DataType>VARCHAR(50)</a:DataType>
+<a:Length>50</a:Length>
 <a:Column.Mandatory>1</a:Column.Mandatory>
 </o:Column>
 <o:Column Id="o102">
@@ -5448,10 +5448,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>COGNOME_PERSONALE</a:Code>
 <a:CreationDate>1557416000</a:CreationDate>
 <a:Creator>desio</a:Creator>
-<a:ModificationDate>1557416144</a:ModificationDate>
+<a:ModificationDate>1558377256</a:ModificationDate>
 <a:Modifier>desio</a:Modifier>
-<a:DataType>VARCHAR(20)</a:DataType>
-<a:Length>20</a:Length>
+<a:DataType>VARCHAR(50)</a:DataType>
+<a:Length>50</a:Length>
 <a:Column.Mandatory>1</a:Column.Mandatory>
 </o:Column>
 <o:Column Id="o103">
@@ -5460,10 +5460,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>NAZIONALITA_PERSONALE</a:Code>
 <a:CreationDate>1557416000</a:CreationDate>
 <a:Creator>desio</a:Creator>
-<a:ModificationDate>1557417579</a:ModificationDate>
+<a:ModificationDate>1558377256</a:ModificationDate>
 <a:Modifier>desio</a:Modifier>
-<a:DataType>VARCHAR(20)</a:DataType>
-<a:Length>20</a:Length>
+<a:DataType>VARCHAR(50)</a:DataType>
+<a:Length>50</a:Length>
 <a:Column.Mandatory>1</a:Column.Mandatory>
 </o:Column>
 <o:Column Id="o104">
@@ -5483,10 +5483,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>PROFESSIONE</a:Code>
 <a:CreationDate>1557416000</a:CreationDate>
 <a:Creator>desio</a:Creator>
-<a:ModificationDate>1557416144</a:ModificationDate>
+<a:ModificationDate>1558377256</a:ModificationDate>
 <a:Modifier>desio</a:Modifier>
-<a:DataType>VARCHAR(20)</a:DataType>
-<a:Length>20</a:Length>
+<a:DataType>VARCHAR(50)</a:DataType>
+<a:Length>50</a:Length>
 <a:Column.Mandatory>1</a:Column.Mandatory>
 </o:Column>
 </c:Columns>

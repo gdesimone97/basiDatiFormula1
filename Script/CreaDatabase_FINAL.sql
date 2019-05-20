@@ -1,30 +1,18 @@
-/*==============================================================*/
-/* DBMS name:      PostgreSQL 9.x                               */
-/* Created on:     20/05/2019 16:17:52                          */
-/*==============================================================*/
-
 
 drop table AFFERENZA_PERSONALE;
-
 drop table AFFERENZA_PILOTI;
-
 drop table CALENDARIO;
-
 drop table CAMPIONATI;
-
 drop table DIRIGENZA;
-
 drop table PERSONALE;
-
 drop table PILOTI;
-
 drop table PISTE;
-
 drop table RISULTATI_ATTUALI;
-
 drop table RISULTATI_PASSATI;
-
 drop table SCUDERIE;
+drop domain if exists TempoGiro cascade;
+
+create domain TempoGiro as int check (value > 0);
 
 /*==============================================================*/
 /* Table: AFFERENZA_PERSONALE                                   */
@@ -55,7 +43,8 @@ create table CALENDARIO (
    NUMERO_CAMPIONATO    INT                  not null,
    DATA                 DATE                 not null,
    NUMERO_GIORNATA      INT                  null,
-   constraint PK_CALENDARIO primary key (SEDE_PISTA, NOME_PISTA, NUMERO_CAMPIONATO)
+   constraint PK_CALENDARIO primary key (SEDE_PISTA, NOME_PISTA, NUMERO_CAMPIONATO),
+   check(NUMERO_GIORNATA between 1 and 21)
 );
 
 /*==============================================================*/
@@ -105,7 +94,8 @@ create table PILOTI (
    TITOLI_VINTI         INT                  not null,
    ATTIVO               BOOL                 not null,
    DATA_RITIRO          INT                  null,
-   constraint PK_PILOTI primary key (CODICE_PILOTA)
+   constraint PK_PILOTI primary key (CODICE_PILOTA),
+   check((attivo and data_ritiro is null) or (data_ritiro <> null and not attivo))
 );
 
 /*==============================================================*/
@@ -133,7 +123,10 @@ create table RISULTATI_ATTUALI (
    MIGLIOR_TEMPO        TempoGiro            null,
    TEMPO_QUALIFICA      TempoGiro            null,
    RITIRO               BOOL                 not null,
-   constraint PK_RISULTATI_ATTUALI primary key (SEDE_PISTA, NOME_PISTA, CODICE_PILOTA, NUMERO_CAMPIONATO)
+   constraint PK_RISULTATI_ATTUALI primary key (SEDE_PISTA, NOME_PISTA, CODICE_PILOTA, NUMERO_CAMPIONATO),
+   constraint PK_RISULTATI primary key (SEDE_PISTA, NOME_PISTA, CODICE_PILOTA, NUMERO_CAMPIONATO),
+	check(punteggio between 0 and 26),
+	check((punteggio <> 0 and not ritirato) or (punteggio = 0))
 );
 
 /*==============================================================*/
@@ -148,8 +141,11 @@ create table RISULTATI_PASSATI (
    MIGLIOR_TEMPO        TempoGiro            null,
    TEMPO_QUALIFICA      TempoGiro            null,
    RITIRO               BOOL                 not null,
-   constraint PK_RISULTATI_PASSATI primary key (SEDE_PISTA, NOME_PISTA, CODICE_PILOTA, NUMERO_CAMPIONATO)
-);
+   constraint PK_RISULTATI_PASSATI primary key (SEDE_PISTA, NOME_PISTA, CODICE_PILOTA, NUMERO_CAMPIONATO),
+   constraint PK_RISULTATI primary key (SEDE_PISTA, NOME_PISTA, CODICE_PILOTA, NUMERO_CAMPIONATO),
+	check(punteggio between 0 and 26),
+	check((punteggio <> 0 and not ritirato) or (punteggio = 0))
+	);
 
 /*==============================================================*/
 /* Table: SCUDERIE                                              */
@@ -164,22 +160,17 @@ create table SCUDERIE (
 alter table AFFERENZA_PERSONALE
    add constraint FK_AFFERENZ_AFFERENZA_CAMPIONA foreign key (NUMERO_CAMPIONATO)
       references CAMPIONATI (NUMERO_CAMPIONATO)
-      on delete restrict on update restrict;
+      on delete restrict on update restrict deferrable initially deferred;
 
 alter table AFFERENZA_PERSONALE
    add constraint FK_AFFERENZ_REFERENCE_SCUDERIE foreign key (NOME_SCUDERIA)
       references SCUDERIE (NOME_SCUDERIA)
-      on delete restrict on update restrict;
+      on delete restrict on update restrict deferrable initially deferred;
 
 alter table AFFERENZA_PERSONALE
    add constraint FK_AFFERENZ_REFERENCE_PERSONAL foreign key (CODICE_PERSONALE)
       references PERSONALE (CODICE_PERSONALE)
-      on delete restrict on update restrict;
-
-alter table AFFERENZA_PERSONALE
-   add constraint FK_AFFERENZ_REFERENCE_CAMPIONA foreign key (NUMERO_CAMPIONATO)
-      references CAMPIONATI (NUMERO_CAMPIONATO)
-      on delete restrict on update restrict;
+      on delete restrict on update restrict deferrable initially deferred;
 
 alter table AFFERENZA_PILOTI
    add constraint FK_AFFERENZ_REFERENCE_PILOTI foreign key (CODICE_PILOTA)
@@ -209,17 +200,17 @@ alter table CALENDARIO
 alter table DIRIGENZA
    add constraint FK_DIRIGENZ_REFERENCE_CAMPIONA foreign key (NUMERO_CAMPIONATO)
       references CAMPIONATI (NUMERO_CAMPIONATO)
-      on delete restrict on update restrict;
+      on delete restrict on update restrict deferrable initially deferred;
 
 alter table DIRIGENZA
    add constraint FK_DIRIGENZ_REFERENCE_PERSONAL foreign key (CODICE_PERSONALE)
       references PERSONALE (CODICE_PERSONALE)
-      on delete restrict on update restrict;
+      on delete restrict on update restrict deferrable initially deferred;
 
 alter table DIRIGENZA
    add constraint FK_DIRIGENZ_REFERENCE_SCUDERIE foreign key (NOME_SCUDERIA)
       references SCUDERIE (NOME_SCUDERIA)
-      on delete restrict on update restrict;
+      on delete restrict on update restrict deferrable initially deferred;
 
 alter table RISULTATI_ATTUALI
    add constraint FK_RISULTAT_REFERENCE_PISTE foreign key (SEDE_PISTA, NOME_PISTA)
@@ -234,11 +225,6 @@ alter table RISULTATI_ATTUALI
 alter table RISULTATI_ATTUALI
    add constraint FK_RISULTAT_REFERENCE_PILOTI foreign key (CODICE_PILOTA)
       references PILOTI (CODICE_PILOTA)
-      on delete restrict on update restrict;
-
-alter table RISULTATI_ATTUALI
-   add constraint FK_RISULTAT_RISULTATI_CAMPIONA foreign key (NUMERO_CAMPIONATO)
-      references CAMPIONATI (NUMERO_CAMPIONATO)
       on delete restrict on update restrict;
 
 alter table RISULTATI_PASSATI

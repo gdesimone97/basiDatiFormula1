@@ -76,12 +76,26 @@ begin
 			group by punteggio
 			having count(*) > 1))
 		then raise exception 'Inseriti punteggi ripetuti.';
-	end if;	
+	end if;
+	
+	-- aggiornamento record della pista
+	if( (select min(miglior_tempo)
+		from NUOVI_RISULTATI) < (select tempo_giro
+								from piste
+								where sede_pista = NUOVI_RISULTATI.sede_pista and nome_pista = NUOVI_RISULTATI.nome_pista)
+	   )						  
+	then
+		update piste
+		set giro_veloce =  (select min(miglior_tempo)
+			  				from NUOVI_RISULTATI)
+		where sede_pista = NUOVI_RISULTATI.sede_pista and nome_pista = NUOVI_RISULTATI.nome_pista
+	end if;
+			   
 return NULL;
 end $$ language plpgsql;
 
 create trigger CONTROLLO_PUNTEGGI
-after insert on risultati
+after insert on risultati_attuali
 referencing new table as NUOVI_RISULTATI
 for each statement
 execute procedure CONTROLLO_PUNTEGGI();

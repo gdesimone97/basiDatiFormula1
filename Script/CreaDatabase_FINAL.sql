@@ -1,16 +1,17 @@
-
-drop table AFFERENZA_PERSONALE;
-drop table AFFERENZA_PILOTI;
-drop table CALENDARIO;
-drop table CAMPIONATI;
-drop table DIRIGENZA;
-drop table PERSONALE;
-drop table PILOTI;
-drop table PISTE;
-drop table RISULTATI_ATTUALI;
-drop table RISULTATI_PASSATI;
-drop table SCUDERIE;
+begin transaction;
+drop table if exists SCUDERIE cascade;
+drop table if exists PILOTI cascade;
+drop table if exists PISTE cascade;
+drop table if exists PERSONALE cascade;
+drop table if exists CAMPIONATI cascade;
+drop table if exists AFFERENZA_PERSONALE cascade;
+drop table if exists AFFERENZA_PILOTI cascade;
+drop table if exists CALENDARIO cascade;
+drop table if exists DIRIGENZA cascade;
+drop table if exists RISULTATI_ATTUALI cascade;
+drop table if exists RISULTATI_PASSATI cascade;
 drop domain if exists TempoGiro cascade;
+commit work;
 
 create domain TempoGiro as int check (value > 0);
 

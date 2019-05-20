@@ -21,16 +21,16 @@ create view CLASSIFICA_COSTRUTTORI_ATTUALE (nome_scuderia, punteggio) as
 -- (ovvero dopo che il trigger sposta i 420 risultati_attuali in risultati_passati) (operazione costosa ma fatta 1 V/A)
 
 create view CLASSIFICHE_PILOTI_PASSATI(numero_campionato, codice_pilota, punteggio) as 
-	select numero_campionato, codice_pilota, P.nome_pilota, P.cognome_pilota, sum(punteggio) as punti
+	select numero_campionato, p.codice_pilota, P.nome_pilota, P.cognome_pilota, sum(punteggio) as punti
 	from risultati_passati as A join piloti as P on (A.codice_pilota = P.codice_pilota)
-	group by numero_campionato, codice_pilota
+	group by numero_campionato, p.codice_pilota
 	order by punti desc;
 	
 create view CLASSIFICHE_COSTRUTTORI_PASSATE (numero_campionato, nome_scuderia, punteggio) as
-	select numero_campionato, nome_scuderia, sum(C.punteggio) as punti
+	select a.numero_campionato, nome_scuderia, sum(cast(C.punteggio as INT)) as punti
 	from CLASSIFICHE_PILOTI_PASSATI as C join AFFERENZA_PILOTI as A on (C.codice_pilota = A.codice_pilota)
 	where A.numero_campionato = C.numero_campionato
-	group by numero_campionato, nome_scuderia
+	group by A.numero_campionato, nome_scuderia
 	order by punti desc;
 	
 	

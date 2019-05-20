@@ -4847,11 +4847,11 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Column>
 <o:Column Id="o60">
 <a:ObjectID>8F94C6AF-D6F6-4F38-B19F-D410250C3F38</a:ObjectID>
-<a:Name>Anno Innagurazione</a:Name>
-<a:Code>ANNO_INNAGURAZIONE</a:Code>
+<a:Name>Anno Inaugurazione</a:Name>
+<a:Code>ANNO_INAUGURAZIONE</a:Code>
 <a:CreationDate>1557413834</a:CreationDate>
 <a:Creator>desio</a:Creator>
-<a:ModificationDate>1557756108</a:ModificationDate>
+<a:ModificationDate>1558377857</a:ModificationDate>
 <a:Modifier>desio</a:Modifier>
 <a:DataType>INT</a:DataType>
 <a:Column.Mandatory>1</a:Column.Mandatory>

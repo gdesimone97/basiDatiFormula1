@@ -106,9 +106,9 @@ create table PISTE (
    SEDE_PISTA           VARCHAR(50)          not null,
    NOME_PISTA           VARCHAR(50)          not null,
    LUNGHEZZA            INT                  not null,
-   NUM__CURVE           INT                  not null,
+   NUM_CURVE           INT                  not null,
    GIRO_VELOCE          TempoGiro            null,
-   ANNO_INNAGURAZIONE   INT                  not null,
+   ANNO_INAUGURAZIONE   INT                  not null,
    constraint PK_PISTE primary key (SEDE_PISTA, NOME_PISTA)
 );
 
@@ -152,7 +152,7 @@ create table RISULTATI_PASSATI (
 create table SCUDERIE (
    NOME_SCUDERIA        VARCHAR(50)          not null,
    NAZIONALITA_SCUDERIA VARCHAR(50)          not null,
-   NUM__CAMPIONATI_VINTI INT                  not null,
+   NUM_CAMPIONATI_VINTI INT                  not null,
    constraint PK_SCUDERIE primary key (NOME_SCUDERIA)
 );
 

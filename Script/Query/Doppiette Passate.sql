@@ -1,6 +1,6 @@
 --Il numero di volte in cui i piloti della scuderia hanno fatto prima e seconda posizione nella stessa gara 
 select nome_scuderia,count(*)
- from	    (select codice_pilota,sede_pista,nome_pista,numero_campionato
+from	    (select codice_pilota,sede_pista,nome_pista,numero_campionato
 			from risultati_passati
 			where punteggio = 26 or punteggio = 25
 			union 

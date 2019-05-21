@@ -24,12 +24,12 @@ import java.util.logging.Logger;
 public class GeneraRisultati {
 
     public static void main(String[] args) {
-        String nome = "gennaro";
+        String nome = "postgres";
         String pass = "abc123";
         Connection conn = null;
 
         //DATABASE
-        String url = "jdbc:postgresql://localhost:5432/provaformula1";
+        String url = "jdbc:postgresql://localhost:5432/formula1";
         //******CONNESSIONE & STATEMENT
         try {
             Class.forName("org.postgresql.Driver");

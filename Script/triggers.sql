@@ -114,7 +114,7 @@ execute procedure AGGIORNAMENTO_RISULTATI();
 -- trigger per aggiornare i vincitori del campionato e trasferire i risultati_attuali in risultati_passati
 create or replace function AGGIORNAMENTO_CAMPIONATO() returns trigger as $$
 begin	
-	if(((select max(numero_campionato) from campionati) = new.numero_campionato-1)  
+	if(exists(select * from campionati where numero_campionato = new.numero_campionato-1)  
 	and ( 420 <= (select count(*) from risultati_attuali)))
 	then
 	
@@ -146,7 +146,7 @@ end $$ language plpgsql;
 create trigger AGGIORNAMENTO_CAMPIONATO
 after insert on campionati
 for each statement
-execute procedure AGGIORNAMENTO_CAMPIONATO()
+execute procedure AGGIORNAMENTO_CAMPIONATO();
 
 
 -- trigger per controllare la corretta cancellazione dai risultati_attuali

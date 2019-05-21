@@ -1,0 +1,800 @@
+VS301050:Vittorio:Sempronio:KO:1950-10-30:meccanico:
+TS120675:Tiziana:Sempronio:DE:1975-06-12:meccanico:
+MF220387:Mario:Faggiano:MA:1987-03-22:meccanico:
+LP050957:Loredana:Paolino:JN:1957-09-05:meccanico:
+GL050532:Gianna:Lionetti:FR:1932-05-05:meccanico:
+MR250949:Mariano:Rossi:IN:1949-09-25:meccanico:
+AI200850:Antonio:Iandolo:IT:1950-08-20:meccanico:
+VC021234:Vincenzo:Chianese:IN:1934-12-02:meccanico:
+BR071175:Beatrice:Russo:GR:1975-11-07:meccanico:
+LD121220:Luigi:De Simone:IT:1920-12-12:meccanico:
+ML011237:Michele:Lionetti:DA:1937-12-01:meccanico:
+ED091078:Enzo:d'Acierno:FR:1978-10-09:meccanico:
+ED060931:Enzo:d'Acierno:TN:1931-09-06:meccanico:
+FS170369:Francesco:Sempronio:IR:1969-03-17:meccanico:
+CB281173:Ciccio:Battiato:IN:1973-11-28:meccanico:
+GD210727:Gennaro:Di Marzio:GR:1927-07-21:meccanico:
+MS120463:Mario:Sempronio:ID:1963-04-12:meccanico:
+MD110639:Massimo:De Simone:IT:1939-06-11:meccanico:
+FD130168:Filomena:De Simone:DA:1968-01-13:meccanico:
+CD270867:Carmine:De Santo:EG:1967-08-27:meccanico:
+PS110955:Paolo:Smith:CH:1955-09-11:meccanico:
+PS090748:Pietro:Smith:TN:1948-07-09:meccanico:
+VE080754:Valerio:Esposito:ZA:1954-07-08:meccanico:
+FC310860:Federico:Cappella:PT:1960-08-31:meccanico:
+SB300762:Simone:Bennato:ES:1962-07-30:meccanico:
+RD031181:Roberto:De Santo:FR:1981-11-03:meccanico:
+AM121279:Augusto:Moscato:FR:1979-12-12:meccanico:
+AC011142:Antonio:Cappella:GR:1942-11-01:meccanico:
+RC190396:Roberto:Chianese:CH:1996-03-19:meccanico:
+GR020268:Gianna:Russo:IT:1968-02-02:meccanico:
+TC220433:Tiziano:Cappella:CA:1933-04-22:meccanico:
+SS121062:Stefano:Sempronio:EN:1962-10-12:meccanico:
+MC140753:Massimo:Cappella:IN:1953-07-14:meccanico:
+PM081236:Pietro:Moscato:CA:1936-12-08:meccanico:
+VP021293:Vincenzo:Picariello:DA:1993-12-02:meccanico:
+PD021037:Paolo:De Santo:EN:1937-10-02:meccanico:
+MI240841:Marco:Iandolo:US:1941-08-24:meccanico:
+MD090340:Mariano:De Santo:DA:1940-03-09:meccanico:
+CS080879:Carmine:Smith:GR:1979-08-08:meccanico:
+AE200721:Antonio:Esposito:DE:1921-07-20:meccanico:
+SD250189:Salvatore:De Santo:ID:1989-01-25:meccanico:
+RC110792:Rosa:Canonico:DZ:1992-07-11:meccanico:
+FP230382:Francesco:Picariello:CA:1982-03-23:meccanico:
+FS120842:Fiorella:Smith:ID:1942-08-12:meccanico:
+MG190361:Marco:Galdi:GR:1961-03-19:meccanico:
+SS300861:Stefano:Smith:ID:1961-08-30:meccanico:
+RD061241:Rossella:d'Acierno:ZA:1941-12-06:meccanico:
+LG010162:Luigi:Giaquinto:DZ:1962-01-01:meccanico:
+GP111195:Giovanni:Picariello:CA:1995-11-11:meccanico:
+FD160148:Filomena:d'Acierno:DZ:1948-01-16:meccanico:
+FG300175:Francesco:Guccini:US:1975-01-30:meccanico:
+EP090129:Ettore:Picariello:ID:1929-01-09:meccanico:
+MB160722:Massimo:Bianchi:ID:1922-07-16:meccanico:
+VM280875:Vittorio:Moscato:ID:1975-08-28:meccanico:
+RB090132:Rosa:Battiato:EN:1932-01-09:meccanico:
+AM120730:Augusto:Marcelli:DA:1930-07-12:meccanico:
+GV120939:Gennaro:Vietri:IN:1939-09-12:meccanico:
+MB190761:Marco:Bennato:IT:1961-07-19:meccanico:
+SG120675:Salvatore:Giaquinto:IR:1975-06-12:meccanico:
+BD070463:Beatrice:De Simone:CN:1963-04-07:meccanico:
+TC050251:Tiziano:Caio:ES:1951-02-05:meccanico:
+RB300743:Rosa:Battiato:IN:1943-07-30:meccanico:
+VB150953:Vittorio:Bianchi:PL:1953-09-15:meccanico:
+SC051070:Salvatore:Canonico:EG:1970-10-05:meccanico:
+FB231060:Francesco:Battiato:EG:1960-10-23:meccanico:
+VS190996:Valerio:Smith:DE:1996-09-19:meccanico:
+EE121231:Enzo:Esposito:PL:1931-12-12:meccanico:
+RL091242:Roberto:Lionetti:IN:1942-12-09:meccanico:
+SR220177:Sergio:Rossi:DE:1977-01-22:meccanico:
+AM030291:Angelo:Moscato:CN:1991-02-03:meccanico:
+CP311248:Carmine:Paolino:DZ:1948-12-31:meccanico:
+CE230685:Ciccio:Esposito:EG:1985-06-23:meccanico:
+AD110744:Antonio:d'Acierno:GR:1944-07-11:meccanico:
+VB111237:Valentina:Battiato:ES:1937-12-11:meccanico:
+MG270977:Mariano:Guccini:FR:1977-09-27:meccanico:
+CI140776:Ciccio:Iandolo:FR:1976-07-14:meccanico:
+PC050769:Pietro:Chianese:DA:1969-07-05:meccanico:
+AB110776:Augusto:Bianchi:US:1976-07-11:meccanico:
+GF091131:Giovanni:Faruolo:MA:1931-11-09:meccanico:
+EC271037:Enzo:Cipriano:PT:1937-10-27:meccanico:
+FC230743:Francesco:Cipriano:DE:1943-07-23:meccanico:
+TC230722:Tiziana:Caio:GR:1922-07-23:meccanico:
+LD030269:Loredana:De Masi:TN:1969-02-03:meccanico:
+ME300654:Mariano:Esposito:CH:1954-06-30:meccanico:
+GD120288:Gennaro:De Santo:CN:1988-02-12:meccanico:
+CG050194:Ciccio:Guccini:IR:1994-01-05:meccanico:
+NS230940:Nicola:Sempronio:CA:1940-09-23:meccanico:
+CD050243:Ciccio:d'Acierno:EG:1943-02-05:meccanico:
+TF270699:Tiziano:Faruolo:EG:1999-06-27:meccanico:
+NB290393:Nicola:Barrasso:US:1993-03-29:meccanico:
+LC281028:Loredana:Cipriano:PT:1928-10-28:meccanico:
+NP270576:Nicola:Picariello:ES:1976-05-27:meccanico:
+FC241195:Federico:Cappella:ZA:1995-11-24:meccanico:
+VM130821:Valerio:Marcelli:DE:1921-08-13:meccanico:
+SC060478:Sergio:Cipriano:ID:1978-04-06:meccanico:
+MR200432:Massimo:Russo:JN:1932-04-20:meccanico:
+AB210996:Antonio:Barrasso:IR:1996-09-21:meccanico:
+VP301282:Vito:Picariello:PL:1982-12-30:meccanico:
+CG170722:Carmine:Galdi:DZ:1922-07-17:meccanico:
+GP231283:Giuseppe:Paolino:ID:1983-12-23:meccanico:
+VC061051:Vito:Cappella:CH:1951-10-06:meccanico:
+GM230748:Gianna:Moscato:PL:1948-07-23:meccanico:
+MR180538:Mario:Russo:CN:1938-05-18:meccanico:
+FW060347:Francesco:Wesson:PT:1947-03-06:meccanico:
+ER071084:Enzo:Rossi:ID:1984-10-07:meccanico:
+AE190820:Alfonso:Esposito:EN:1920-08-19:meccanico:
+NE130653:Nicola:Esposito:MA:1953-06-13:meccanico:
+VR180455:Vincenzo:Russo:JN:1955-04-18:meccanico:
+VG190276:Vittorio:Giaquinto:FR:1976-02-19:meccanico:
+TF010523:Tiziana:Faggiano:JN:1923-05-01:meccanico:
+SB071291:Salvatore:Battiato:EN:1991-12-07:meccanico:
+NL300135:Nicola:Lionetti:CA:1935-01-30:meccanico:
+SR020150:Salvatore:Rossi:CA:1950-01-02:meccanico:
+MB310534:Mario:Barrasso:CN:1934-05-31:meccanico:
+FD140222:Francesco:De Masi:ZA:1922-02-14:meccanico:
+SR071236:Sergio:Russo:DA:1936-12-07:meccanico:
+SM260157:Sergio:Moscato:CN:1957-01-26:meccanico:
+SD070979:Salvatore:De Santo:ES:1979-09-07:meccanico:
+SM190627:Salvatore:Moscato:ZA:1927-06-19:meccanico:
+MB081027:Marco:Bianchi:ES:1927-10-08:meccanico:
+SR120895:Sergio:Russo:CA:1995-08-12:meccanico:
+TC090439:Tiziano:Canonico:DE:1939-04-09:meccanico:
+RC280989:Rosa:Canonico:DZ:1989-09-28:meccanico:
+AG061029:Augusto:Guccini:MA:1929-10-06:meccanico:
+MF201188:Massimo:Faggiano:IR:1988-11-20:meccanico:
+BF270184:Beatrice:Faruolo:MA:1984-01-27:meccanico:
+VP090496:Vito:Paoli:DA:1996-04-09:meccanico:
+AE040689:Alfonso:Esposito:EN:1989-06-04:meccanico:
+AB151160:Augusto:Bennato:DZ:1960-11-15:meccanico:
+FD061238:Fiorella:De Santo:DZ:1938-12-06:meccanico:
+LD040460:Loredana:De Simone:PT:1960-04-04:meccanico:
+MC080153:Marco:Caio:KO:1953-01-08:meccanico:
+VB120477:Vittorio:Barrasso:JN:1977-04-12:meccanico:
+MF170630:Massimo:Faruolo:GR:1930-06-17:meccanico:
+PI200540:Pietro:Iandolo:EG:1940-05-20:meccanico:
+MM260267:Mario:Moscato:DZ:1967-02-26:meccanico:
+MG050557:Massimo:Giaquinto:TN:1957-05-05:meccanico:
+EV300591:Enzo:Vietri:CA:1991-05-30:meccanico:
+ME060479:Michele:Esposito:US:1979-04-06:meccanico:
+SM181286:Simone:Marcelli:FR:1986-12-18:meccanico:
+NR061098:Nicola:Rossi:CH:1998-10-06:meccanico:
+EC050831:Ettore:Chianese:PT:1931-08-05:meccanico:
+PS010786:Pietro:Sempronio:ID:1986-07-01:meccanico:
+BM130728:Beatrice:Marcelli:EN:1928-07-13:meccanico:
+CM301036:Carmine:Moscato:GR:1936-10-30:meccanico:
+FB020859:Federico:Barrasso:CH:1959-08-02:meccanico:
+SM020649:Stefano:Marcelli:DZ:1949-06-02:meccanico:
+SR150982:Sergio:Rossi:CA:1982-09-15:meccanico:
+PR240723:Paolo:Rossi:MA:1923-07-24:meccanico:
+TL020483:Tiziana:Lionetti:DZ:1983-04-02:meccanico:
+VB300795:Vito:Bianchi:EG:1995-07-30:meccanico:
+GE180962:Giuseppe:Esposito:DZ:1962-09-18:meccanico:
+RV110287:Roberto:Vietri:IN:1987-02-11:meccanico:
+MG250531:Mario:Guccini:CH:1931-05-25:meccanico:
+AI250423:Augusto:Iandolo:CH:1923-04-25:meccanico:
+PB290484:Pietro:Barrasso:GR:1984-04-29:meccanico:
+TB170390:Tiziano:Bennato:KO:1990-03-17:meccanico:
+VD110530:Vittorio:d'Acierno:DA:1930-05-11:meccanico:
+FS170682:Fiorella:Smith:ZA:1982-06-17:meccanico:
+SB250646:Sergio:Battiato:PL:1946-06-25:meccanico:
+NC301184:Nicola:Coppola:DE:1984-11-30:meccanico:
+MR061173:Michele:Russo:CH:1973-11-06:meccanico:
+ML130492:Mariano:Lionetti:ZA:1992-04-13:meccanico:
+PG280799:Paolo:Galdi:IT:1999-07-28:meccanico:
+PC231164:Pietro:Cappella:CH:1964-11-23:meccanico:
+AB160196:Antonio:Bianchi:EG:1996-01-16:meccanico:
+FC271128:Francesco:Coppola:CN:1928-11-27:meccanico:
+SI220663:Salvatore:Iandolo:CN:1963-06-22:meccanico:
+AR110166:Augusto:Rossi:DZ:1966-01-11:meccanico:
+MF010178:Marco:Faruolo:ID:1978-01-01:meccanico:
+VL260944:Vittorio:Lionetti:ID:1944-09-26:meccanico:
+MF090977:Mariano:Faruolo:KO:1977-09-09:meccanico:
+MC030586:Michele:Cipriano:ES:1986-05-03:meccanico:
+LM020154:Luigi:Marcelli:ES:1954-01-02:meccanico:
+SD100357:Sergio:Di Marzio:PL:1957-03-10:meccanico:
+SM240131:Sergio:Moscato:IT:1931-01-24:meccanico:
+CL110660:Ciccio:Lionetti:DA:1960-06-11:meccanico:
+SB071194:Sergio:Bianchi:EN:1994-11-07:meccanico:
+CF070991:Carmine:Faruolo:US:1991-09-07:meccanico:
+EL081120:Enzo:Lionetti:ID:1920-11-08:meccanico:
+RC160391:Rossella:Chianese:IT:1991-03-16:meccanico:
+AP131254:Antonio:Picariello:CA:1954-12-13:meccanico:
+PB070974:Paola:Battiato:US:1974-09-07:meccanico:
+EP050187:Ettore:Picariello:MA:1987-01-05:meccanico:
+GD310821:Gennaro:De Simone:PL:1921-08-31:meccanico:
+VV260797:Valerio:Vietri:PL:1997-07-26:meccanico:
+PD021075:Paola:De Santo:DA:1975-10-02:meccanico:
+SD081135:Simone:Di Marzio:GR:1935-11-08:meccanico:
+CP201122:Clelia:Paoli:PL:1922-11-20:meccanico:
+FB040173:Fiorella:Bennato:MA:1973-01-04:meccanico:
+MC300426:Marco:Chianese:KO:1926-04-30:meccanico:
+EI020796:Enzo:Iandolo:EN:1996-07-02:meccanico:
+GD130349:Giuseppe:d'Acierno:DA:1949-03-13:meccanico:
+EC100487:Ettore:Chianese:CN:1987-04-10:meccanico:
+LB140378:Luigi:Battiato:ZA:1978-03-14:meccanico:
+GC190124:Giuseppe:Coppola:EG:1924-01-19:meccanico:
+AD240624:Augusto:Di Marzio:KO:1924-06-24:meccanico:
+TD211285:Tiziana:De Masi:CH:1985-12-21:meccanico:
+PL210369:Paolo:Lionetti:KO:1969-03-21:meccanico:
+EC230848:Enzo:Cappella:PT:1948-08-23:meccanico:
+ME010937:Michele:Esposito:DE:1937-09-01:meccanico:
+MS190132:Marco:Smith:IT:1932-01-19:meccanico:
+VB270293:Vito:Bianchi:ZA:1993-02-27:meccanico:
+VB230699:Vincenzo:Bianchi:DE:1999-06-23:meccanico:
+AB021099:Augusto:Bennato:DE:1999-10-02:meccanico:
+AC311040:Anna:Cappella:ZA:1940-10-31:meccanico:
+PV151160:Paolo:Vietri:JN:1960-11-15:meccanico:
+CB171252:Ciccio:Barrasso:MA:1952-12-17:meccanico:
+BB110226:Beatrice:Bianchi:CN:1926-02-11:meccanico:
+FP040623:Federico:Picariello:GR:1923-06-04:meccanico:
+GR280199:Giuseppe:Russo:US:1999-01-28:meccanico:
+AS190697:Alfonso:Sempronio:TN:1997-06-19:meccanico:
+LG280572:Loredana:Giaquinto:FR:1972-05-28:meccanico:
+MC090797:Marco:Coppola:TN:1997-07-09:meccanico:
+MR160288:Marco:Russo:CN:1988-02-16:meccanico:
+FM251245:Fiorella:Marcelli:CH:1945-12-25:meccanico:
+AS250238:Augusto:Smith:KO:1938-02-25:meccanico:
+AC120248:Anna:Caio:FR:1948-02-12:meccanico:
+GF040177:Giovanni:Faggiano:FR:1977-01-04:meccanico:
+CB301061:Ciccio:Bennato:DE:1961-10-30:meccanico:
+PS140632:Paola:Smith:PL:1932-06-14:meccanico:
+RB140933:Rossella:Battiato:IR:1933-09-14:meccanico:
+VS140762:Vito:Sempronio:DA:1962-07-14:meccanico:
+FB050433:Federico:Bianchi:KO:1933-04-05:meccanico:
+ME221260:Mario:Esposito:US:1960-12-22:meccanico:
+FS300767:Federico:Smith:DA:1967-07-30:meccanico:
+SE250674:Simone:Esposito:US:1974-06-25:meccanico:
+AG101224:Anna:Galdi:TN:1924-12-10:meccanico:
+RL170642:Rossella:Lionetti:US:1942-06-17:meccanico:
+AW110368:Augusto:Wesson:IN:1968-03-11:meccanico:
+RF080967:Rosa:Faruolo:GR:1967-09-08:meccanico:
+MM290639:Marco:Marcelli:DA:1939-06-29:meccanico:
+FF210487:Francesco:Faruolo:ZA:1987-04-21:meccanico:
+GR201145:Giovanni:Rossi:IN:1945-11-20:meccanico:
+SD161195:Salvatore:d'Acierno:JN:1995-11-16:meccanico:
+EF230338:Enzo:Faggiano:EN:1938-03-23:meccanico:
+LG100691:Luigi:Giaquinto:ID:1991-06-10:meccanico:
+GB290532:Giovanni:Bianchi:CA:1932-05-29:meccanico:
+FD150830:Federico:De Simone:TN:1930-08-15:meccanico:
+VL050829:Vittorio:Lionetti:FR:1929-08-05:meccanico:
+SP051289:Simone:Paoli:DA:1989-12-05:meccanico:
+VC300191:Valerio:Chianese:EN:1991-01-30:meccanico:
+GF060162:Giovanni:Faruolo:FR:1962-01-06:meccanico:
+VB140739:Vittorio:Battiato:KO:1939-07-14:meccanico:
+RC220632:Rosa:Cappella:ZA:1932-06-22:meccanico:
+RG310130:Rosa:Giaquinto:ES:1930-01-31:meccanico:
+FV110662:Fiorella:Vietri:IN:1962-06-11:meccanico:
+GC240164:Giovanni:Caio:TN:1964-01-24:meccanico:
+BE110289:Beatrice:Esposito:IN:1989-02-11:meccanico:
+MG141029:Mario:Guccini:ZA:1929-10-14:meccanico:
+FL090144:Filomena:Lionetti:DZ:1944-01-09:meccanico:
+FD100141:Federico:Di Marzio:ES:1941-01-10:meccanico:
+RC060386:Rosa:Cappella:CA:1986-03-06:meccanico:
+CB040957:Ciccio:Bennato:ZA:1957-09-04:meccanico:
+GD160449:Giovanni:De Masi:CA:1949-04-16:meccanico:
+LG170750:Luigi:Galdi:IN:1950-07-17:meccanico:
+ML291026:Mariano:Lionetti:IN:1926-10-29:meccanico:
+VP090864:Vincenzo:Paoli:US:1964-08-09:meccanico:
+PC110925:Paolo:Cipriano:EG:1925-09-11:meccanico:
+GF240781:Gennaro:Faruolo:US:1981-07-24:meccanico:
+CB141221:Ciccio:Battiato:ES:1921-12-14:meccanico:
+SS221169:Salvatore:Sempronio:FR:1969-11-22:meccanico:
+BE121260:Beatrice:Esposito:ID:1960-12-12:meccanico:
+BD100656:Beatrice:De Santo:ZA:1956-06-10:meccanico:
+MC010346:Mariano:Caio:IT:1946-03-01:meccanico:
+EW240685:Enzo:Wesson:CH:1985-06-24:meccanico:
+SL120855:Simone:Lionetti:KO:1955-08-12:meccanico:
+RG201224:Rossella:Giaquinto:CA:1924-12-20:meccanico:
+SR110829:Sergio:Rossi:US:1929-08-11:meccanico:
+MP060393:Massimo:Paoli:IR:1993-03-06:meccanico:
+AC250463:Augusto:Cappella:DZ:1963-04-25:meccanico:
+VP010171:Valerio:Paoli:GR:1971-01-01:meccanico:
+MB140791:Massimo:Bennato:ES:1991-07-14:meccanico:
+PB050932:Pietro:Bennato:ID:1932-09-05:meccanico:
+SC250181:Salvatore:Coppola:IN:1981-01-25:meccanico:
+MG280858:Massimo:Galdi:IR:1958-08-28:meccanico:
+FC020945:Federico:Cipriano:ID:1945-09-02:meccanico:
+AE210928:Antonio:Esposito:GR:1928-09-21:meccanico:
+AF030298:Angelo:Faruolo:MA:1998-02-03:meccanico:
+VP120955:Valentina:Paolino:PT:1955-09-12:meccanico:
+SG121189:Simone:Giaquinto:JN:1989-11-12:meccanico:
+VD170884:Valerio:De Simone:DA:1984-08-17:meccanico:
+SP010580:Sergio:Picariello:IN:1980-05-01:meccanico:
+FI031021:Filomena:Iandolo:CA:1921-10-03:meccanico:
+CG160777:Carmine:Galdi:PT:1977-07-16:meccanico:
+MC150446:Marco:Cipriano:DZ:1946-04-15:meccanico:
+RG080159:Rosa:Guccini:CA:1959-01-08:meccanico:
+VB280990:Valerio:Bennato:DZ:1990-09-28:meccanico:
+MG240651:Mariano:Guccini:FR:1951-06-24:meccanico:
+SB220840:Stefano:Bianchi:EN:1940-08-22:meccanico:
+CB180520:Ciccio:Battiato:DA:1920-05-18:meccanico:
+FB040936:Francesco:Barrasso:DE:1936-09-04:meccanico:
+SD090537:Salvatore:De Masi:KO:1937-05-09:meccanico:
+PE020864:Pietro:Esposito:IT:1964-08-02:meccanico:
+RE030167:Rossella:Esposito:ES:1967-01-03:meccanico:
+SB190156:Stefano:Barrasso:US:1956-01-19:meccanico:
+VB280977:Vincenzo:Bianchi:EG:1977-09-28:meccanico:
+MM080594:Marco:Marcelli:FR:1994-05-08:meccanico:
+VB221031:Valerio:Battiato:DE:1931-10-22:meccanico:
+GG010141:Gianna:Galdi:DE:1941-01-01:meccanico:
+AD200990:Antonio:De Masi:PL:1990-09-20:meccanico:
+MC270122:Mariano:Coppola:CH:1922-01-27:meccanico:
+GE030633:Giuseppe:Esposito:EG:1933-06-03:meccanico:
+CS161050:Ciccio:Sempronio:PT:1950-10-16:meccanico:
+CC120933:Ciccio:Coppola:ID:1933-09-12:meccanico:
+MS140635:Marco:Smith:TN:1935-06-14:meccanico:
+AE070495:Antonio:Esposito:ES:1995-04-07:meccanico:
+CV260720:Ciccio:Vietri:DZ:1920-07-26:meccanico:
+EE120937:Ettore:Esposito:FR:1937-09-12:meccanico:
+GW010829:Giuseppe:Wesson:KO:1929-08-01:meccanico:
+RS311290:Rossella:Smith:IR:1990-12-31:meccanico:
+AR070382:Augusto:Rossi:PT:1982-03-07:meccanico:
+FM251032:Federico:Marcelli:ID:1932-10-25:meccanico:
+NI030890:Nicola:Iandolo:MA:1990-08-03:meccanico:
+MG300538:Marco:Guccini:US:1938-05-30:meccanico:
+RR301272:Rossella:Russo:EN:1972-12-30:meccanico:
+FD080576:Federico:Di Marzio:IN:1976-05-08:meccanico:
+VE020727:Vito:Esposito:JN:1927-07-02:meccanico:
+AV150780:Angelo:Vietri:EG:1980-07-15:meccanico:
+MW220824:Massimo:Wesson:CN:1924-08-22:meccanico:
+AC120436:Augusto:Chianese:US:1936-04-12:meccanico:
+NG050675:Nicola:Giaquinto:IN:1975-06-05:meccanico:
+GD210387:Giuseppe:De Masi:DE:1987-03-21:meccanico:
+VB141235:Valerio:Bianchi:KO:1935-12-14:meccanico:
+LW180886:Luigi:Wesson:JN:1986-08-18:meccanico:
+SS061190:Stefano:Smith:GR:1990-11-06:meccanico:
+VP190195:Vincenzo:Paolino:CA:1995-01-19:meccanico:
+EI120261:Ettore:Iandolo:GR:1961-02-12:meccanico:
+SG170562:Simone:Guccini:DE:1962-05-17:meccanico:
+PS130679:Paolo:Sempronio:IR:1979-06-13:meccanico:
+MM120236:Michele:Moscato:PL:1936-02-12:meccanico:
+TD060797:Tiziana:De Santo:PT:1997-07-06:meccanico:
+GR250498:Giovanni:Rossi:JN:1998-04-25:meccanico:
+FC120253:Federico:Cappella:DA:1953-02-12:meccanico:
+ME051148:Michele:Esposito:US:1948-11-05:meccanico:
+NB201273:Nicola:Barrasso:CA:1973-12-20:meccanico:
+SP101053:Salvatore:Paolino:CA:1953-10-10:meccanico:
+ND270174:Nicola:De Simone:TN:1974-01-27:meccanico:
+PB120569:Pietro:Battiato:DA:1969-05-12:meccanico:
+GC030282:Giuseppe:Canonico:DE:1982-02-03:meccanico:
+MS050639:Marco:Smith:ES:1939-06-05:meccanico:
+MS291185:Michele:Smith:EG:1985-11-29:meccanico:
+TC070665:Tiziano:Caio:DE:1965-06-07:meccanico:
+VP200377:Valerio:Paolino:EG:1977-03-20:meccanico:
+RC270594:Roberto:Cipriano:MA:1994-05-27:meccanico:
+CD150629:Carmine:De Santo:ZA:1929-06-15:meccanico:
+FS030933:Filomena:Smith:EN:1933-09-03:meccanico:
+AC120122:Augusto:Chianese:PL:1922-01-12:meccanico:
+ES150974:Enzo:Sempronio:PT:1974-09-15:meccanico:
+VB090877:Vittorio:Bennato:FR:1977-08-09:meccanico:
+FD091279:Filomena:Di Marzio:ES:1979-12-09:meccanico:
+CC310887:Ciccio:Coppola:FR:1987-08-31:meccanico:
+AG141277:Alfonso:Galdi:IN:1977-12-14:meccanico:
+PM050472:Paola:Marcelli:PT:1972-04-05:meccanico:
+AC020638:Alfonso:Coppola:ID:1938-06-02:meccanico:
+LB220594:Loredana:Battiato:FR:1994-05-22:meccanico:
+LB290467:Loredana:Bianchi:ID:1967-04-29:meccanico:
+AC210790:Antonio:Canonico:IN:1990-07-21:meccanico:
+GM040244:Giuseppe:Marcelli:DA:1944-02-04:meccanico:
+PV230149:Pietro:Vietri:FR:1949-01-23:meccanico:
+CR171140:Carmine:Russo:MA:1940-11-17:meccanico:
+RD281253:Roberto:De Masi:CN:1953-12-28:meccanico:
+FE120945:Francesco:Esposito:US:1945-09-12:meccanico:
+PW150868:Pietro:Wesson:CA:1968-08-15:meccanico:
+GG180457:Giovanni:Guccini:TN:1957-04-18:meccanico:
+PD301273:Paola:De Santo:EN:1973-12-30:meccanico:
+PD210944:Paolo:De Masi:US:1944-09-21:meccanico:
+GP141152:Gennaro:Picariello:GR:1952-11-14:meccanico:
+PG270962:Paola:Guccini:ES:1962-09-27:meccanico:
+AM100335:Augusto:Moscato:IN:1935-03-10:meccanico:
+EF011295:Enzo:Faggiano:DE:1995-12-01:meccanico:
+CG100546:Clelia:Giaquinto:EN:1946-05-10:meccanico:
+AM210565:Alfonso:Marcelli:JN:1965-05-21:meccanico:
+CP060888:Clelia:Picariello:PL:1988-08-06:meccanico:
+AS140222:Antonio:Smith:GR:1922-02-14:meccanico:
+VD160422:Vincenzo:De Simone:ID:1922-04-16:meccanico:
+TB010887:Tiziano:Battiato:PT:1987-08-01:meccanico:
+VP140496:Vito:Paoli:IT:1996-04-14:meccanico:
+VW090151:Valerio:Wesson:DE:1951-01-09:meccanico:
+GR030643:Giovanni:Russo:DZ:1943-06-03:meccanico:
+MG010799:Michele:Giaquinto:JN:1999-07-01:meccanico:
+MB091126:Marco:Barrasso:DE:1926-11-09:meccanico:
+AC191293:Augusto:Cipriano:US:1993-12-19:meccanico:
+GP210747:Giuseppe:Paoli:FR:1947-07-21:meccanico:
+PM060924:Paolo:Marcelli:ES:1924-09-06:meccanico:
+SR230133:Simone:Rossi:FR:1933-01-23:meccanico:
+SW270330:Simone:Wesson:MA:1930-03-27:meccanico:
+SP180359:Sergio:Paolino:MA:1959-03-18:meccanico:
+VV300481:Valentina:Vietri:ZA:1981-04-30:meccanico:
+MD160728:Mariano:Di Marzio:US:1928-07-16:meccanico:
+NC080888:Nicola:Chianese:CH:1988-08-08:meccanico:
+SE281067:Sergio:Esposito:ID:1967-10-28:meccanico:
+FD030146:Filomena:Di Marzio:JN:1946-01-03:meccanico:
+TG181281:Tiziano:Galdi:ZA:1981-12-18:meccanico:
+CF280466:Ciccio:Faggiano:EN:1966-04-28:meccanico:
+VG280661:Valerio:Giaquinto:KO:1961-06-28:meccanico:
+RP010289:Rosa:Picariello:GR:1989-02-01:meccanico:
+CC240575:Carmine:Coppola:IN:1975-05-24:meccanico:
+NP100196:Nicola:Paoli:PT:1996-01-10:meccanico:
+GB280740:Gennaro:Battiato:PT:1940-07-28:meccanico:
+TB170434:Tiziana:Battiato:CA:1934-04-17:meccanico:
+AE130569:Anna:Esposito:GR:1969-05-13:meccanico:
+FD271099:Federico:De Santo:PT:1999-10-27:meccanico:
+CR150764:Ciccio:Rossi:JN:1964-07-15:meccanico:
+TE100662:Tiziana:Esposito:US:1962-06-10:meccanico:
+PB260452:Paola:Barrasso:IN:1952-04-26:meccanico:
+MB190276:Michele:Bianchi:KO:1976-02-19:meccanico:
+GP190848:Gennaro:Paoli:MA:1948-08-19:meccanico:
+RM181021:Rosa:Moscato:IT:1921-10-18:meccanico:
+SF040765:Sergio:Faggiano:EN:1965-07-04:meccanico:
+PS111168:Pietro:Smith:PT:1968-11-11:meccanico:
+RI301178:Rossella:Iandolo:ZA:1978-11-30:meccanico:
+GB300541:Gennaro:Bennato:MA:1941-05-30:meccanico:
+MC110952:Michele:Chianese:DE:1952-09-11:meccanico:
+MB140477:Mariano:Barrasso:ES:1977-04-14:meccanico:
+LD250339:Loredana:De Santo:IR:1939-03-25:meccanico:
+MB240687:Massimo:Bennato:IR:1987-06-24:meccanico:
+VD250735:Valerio:De Santo:CA:1935-07-25:meccanico:
+VC240480:Vito:Cipriano:US:1980-04-24:meccanico:
+SD250574:Sergio:d'Acierno:JN:1974-05-25:meccanico:
+VG230641:Vincenzo:Guccini:TN:1941-06-23:meccanico:
+AC020740:Angelo:Coppola:PL:1940-07-02:meccanico:
+VL130647:Vincenzo:Lionetti:PT:1947-06-13:meccanico:
+PD151296:Pietro:De Santo:IR:1996-12-15:meccanico:
+VD220695:Vincenzo:d'Acierno:CA:1995-06-22:meccanico:
+AE030668:Alfonso:Esposito:KO:1968-06-03:meccanico:
+LP140980:Luigi:Paoli:EN:1980-09-14:meccanico:
+SF180568:Salvatore:Faruolo:ZA:1968-05-18:meccanico:
+RR070481:Roberto:Rossi:CA:1981-04-07:meccanico:
+FC050754:Fiorella:Coppola:US:1954-07-05:meccanico:
+GB060981:Gennaro:Battiato:ID:1981-09-06:meccanico:
+ML030267:Mario:Lionetti:IR:1967-02-03:meccanico:
+AB150163:Angelo:Bennato:ZA:1963-01-15:meccanico:
+AG151043:Anna:Guccini:JN:1943-10-15:meccanico:
+VR050957:Valerio:Rossi:CH:1957-09-05:meccanico:
+FE110141:Filomena:Esposito:IN:1941-01-11:meccanico:
+LD240691:Luigi:d'Acierno:ES:1991-06-24:meccanico:
+CC210556:Carmine:Canonico:FR:1956-05-21:meccanico:
+SF070839:Sergio:Faggiano:KO:1939-08-07:meccanico:
+MC280458:Massimo:Canonico:DE:1958-04-28:meccanico:
+FC220130:Filomena:Cappella:CA:1930-01-22:meccanico:
+MR160143:Michele:Rossi:ZA:1943-01-16:meccanico:
+NV070529:Nicola:Vietri:EN:1929-05-07:meccanico:
+EB230921:Ettore:Bennato:ZA:1921-09-23:meccanico:
+GF120772:Giuseppe:Faruolo:KO:1972-07-12:meccanico:
+AM311224:Angelo:Marcelli:EN:1924-12-31:meccanico:
+GM101242:Giuseppe:Moscato:MA:1942-12-10:meccanico:
+PG150445:Paola:Galdi:CN:1945-04-15:meccanico:
+CC150276:Carmine:Cipriano:ID:1976-02-15:meccanico:
+VB170926:Valerio:Bennato:FR:1926-09-17:meccanico:
+GR090472:Giuseppe:Rossi:MA:1972-04-09:meccanico:
+BP251075:Beatrice:Picariello:US:1975-10-25:meccanico:
+AD310823:Anna:d'Acierno:PT:1923-08-31:meccanico:
+VI210638:Valerio:Iandolo:ES:1938-06-21:meccanico:
+VD140493:Vincenzo:d'Acierno:DE:1993-04-14:meccanico:
+RW270731:Roberto:Wesson:ZA:1931-07-27:meccanico:
+MD290284:Marco:De Santo:DA:1984-02-29:meccanico:
+FF050985:Francesco:Faruolo:CN:1985-09-05:meccanico:
+GD291160:Giovanni:Di Marzio:EN:1960-11-29:meccanico:
+CL050562:Ciccio:Lionetti:GR:1962-05-05:meccanico:
+SD141138:Simone:De Masi:CA:1938-11-14:meccanico:
+SC150868:Salvatore:Chianese:US:1968-08-15:meccanico:
+PP150489:Paola:Picariello:CN:1989-04-15:meccanico:
+VC020993:Vittorio:Coppola:PL:1993-09-02:meccanico:
+FG120479:Filomena:Giaquinto:PL:1979-04-12:meccanico:
+FD210961:Francesco:De Masi:DZ:1961-09-21:meccanico:
+AS040197:Alfonso:Sempronio:PT:1997-01-04:meccanico:
+FF270288:Fiorella:Faruolo:EG:1988-02-27:meccanico:
+MD210230:Michele:d'Acierno:CA:1930-02-21:meccanico:
+CC260982:Carmine:Canonico:IR:1982-09-26:meccanico:
+EG211062:Enzo:Guccini:JN:1962-10-21:meccanico:
+MB180149:Mario:Barrasso:ZA:1949-01-18:meccanico:
+MC050497:Massimo:Cipriano:FR:1997-04-05:meccanico:
+GF080863:Giovanni:Faruolo:MA:1963-08-08:meccanico:
+VD210487:Vittorio:Di Marzio:TN:1987-04-21:meccanico:
+VD070597:Vincenzo:De Simone:EN:1997-05-07:meccanico:
+VB040131:Valentina:Bennato:DA:1931-01-04:meccanico:
+CC010826:Ciccio:Cappella:IR:1926-08-01:meccanico:
+MI220183:Massimo:Iandolo:DE:1983-01-22:meccanico:
+NB300897:Nicola:Barrasso:GR:1997-08-30:meccanico:
+VG200535:Valentina:Guccini:DA:1935-05-20:meccanico:
+CR180997:Ciccio:Russo:DZ:1997-09-18:meccanico:
+FF141231:Federico:Faruolo:ID:1931-12-14:meccanico:
+MV230596:Marco:Vietri:EG:1996-05-23:meccanico:
+FD280945:Federico:Di Marzio:PT:1945-09-28:meccanico:
+SB030251:Simone:Bianchi:ZA:1951-02-03:meccanico:
+AD081122:Alfonso:Di Marzio:MA:1922-11-08:meccanico:
+VB011137:Vito:Bennato:CA:1937-11-01:meccanico:
+GR110258:Gennaro:Rossi:DA:1958-02-11:meccanico:
+FP130922:Federico:Paoli:CA:1922-09-13:meccanico:
+MP200376:Michele:Paolino:ZA:1976-03-20:meccanico:
+SR020777:Salvatore:Russo:DZ:1977-07-02:meccanico:
+VG060932:Valerio:Giaquinto:DZ:1932-09-06:meccanico:
+AM270764:Anna:Moscato:ZA:1964-07-27:meccanico:
+MG011175:Michele:Giaquinto:ES:1975-11-01:meccanico:
+FC130365:Filomena:Cipriano:EN:1965-03-13:meccanico:
+GC010837:Giovanni:Cipriano:MA:1937-08-01:meccanico:
+LB150930:Luigi:Bennato:PL:1930-09-15:meccanico:
+GM270127:Gianna:Moscato:FR:1927-01-27:meccanico:
+MP100560:Massimo:Paolino:EN:1960-05-10:meccanico:
+NP030789:Nicola:Picariello:CA:1989-07-03:meccanico:
+VD241029:Vittorio:d'Acierno:IT:1929-10-24:meccanico:
+SL280330:Salvatore:Lionetti:CA:1930-03-28:meccanico:
+LW070340:Luigi:Wesson:PT:1940-03-07:meccanico:
+MC270494:Mariano:Canonico:US:1994-04-27:meccanico:
+MF110544:Michele:Faggiano:IT:1944-05-11:meccanico:
+SC171259:Salvatore:Cappella:IN:1959-12-17:meccanico:
+VG030829:Valentina:Guccini:ZA:1929-08-03:meccanico:
+LB220673:Loredana:Bianchi:PT:1973-06-22:meccanico:
+RC150537:Roberto:Cipriano:IT:1937-05-15:meccanico:
+GI231060:Gennaro:Iandolo:DA:1960-10-23:meccanico:
+LE110338:Loredana:Esposito:MA:1938-03-11:meccanico:
+CW170324:Ciccio:Wesson:ES:1924-03-17:meccanico:
+MM111281:Mario:Marcelli:ID:1981-12-11:meccanico:
+FV040269:Federico:Vietri:ZA:1969-02-04:meccanico:
+CP011256:Clelia:Paolino:PT:1956-12-01:meccanico:
+GP040729:Giovanni:Paolino:EG:1929-07-04:meccanico:
+MC120669:Marco:Caio:MA:1969-06-12:meccanico:
+AM051168:Alfonso:Moscato:DZ:1968-11-05:meccanico:
+VC110162:Vincenzo:Canonico:JN:1962-01-11:meccanico:
+LS310337:Luigi:Smith:IT:1937-03-31:meccanico:
+GB240775:Gianna:Bennato:PL:1975-07-24:meccanico:
+RG270659:Rosa:Giaquinto:ZA:1959-06-27:meccanico:
+VE011070:Vincenzo:Esposito:US:1970-10-01:meccanico:
+CD310890:Carmine:De Santo:US:1990-08-31:meccanico:
+RR230451:Roberto:Rossi:EG:1951-04-23:meccanico:
+CD031089:Ciccio:De Santo:PT:1989-10-03:meccanico:
+TC190959:Tiziana:Caio:ID:1959-09-19:meccanico:
+GF080792:Giuseppe:Faruolo:MA:1992-07-08:meccanico:
+MG200875:Mario:Guccini:KO:1975-08-20:meccanico:
+BF140460:Beatrice:Faruolo:CN:1960-04-14:meccanico:
+FG200839:Fiorella:Galdi:US:1939-08-20:meccanico:
+GD041048:Gianna:Di Marzio:TN:1948-10-04:meccanico:
+PC120545:Paolo:Canonico:ID:1945-05-12:meccanico:
+PC120596:Paolo:Coppola:DZ:1996-05-12:meccanico:
+GD300678:Giuseppe:De Santo:DE:1978-06-30:meccanico:
+PC050764:Pietro:Caio:GR:1964-07-05:meccanico:
+CS210340:Clelia:Sempronio:GR:1940-03-21:meccanico:
+GF120356:Giovanni:Faruolo:ID:1956-03-12:meccanico:
+VC080723:Vito:Cappella:TN:1923-07-08:meccanico:
+FP040777:Federico:Picariello:CH:1977-07-04:meccanico:
+SB200698:Stefano:Bennato:CA:1998-06-20:meccanico:
+AC300127:Antonio:Caio:EG:1927-01-30:meccanico:
+AG301021:Anna:Guccini:PL:1921-10-30:meccanico:
+EG260280:Ettore:Guccini:CN:1980-02-26:meccanico:
+RS070123:Rossella:Sempronio:JN:1923-01-07:meccanico:
+PD030285:Pietro:d'Acierno:JN:1985-02-03:meccanico:
+FP200371:Fiorella:Picariello:TN:1971-03-20:meccanico:
+VC250888:Vittorio:Chianese:ID:1988-08-25:meccanico:
+GG060781:Giovanni:Guccini:DA:1981-07-06:meccanico:
+CL130820:Carmine:Lionetti:GR:1920-08-13:meccanico:
+MC210397:Michele:Caio:TN:1997-03-21:meccanico:
+EC300446:Ettore:Coppola:EG:1946-04-30:meccanico:
+MC130532:Massimo:Canonico:KO:1932-05-13:meccanico:
+SV091062:Stefano:Vietri:US:1962-10-09:meccanico:
+CE260467:Clelia:Esposito:TN:1967-04-26:meccanico:
+PF150150:Pietro:Faggiano:ID:1950-01-15:meccanico:
+NB200451:Nicola:Bianchi:IT:1951-04-20:meccanico:
+MD251129:Michele:De Masi:DZ:1929-11-25:meccanico:
+MP030394:Michele:Paoli:ZA:1994-03-03:meccanico:
+GR110531:Gennaro:Russo:CN:1931-05-11:meccanico:
+AS270489:Alfonso:Smith:EN:1989-04-27:meccanico:
+BS180898:Beatrice:Sempronio:CN:1998-08-18:meccanico:
+FC251094:Fiorella:Chianese:EN:1994-10-25:meccanico:
+MD141126:Mario:De Santo:GR:1926-11-14:meccanico:
+SR160964:Sergio:Rossi:EN:1964-09-16:meccanico:
+LR220264:Luigi:Rossi:CH:1964-02-22:meccanico:
+FE121297:Fiorella:Esposito:JN:1997-12-12:meccanico:
+MP020520:Mario:Picariello:PT:1920-05-02:meccanico:
+RG170365:Roberto:Giaquinto:JN:1965-03-17:meccanico:
+MW080180:Michele:Wesson:ZA:1980-01-08:meccanico:
+MF250265:Massimo:Faggiano:CN:1965-02-25:meccanico:
+SC240941:Sergio:Cipriano:ID:1941-09-24:meccanico:
+EC170635:Enzo:Canonico:IT:1935-06-17:meccanico:
+CI131126:Ciccio:Iandolo:DZ:1926-11-13:meccanico:
+SE151275:Simone:Esposito:GR:1975-12-15:meccanico:
+GL210380:Giovanni:Lionetti:KO:1980-03-21:meccanico:
+VB230140:Valerio:Bianchi:DZ:1940-01-23:meccanico:
+TE100455:Tiziana:Esposito:GR:1955-04-10:meccanico:
+PC140267:Pietro:Cipriano:ES:1967-02-14:meccanico:
+LB180967:Loredana:Battiato:ZA:1967-09-18:meccanico:
+VG070736:Vincenzo:Galdi:EG:1936-07-07:meccanico:
+MG221173:Mario:Giaquinto:US:1973-11-22:meccanico:
+RC221267:Roberto:Cappella:TN:1967-12-22:meccanico:
+NB210526:Nicola:Battiato:CA:1926-05-21:meccanico:
+AB131236:Antonio:Battiato:TN:1936-12-13:meccanico:
+VF260588:Valerio:Faggiano:TN:1988-05-26:meccanico:
+TS051025:Tiziana:Smith:CA:1925-10-05:meccanico:
+RG250627:Roberto:Guccini:FR:1927-06-25:meccanico:
+CC120996:Clelia:Coppola:EN:1996-09-12:meccanico:
+AM070685:Antonio:Moscato:EN:1985-06-07:meccanico:
+PR210975:Paolo:Rossi:IT:1975-09-21:meccanico:
+NP130894:Nicola:Paoli:IR:1994-08-13:meccanico:
+FD060626:Francesco:De Santo:US:1926-06-06:meccanico:
+VG021255:Vincenzo:Giaquinto:DZ:1955-12-02:meccanico:
+SP040264:Sergio:Paoli:FR:1964-02-04:meccanico:
+SP240820:Salvatore:Paoli:CA:1920-08-24:meccanico:
+AC300631:Angelo:Coppola:MA:1931-06-30:meccanico:
+MC201072:Marco:Coppola:FR:1972-10-20:meccanico:
+SD280280:Stefano:De Masi:DE:1980-02-28:meccanico:
+AR220860:Alfonso:Rossi:JN:1960-08-22:meccanico:
+TC090259:Tiziana:Caio:CA:1959-02-09:meccanico:
+AD050948:Anna:De Masi:EN:1948-09-05:meccanico:
+NW130237:Nicola:Wesson:EG:1937-02-13:meccanico:
+VM120860:Vittorio:Moscato:CA:1960-08-12:meccanico:
+AR071047:Anna:Russo:MA:1947-10-07:meccanico:
+AD120256:Angelo:De Masi:JN:1956-02-12:meccanico:
+RI180938:Rossella:Iandolo:DE:1938-09-18:meccanico:
+RB090646:Roberto:Battiato:TN:1946-06-09:meccanico:
+FS260554:Francesco:Smith:EN:1954-05-26:meccanico:
+MB300657:Michele:Bennato:DZ:1957-06-30:meccanico:
+PB100148:Paolo:Bennato:GR:1948-01-10:meccanico:
+GR030693:Giuseppe:Russo:DE:1993-06-03:meccanico:
+CL181258:Carmine:Lionetti:DZ:1958-12-18:meccanico:
+GC150721:Giuseppe:Coppola:IT:1921-07-15:meccanico:
+GM120624:Giuseppe:Marcelli:DZ:1924-06-12:meccanico:
+AM260186:Antonio:Moscato:FR:1986-01-26:meccanico:
+VC120383:Vincenzo:Coppola:US:1983-03-12:meccanico:
+GC160582:Gianna:Cappella:CN:1982-05-16:meccanico:
+MM180386:Massimo:Marcelli:CA:1986-03-18:meccanico:
+MB011145:Michele:Bianchi:KO:1945-11-01:meccanico:
+EB090533:Enzo:Barrasso:TN:1933-05-09:meccanico:
+PE301065:Paolo:Esposito:EN:1965-10-30:meccanico:
+AG231036:Antonio:Galdi:CA:1936-10-23:meccanico:
+SB281178:Salvatore:Bennato:ES:1978-11-28:meccanico:
+VS170574:Valerio:Sempronio:IT:1974-05-17:meccanico:
+GC090546:Giovanni:Caio:IT:1946-05-09:meccanico:
+VC170672:Vittorio:Canonico:ZA:1972-06-17:meccanico:
+MD211276:Mario:De Santo:TN:1976-12-21:meccanico:
+VC130774:Vincenzo:Cappella:CA:1974-07-13:meccanico:
+SM221174:Sergio:Marcelli:CH:1974-11-22:meccanico:
+EC020357:Ettore:Caio:ID:1957-03-02:meccanico:
+LD210682:Luigi:Di Marzio:EG:1982-06-21:meccanico:
+MD150590:Marco:Di Marzio:EG:1990-05-15:meccanico:
+GV181245:Giovanni:Vietri:US:1945-12-18:meccanico:
+PB280120:Pietro:Barrasso:MA:1920-01-28:meccanico:
+VR270192:Valerio:Rossi:DZ:1992-01-27:meccanico:
+PD010567:Paolo:De Santo:CN:1967-05-01:meccanico:
+MG260771:Mario:Galdi:US:1971-07-26:meccanico:
+VE110861:Vittorio:Esposito:GR:1961-08-11:meccanico:
+MM250751:Mario:Marcelli:CH:1951-07-25:meccanico:
+RC170143:Rosa:Cipriano:EN:1943-01-17:meccanico:
+TD240362:Tiziano:De Simone:DZ:1962-03-24:meccanico:
+MG130895:Michele:Guccini:GR:1995-08-13:meccanico:
+GP050575:Giuseppe:Paoli:CH:1975-05-05:meccanico:
+VD130685:Vito:De Masi:FR:1985-06-13:meccanico:
+AC140538:Augusto:Cipriano:IR:1938-05-14:meccanico:
+MW271022:Massimo:Wesson:GR:1922-10-27:meccanico:
+NS230235:Nicola:Smith:DZ:1935-02-23:meccanico:
+LP131282:Luigi:Picariello:KO:1982-12-13:meccanico:
+CC030657:Clelia:Chianese:CA:1957-06-03:meccanico:
+TE040867:Tiziano:Esposito:IT:1967-08-04:meccanico:
+RM050769:Roberto:Moscato:IN:1969-07-05:meccanico:
+GB300460:Giuseppe:Barrasso:DZ:1960-04-30:meccanico:
+PD090645:Paolo:De Santo:CA:1945-06-09:meccanico:
+TE040742:Tiziana:Esposito:IR:1942-07-04:meccanico:
+VG030651:Vittorio:Galdi:CH:1951-06-03:meccanico:
+AR130868:Augusto:Russo:IR:1968-08-13:meccanico:
+VC240674:Vittorio:Coppola:FR:1974-06-24:meccanico:
+VG110591:Vittorio:Galdi:IR:1991-05-11:meccanico:
+MV040165:Michele:Vietri:ID:1965-01-04:meccanico:
+PP131058:Pietro:Paolino:DE:1958-10-13:meccanico:
+PP010620:Paola:Paolino:IR:1920-06-01:meccanico:
+VF061244:Vincenzo:Faggiano:DZ:1944-12-06:meccanico:
+TC101269:Tiziano:Coppola:KO:1969-12-10:meccanico:
+SM220980:Stefano:Marcelli:TN:1980-09-22:meccanico:
+PD180264:Paola:d'Acierno:DE:1964-02-18:meccanico:
+LC100589:Loredana:Cipriano:CA:1989-05-10:meccanico:
+TF280170:Tiziano:Faggiano:PL:1970-01-28:meccanico:
+VW210127:Vincenzo:Wesson:EG:1927-01-21:meccanico:
+LD040696:Loredana:Di Marzio:TN:1996-06-04:meccanico:
+FD210566:Fiorella:De Santo:ES:1966-05-21:meccanico:
+MF210959:Mariano:Faruolo:MA:1959-09-21:meccanico:
+NR170639:Nicola:Rossi:IR:1939-06-17:meccanico:
+TG290575:Tiziana:Giaquinto:ID:1975-05-29:meccanico:
+GF100636:Gennaro:Faggiano:PT:1936-06-10:meccanico:
+SD150843:Stefano:De Santo:DZ:1943-08-15:meccanico:
+GR201055:Giuseppe:Russo:GR:1955-10-20:meccanico:
+CC240689:Ciccio:Coppola:CH:1989-06-24:meccanico:
+SP140430:Stefano:Paolino:JN:1930-04-14:meccanico:
+MG050552:Mario:Giaquinto:DE:1952-05-05:meccanico:
+VC301174:Valentina:Caio:ES:1974-11-30:meccanico:
+GM120729:Gennaro:Moscato:GR:1929-07-12:meccanico:
+ME030491:Mario:Esposito:ZA:1991-04-03:meccanico:
+BD030975:Beatrice:Di Marzio:IN:1975-09-03:meccanico:
+RD070789:Rossella:Di Marzio:DA:1989-07-07:meccanico:
+MB091243:Massimo:Bennato:ZA:1943-12-09:meccanico:
+ED090924:Enzo:d'Acierno:TN:1924-09-09:meccanico:
+CR260429:Carmine:Russo:TN:1929-04-26:meccanico:
+VB130321:Vito:Battiato:CA:1921-03-13:meccanico:
+PD190472:Paolo:d'Acierno:EG:1972-04-19:meccanico:
+MG080727:Michele:Giaquinto:PT:1927-07-08:meccanico:
+NG171142:Nicola:Guccini:JN:1942-11-17:meccanico:
+BP151041:Beatrice:Paoli:KO:1941-10-15:meccanico:
+FG200965:Federico:Galdi:TN:1965-09-20:meccanico:
+VC111183:Vincenzo:Caio:US:1983-11-11:meccanico:
+MF300889:Marco:Faggiano:GR:1989-08-30:meccanico:
+MM281037:Massimo:Marcelli:FR:1937-10-28:meccanico:
+MC120576:Mario:Chianese:FR:1976-05-12:meccanico:
+PB081271:Paola:Battiato:TN:1971-12-08:meccanico:
+VD280488:Valentina:De Masi:EN:1988-04-28:meccanico:
+GP241131:Gianna:Picariello:CH:1931-11-24:meccanico:
+PV080452:Pietro:Vietri:ZA:1952-04-08:meccanico:
+GE040961:Giuseppe:Esposito:ES:1961-09-04:meccanico:
+MB180786:Michele:Bianchi:TN:1986-07-18:meccanico:
+NG160960:Nicola:Guccini:DE:1960-09-16:meccanico:
+GM200355:Giuseppe:Moscato:TN:1955-03-20:meccanico:
+ED300673:Ettore:Di Marzio:DE:1973-06-30:meccanico:
+GD280344:Giuseppe:De Santo:PT:1944-03-28:meccanico:
+VG020139:Vito:Guccini:FR:1939-01-02:meccanico:
+SR080593:Sergio:Rossi:EG:1993-05-08:meccanico:
+TG071274:Tiziana:Guccini:IN:1974-12-07:meccanico:
+GL271099:Giovanni:Lionetti:GR:1999-10-27:meccanico:
+AR040820:Angelo:Rossi:JN:1920-08-04:meccanico:
+FB251095:Filomena:Battiato:EN:1995-10-25:meccanico:
+GI130865:Giovanni:Iandolo:DE:1965-08-13:meccanico:
+PG080430:Paola:Galdi:KO:1930-04-08:meccanico:
+SC160680:Simone:Cappella:US:1980-06-16:meccanico:
+VF010597:Valerio:Faggiano:EG:1997-05-01:meccanico:
+SB230650:Sergio:Barrasso:ID:1950-06-23:meccanico:
+MC180729:Mariano:Caio:ID:1929-07-18:meccanico:
+GM151222:Gianna:Moscato:DA:1922-12-15:meccanico:
+GE220773:Gennaro:Esposito:ID:1973-07-22:meccanico:
+AC200779:Alfonso:Cappella:PL:1979-07-20:meccanico:
+PV150454:Paolo:Vietri:ZA:1954-04-15:meccanico:
+GC100257:Giuseppe:Cipriano:EN:1957-02-10:meccanico:
+AE201281:Angelo:Esposito:MA:1981-12-20:meccanico:
+FD200482:Fiorella:De Simone:TN:1982-04-20:meccanico:
+SC130336:Salvatore:Chianese:JN:1936-03-13:meccanico:
+PC110776:Paola:Cappella:EN:1976-07-11:meccanico:
+VC090567:Vincenzo:Cappella:FR:1967-05-09:meccanico:
+SP250890:Stefano:Paoli:PL:1990-08-25:meccanico:
+CC130173:Clelia:Coppola:DZ:1973-01-13:meccanico:
+VR120959:Valerio:Russo:PT:1959-09-12:meccanico:
+VD150894:Vittorio:De Simone:FR:1994-08-15:meccanico:
+VD301133:Vincenzo:De Santo:CN:1933-11-30:meccanico:
+CG080373:Clelia:Guccini:PL:1973-03-08:meccanico:
+CC300449:Clelia:Chianese:EG:1949-04-30:meccanico:
+CG230672:Ciccio:Giaquinto:DE:1972-06-23:meccanico:
+VF091034:Vito:Faruolo:ID:1934-10-09:meccanico:
+VC281029:Vito:Canonico:IR:1929-10-28:meccanico:
+VM260649:Vittorio:Moscato:ES:1949-06-26:meccanico:
+PW020483:Pietro:Wesson:FR:1983-04-02:meccanico:
+RC200841:Roberto:Coppola:US:1941-08-20:meccanico:
+GD020452:Gennaro:De Masi:ZA:1952-04-02:meccanico:
+GE251124:Giovanni:Esposito:MA:1924-11-25:meccanico:
+BF240973:Beatrice:Faggiano:IR:1973-09-24:meccanico:
+LL070721:Loredana:Lionetti:ID:1921-07-07:meccanico:
+RP111039:Rosa:Picariello:CA:1939-10-11:meccanico:
+GR100345:Gennaro:Rossi:IN:1945-03-10:meccanico:
+GF260291:Giuseppe:Faggiano:DA:1991-02-26:meccanico:
+AM110167:Angelo:Moscato:TN:1967-01-11:meccanico:
+SF220593:Stefano:Faruolo:ES:1993-05-22:meccanico:
+TS191048:Tiziano:Sempronio:IT:1948-10-19:meccanico:
+AF250725:Anna:Faggiano:GR:1925-07-25:meccanico:
+VC130920:Vito:Caio:IR:1920-09-13:meccanico:
+TP170340:Tiziana:Paoli:IT:1940-03-17:meccanico:
+LD151163:Luigi:d'Acierno:ES:1963-11-15:meccanico:
+MS220268:Massimo:Sempronio:IR:1968-02-22:meccanico:
+AB230447:Alfonso:Bianchi:PL:1947-04-23:meccanico:
+VB121122:Valerio:Battiato:CN:1922-11-12:meccanico:
+FS150286:Filomena:Smith:EN:1986-02-15:meccanico:
+AR041152:Augusto:Rossi:ES:1952-11-04:meccanico:
+ND260636:Nicola:Di Marzio:DE:1936-06-26:meccanico:
+SM141188:Simone:Moscato:EN:1988-11-14:meccanico:
+CG190932:Ciccio:Galdi:GR:1932-09-19:meccanico:
+RC270220:Rosa:Caio:DE:1920-02-27:meccanico:
+AI200280:Antonio:Iandolo:DZ:1980-02-20:meccanico:
+BB030984:Beatrice:Barrasso:CH:1984-09-03:meccanico:
+ML190568:Michele:Lionetti:IR:1968-05-19:meccanico:
+ME120133:Michele:Esposito:ID:1933-01-12:meccanico:
+TG140725:Tiziano:Guccini:JN:1925-07-14:meccanico:
+AW160875:Alfonso:Wesson:KO:1975-08-16:meccanico:
+RB271086:Roberto:Battiato:IR:1986-10-27:meccanico:
+GC211063:Gennaro:Cappella:FR:1963-10-21:meccanico:
+AC301242:Angelo:Chianese:DZ:1942-12-30:meccanico:
+GI181075:Gennaro:Iandolo:ID:1975-10-18:meccanico:
+VC060476:Vito:Coppola:IT:1976-04-06:meccanico:
+VI231126:Vincenzo:Iandolo:KO:1926-11-23:meccanico:
+VD270458:Vincenzo:De Simone:ES:1958-04-27:meccanico:
+PF060262:Paola:Faruolo:DA:1962-02-06:meccanico:
+TP031223:Tiziana:Paoli:DZ:1923-12-03:meccanico:
+FD170886:Francesco:De Santo:GR:1986-08-17:meccanico:
+RE260167:Roberto:Esposito:DE:1967-01-26:meccanico:
+SM170442:Salvatore:Marcelli:TN:1942-04-17:meccanico:
+AC140143:Alfonso:Chianese:ES:1943-01-14:meccanico:
+AD240188:Angelo:De Santo:DE:1988-01-24:meccanico:
+AL250328:Angelo:Lionetti:IR:1928-03-25:meccanico:
+GD250196:Gennaro:d'Acierno:ID:1996-01-25:meccanico:
+LC130186:Luigi:Cipriano:DA:1986-01-13:meccanico:
+LD100822:Luigi:De Simone:CN:1922-08-10:meccanico:
+CP221269:Clelia:Paolino:IR:1969-12-22:meccanico:
+FB111298:Francesco:Bennato:DA:1998-12-11:meccanico:
+AR130933:Angelo:Russo:PL:1933-09-13:meccanico:
+VD170925:Vittorio:De Santo:KO:1925-09-17:meccanico:
+AF230699:Angelo:Faruolo:JN:1999-06-23:meccanico:
+MG151045:Mariano:Giaquinto:CN:1945-10-15:meccanico:
+PD010580:Paolo:De Simone:KO:1980-05-01:meccanico:
+EC240538:Ettore:Chianese:ID:1938-05-24:meccanico:
+SI250396:Sergio:Iandolo:ID:1996-03-25:meccanico:

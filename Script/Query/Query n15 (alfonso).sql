@@ -46,4 +46,4 @@ create view PILOTI_VINCITORI_CONSECUTIVI(codice_pilota, numero_campionati_consec
 	from piloti as P
 	where P.codice_pilota not in (select SV.codice_pilota
 								from STORICO_VINCITORI as SV)
-								
+	order by numero_campionati_consecutivi desc;							

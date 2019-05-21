@@ -143,12 +143,12 @@ return NEW;
 end $$ language plpgsql;
 											   
 create trigger AGGIORNAMENTO_CAMPIONATO
-after insert on campionati
+before insert on campionati
 for each row
 execute procedure AGGIORNAMENTO_CAMPIONATO();
 
 
-trigger per controllare la corretta cancellazione dai risultati_attuali
+--trigger per controllare la corretta cancellazione dai risultati_attuali
 create or replace function CONTROLLO_CANCELLAZIONE_RISULTATI() returns trigger as $$
 declare
 	ultima_giornata_tmp int;

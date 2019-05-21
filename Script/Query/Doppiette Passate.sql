@@ -1,5 +1,5 @@
 --Il numero di volte in cui i piloti della scuderia hanno fatto prima e seconda posizione nella stessa gara 
-select nome_scuderia,count(*)
+select nome_scuderia,count(*)/2 as "Numero Doppiette"
 from	    (select codice_pilota,sede_pista,nome_pista,numero_campionato
 			from risultati_passati
 			where punteggio = 26 or punteggio = 25
@@ -9,4 +9,3 @@ from	    (select codice_pilota,sede_pista,nome_pista,numero_campionato
 			where punteggio = 19 or punteggio = 18) as CP, afferenza_piloti as AP
 where cp.codice_pilota=ap.codice_pilota and cp.numero_campionato=ap.numero_campionato
 group by nome_scuderia
-

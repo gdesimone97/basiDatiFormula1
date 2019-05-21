@@ -1,6 +1,6 @@
-LN131199:Lando:Norris:Inglese:1999-11-13:0:1:0:
-AG141293:Antonio:Giovinazzi:Italiano:1993-12-14:0:1:0:
-DK260494:Daniil:Kvyat:Russo:1994-04-26:0:1:0:
-AA230396:Alexander:Albon:Inglese:1996-03-23:0:1:0:
-RK071284:Robert:Kubica:Polacco:1984-12-07:0:1:0:
-GR150298:George:Russell:Inglese:1998-02-15:0:1:0:
+LN131199:Lando:Norris:EN:1999-11-13:0:1:0:
+AG141293:Antonio:Giovinazzi:IT:1993-12-14:0:1:0:
+DK260494:Daniil:Kvyat:RU:1994-04-26:0:1:0:
+AA230396:Alexander:Albon:EN:1996-03-23:0:1:0:
+RK071284:Robert:Kubica:PL:1984-12-07:0:1:0:
+GR150298:George:Russell:EN:1998-02-15:0:1:0:

@@ -20,7 +20,7 @@ create view CLASSIFICA_COSTRUTTORI_ATTUALE (nome_scuderia, punteggio) as
 -- le due viste "passate" vengono ricalcolate ogni volta che il campionato termina
 -- (ovvero dopo che il trigger sposta i 420 risultati_attuali in risultati_passati) (operazione costosa ma fatta 1 V/A)
 
-create view CLASSIFICHE_PILOTI_PASSATI(numero_campionato, codice_pilota, punteggio) as 
+create view CLASSIFICHE_PILOTI_PASSATI(numero_campionato, codice_pilota,nome_pilota,cognome_pilota, punteggio) as 
 	select numero_campionato, p.codice_pilota, P.nome_pilota, P.cognome_pilota, sum(punteggio) as punti
 	from risultati_passati as A join piloti as P on (A.codice_pilota = P.codice_pilota)
 	group by numero_campionato, p.codice_pilota

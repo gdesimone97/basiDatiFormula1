@@ -129,7 +129,7 @@ begin
 	update scuderie
     set num_campionati_vinti = num_campionati_vinti +1
 							    											   
-	where nome_scuderia =   (select nome_scudeia
+	where nome_scuderia =   (select nome_scuderia
 							 from CLASSIFICA_COSTRUTTORI_ATTUALE
 							 where punti = (select max(punti)
 							  			    from CLASSIFICA_COSTRUTTORI_ATTUALE ));

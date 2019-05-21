@@ -111,14 +111,14 @@ referencing new table as NUOVI_RISULTATI
 for each statement
 execute procedure AGGIORNAMENTO_RISULTATI();
 
--- query per aggiornare campionati
+-- trigger per aggiornare i vincitori del campionato e trasferire i risultati_attuali in risultati_passati
 create or replace function AGGIORNAMENTO_CAMPIONATO() returns trigger as $$
 begin	
-	if(((select max(numero_campionto) from campionati) = new.numero_campionato-1)  
+	if(((select max(numero_campionato) from campionati) = new.numero_campionato-1)  
 	and ( 420 <= (select count(*) from risultati_attuali)))
 	then
 	
-	update Piloti
+	update piloti
 	set titoli_vinti =  titoli_vinti +1
 			   			
 	where codice_pilota =  (select codice_pilota
@@ -147,3 +147,31 @@ create trigger AGGIORNAMENTO_CAMPIONATO
 after insert on campionati
 for each statement
 execute procedure AGGIORNAMENTO_CAMPIONATO()
+
+
+-- trigger per controllare la corretta cancellazione dai risultati_attuali
+create or replace function CONTROLLO_CANCELLAZIONE_RISULTATI() returns trigger as $$
+declare
+	ultima_giornata_tmp int;
+	giornata_cancellata int;
+begin
+	select max(C.numero_giornata) into numero_giornata_tmp
+	from risultati_attuali as RA join calendario as C
+	where RA.sede_pista = C.sede_pista and RA.nome_pista = C.nome_pista and RA.numero_campionato = C.numero_campionato;
+	
+	select C.numero_giornata into giornata_cancellata
+	from calendario as C
+	where C.nome_pista = NEW.nome_pista and C.sede_pista = NEW.sede_pista  and C.numero_campionato = NEW.num_campionato;
+	
+	if(ultima_giornata_tmp <> giornata_cancellata)
+		then raise exception 'Tentata cancellazione di una giornata passata.';
+	else
+		delete from risultati_attuali
+		where nome_pista = NEW.nome_pista and sede_pista = NEW.sede_pista  and numero_campionato = NEW.num_campionato;
+		
+end $$ language plpgsql;
+
+create trigger CONTROLLO_CANCELLAZIONE_RISULTATI
+before delete on risultati_attuali
+for each row
+execute procedure CONTROLLO_CANCELLAZIONE_RISULTATI()

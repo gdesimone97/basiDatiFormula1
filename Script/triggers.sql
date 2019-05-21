@@ -161,13 +161,13 @@ begin
 	
 	select C.numero_giornata into giornata_cancellata
 	from calendario as C
-	where C.nome_pista = OLD.nome_pista and C.sede_pista = OLD.sede_pista  and C.numero_campionato = OLD.num_campionato;
+	where C.nome_pista = OLD.nome_pista and C.sede_pista = OLD.sede_pista  and C.numero_campionato = OLD.numero_campionato;
 	
 	if(ultima_giornata_tmp <> giornata_cancellata)
 		then raise exception 'Tentata cancellazione di una giornata passata.';
 	else
 		delete from risultati_attuali
-		where nome_pista = OLD.nome_pista and sede_pista = OLD.sede_pista  and numero_campionato = OLD.num_campionato;
+		where nome_pista = OLD.nome_pista and sede_pista = OLD.sede_pista  and numero_campionato = OLD.numero_campionato;
 	end if;
 return OLD;
 end $$ language plpgsql;

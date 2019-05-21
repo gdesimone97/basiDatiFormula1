@@ -1,7 +1,7 @@
 drop trigger if exists CONTROLLO_CARDINALITA_PERSONALE on personale cascade;
 drop trigger if exists CONTROLLO_CARDINALITA_SCUDERIE on scuderie cascade;
 drop trigger if exists CONTROLLO_AMMINISTRATORE on dirigenza cascade;
-drop trigger if exists CONTROLLO_PUNTEGGI on risutlati cascade;
+drop trigger if exists CONTROLLO_PUNTEGGI on risultati_attuali cascade;
 
 -- trigger per esprimere la cardinalità minima 1 su scuderie
 create or replace function CONTROLLO_CARDINALITA_SCUDERIE() returns trigger as $$
@@ -61,28 +61,29 @@ begin
 		then raise exception 'Numero risultati non corretto.';
 	end if;
 	-- controllare che siano tutti dello stesso campionato e sulla stessa pista
-	if ( not exists (
-			select *
+	if ( 0 = (
+			select count(*)
 			from NUOVI_RISULTATI
 			group by numero_campionato, sede_pista, nome_pista
 			having count(*) = 20 ))
 		then raise exception 'Inseriti risultati su più giornate.';
 	end if;
 	-- controllare che non ci siano punteggi ripetuti (tranne 0)
-	if( exists (
-			select *
+	if ( exists (
+			select '', '', '', ''
 			from NUOVI_RISULTATI
 			where punteggio <> 0
 			group by punteggio
-			having count(*) > 1))
+			having count(*) > 1
+			) )
 		then raise exception 'Inseriti punteggi ripetuti.';
 	end if;
 	
 	-- aggiornamento record della pista
 	if( (select min(miglior_tempo)
-		from NUOVI_RISULTATI) < (select giro_veloce
-								from piste
-								where sede_pista = NUOVI_RISULTATI.sede_pista and nome_pista = NUOVI_RISULTATI.nome_pista)
+		from NUOVI_RISULTATI) < (select distinct giro_veloce
+								from piste p, NUOVI_RISULTATI n
+								where p.sede_pista = n.sede_pista and p.nome_pista = n.nome_pista)
 	   )						  
 	then
 		update piste

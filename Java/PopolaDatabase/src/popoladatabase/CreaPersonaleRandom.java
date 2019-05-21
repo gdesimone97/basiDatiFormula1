@@ -79,7 +79,7 @@ public class CreaPersonaleRandom {
         maleNames.add("Valerio");
         maleNames.add("Enzo");
         maleNames.add("Marco");
-        maleNames.add("Vito");
+        maleNames.add("Lello");
         maleNames.add("Salvatore");
         maleNames.add("Augusto");
         maleNames.add("Ciccio");
@@ -130,7 +130,7 @@ public class CreaPersonaleRandom {
         surNames.add("Di Marzio");
         surNames.add("Vietri");
         surNames.add("Cappella");
-        surNames.add("Lionetti");
+        surNames.add("Deghello");
         surNames.add("Iandolo");
     }
 

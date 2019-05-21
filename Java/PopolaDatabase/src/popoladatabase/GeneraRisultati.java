@@ -97,6 +97,7 @@ public class GeneraRisultati {
                     out.newLine();
                 }
                 System.out.println("GIORNATA INSERITA\n");
+				System.out.println("Siam Lello Deghello le tue scarpine oh yeah\n");
                 out.close();
                 cont++;
             }

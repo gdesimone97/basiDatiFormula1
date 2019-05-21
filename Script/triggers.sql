@@ -115,7 +115,7 @@ execute procedure AGGIORNAMENTO_RISULTATI();
 create or replace function AGGIORNAMENTO_CAMPIONATO() returns trigger as $$
 begin	
 	if(exists(select * from campionati where numero_campionato = new.numero_campionato-1)  
-	and ( 60 <= (select count(*) from risultati_attuali)))
+	and ( 420 <= (select count(*) from risultati_attuali)))
 	then
 	
 	update piloti

@@ -2,6 +2,7 @@ drop trigger if exists CONTROLLO_CARDINALITA_PERSONALE on personale cascade;
 drop trigger if exists CONTROLLO_CARDINALITA_SCUDERIE on scuderie cascade;
 drop trigger if exists CONTROLLO_AMMINISTRATORE on dirigenza cascade;
 drop trigger if exists CONTROLLO_PUNTEGGI on risultati_attuali cascade;
+drop trigger if exists AGGIORNAMENTO_CAMPIONATO on campionati cascade;
 
 -- trigger per esprimere la cardinalità minima 1 su scuderie
 create or replace function CONTROLLO_CARDINALITA_SCUDERIE() returns trigger as $$
@@ -109,3 +110,40 @@ after insert on risultati_attuali
 referencing new table as NUOVI_RISULTATI
 for each statement
 execute procedure AGGIORNAMENTO_RISULTATI();
+
+-- query per aggiornare campionati
+create or replace function AGGIORNAMENTO_CAMPIONATO() returns trigger as $$
+begin	
+	if(((select max(numero_campionto) from campionati) = new.numero_campionato-1)  
+	and ( 420 <= (select count(*) from risultati_attuali)))
+	then
+	
+	update Piloti
+	set titoli_vinti =  titoli_vinti +1
+			   			
+	where codice_pilota =  (select codice_pilota
+							from risultati_attuali
+							where punteggio = (select max(punteggio)
+											   from risultati_attuali));
+											   
+	update scuderie
+    set num_campionati_vinti = num_campionati_vinti +1
+							    											   
+	where nome_scuderia =   (select nome_scudeia
+							 from CLASSIFICA_COSTRUTTORI_ATTUALE
+							 where punti = (select max(punti)
+							  			    from CLASSIFICA_COSTRUTTORI_ATTUALE ));
+	
+											
+											
+	insert into risultati_passati select * from risultati_attuali;
+	delete from risultati_attuali;
+	
+end if;
+return NEW;
+end $$ language plpgsql;
+											   
+create trigger AGGIORNAMENTO_CAMPIONATO
+after insert on campionati
+for each statement
+execute procedure AGGIORNAMENTO_CAMPIONATO()

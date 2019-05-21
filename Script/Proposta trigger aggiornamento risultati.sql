@@ -1,7 +1,8 @@
 -- query per aggiornare punteggi passati
 create or replace function AGGIORNAMENTO_TITOLI() returns trigger as $$
 begin	
-	if((select max(numero_campionto) from campionati) = new.numero_campionato-1)  
+	if(((select max(numero_campionto) from campionati) = new.numero_campionato-1)  
+	and ( 420 <= (select count(*) from risultati_attuali)))
 	then
 	
 	update Piloti
@@ -19,6 +20,11 @@ begin
 							 from CLASSIFICA_COSTRUTTORI_ATTUALE
 							 where punti = (select max(punti)
 							  			    from CLASSIFICA_COSTRUTTORI_ATTUALE ));
+	
+											
+											
+	insert into risultati_passati select * from risultati_attuali;
+	delete from risultati_attuali;
 end if;
 return NEW;
 end $$ language plpgsql;

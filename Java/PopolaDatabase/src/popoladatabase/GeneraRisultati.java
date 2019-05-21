@@ -54,25 +54,24 @@ public class GeneraRisultati {
             num = Integer.parseInt(sc.nextLine());
             System.out.print("Da quale giornata vuoi inserire? ");
             inizio = Integer.parseInt(sc.nextLine());
-            
 
             BufferedWriter out = new BufferedWriter(new FileWriter(nomeFile, true));
 
             //PER OGNI PILOTA:
             while (cont < num) {
-                pst.setInt(2, inizio+cont);
+                pst.setInt(2, inizio + cont);
                 for (int i = 0; i < 20; i++) {
                     ResultSet rs = pst.executeQuery();
-                    if(rs.next()) {
+                    if (rs.next()) {
                         out.write(rs.getString("sede_pista") + ":");
                         out.write(rs.getString("nome_pista") + ":");
                     }
-                    
+
                     System.out.print("Codice Pilota: ");
                     out.write(sc.nextLine() + ":");
-                    
+
                     out.write((campionato) + ":");
-                    
+
                     System.out.print("Punteggio: ");
                     punteggio = Integer.parseInt(sc.nextLine());
                     out.write(punteggio + ":");
@@ -84,11 +83,16 @@ public class GeneraRisultati {
                     System.out.print("Tempo Qualifica (mm:ss:lll): ");
                     out.write(sc.nextLine() + ":");
 
-                    if (punteggio == 0 & tempoms.compareTo("0:0:0") == 0) {
-                        out.write("1:");
-                    } else {
-                        out.write("0:");
+                    if (punteggio == 0) {
+                        System.out.print("Pilota ritirato [0/1]: ");
+                        if (Integer.parseInt(sc.nextLine()) == 1) {
+                            out.write("0:");
+                        } else {
+                            out.write("1:");
+                        }
                     }
+                    else out.write("0:");
+                    
                     System.out.println("PILOTA INSERITO\n");
                     out.newLine();
                 }

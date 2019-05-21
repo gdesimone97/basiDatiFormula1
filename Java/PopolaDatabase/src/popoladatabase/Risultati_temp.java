@@ -5,9 +5,7 @@
  */
 package popoladatabase;
 
-import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -15,23 +13,24 @@ import java.util.Scanner;
 
 /**
  *
- * @author Mariano Esposito
+ * @author 1997g
  */
 public class Risultati_temp {
 
     private static PreparedStatement pst = null;
     private static PreparedStatement pst2 = null;
     private static PreparedStatement pst3 = null;
+    private static PreparedStatement pst4 = null;
+    
 
-    public static void insert(Connection conn, String nomeFile) throws SQLException, FileNotFoundException, FineException {
+    public static void insert(Connection conn, Scanner sc) throws SQLException, FileNotFoundException, FineException {
         if (pst == null) {
             pst = conn.prepareStatement("insert into Risultati_t "
                     + "(Sede_Pista, Nome_Pista, Codice_Pilota, Numero_Campionato, Punteggio, Miglior_Tempo, Tempo_Qualifica, Ritiro) "
                     + "values (?, ?, ?, ?, ?, ?, ?, ?);");
         }
         if (pst2 == null) {
-            pst2 = conn.prepareStatement("insert into risultati select * from risultati_t");
-
+            pst2 = conn.prepareStatement("insert into risultati_attuali select * from risultati_t");
         }
         if (pst3 == null) {
             pst3 = conn.prepareStatement("create temporary table if not exists Risultati_t ("
@@ -42,18 +41,20 @@ public class Risultati_temp {
                     + "   PUNTEGGIO            INT                  not null,"
                     + "   MIGLIOR_TEMPO        TempoGiro            null,"
                     + "   TEMPO_QUALIFICA      TempoGiro            null,"
-                    + "   RITIRO             BOOL               	 not null);");
+                    + "   RITIRO               BOOL                 not null);");
+        }
+        if (pst4 == null) {
+            pst4 = conn.prepareStatement("delete from risultati_t");
+
         }
 
-        Scanner sc = new Scanner(new BufferedReader(new FileReader(nomeFile)));
-        sc.useDelimiter(":");
         int minuti;
         int secondi;
         int millisecondi;
         int tempoms;
         int cont = 0;
 
-        while (sc.hasNext()) {
+        while (sc.hasNext() & cont < 20) {
             pst.setString(1, sc.next());
             pst.setString(2, sc.next());
             pst.setString(3, sc.next());
@@ -85,11 +86,18 @@ public class Risultati_temp {
 
             cont++;
         }
+        
+        //trasferisco i risultati da Risultati_t a Risultati_attuali
         pst2.executeUpdate();
+        
+        //cancello tutte le righe di Risultati_t
+        pst4.executeUpdate();
+        
+        //se il file ha raggiunto la Fine, restituisce eccezione
         if (cont == 0) {
             throw new FineException();
         }
-
     }
+
 
 }

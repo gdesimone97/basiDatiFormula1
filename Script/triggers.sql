@@ -114,7 +114,7 @@ execute procedure AGGIORNAMENTO_RISULTATI();
 -- query per aggiornare campionati
 create or replace function AGGIORNAMENTO_CAMPIONATO() returns trigger as $$
 begin	
-	if(((select max(numero_campionto) from campionati) = new.numero_campionato-1)  
+	if(((select max(numero_campionato) from campionati) = new.numero_campionato-1)  
 	and ( 420 <= (select count(*) from risultati_attuali)))
 	then
 	

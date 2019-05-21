@@ -248,18 +248,15 @@ public class PopolaFormula1 {
                     System.out.println();
                     x++;
                 }
-
-                System.out.print("INSERISCI NUMERO DI CAMPIONATO (END PER USCIRE): ");
+                
+                //INSERISCO L'AFFERENZA PILOTI PER QUESTO CAMPIONATO
+                AfferenzaPiloti.insert(conn, "afferenzapiloti" + numCampionato + ".txt");
+                System.out.println("Ho inserito le afferenze piloti per le scuderie del campionato " + numCampionato);
+                System.out.print("\nINSERISCI NUMERO DI CAMPIONATO (END PER USCIRE): ");
                 risp = scIn.nextLine();
                 x=0;
             }
 
-//******INSERIMENTO AFFERENZA PILOTI
-            AfferenzaPiloti.insert(conn, "afferenzapiloti2018.txt");
-            System.out.println("Afferenze Piloti 2018 Inserite");
-            
-            AfferenzaPiloti.insert(conn, "afferenzapiloti2019.txt");
-            System.out.println("Afferenze Piloti 2019 Inserite");
 
             conn.commit();
 

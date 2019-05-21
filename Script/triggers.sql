@@ -52,7 +52,11 @@ for each row
 execute procedure CONTROLLO_AMMINISTRATORE();
 				   
 -- trigger per controllare che i punteggi dei risultati inseriti di una giornata non siano sovrapposti
-create or replace function CONTROLLO_PUNTEGGI() returns trigger as $$
+create or replace function AGGIORNAMENTO_RISULTATI() returns trigger as $$
+declare
+	miglior_tempo_TMP int;
+	sede_pista_TMP varchar(50);
+	nome_pista_TMP varchar(50);
 begin
 	-- controllare che ci siano 20 risultati
 	if( 20 <> (	select count(*)
@@ -80,23 +84,28 @@ begin
 	end if;
 	
 	-- aggiornamento record della pista
-	if( (select min(miglior_tempo)
-		from NUOVI_RISULTATI) < (select distinct giro_veloce
+	select distinct sede_pista into sede_pista_TMP
+	from NUOVI_RISULTATI;
+	select distinct nome_pista into nome_pista_TMP
+	from NUOVI_RISULTATI;
+	select min(miglior_tempo) into miglior_tempo_TMP
+		from NUOVI_RISULTATI;
+	if( miglior_tempo_TMP < (select distinct giro_veloce
 								from piste p, NUOVI_RISULTATI n
 								where p.sede_pista = n.sede_pista and p.nome_pista = n.nome_pista)
 	   )						  
 	then
+		
 		update piste
-		set giro_veloce =  (select min(miglior_tempo)
-			  				from NUOVI_RISULTATI)
-		where sede_pista = NUOVI_RISULTATI.sede_pista and nome_pista = NUOVI_RISULTATI.nome_pista;
+		set giro_veloce =  miglior_tempo_TMP
+		where sede_pista = sede_pista_TMP and nome_pista = nome_pista_TMP;
 	end if;
 			   
 return NULL;
 end $$ language plpgsql;
 
-create trigger CONTROLLO_PUNTEGGI
+create trigger AGGIORNAMENTO_RISULTATI
 after insert on risultati_attuali
 referencing new table as NUOVI_RISULTATI
 for each statement
-execute procedure CONTROLLO_PUNTEGGI();
+execute procedure AGGIORNAMENTO_RISULTATI();

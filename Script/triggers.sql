@@ -155,8 +155,8 @@ declare
 	ultima_giornata_tmp int;
 	giornata_cancellata int;
 begin
-	select max(C.numero_giornata) into numero_giornata_tmp
-	from risultati_attuali as RA join calendario as C
+	select max(C.numero_giornata) into ultima_giornata_tmp
+	from risultati_attuali as RA , calendario as C
 	where RA.sede_pista = C.sede_pista and RA.nome_pista = C.nome_pista and RA.numero_campionato = C.numero_campionato;
 	
 	select C.numero_giornata into giornata_cancellata

@@ -173,6 +173,7 @@ return OLD;
 end $$ language plpgsql;
 
 create trigger CONTROLLO_CANCELLAZIONE_RISULTATI
-before delete on risultati_attuali
+after delete on risultati_attuali
 for each row
+WHEN (pg_trigger_depth() < 1)
 execute procedure CONTROLLO_CANCELLAZIONE_RISULTATI()

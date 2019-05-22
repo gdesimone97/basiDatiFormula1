@@ -17,7 +17,7 @@ from	(select nazionalita
 		having count(*)=2) as t2   
 group by nazionalita;			
 	 
-select nazionalita, max(vittorie)				 
+select nazionalita, max(vittorie) as "Numero Vittorie"				 
 from NAZIONALITA_VINCITRICI
 where vittorie = (select max(vittorie)
 				  from NAZIONALITA_VINCITRICI)

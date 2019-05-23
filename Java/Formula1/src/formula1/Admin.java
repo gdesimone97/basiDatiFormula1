@@ -35,8 +35,8 @@ public class Admin {
      * @param user
      * @param password
      * @return
-     * @throws SQLException
-     * @throws AdminLoginFailed 
+     * @throws SQLException Eventuali errori di connessione
+     * @throws AdminLoginFailed Nome utente e password admin errati
      */
     public static Admin adminConnection(String user, String password) throws SQLException, AdminLoginFailed {
         if (user.compareTo(USER_ADMIN)==0 && pass.compareTo(PASS_ADMIN)==0) {

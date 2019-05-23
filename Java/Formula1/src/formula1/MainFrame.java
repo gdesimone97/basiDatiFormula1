@@ -5,12 +5,9 @@
  */
 package formula1;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.JTableHeader;
@@ -23,9 +20,6 @@ import javax.swing.table.TableModel;
  */
 public class MainFrame extends javax.swing.JFrame {
 
-    private static String url = "jdbc:postgresql://localhost:5432/prova";
-    private static Connection conn;
-    private static Statement stm;
     private PreparedStatement pstSelezionaPilota;
     private PreparedStatement pstSelezionaScuderia;
 
@@ -39,12 +33,6 @@ public class MainFrame extends javax.swing.JFrame {
         aggiornaTabellaScuderie();
         settaTabellaScuderie();
 
-        
-        //TUTTE LE QUERY
-        pstSelezionaPilota = conn.prepareStatement("select * from piloti where codice_pilota = "
-                + "(select codice_pilota from classifica_piloti_attuale offset ? limit 1)");
-        pstSelezionaScuderia = conn.prepareStatement("select * from scuderie where codice_scuderia = "
-                + "(select codice_scuderia from classifica_costruttori_attuali offset ? limit 1)");
     }
 
     private void settaTabellaPiloti() {
@@ -64,7 +52,7 @@ public class MainFrame extends javax.swing.JFrame {
         TableModel model = tablePiloti.getModel();
         int riga = 0;
 
-        ResultSet classifica = Query.getClassificaPiloti();
+        ResultSet classifica = Query.getClassificaPilotiAttuale();
 
         while (classifica.next()) {
             model.setValueAt(riga + 1, riga, 0);
@@ -91,8 +79,7 @@ public class MainFrame extends javax.swing.JFrame {
         TableModel model = tableScuderie.getModel();
         int riga = 0;
 
-        stm = conn.createStatement();
-        ResultSet classifica = stm.executeQuery("select * from classifica_costruttori_attuale");
+        ResultSet classifica = Query.getClassificaScuderieAttuale();
 
         while (classifica.next()) {
             model.setValueAt(riga + 1, riga, 0);
@@ -457,8 +444,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void tablePilotiMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablePilotiMouseReleased
         try {
-            pstSelezionaPilota.setInt(1, tablePiloti.getSelectedRow());
-            ResultSet rst = pstSelezionaPilota.executeQuery();
+            ResultSet rst = Query.selezionaPilota(tablePiloti.getSelectedRow());
 
             while (rst.next()) {
                 nomeTextField.setText(rst.getString("nome_pilota"));
@@ -481,9 +467,8 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void tableScuderieMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableScuderieMouseReleased
         try {
-            pstSelezionaScuderia.setInt(1, tableScuderie.getSelectedRow());
-            ResultSet rst = pstSelezionaScuderia.executeQuery();
-            pstAfferenzaScuderia.setString();
+            ResultSet rst = Query.selezionaScuderia(tableScuderie.getSelectedRow());
+//            pstAfferenzaScuderia.setString();
 
             while (rst.next()) {
                 nomeScuderiaTextField.setText(rst.getString("nome_pilota"));
@@ -525,14 +510,6 @@ public class MainFrame extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        try {
-            Class.forName("org.postgresql.Driver");
-            conn = DriverManager.getConnection(url, "utente_generico", "password");
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

@@ -6,7 +6,6 @@
 package formula1;
 
 import java.awt.event.WindowEvent;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;

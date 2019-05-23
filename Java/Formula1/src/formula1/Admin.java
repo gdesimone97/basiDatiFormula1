@@ -86,7 +86,7 @@ public class Admin {
         return pst.executeUpdate();
     }
     
-    public int aggingiPersonale(String codicePersonale,String nomePersonale,String cognomePersonale,String nazionalitaPersonale,Date date,String professione) throws SQLException{
+    public int aggiungiPersonale(String codicePersonale,String nomePersonale,String cognomePersonale,String nazionalitaPersonale,Date date,String professione) throws SQLException{
         String q="insert into personale values(?,?,?,?,?,?)";
         PreparedStatement pst=conn.prepareStatement(q);
         pst.setString(1, codicePersonale);

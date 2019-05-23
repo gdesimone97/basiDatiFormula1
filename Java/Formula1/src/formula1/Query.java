@@ -19,7 +19,7 @@ import java.sql.Statement;
 public class Query {
 
     private String query;
-    private static final String url = "jdbc:postgresql://localhost/pr3ova";
+    private static final String url = "jdbc:postgresql://localhost/prova";
     private static final String user = "utente_generico";
     private static final String pass = "password";
     private static Connection conn;

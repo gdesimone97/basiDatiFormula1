@@ -18,7 +18,7 @@ import java.sql.Statement;
  */
 public class Query {
 
-    private static final String url = "jdbc:postgresql://192.168.1.164/prova";
+    private static final String url = "jdbc:postgresql://localhost/prova";
     private static String user = "utente_generico";
     private static String pass = "password";
     private static Connection conn;

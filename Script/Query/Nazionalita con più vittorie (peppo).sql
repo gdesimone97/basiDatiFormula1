@@ -8,13 +8,14 @@ create temporary view NAZIONALITA_VINCITRICI (nazionalita,vittorie) as
 				from CLASSIFICHE_PILOTI_PASSATI C join piloti P on (c.codice_pilota = p.codice_pilota)
 				where punteggio = any (select max(punteggio)
 									   from CLASSIFICHE_PILOTI_PASSATI)
-
+				group by numero_campionato
 				union all
 
 				select s.nazionalita_scuderia
 				from CLASSIFICHE_COSTRUTTORI_PASSATE C join scuderie as S on (c.nome_scuderia = s.nome_scuderia)
 				where punteggio = any (select max(punteggio)
-									   from CLASSIFICHE_COSTRUTTORI_PASSATE)) as t1
+									   from CLASSIFICHE_COSTRUTTORI_PASSATE)
+				group by numero_campionato					               ) as t1
 		group by nazionalita;			   	
 
 --Predo la scuderia con il maggior numero di vittorie	 

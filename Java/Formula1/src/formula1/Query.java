@@ -96,8 +96,8 @@ public class Query {
             System.out.println("Parametro errato nel metodo: \"selezionaAfferenza\" ");
         }
         PreparedStatement pstSelezionaAfferenza=conn.prepareStatement(q);
-        pstSelezionaPilota.setInt(1, x);
-        return pstSelezionaPilota.executeQuery();
+        pstSelezionaAfferenza.setInt(1, x);
+        return pstSelezionaAfferenza.executeQuery();
     }
 
 }

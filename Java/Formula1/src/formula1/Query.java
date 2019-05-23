@@ -70,5 +70,14 @@ public class Query {
         pstSelezionaPilota.setInt(1, x);
         return pstSelezionaPilota.executeQuery();
     }
-
+        public static ResultSet selezionaScuderia(int x) throws SQLException {
+        String q = "select * from scuderie where codice_scuderia = "
+                + "(select codice_scuderia from classifica_costruttori_attuali offset ? limit 1)";
+        if (pstSelezionaPilota == null) {
+            pstSelezionaPilota=conn.prepareStatement(q);
+        }
+        pstSelezionaPilota.setInt(1, x);
+        return pstSelezionaPilota.executeQuery();
+    }
+    
 }

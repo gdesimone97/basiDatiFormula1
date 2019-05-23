@@ -18,13 +18,14 @@ import java.sql.Statement;
  */
 public class Query {
 
-    private String query;
     private static final String url = "jdbc:postgresql://192.168.1.164/prova";
     private static final String user = "utente_generico";
     private static final String pass = "password";
     private static Connection conn;
 
     private static PreparedStatement pstSelezionaPilota = null;
+    private static PreparedStatement pstSelezionaScuderia = null;
+    private static PreparedStatement pstSelezionaPilota2 = null;
 
     public Query() {
 
@@ -68,8 +69,9 @@ public class Query {
 
     public static ResultSet selezionaPilota(String x) throws SQLException {
         String q = "select * from piloti where codice_pilota = ?";
-
-        PreparedStatement pstSelezionaPilota2 = conn.prepareStatement(q);
+        if (pstSelezionaPilota2 == null) {
+            pstSelezionaPilota2 = conn.prepareStatement(q);
+        }
         pstSelezionaPilota2.setString(1, x);
         return pstSelezionaPilota2.executeQuery();
     }
@@ -77,11 +79,11 @@ public class Query {
     public static ResultSet selezionaScuderia(int x) throws SQLException {
         String q = "select * from scuderie where nome_scuderia = "
                 + "(select nome_scuderia from classifica_costruttori_attuale offset ? limit 1)";
-        if (pstSelezionaPilota == null) {
-            pstSelezionaPilota = conn.prepareStatement(q);
+        if (pstSelezionaScuderia == null) {
+            pstSelezionaScuderia = conn.prepareStatement(q);
         }
-        pstSelezionaPilota.setInt(1, x);
-        return pstSelezionaPilota.executeQuery();
+        pstSelezionaScuderia.setInt(1, x);
+        return pstSelezionaScuderia.executeQuery();
     }
 
     public static ResultSet selezionaAfferenza(int x) throws SQLException {

@@ -41,7 +41,7 @@ public class Query {
         return stm.executeQuery(q);
     }
     
-    public static ResultSet getClassificaPilotiPassati() throws SQLException{
+    public static ResultSet getClassifichePilotiPassati() throws SQLException{
         String q = "select * from CLASSIFICHE_PILOTI_PASSATI";
         return conn.createStatement().executeQuery(q);
     }
@@ -50,10 +50,12 @@ public class Query {
         String q = "select * from CLASSIFICA_COSTRUTTORI_ATTUALE";
         return conn.createStatement().executeQuery(q);
     }
-     public static ResultSet getClassificaScuderiePassate() throws SQLException{
+     public static ResultSet getClassificheScuderiePassate() throws SQLException{
         String q = "select * from CLASSIFICHE_COSTRUTTORI_PASSATE";
         return conn.createStatement().executeQuery(q);
     }
+     
+     
 }
 
 

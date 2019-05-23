@@ -9,13 +9,13 @@ package formula1;
  *
  * @author desio
  */
-public class AdminLoginFailed extends Exception {
+public class TempoGiro {
 
-    /**
-     * Creates a new instance of <code>AdminLoginFailed</code> without detail
-     * message.
-     */
-    public AdminLoginFailed() {
+    private TempoGiro() {
     }
 
+    public static int generaGiro(int minuti,int secondi,int mSecondi){
+        return (minuti*60+secondi)*100+mSecondi;
+    }
+     
 }

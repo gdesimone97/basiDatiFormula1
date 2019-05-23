@@ -1,5 +1,5 @@
 --La nazione che ha avuto più piloti e scuderie campioni 
-
+create temporary view NAZIONALITA_VINCITRICI (nazionalita,vittorie) as
 select nazionalita,count(*)
 from	(select nazionalita
 		 from	(select c.numero_campionato, p.nazionalita
@@ -15,4 +15,10 @@ from	(select nazionalita
 									   from CLASSIFICHE_COSTRUTTORI_PASSATE)) as t1
 		group by nazionalita,numero_campionato					   
 		having count(*)=2) as t2   
-group by nazionalita					   
+group by nazionalita;			
+	 
+select nazionalita, max(vittorie) as "Numero Vittorie"				 
+from NAZIONALITA_VINCITRICI
+where vittorie = (select max(vittorie)
+				  from NAZIONALITA_VINCITRICI)
+group by nazionalita

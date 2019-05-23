@@ -1,7 +1,7 @@
 --La nazione che ha avuto più piloti e scuderie campioni 
 
 create temporary view NAZIONALITA_VINCITRICI (nazionalita,vittorie) as
--- Raggruppando per nazionalita e campionato controllo che le nazionalita di piloti e scuderie coincidano
+-- Raggruppando per nazionalita conto le occorrenze della stessa
 		 select nazionalita, count(*)
 		 from	(-- Leggo la scuderia e il pilota che hanno vinto i campionati passati
 				select p.nazionalita
@@ -15,7 +15,7 @@ create temporary view NAZIONALITA_VINCITRICI (nazionalita,vittorie) as
 				from CLASSIFICHE_COSTRUTTORI_PASSATE C join scuderie as S on (c.nome_scuderia = s.nome_scuderia)
 				where punteggio = any (select max(punteggio)
 									   from CLASSIFICHE_COSTRUTTORI_PASSATE)) as t1
-		group by nazionalita			   	
+		group by nazionalita;			   	
 
 --Predo la scuderia con il maggior numero di vittorie	 
 select nazionalita, max(vittorie) as "Numero Vittorie"				 

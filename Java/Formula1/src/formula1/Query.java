@@ -49,7 +49,7 @@ public class Query {
         return conn.createStatement().executeQuery(q);
     }
 
-    public static ResultSet getClassificaScuderieAttual() throws SQLException {
+    public static ResultSet getClassificaScuderieAttuale() throws SQLException {
         String q = "select * from CLASSIFICA_COSTRUTTORI_ATTUALE";
         return conn.createStatement().executeQuery(q);
     }
@@ -58,5 +58,7 @@ public class Query {
         String q = "select * from CLASSIFICHE_COSTRUTTORI_PASSATE";
         return conn.createStatement().executeQuery(q);
     }
+    
+    public static ResultSet selezionaPilota()
 
 }

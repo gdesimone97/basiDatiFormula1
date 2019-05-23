@@ -11,8 +11,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -36,7 +34,7 @@ public class Query {
         try {
             conn = DriverManager.getConnection(url, user, pass);
         } catch (SQLException ex) {
-            Logger.getLogger(Query.class.getName()).log(Level.SEVERE, null, ex);
+            ;
         }
     }
 
@@ -82,7 +80,7 @@ public class Query {
 
     public static ResultSet selezionaScuderia(int x) throws SQLException {
         String q = "select * from scuderie where codice_scuderia = "
-                + "(select codice_scuderia from classifica_costruttori_attuali offset ? limit 1)";
+                + "(select nome_scuderia from classifica_costruttori_attuali offset ? limit 1)";
         if (pstSelezionaPilota == null) {
             pstSelezionaPilota = conn.prepareStatement(q);
         }
@@ -95,9 +93,9 @@ public class Query {
         if (x >= 0 && x <= 19) {
             q += "where codice_pilota = (select codice_pilota form CLASSIFICA_PILOTA_ATTUALE offset ? limit 1)";
         } else if (x >= 20 && x <= 29) {
-            q += "where codice_pilota = (select codice_pilota form CLASSIFICA_SCUDERIA_ATTUALE offset ? limit 1)";
+            q += "where codice_pilota = (select nome_scuderia form CLASSIFICA_SCUDERIA_ATTUALE offset ? limit 1)";
         } else {
-            System.out.println("Parametro passato errato nel metodo: \"selezionaAfferenza\" ");
+            System.out.println("Parametro errato nel metodo: \"selezionaAfferenza\" ");
         }
         pstSelezionaPilota.setInt(1, x);
         return pstSelezionaPilota.executeQuery();

@@ -24,7 +24,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     public MainFrame() {
         initComponents();
-        
+
         try {
             Query.InitConnection();
 
@@ -413,10 +413,10 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(afferenzaScuderiaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(afferenza1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(afferenza2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addComponent(afferenza1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(afferenza2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(84, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout ScuderiaPanelLayout = new javax.swing.GroupLayout(ScuderiaPanel);
@@ -489,15 +489,19 @@ public class MainFrame extends javax.swing.JFrame {
                 nomeScuderiaTextField.setText(rstScuderia.getString("nome_scuderia"));
                 nazionalitaScuderiaTextField.setText(rstScuderia.getString("nazionalita_scuderia"));
                 titoliScuderiaTextField.setText(rstScuderia.getString("num_campionati_vinti"));
-
-                afferenzaScuderiaLabel.setText("A questa scuderia afferiscono: ");
-                while (rstAfferenza.next()) {
-                    ResultSet rstPilota = Query.selezionaPilota(rstAfferenza.getString("codice_pilota"));
-                    while (rstPilota.next()) {
-                        afferenza1Label.setText(rstPilota.getString("nome_pilota") + " " + rstPilota.getString("cognome_pilota"));
-                    }
-                }
             }
+            
+            afferenzaScuderiaLabel.setText("A questa scuderia afferiscono: ");
+            rstAfferenza.next();
+            ResultSet rstPilota = Query.selezionaPilota(rstAfferenza.getString("codice_pilota"));
+            rstPilota.next();
+            afferenza1Label.setText(rstPilota.getString("nome_pilota") + " " + rstPilota.getString("cognome_pilota"));
+
+            rstAfferenza.next();
+
+            rstPilota = Query.selezionaPilota(rstAfferenza.getString("codice_pilota"));
+            rstPilota.next();
+            afferenza2Label.setText(rstPilota.getString("nome_pilota") + " " + rstPilota.getString("cognome_pilota"));
 
         } catch (SQLException ex) {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);

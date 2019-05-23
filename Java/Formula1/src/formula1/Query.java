@@ -24,7 +24,7 @@ public class Query {
     private static final String pass = "password";
     private static Connection conn;
 
-    private static PreparedStatement pstSelezionaPilota;
+    private static PreparedStatement pstSelezionaPilota=null;
 
     public Query() {
 

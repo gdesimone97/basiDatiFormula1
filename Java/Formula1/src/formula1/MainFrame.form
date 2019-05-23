@@ -289,7 +289,7 @@
                           <Component id="classificaScuderiaPanel" alignment="0" max="32767" attributes="0"/>
                           <Component id="infoScuderiaPanel" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="11" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="25" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -358,13 +358,9 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="nazionalitaLabel1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
                               <Component id="afferenzaScuderiaLabel" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
@@ -380,6 +376,14 @@
                                       <Component id="nazionalitaScuderiaTextField" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="nazionalitaLabel1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="afferenza1Label" alignment="0" min="-2" pref="137" max="-2" attributes="0"/>
+                                      <Component id="afferenza2Label" alignment="0" min="-2" pref="137" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -401,8 +405,12 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="titoliScuderiaTextField" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="afferenzaScuderiaLabel" min="-2" pref="68" max="-2" attributes="0"/>
-                          <EmptySpace pref="109" max="32767" attributes="0"/>
+                          <Component id="afferenzaScuderiaLabel" min="-2" pref="22" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="afferenza1Label" min="-2" pref="23" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="afferenza2Label" min="-2" pref="23" max="-2" attributes="0"/>
+                          <EmptySpace pref="73" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -442,6 +450,10 @@
                     <Property name="editable" type="boolean" value="false"/>
                     <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="afferenza1Label">
+                </Component>
+                <Component class="javax.swing.JLabel" name="afferenza2Label">
                 </Component>
               </SubComponents>
             </Container>

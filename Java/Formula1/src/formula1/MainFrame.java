@@ -5,11 +5,13 @@
  */
 package formula1;
 
+import java.awt.event.WindowEvent;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableColumnModel;
 import javax.swing.table.TableModel;
@@ -20,19 +22,22 @@ import javax.swing.table.TableModel;
  */
 public class MainFrame extends javax.swing.JFrame {
 
-    private PreparedStatement pstSelezionaPilota;
-    private PreparedStatement pstSelezionaScuderia;
-
-    public MainFrame() throws SQLException {
+    public MainFrame() {
         initComponents();
-
         
-        //SETTO LE CLASSIFICHE
-        aggiornaTabellaPiloti();
-        settaTabellaPiloti();
-        aggiornaTabellaScuderie();
-        settaTabellaScuderie();
+        try {
+            Query.InitConnection();
 
+            //SETTO LE CLASSIFICHE
+            aggiornaTabellaPiloti();
+            aggiornaTabellaScuderie();
+            settaTabellaPiloti();
+            settaTabellaScuderie();
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Errore di connessione");
+            this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+        }
     }
 
     private void settaTabellaPiloti() {
@@ -41,7 +46,7 @@ public class MainFrame extends javax.swing.JFrame {
         columnModel.getColumn(1).setPreferredWidth(160);
         columnModel.getColumn(2).setPreferredWidth(30);
         tablePiloti.setColumnModel(columnModel);
-        
+
         JTableHeader tableheader = tablePiloti.getTableHeader();
         tableheader.setResizingAllowed(false);
         tableheader.setReorderingAllowed(false);
@@ -61,20 +66,20 @@ public class MainFrame extends javax.swing.JFrame {
             riga++;
         }
     }
-    
+
     private void settaTabellaScuderie() {
         TableColumnModel columnModel = tableScuderie.getColumnModel();
         columnModel.getColumn(0).setPreferredWidth(1);
         columnModel.getColumn(1).setPreferredWidth(160);
         columnModel.getColumn(2).setPreferredWidth(30);
         tableScuderie.setColumnModel(columnModel);
-        
+
         JTableHeader tableheader = tableScuderie.getTableHeader();
         tableheader.setResizingAllowed(false);
         tableheader.setReorderingAllowed(false);
         tableScuderie.setTableHeader(tableheader);
     }
-    
+
     private void aggiornaTabellaScuderie() throws SQLException {
         TableModel model = tableScuderie.getModel();
         int riga = 0;
@@ -122,6 +127,8 @@ public class MainFrame extends javax.swing.JFrame {
         nomeScuderiaTextField = new javax.swing.JTextField();
         nazionalitaScuderiaTextField = new javax.swing.JTextField();
         titoliScuderiaTextField = new javax.swing.JTextField();
+        afferenza1Label = new javax.swing.JLabel();
+        afferenza2Label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -369,9 +376,6 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(infoScuderiaPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(infoScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(infoScuderiaPanelLayout.createSequentialGroup()
-                        .addComponent(nazionalitaLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(afferenzaScuderiaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, infoScuderiaPanelLayout.createSequentialGroup()
                         .addGroup(infoScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -383,7 +387,13 @@ public class MainFrame extends javax.swing.JFrame {
                                     .addComponent(titoliLabel1))
                                 .addGap(0, 194, Short.MAX_VALUE))
                             .addComponent(nazionalitaScuderiaTextField, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addGroup(infoScuderiaPanelLayout.createSequentialGroup()
+                        .addGroup(infoScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nazionalitaLabel1)
+                            .addComponent(afferenza1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(afferenza2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         infoScuderiaPanelLayout.setVerticalGroup(
             infoScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -401,8 +411,12 @@ public class MainFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(titoliScuderiaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(afferenzaScuderiaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addComponent(afferenzaScuderiaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(afferenza1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(afferenza2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout ScuderiaPanelLayout = new javax.swing.GroupLayout(ScuderiaPanel);
@@ -421,7 +435,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(ScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(classificaScuderiaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(infoScuderiaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addGap(0, 25, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Scuderie", ScuderiaPanel);
@@ -467,15 +481,22 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void tableScuderieMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableScuderieMouseReleased
         try {
-            ResultSet rst = Query.selezionaScuderia(tableScuderie.getSelectedRow());
-//            pstAfferenzaScuderia.setString();
+            int x = tableScuderie.getSelectedRow();
+            ResultSet rstScuderia = Query.selezionaScuderia(x);
+            ResultSet rstAfferenza = Query.selezionaAfferenza(x + 20);
 
-            while (rst.next()) {
-                nomeScuderiaTextField.setText(rst.getString("nome_pilota"));
-                nazionalitaScuderiaTextField.setText(rst.getString("nazionalita"));
-                titoliScuderiaTextField.setText(rst.getString("titoli_vinti"));
+            while (rstScuderia.next()) {
+                nomeScuderiaTextField.setText(rstScuderia.getString("nome_scuderia"));
+                nazionalitaScuderiaTextField.setText(rstScuderia.getString("nazionalita_scuderia"));
+                titoliScuderiaTextField.setText(rstScuderia.getString("num_campionati_vinti"));
 
-                afferenzaScuderiaLabel.setText("A questa scuderia afferiscono:");
+                afferenzaScuderiaLabel.setText("A questa scuderia afferiscono: ");
+                while (rstAfferenza.next()) {
+                    ResultSet rstPilota = Query.selezionaPilota(rstAfferenza.getString("codice_pilota"));
+                    while (rstPilota.next()) {
+                        afferenza1Label.setText(rstPilota.getString("nome_pilota") + " " + rstPilota.getString("cognome_pilota"));
+                    }
+                }
             }
 
         } catch (SQLException ex) {
@@ -510,14 +531,9 @@ public class MainFrame extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                try {
-                    new MainFrame().setVisible(true);
-                } catch (SQLException ex) {
-                    Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                new MainFrame().setVisible(true);
             }
         });
 
@@ -526,6 +542,8 @@ public class MainFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PilotaPanel;
     private javax.swing.JPanel ScuderiaPanel;
+    private javax.swing.JLabel afferenza1Label;
+    private javax.swing.JLabel afferenza2Label;
     private javax.swing.JLabel afferenzaScuderiaLabel;
     private javax.swing.JPanel classificaPilotaPanel;
     private javax.swing.JPanel classificaScuderiaPanel;

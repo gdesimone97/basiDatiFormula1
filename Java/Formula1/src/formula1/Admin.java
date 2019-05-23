@@ -46,6 +46,7 @@ public class Admin {
         throw new AdminLoginFailed();
     }
 
+    //Per inserire la data usare il metodo statico della classe Date: Date.valueOf
     public int aggiungiPilota(String codicePilota, String nomePilota, String cognomePilota, String nazionalita, Date date, int titoliVinti, boolean attivo, int dataRitiro) throws SQLException {
         String q = "inser into piloti values(?,?;?,?,?,?,?,?)";
         PreparedStatement pst = conn.prepareStatement(q);
@@ -69,6 +70,7 @@ public class Admin {
         return pst.executeUpdate();
     }
 
+    // per inserire tempoGiro usrare il metodo statico della classe Tempogiro: TempoGiro.generaGiro
     public int aggiungiPista(String sedePista, String nomePista, int lunghezza, int numeroCureve, TempoGiro giro, int annoInaugurazione) throws SQLException {
         String q = "insert into piste values(?,?,?,?,?,?)";
         PreparedStatement pst = conn.prepareStatement(q);
@@ -81,6 +83,7 @@ public class Admin {
         return pst.executeUpdate();
     }
 
+    //Per inserire la data usare il metodo statico della classe Date: Date.valueOf
     public int aggiungiPersonale(String codicePersonale, String nomePersonale, String cognomePersonale, String nazionalitaPersonale, Date date, String professione) throws SQLException {
         String q = "insert into personale values(?,?,?,?,?,?)";
         PreparedStatement pst = conn.prepareStatement(q);
@@ -92,10 +95,11 @@ public class Admin {
         pst.setString(6, professione);
         return pst.executeUpdate();
     }
-    
-    public int aggiungiCampionato(int numeroCampionato,Date dataInizio,Date dataFine,String motore,String gomme) throws SQLException{
-        String q="insert into campionati values(?,?,?,?,?)";
-        PreparedStatement pst=conn.prepareStatement(q);
+
+    //Per inserire la data usare il metodo statico della classe Date: Date.valueOf
+    public int aggiungiCampionato(int numeroCampionato, Date dataInizio, Date dataFine, String motore, String gomme) throws SQLException {
+        String q = "insert into campionati values(?,?,?,?,?)";
+        PreparedStatement pst = conn.prepareStatement(q);
         pst.setInt(1, numeroCampionato);
         pst.setDate(2, dataInizio);
         pst.setDate(3, dataFine);
@@ -103,5 +107,5 @@ public class Admin {
         pst.setString(5, gomme);
         return pst.executeUpdate();
     }
-    
+
 }

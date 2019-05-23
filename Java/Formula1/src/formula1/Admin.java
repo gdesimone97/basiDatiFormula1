@@ -10,8 +10,6 @@ import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.time.LocalDate;
 
 /**
  *
@@ -43,7 +41,7 @@ public class Admin {
      * @throws AdminLoginFailed Nome utente e password admin errati
      */
     public static Admin adminConnection(String user, String password) throws SQLException, AdminLoginFailed {
-        if (user.compareTo(USER_ADMIN)==0 && pass.compareTo(PASS_ADMIN)==0) {
+        if (user.compareTo(USER_ADMIN)==0 && password.compareTo(PASS_ADMIN)==0) {
             conn=DriverManager.getConnection(URL, user, password);
             Admin superUser=new Admin(user, password);
             return superUser;
@@ -97,5 +95,7 @@ public class Admin {
         pst.setString(6, professione);
         return pst.executeUpdate();
     }
+    
+    
     
 }

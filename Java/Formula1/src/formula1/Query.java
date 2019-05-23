@@ -86,7 +86,7 @@ public class Query {
     }
 
     public static ResultSet selezionaAfferenza(int x) throws SQLException {
-        String q = "select * from afferenza_personale ";
+        String q = "select * from afferenza_piloti ";
         if (x >= 0 && x <= 19) {
             q += "where codice_pilota = (select codice_pilota form CLASSIFICA_PILOTA_ATTUALE offset ? limit 1)";
         } else if (x >= 20 && x <= 29) {

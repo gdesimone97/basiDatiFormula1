@@ -42,7 +42,6 @@ public class GeneraRisultati {
             int punteggio;
             String tempoms;
             int inizio;
-            String nomeFile = "risultati.txt";
 
             Scanner sc = new Scanner(System.in);
             sc.useDelimiter(":");
@@ -54,6 +53,8 @@ public class GeneraRisultati {
             num = Integer.parseInt(sc.nextLine());
             System.out.print("Da quale giornata vuoi inserire? ");
             inizio = Integer.parseInt(sc.nextLine());
+            
+            String nomeFile = "risultati" + Integer.toString(1950+Integer.parseInt(campionato)) + ".txt"; 
 
             BufferedWriter out = new BufferedWriter(new FileWriter(nomeFile, true));
 

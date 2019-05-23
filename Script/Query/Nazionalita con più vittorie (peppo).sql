@@ -4,14 +4,14 @@ create temporary view NAZIONALITA_VINCITRICI (nazionalita,vittorie) as
 -- Raggruppando per nazionalita e campionato controllo che le nazionalita di piloti e scuderie coincidano
 		 select nazionalita, count(*)
 		 from	(-- Leggo la scuderia e il pilota che hanno vinto i campionati passati
-				select c.numero_campionato, p.nazionalita
+				select p.nazionalita
 				from CLASSIFICHE_PILOTI_PASSATI C join piloti P on (c.codice_pilota = p.codice_pilota)
 				where punteggio = any (select max(punteggio)
 									   from CLASSIFICHE_PILOTI_PASSATI)
 
 				union all
 
-				select c.numero_campionato, s.nazionalita_scuderia
+				select s.nazionalita_scuderia
 				from CLASSIFICHE_COSTRUTTORI_PASSATE C join scuderie as S on (c.nome_scuderia = s.nome_scuderia)
 				where punteggio = any (select max(punteggio)
 									   from CLASSIFICHE_COSTRUTTORI_PASSATE)) as t1

@@ -19,7 +19,7 @@ import java.sql.Statement;
 public class Query {
 
     private String query;
-    private static final String url = "jdbc:postgresql://localhost/prova";
+    private static final String url = "jdbc:postgresql://192.168.1.164/prova";
     private static final String user = "utente_generico";
     private static final String pass = "password";
     private static Connection conn;
@@ -88,13 +88,14 @@ public class Query {
     public static ResultSet selezionaAfferenza(int x) throws SQLException {
         String q = "select * from afferenza_piloti ";
         if (x >= 0 && x <= 19) {
-            q += "where codice_pilota = (select codice_pilota form CLASSIFICA_PILOTA_ATTUALE offset ? limit 1)";
+            q += "where codice_pilota = (select codice_pilota from CLASSIFICA_PILOTA_ATTUALE offset ? limit 1)";
         } else if (x >= 20 && x <= 29) {
             x = x - 20;
-            q += "where nome_scuderia = (select nome_scuderia form CLASSIFICA_COSTRUTTORI_ATTUALE offset ? limit 1)";
+            q += "where nome_scuderia = (select nome_scuderia from CLASSIFICA_COSTRUTTORI_ATTUALE offset ? limit 1)";
         } else {
             System.out.println("Parametro errato nel metodo: \"selezionaAfferenza\" ");
         }
+        PreparedStatement pstSelezionaAfferenza=conn.prepareStatement(q);
         pstSelezionaPilota.setInt(1, x);
         return pstSelezionaPilota.executeQuery();
     }

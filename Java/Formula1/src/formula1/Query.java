@@ -79,7 +79,7 @@ public class Query {
     }
 
     public static ResultSet selezionaScuderia(int x) throws SQLException {
-        String q = "select * from scuderie where codice_scuderia = "
+        String q = "select * from scuderie where nome_scuderia = "
                 + "(select nome_scuderia from classifica_costruttori_attuali offset ? limit 1)";
         if (pstSelezionaPilota == null) {
             pstSelezionaPilota = conn.prepareStatement(q);

@@ -18,9 +18,9 @@ import java.sql.Statement;
  */
 public class Query {
 
-    private static final String url = "jdbc:postgresql://localhost/prova";
-    private static String user = "utente_generico";
-    private static String pass = "password";
+    private static final String URL = "jdbc:postgresql://localhost/prova";
+    private static final String USER = "utente_generico";
+    private static final String PASS = "password";
     private static Connection conn;
 
     private static PreparedStatement pstSelezionaPilota = null;
@@ -32,7 +32,7 @@ public class Query {
     }
 
     public static void InitConnection() throws SQLException {
-        conn = DriverManager.getConnection(url, user, pass);
+        conn = DriverManager.getConnection(URL, USER, PASS);
 
     }
 

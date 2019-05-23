@@ -19,15 +19,13 @@ public class Admin {
 
     private static final String USER_ADMIN = "postgres";
     private static final String PASS_ADMIN = "abc123";
-    private static String  user;
-    private static String  pass;
     private static final String URL = "jdbc:postgresql://localhost/prova";
     private static Connection conn;
-    
-    private Admin(String user, String pass){
-        this.user = user;
-        this.pass = pass;
+
+    private Admin() {
     }
+    
+
 
     /**
      * Il metodo prende in input nome untente e password e controlla
@@ -43,7 +41,7 @@ public class Admin {
     public static Admin adminConnection(String user, String password) throws SQLException, AdminLoginFailed {
         if (user.compareTo(USER_ADMIN)==0 && password.compareTo(PASS_ADMIN)==0) {
             conn=DriverManager.getConnection(URL, user, password);
-            Admin superUser=new Admin(user, password);
+            Admin superUser=new Admin();
             return superUser;
         }
         throw new AdminLoginFailed();

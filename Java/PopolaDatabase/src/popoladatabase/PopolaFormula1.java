@@ -117,8 +117,10 @@ public class PopolaFormula1 {
             scMeccanico.useDelimiter(":");
             Scanner scStaffMuretto = new Scanner(new BufferedReader(new FileReader("staffmuretto.txt")));
             scStaffMuretto.useDelimiter(":");
-            Scanner scRisultati = new Scanner(new BufferedReader(new FileReader("risultati.txt")));
-            scRisultati.useDelimiter(":");
+            Scanner scRisultati2018 = new Scanner(new BufferedReader(new FileReader("risultati2018.txt")));
+            scRisultati2018.useDelimiter(":");
+            Scanner scRisultati2019 = new Scanner(new BufferedReader(new FileReader("risultati2019.txt")));
+            scRisultati2019.useDelimiter(":");
 
             
 //******SVUOTAMENTO DATABASE
@@ -137,23 +139,22 @@ public class PopolaFormula1 {
             Piloti.insert(conn, "piloti 2018.txt");
             System.out.println("Piloti Inseriti");
 
-//******INSERIMENTO CAMPIONATI
-            Campionati.insert(conn, "campionati.txt");
-            System.out.println("Campionati Inseriti");
+//******INSERIMENTO CAMPIONATO 2018
+            Campionati.insert(conn, "campionati2018.txt");
+            System.out.println("Campionato 2018 Inserito");
 
-//******INSERIMENTO CALENDARIO
+//******INSERIMENTO CALENDARIO 2018
             Calendario.insert(conn, "calendario2018.txt");
-            Calendario.insert(conn, "calendario2019.txt");
-            System.out.println("Calendario Inserito");
+            System.out.println("Calendario 2018 Inserito");
 
-//******INSERIMENTO RISULTATI
+//******INSERIMENTO RISULTATI 2018
             Scanner scIn = new Scanner(System.in);
             System.out.print("Caricare risultati da file? [S/N] : ");
             String risposta = scIn.nextLine();
             
             while (true) {
                 if (risposta.toUpperCase().compareTo("S") == 0) {
-                    Risultati_temp.insert(conn, scRisultati);
+                    Risultati_temp.insert(conn, scRisultati2018);
                     System.out.print("Risultati Inseriti, vuoi caricare un'altra giornata? [S/N]: ");
                     risposta = scIn.nextLine();
                 } else if (risposta.toUpperCase().compareTo("N") == 0) {
@@ -164,11 +165,44 @@ public class PopolaFormula1 {
                 }
             }
 
+            System.out.println();
+            System.out.println();
+
+//******INSERIMENTO CAMPIONATO 2019
+            Campionati.insert(conn, "campionati2019.txt");
+            System.out.println("Campionato 2019 Inserito");
+
+//******INSERIMENTO CALENDARIO 2019
+            Calendario.insert(conn, "calendario2019.txt");
+            System.out.println("Calendario 2019 Inserito");
+            
+            conn.commit();
+
+//******INSERIMENTO RISULTATI 2019
+            System.out.print("Caricare risultati da file? [S/N] : ");
+            risposta = scIn.nextLine();
+            
+            while (true) {
+                if (risposta.toUpperCase().compareTo("S") == 0) {
+                    Risultati_temp.insert(conn, scRisultati2019);
+                    System.out.print("Risultati Inseriti, vuoi caricare un'altra giornata? [S/N]: ");
+                    risposta = scIn.nextLine();
+                } else if (risposta.toUpperCase().compareTo("N") == 0) {
+                    break;
+                } else {
+                    System.out.print("Risposta non valida, reinserisci: ");
+                    risposta = scIn.nextLine();
+                }
+            }
+            
+            Calendario.insert(conn, "calendario2019.txt");
+            System.out.println("Calendario 2018 Inserito");
+
             conn.commit();
 
             System.out.println();
-            System.out.println();
-
+            System.out.println();       
+     
 //******INSERIMENTO DI SCUDERIE E PERSONALE
             System.out.print("INSERISCI NUMERO DI CAMPIONATO (END PER USCIRE): ");
             String risp = scIn.nextLine();

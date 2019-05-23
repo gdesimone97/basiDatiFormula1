@@ -68,11 +68,10 @@ public class Query {
 
     public static ResultSet selezionaPilota(String x) throws SQLException {
         String q = "select * from piloti where codice_pilota = ?";
-        if (pstSelezionaPilota == null) {
-            pstSelezionaPilota = conn.prepareStatement(q);
-        }
-        pstSelezionaPilota.setString(1, x);
-        return pstSelezionaPilota.executeQuery();
+
+        PreparedStatement pstSelezionaPilota2 = conn.prepareStatement(q);
+        pstSelezionaPilota2.setString(1, x);
+        return pstSelezionaPilota2.executeQuery();
     }
 
     public static ResultSet selezionaScuderia(int x) throws SQLException {
@@ -95,7 +94,7 @@ public class Query {
         } else {
             System.out.println("Parametro errato nel metodo: \"selezionaAfferenza\" ");
         }
-        PreparedStatement pstSelezionaAfferenza=conn.prepareStatement(q);
+        PreparedStatement pstSelezionaAfferenza = conn.prepareStatement(q);
         pstSelezionaAfferenza.setInt(1, x);
         return pstSelezionaAfferenza.executeQuery();
     }

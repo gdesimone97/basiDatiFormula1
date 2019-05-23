@@ -7,6 +7,7 @@ package formula1;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -17,7 +18,6 @@ import java.util.logging.Logger;
  *
  * @author desio
  */
-
 public class Query {
 
     private String query;
@@ -25,6 +25,8 @@ public class Query {
     private static final String user = "utente_generico";
     private static final String pass = "password";
     private static Connection conn;
+
+    private static PreparedStatement pstSelezionaPilota;
 
     public Query() {
 
@@ -58,7 +60,15 @@ public class Query {
         String q = "select * from CLASSIFICHE_COSTRUTTORI_PASSATE";
         return conn.createStatement().executeQuery(q);
     }
-    
-    public static ResultSet selezionaPilota()
+
+    public static ResultSet selezionaPilota(int x) throws SQLException {
+        String q = "select * from piloti where codice_pilota = "
+                + "(select codice_pilota from classifica_piloti_attuale offset ? limit 1)";
+        if (pstSelezionaPilota == null) {
+            pstSelezionaPilota=conn.prepareStatement(q);
+        }
+        pstSelezionaPilota.setInt(1, x);
+        return pstSelezionaPilota.executeQuery();
+    }
 
 }

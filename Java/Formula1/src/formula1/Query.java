@@ -65,30 +65,42 @@ public class Query {
         String q = "select * from piloti where codice_pilota = "
                 + "(select codice_pilota from classifica_piloti_attuale offset ? limit 1)";
         if (pstSelezionaPilota == null) {
-            pstSelezionaPilota=conn.prepareStatement(q);
+            pstSelezionaPilota = conn.prepareStatement(q);
         }
         pstSelezionaPilota.setInt(1, x);
         return pstSelezionaPilota.executeQuery();
     }
-        public static ResultSet selezionaScuderia(int x) throws SQLException {
+
+    public static ResultSet selezionaPilota(String x) throws SQLException {
+        String q = "select * from piloti where codice_pilota = ?";
+        if (pstSelezionaPilota == null) {
+            pstSelezionaPilota = conn.prepareStatement(q);
+        }
+        pstSelezionaPilota.setString(1, x);
+        return pstSelezionaPilota.executeQuery();
+    }
+
+    public static ResultSet selezionaScuderia(int x) throws SQLException {
         String q = "select * from scuderie where codice_scuderia = "
                 + "(select codice_scuderia from classifica_costruttori_attuali offset ? limit 1)";
         if (pstSelezionaPilota == null) {
-            pstSelezionaPilota=conn.prepareStatement(q);
+            pstSelezionaPilota = conn.prepareStatement(q);
         }
         pstSelezionaPilota.setInt(1, x);
         return pstSelezionaPilota.executeQuery();
     }
-        
-       public static ResultSet selezionaAfferenza(int x) throws SQLException{
-           String q= "select * from afferenza_personale ";
-           if(x>=0&&x<=19)
-               q+="where codice_pilota = (select codice_pilota form CLASSIFICA_PILOTA_ATTUALE offset ? limit 1)";
-           else if(x>=20 && x<=29)
-               q+= "where codice_pilota = (select codice_pilota form CLASSIFICA_SCUDERIA_ATTUALE offset ? limit 1)";
-           else
-               System.out.println("Parametro passato errato nel metodo: \"selezionaAfferenza\" ");
-           pstSelezionaPilota.setInt(1, x);
-           return pstSelezionaPilota.executeQuery();
-       }
+
+    public static ResultSet selezionaAfferenza(int x) throws SQLException {
+        String q = "select * from afferenza_personale ";
+        if (x >= 0 && x <= 19) {
+            q += "where codice_pilota = (select codice_pilota form CLASSIFICA_PILOTA_ATTUALE offset ? limit 1)";
+        } else if (x >= 20 && x <= 29) {
+            q += "where codice_pilota = (select codice_pilota form CLASSIFICA_SCUDERIA_ATTUALE offset ? limit 1)";
+        } else {
+            System.out.println("Parametro passato errato nel metodo: \"selezionaAfferenza\" ");
+        }
+        pstSelezionaPilota.setInt(1, x);
+        return pstSelezionaPilota.executeQuery();
+    }
+
 }

@@ -14,6 +14,7 @@ import java.io.*;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.lang.model.util.ElementFilter;
 
 /**
  *
@@ -117,36 +118,72 @@ public class Admin {
     }
 
     /**
-     * 
+     *
      * @param file - file da leggere
-     * @return true se l'inserimento è andato a buon fine - false se ci sono stati errori
-     * @throws SQLException 
+     * @return true se l'inserimento è andato a buon fine - false se ci sono
+     * stati errori
+     * @throws SQLException
      */
-    public boolean inserisciRisultati(String file) throws SQLException {
+    public void inserisciRisultati(String file) throws SQLException {
         try (DataInputStream i = new DataInputStream(new BufferedInputStream(new FileInputStream(file)))) {
+            int cont = 0;
             Scanner sc = new Scanner(file);
             sc.useDelimiter(":");
-            String q = "insert into risultati_attuali values(?,?,?,?,?,?,?,?)";
-            PreparedStatement pst = conn.prepareStatement(q);
+            String qInsert_t = "insert into risultati_t values(?,?,?,?,?,?,?,?)";
+            String qInsert = "insert into risultati_attuali select * from risultati_t";
+            String qClear = "delete from risultati_t";
+
+            PreparedStatement pst = conn.prepareStatement(qInsert_t);
+            PreparedStatement pstTemporaryTable = conn.prepareStatement("create temporary table if not exists Risultati_t ("
+                    + "   SEDE_PISTA           VARCHAR(50)          not null,"
+                    + "   NOME_PISTA           VARCHAR(50)          not null,"
+                    + "   CODICE_PILOTA        CHAR(8)              not null,"
+                    + "   NUMERO_CAMPIONATO    INT                  not null,"
+                    + "   PUNTEGGIO            INT                  not null,"
+                    + "   MIGLIOR_TEMPO        TempoGiro            null,"
+                    + "   TEMPO_QUALIFICA      TempoGiro            null,"
+                    + "   RITIRO               BOOL                 not null);");
+
+            PreparedStatement pstInsertAttuali = conn.prepareStatement(qInsert);
+            PreparedStatement pstClear = conn.prepareStatement(qClear);
+
+            pstTemporaryTable.executeUpdate();
+
             conn.setAutoCommit(false);
-            while (sc.hasNext()) {
+            while (sc.hasNext() && cont < 20) {
                 pst.setString(1, sc.next());
                 pst.setString(2, sc.next());
                 pst.setString(3, sc.next());
                 pst.setInt(4, sc.nextInt());
                 pst.setInt(5, sc.nextInt());
-                pst.setObject(6, TempoGiro.generaGiro(sc.nextInt(), sc.nextInt(), sc.nextInt())); //Miglior tempo
-                pst.setObject(7, TempoGiro.generaGiro(sc.nextInt(), sc.nextInt(), sc.nextInt()));
+                int migliorTempo = TempoGiro.generaGiro(sc.nextInt(), sc.nextInt(), sc.nextInt());
+                int tempoQualifica = TempoGiro.generaGiro(sc.nextInt(), sc.nextInt(), sc.nextInt());
+                if (migliorTempo == 0) {
+                    pst.setNull(6, java.sql.Types.INTEGER); //Miglior tempo
+                } else {
+                    pst.setInt(6, migliorTempo);
+                }
+                if (tempoQualifica == 0) {
+                    pst.setNull(7, java.sql.Types.INTEGER); //Tempo Qualifica
+                } else {
+                    pst.setInt(7, tempoQualifica);
+                }
                 boolean attivo = sc.nextInt() == 0;
                 pst.setBoolean(8, attivo);
                 pst.executeUpdate();
+                sc.next();
+                cont++;
             }
+            conn.commit();
+            pstInsertAttuali.executeUpdate();
+            pstClear.executeQuery();
+            conn.commit();
+            conn.setAutoCommit(true);
         } catch (Exception ex) {
             conn.rollback();
-            return false;
+            conn.setAutoCommit(false);
         }
-        conn.setAutoCommit(true);
-        return true;
+
     }
 
 }

@@ -40,7 +40,7 @@ public class Query {
     public static ResultSet getClassificaPilotiAttuale() throws SQLException {
         String q = "select * from CLASSIFICA_PILOTI_ATTUALE ";
         Statement stm = conn.createStatement();
-        ResultSet rst= stm.executeQuery(q);
+        ResultSet rst = stm.executeQuery(q);
         return rst;
     }
 
@@ -113,20 +113,20 @@ public class Query {
         int dataAnnoCorrente = LocalDate.now().getYear();
         return dataAnnoCorrente == anno;
     }
-    
-    public static ResultSet[] selezionaPersonale(int numeroCampionato,String nomeScuderia) throws SQLException{
-        String qPersonale="select * from personale where codice_personale in (select codice_personale from afferenza_personale where numero_campionato = ? and nome_scuderia = ?)";
-        String qDirigente="select * from personale where codice_personale in (select codice_personale from dirigenza where numero_campionato = ? and nome_scuderia= ?)";
-        ResultSet rst[]=new ResultSet[2];
-        PreparedStatement pstPersonale=conn.prepareStatement(qPersonale);
-        PreparedStatement pstDirigente=conn.prepareStatement(qDirigente);
+
+    public static ResultSet[] selezionaPersonale(int numeroCampionato, String nomeScuderia) throws SQLException {
+        String qPersonale = "select * from personale where codice_personale in (select codice_personale from afferenza_personale where numero_campionato = ? and nome_scuderia = ?)";
+        String qDirigente = "select * from personale where codice_personale in (select codice_personale from dirigenza where numero_campionato = ? and nome_scuderia= ?)";
+        ResultSet rst[] = new ResultSet[2];
+        PreparedStatement pstPersonale = conn.prepareStatement(qPersonale);
+        PreparedStatement pstDirigente = conn.prepareStatement(qDirigente);
         pstPersonale.setInt(1, numeroCampionato);
         pstPersonale.setString(2, nomeScuderia);
         pstDirigente.setInt(1, numeroCampionato);
         pstDirigente.setString(2, nomeScuderia);
-        rst[0]= pstDirigente.executeQuery();
-        rst[1]=pstPersonale.executeQuery();
+        rst[0] = pstDirigente.executeQuery();
+        rst[1] = pstPersonale.executeQuery();
         return rst;
     }
-    
+
 }

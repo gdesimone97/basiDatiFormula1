@@ -984,6 +984,7 @@ public class MainFrame extends javax.swing.JFrame {
                     admin = Admin.adminConnection(utente, password);
                     JOptionPane.showMessageDialog(this, "Login effettuato con successo!");
                     logoutButton.setVisible(true);
+                    loginButton.setVisible(false);
                     //SBLOCCA LE SESSIONI PER ADMIN
                 } catch (SQLException ex) {
                     JOptionPane.showMessageDialog(this, "Errore di connessione, riprova!");
@@ -997,6 +998,7 @@ public class MainFrame extends javax.swing.JFrame {
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
         admin.logOut(admin);
         logoutButton.setVisible(false);
+        loginButton.setVisible(true);
     }//GEN-LAST:event_logoutButtonActionPerformed
 
     private void personaleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personaleButtonActionPerformed

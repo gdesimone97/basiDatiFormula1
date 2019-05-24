@@ -158,8 +158,7 @@ public class Admin {
                 } else {
                     pst.setInt(7, tempoQualifica);
                 }
-                boolean attivo = sc.nextInt() == 0;
-                pst.setBoolean(8, attivo);
+                pst.setBoolean(8, (sc.nextInt() == 1 ? true : false));
                 pst.executeUpdate();
                 sc.nextLine();
                 cont++;

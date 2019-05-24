@@ -118,7 +118,7 @@ public class Query {
     }
     
     public static ResultSet selezionaGiornata(int numeroCampionato, int x) throws SQLException {
-        String q = "select * from CALENDARIO where numeroCampionato = ? and numero_giornata = ?";
+        String q = "select * from CALENDARIO where numero_campionato = ? and numero_giornata = ?";
         if (pstSelezionaGiornata == null) {
             pstSelezionaGiornata = conn.prepareStatement(q);
         }

@@ -47,6 +47,8 @@ public class MainFrame extends javax.swing.JFrame {
             settaTabellaCalendario();
             aggiornaComboBox();
             logoutButton.setVisible(false);
+            
+            jTabbedPane1.getComponentAt(1).setVisible(false);
 
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, "Errore di connessione");
@@ -64,7 +66,7 @@ public class MainFrame extends javax.swing.JFrame {
         aggiornaTabellaScuderie();
         aggiornaCalendario();
     }
-    
+
     private void aggiornaCalendario() throws SQLException {
         DefaultTableModel defaultModel = (DefaultTableModel) tableCalendario.getModel();
         tableCalendario.setModel(defaultModel);
@@ -80,7 +82,7 @@ public class MainFrame extends javax.swing.JFrame {
         }
 
         riga = 0;
-        
+
         ResultSet calendario = Query.getCalendario(numeroCampionato);
 
         while (calendario.next()) {
@@ -91,12 +93,12 @@ public class MainFrame extends javax.swing.JFrame {
             riga++;
         }
     }
-    
+
     private void settaTabellaCalendario() {
         TableColumnModel columnModel = tableCalendario.getColumnModel();
         columnModel.getColumn(0).setPreferredWidth(1);
         columnModel.getColumn(1).setPreferredWidth(100);
-        columnModel.getColumn(2).setPreferredWidth(300);
+        columnModel.getColumn(2).setPreferredWidth(200);
         tableCalendario.setColumnModel(columnModel);
 
         JTableHeader tableheader = tableCalendario.getTableHeader();
@@ -238,7 +240,14 @@ public class MainFrame extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         tableCalendario = new javax.swing.JTable();
         infoPistaPanel = new javax.swing.JPanel();
-        pistaLabel = new javax.swing.JLabel();
+        lunghezzaPistaLabel = new javax.swing.JLabel();
+        lunghezzaTextField = new javax.swing.JTextField();
+        curveLabel = new javax.swing.JLabel();
+        curveTextField = new javax.swing.JTextField();
+        inaugurazioneLabel = new javax.swing.JLabel();
+        inaugurazioneTextField = new javax.swing.JTextField();
+        recordLabel = new javax.swing.JLabel();
+        recordTextField = new javax.swing.JTextField();
         RisultatiPanel = new javax.swing.JPanel();
         verificaPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -435,7 +444,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(PilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(classificaPilotaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(infoPilotaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 127, Short.MAX_VALUE))
+                .addGap(0, 136, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Piloti", PilotaPanel);
@@ -587,7 +596,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(ScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(classificaScuderiaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(infoScuderiaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 141, Short.MAX_VALUE))
+                .addGap(0, 150, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Scuderie", ScuderiaPanel);
@@ -619,7 +628,7 @@ public class MainFrame extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "Giornata", "Sede Pista", "Nome Pista"
+                "", "Sede Pista", "Nome Pista"
             }
         ) {
             Class[] types = new Class [] {
@@ -649,16 +658,30 @@ public class MainFrame extends javax.swing.JFrame {
         calendariPanel.setLayout(calendariPanelLayout);
         calendariPanelLayout.setHorizontalGroup(
             calendariPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(calendariPanelLayout.createSequentialGroup()
-                .addComponent(jScrollPane4)
-                .addContainerGap())
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         calendariPanelLayout.setVerticalGroup(
             calendariPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        infoPistaPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Informazioni"));
+        infoPistaPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Informazioni Pista"));
+
+        lunghezzaPistaLabel.setText("Lunghezza:");
+
+        lunghezzaTextField.setEditable(false);
+
+        curveLabel.setText("Numero Curve:");
+
+        curveTextField.setEditable(false);
+
+        inaugurazioneLabel.setText("Anno Inaugurazione:");
+
+        inaugurazioneTextField.setEditable(false);
+
+        recordLabel.setText("Record Su Pista:");
+
+        recordTextField.setEditable(false);
 
         javax.swing.GroupLayout infoPistaPanelLayout = new javax.swing.GroupLayout(infoPistaPanel);
         infoPistaPanel.setLayout(infoPistaPanelLayout);
@@ -666,32 +689,59 @@ public class MainFrame extends javax.swing.JFrame {
             infoPistaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(infoPistaPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pistaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addGroup(infoPistaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lunghezzaTextField)
+                    .addComponent(curveTextField)
+                    .addComponent(inaugurazioneTextField)
+                    .addGroup(infoPistaPanelLayout.createSequentialGroup()
+                        .addGroup(infoPistaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lunghezzaPistaLabel)
+                            .addComponent(curveLabel)
+                            .addComponent(inaugurazioneLabel)
+                            .addComponent(recordLabel))
+                        .addGap(0, 51, Short.MAX_VALUE))
+                    .addComponent(recordTextField))
+                .addContainerGap())
         );
         infoPistaPanelLayout.setVerticalGroup(
             infoPistaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(infoPistaPanelLayout.createSequentialGroup()
-                .addComponent(pistaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap()
+                .addComponent(lunghezzaPistaLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lunghezzaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(curveLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(curveTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(inaugurazioneLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(inaugurazioneTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(recordLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(recordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout CalendarioPanelLayout = new javax.swing.GroupLayout(CalendarioPanel);
         CalendarioPanel.setLayout(CalendarioPanelLayout);
         CalendarioPanelLayout.setHorizontalGroup(
             CalendarioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CalendarioPanelLayout.createSequentialGroup()
-                .addGroup(CalendarioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(calendariPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(infoPistaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(CalendarioPanelLayout.createSequentialGroup()
+                .addComponent(calendariPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(infoPistaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         CalendarioPanelLayout.setVerticalGroup(
             CalendarioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CalendarioPanelLayout.createSequentialGroup()
-                .addComponent(calendariPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(infoPistaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(CalendarioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(calendariPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(infoPistaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(136, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Calendario", CalendarioPanel);
@@ -917,7 +967,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(RisultatiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(inserimentoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(verificaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 119, Short.MAX_VALUE))
+                .addGap(0, 128, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Risultati", RisultatiPanel);
@@ -930,7 +980,7 @@ public class MainFrame extends javax.swing.JFrame {
         );
         CampionatoPanelLayout.setVerticalGroup(
             CampionatoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 498, Short.MAX_VALUE)
+            .addGap(0, 507, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Campionato", CampionatoPanel);
@@ -976,7 +1026,7 @@ public class MainFrame extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(numCampionatoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1117,6 +1167,10 @@ public class MainFrame extends javax.swing.JFrame {
         afferenza1Label.setText("");
         afferenza2Label.setText("");
         personaleButton.setEnabled(false);
+        lunghezzaTextField.setText("");
+        curveTextField.setText("");
+        inaugurazioneTextField.setText("");
+        recordTextField.setText("");
 
         try {
             aggiornaTabellaPiloti();
@@ -1200,12 +1254,11 @@ public class MainFrame extends javax.swing.JFrame {
         if (!risultatiList.isSelectionEmpty()) {
             cancellaRigaButton.setEnabled(true);
             scriviFileButton.setEnabled(true);
-        }
-        else {
+        } else {
             cancellaRigaButton.setEnabled(false);
             scriviFileButton.setEnabled(false);
         }
-            
+
     }//GEN-LAST:event_risultatiListValueChanged
 
     private void cancellaRigaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancellaRigaButtonActionPerformed
@@ -1236,8 +1289,8 @@ public class MainFrame extends javax.swing.JFrame {
 
             Scanner sc = new Scanner(new BufferedReader(new FileReader(nomeFile)));
             sc.useDelimiter("");
-            
-            while(sc.hasNext()) {
+
+            while (sc.hasNext()) {
                 dm.addElement(sc.nextLine());
                 count++;
             }
@@ -1245,7 +1298,7 @@ public class MainFrame extends javax.swing.JFrame {
             countRisultatiLabel2.setText(count.toString());
             commitButton.setEnabled(true);
             cancellaTuttoButton.setEnabled(true);
-            
+
         } catch (FileNotFoundException ex) {
             JOptionPane.showMessageDialog(this, "Errore nell'apertura del file.");
         }
@@ -1264,21 +1317,35 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void tableCalendarioMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableCalendarioMouseReleased
         try {
-            int x = tableCalendario.getSelectedRow();
+            int x = tableCalendario.getSelectedRow() + 1;
             ResultSet rstGiornata = Query.selezionaGiornata(numeroCampionato, x);
-            String str = "";
-            
+
             while (rstGiornata.next()) {
                 String sede_pista = rstGiornata.getString("sede_pista");
                 String nome_pista = rstGiornata.getString("nome_pista");
                 ResultSet rstPista = Query.selezionaPista(sede_pista, nome_pista);
-                str += "Per questa giornata è stata scelta la pista " + nome_pista +
-                        ", una pista lunga " + rstPista.getInt("lunghezza") + ", composta da " +
-                        rstPista.getInt("num_curve") + " e inaugurata nel " + rstPista.getInt("anno_inaugurazione") +
-                        ".\nIl record su questa pista è: " + rstPista.getInt("giro_veloce");
+                rstPista.next();
+                lunghezzaTextField.setText(((Integer) rstPista.getInt("lunghezza")).toString() + " metri");
+                curveTextField.setText(((Integer) rstPista.getInt("num_curve")).toString());
+                inaugurazioneTextField.setText(((Integer) rstPista.getInt("anno_inaugurazione")).toString());
+                Integer record = rstPista.getInt("giro_veloce");
+                if (record != 0) {
+                    Integer millis = record % 1000;
+                    String millisec;
+                    if (millis < 10) {
+                        millisec = "00" + millis.toString();
+                    } else if (millis < 100) {
+                        millisec = "0" + millis.toString();
+                    } else {
+                        millisec = millis.toString();
+                    }
+                    Integer secondi = (record / 1000) % 60;
+                    Integer minuti = (record / 1000) / 60;
+                    recordTextField.setText(minuti.toString() + ":" + (secondi < 10 ? "0" + secondi : secondi) + ":" + millisec);
+                }
+                else recordTextField.setText("Nessun record");
             }
-            pistaLabel.setText(str);
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -1340,8 +1407,12 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton commitButton;
     private javax.swing.JLabel countRisultatiLabel;
     private javax.swing.JLabel countRisultatiLabel2;
+    private javax.swing.JLabel curveLabel;
+    private javax.swing.JTextField curveTextField;
     private javax.swing.JLabel dataLabel;
     private javax.swing.JTextField dataTextField;
+    private javax.swing.JLabel inaugurazioneLabel;
+    private javax.swing.JTextField inaugurazioneTextField;
     private javax.swing.JPanel infoPilotaPanel;
     private javax.swing.JPanel infoPistaPanel;
     private javax.swing.JPanel infoScuderiaPanel;
@@ -1362,6 +1433,8 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton loginButton;
     private javax.swing.JButton logoutButton;
+    private javax.swing.JLabel lunghezzaPistaLabel;
+    private javax.swing.JTextField lunghezzaTextField;
     private javax.swing.JTextField migliorTempoField;
     private javax.swing.JLabel nazionalitaLabel;
     private javax.swing.JLabel nazionalitaLabel1;
@@ -1376,8 +1449,9 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField numeroCampionatoField;
     private javax.swing.JTextField numeroGiornataField;
     private javax.swing.JButton personaleButton;
-    private javax.swing.JLabel pistaLabel;
     private javax.swing.JTextField punteggioField;
+    private javax.swing.JLabel recordLabel;
+    private javax.swing.JTextField recordTextField;
     private javax.swing.JList<String> risultatiList;
     private javax.swing.JLabel ritiratoLabel;
     private javax.swing.JCheckBox ritiroCheckBox;

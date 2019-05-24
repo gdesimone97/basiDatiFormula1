@@ -129,4 +129,11 @@ public class Query {
         return rst;
     }
 
+    public static ResultSet selezionaPista(int numeroCampionato,int numeroGiornata) throws SQLException{
+        String q="select sede_pista,nome_pista from calendario where numero_campionato= ? and numero_giornata = ?";
+        PreparedStatement pst=conn.prepareStatement(q);
+        pst.setInt(1, numeroCampionato);
+        pst.setInt(2, numeroGiornata);
+        return pst.executeQuery();
+    }
 }

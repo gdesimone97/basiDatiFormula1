@@ -995,7 +995,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
-        admin = null;
+        admin.logOut(admin);
         logoutButton.setVisible(false);
     }//GEN-LAST:event_logoutButtonActionPerformed
 
@@ -1043,10 +1043,15 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_commitButtonActionPerformed
 
     private void risultatiListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_risultatiListValueChanged
-        if (!risultatiList.isSelectionEmpty())
+        if (!risultatiList.isSelectionEmpty()) {
             cancellaRigaButton.setEnabled(true);
-        else
+            scriviFileButton.setEnabled(true);
+        }
+        else {
             cancellaRigaButton.setEnabled(false);
+            scriviFileButton.setEnabled(false);
+        }
+            
     }//GEN-LAST:event_risultatiListValueChanged
 
     private void cancellaRigaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancellaRigaButtonActionPerformed

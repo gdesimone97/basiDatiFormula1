@@ -1,4 +1,3 @@
-﻿Melbourne:Melbourne Grand Prix Circuit:69:2019-03-17:1:
 Sakhir:Barhain International Circuit:69:2019-03-31:2:
 Shanghai:Shanghai International Circuit:69:2019-04-14:3:
 Baku:Baku City Circuit:69:2019-04-28:4:
@@ -19,3 +18,4 @@ Città del Messico:Autodromo Hernanos Rodriguez:69:2019-10-27:18:
 Austin:Circuit of the Americas:69:2019-11-03:19:
 Interlagos:Autodromo José Carlos Pace:69:2019-11-17:20:
 Isola Yas:Yas Marina Circuit:69:2019-12-01:21:
+Melbourne:Melbourne Grand Prix Circuit:69:2019-03-17:1:

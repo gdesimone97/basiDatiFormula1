@@ -194,9 +194,6 @@ public class PopolaFormula1 {
                     risposta = scIn.nextLine();
                 }
             }
-            
-            Calendario.insert(conn, "calendario2019.txt");
-            System.out.println("Calendario 2018 Inserito");
 
             conn.commit();
 

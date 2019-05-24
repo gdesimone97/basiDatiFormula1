@@ -8,13 +8,14 @@ package formula1;
 import java.awt.event.WindowEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableColumnModel;
-import javax.swing.table.TableModel;
 
 /**
  *
@@ -23,6 +24,8 @@ import javax.swing.table.TableModel;
 public class MainFrame extends javax.swing.JFrame {
 
     private DefaultListModel dm = new DefaultListModel();
+    private int numeroCampionato = LocalDate.now().getYear() - 1950;
+    private Admin admin;
 
     public MainFrame() {
         initComponents();
@@ -31,15 +34,24 @@ public class MainFrame extends javax.swing.JFrame {
             Query.InitConnection();
 
             //SETTO LE CLASSIFICHE
-            aggiornaTabellaPiloti();
-            aggiornaTabellaScuderie();
             settaTabellaPiloti();
             settaTabellaScuderie();
+            aggiornaComboBox();
 
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, "Errore di connessione");
             this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
         }
+    }
+
+    private void aggiornaComboBox() throws SQLException {
+        int anno = 2020;
+        while (anno > 2018) {
+            numCampionatoComboBox.addItem(Integer.toString(--anno));
+        }
+        
+        aggiornaTabellaPiloti();
+        aggiornaTabellaScuderie();
     }
 
     private void settaTabellaPiloti() {
@@ -56,15 +68,34 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     private void aggiornaTabellaPiloti() throws SQLException {
-        TableModel model = tablePiloti.getModel();
-        int riga = 0;
+        DefaultTableModel defaultModel = (DefaultTableModel) tablePiloti.getModel();
+        tablePiloti.setModel(defaultModel);
 
-        ResultSet classifica = Query.getClassificaPilotiAttuale();
+        int riga = 0;
+        while (riga < 20) {
+            defaultModel.setValueAt("", riga, 0);
+            defaultModel.setValueAt("", riga, 1);
+            defaultModel.setValueAt("", riga, 2);
+            riga++;
+            tablePiloti.setEnabled(false);
+            tablePiloti.clearSelection();
+        }
+        
+        riga = 0;
+        
+        ResultSet classifica;
+
+        if (Query.isCurrent(numeroCampionato)) {
+            classifica = Query.getClassificaPilotiAttuale();
+        } else {
+            classifica = Query.getClassifichePilotiPassati(numeroCampionato);
+        }
 
         while (classifica.next()) {
-            model.setValueAt(riga + 1, riga, 0);
-            model.setValueAt(classifica.getString("nome_pilota") + " " + classifica.getString("cognome_pilota"), riga, 1);
-            model.setValueAt(classifica.getInt("punteggio"), riga, 2);
+            tablePiloti.setEnabled(true);
+            defaultModel.setValueAt(riga + 1, riga, 0);
+            defaultModel.setValueAt(classifica.getString("nome_pilota") + " " + classifica.getString("cognome_pilota"), riga, 1);
+            defaultModel.setValueAt(classifica.getInt("punteggio"), riga, 2);
             riga++;
         }
     }
@@ -83,15 +114,33 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     private void aggiornaTabellaScuderie() throws SQLException {
-        TableModel model = tableScuderie.getModel();
+        DefaultTableModel defaultModel = (DefaultTableModel) tableScuderie.getModel();
+        tableScuderie.removeRowSelectionInterval(0, 9);
         int riga = 0;
+        
+        while (riga < 10) {
+            defaultModel.setValueAt("", riga, 0);
+            defaultModel.setValueAt("", riga, 1);
+            defaultModel.setValueAt("", riga, 2);
+            riga++;
+            tableScuderie.setEnabled(false);
+            tableScuderie.clearSelection();
+        }
+        
+        riga = 0;
 
-        ResultSet classifica = Query.getClassificaScuderieAttuale();
+        ResultSet classifica;
+        if (Query.isCurrent(numeroCampionato)) {
+            classifica = Query.getClassificaScuderieAttuale();
+        } else {
+            classifica = Query.getClassificheScuderiePassate(numeroCampionato);
+        }
 
         while (classifica.next()) {
-            model.setValueAt(riga + 1, riga, 0);
-            model.setValueAt(classifica.getString("nome_scuderia"), riga, 1);
-            model.setValueAt(classifica.getInt("punteggio"), riga, 2);
+            tableScuderie.setEnabled(true);
+            defaultModel.setValueAt(riga + 1, riga, 0);
+            defaultModel.setValueAt(classifica.getString("nome_scuderia"), riga, 1);
+            defaultModel.setValueAt(classifica.getInt("punteggio"), riga, 2);
             riga++;
         }
     }
@@ -152,6 +201,10 @@ public class MainFrame extends javax.swing.JFrame {
         inserisciButton = new javax.swing.JButton();
         cancellaButton = new javax.swing.JButton();
         CampionatoPanel = new javax.swing.JPanel();
+        numCampionatoComboBox = new javax.swing.JComboBox<>();
+        numCampionatoLabel = new javax.swing.JLabel();
+        numCampionatoLabel1 = new javax.swing.JLabel();
+        loginButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -634,17 +687,51 @@ public class MainFrame extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Campionato", CampionatoPanel);
 
+        numCampionatoComboBox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                numCampionatoComboBoxItemStateChanged(evt);
+            }
+        });
+
+        numCampionatoLabel.setText("Seleziona Campionato:");
+
+        loginButton.setText("Login Admin");
+        loginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jTabbedPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(numCampionatoLabel)
+                .addGap(18, 18, 18)
+                .addComponent(numCampionatoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(numCampionatoLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(loginButton)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(numCampionatoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(numCampionatoLabel))
+                        .addComponent(numCampionatoLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(loginButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 130, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         pack();
@@ -677,7 +764,7 @@ public class MainFrame extends javax.swing.JFrame {
         try {
             int x = tableScuderie.getSelectedRow();
             ResultSet rstScuderia = Query.selezionaScuderia(x);
-            ResultSet rstAfferenza = Query.selezionaAfferenza(x + 20);
+            ResultSet rstAfferenza = Query.selezionaAfferenza(x + 20, numeroCampionato);
 
             while (rstScuderia.next()) {
                 nomeScuderiaTextField.setText(rstScuderia.getString("nome_scuderia"));
@@ -724,14 +811,13 @@ public class MainFrame extends javax.swing.JFrame {
                 || migliorTempo.compareTo("") == 0 || tempoQualifica.compareTo("") == 0) {
             JOptionPane.showMessageDialog(this, "Devi inserire tutti i campi");
         } else {
-            String sede_pista = Query.selezionaSedePista(numC, numG);
-            String nome_pista = Query.selezionaNomePista(numC, numG);
-            
+            //String sede_pista = Query.selezionaSedePista(numC, numG);
+            //String nome_pista = Query.selezionaNomePista(numC, numG);
+
             dm.addElement(numC + ":" + numG + ":" + codice + ":" + punti + ":" + migliorTempo + ":" + tempoQualifica + ":"
                     + (!ritiroCheckBox.isSelected() ? "0:" : "1:"));
             risultatiList.setModel(dm);
-            
-            
+
             codiceField.setText("");
             punteggioField.setText("");
             migliorTempoField.setText("");
@@ -741,6 +827,32 @@ public class MainFrame extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_inserisciButtonActionPerformed
+
+    private void numCampionatoComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_numCampionatoComboBoxItemStateChanged
+        numeroCampionato = Integer.parseInt((String) numCampionatoComboBox.getSelectedItem()) - 1950;
+        numCampionatoLabel1.setText((Query.isCurrent(numeroCampionato) ? "Anno corrente selezionato" : "CIAO"));
+
+        try {
+            aggiornaTabellaPiloti();
+            aggiornaTabellaScuderie();
+        } catch (SQLException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_numCampionatoComboBoxItemStateChanged
+
+    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
+        String utente = JOptionPane.showInputDialog("Inserisci Utente: ");
+        String password = JOptionPane.showInputDialog("Inserisci Password: ");
+        try {
+            admin = Admin.adminConnection(utente, password);
+            JOptionPane.showMessageDialog(this, "Login effettuato con successo!");
+            //SBLOCCA LE SESSIONI PER ADMIN
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Errore di connessione, riprova!");
+        } catch (AdminLoginFailed ex) {
+            JOptionPane.showMessageDialog(this, "Credenziali errate!");
+        }
+    }//GEN-LAST:event_loginButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -807,6 +919,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JButton loginButton;
     private javax.swing.JTextField migliorTempoField;
     private javax.swing.JLabel nazionalitaLabel;
     private javax.swing.JLabel nazionalitaLabel1;
@@ -816,6 +929,9 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel nomeLabel1;
     private javax.swing.JTextField nomeScuderiaTextField;
     private javax.swing.JTextField nomeTextField;
+    private javax.swing.JComboBox<String> numCampionatoComboBox;
+    private javax.swing.JLabel numCampionatoLabel;
+    private javax.swing.JLabel numCampionatoLabel1;
     private javax.swing.JTextField numeroCampionatoField;
     private javax.swing.JTextField numeroGiornataField;
     private javax.swing.JTextField punteggioField;

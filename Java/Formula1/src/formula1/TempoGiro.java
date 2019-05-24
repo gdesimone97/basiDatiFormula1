@@ -15,7 +15,7 @@ public class TempoGiro {
     }
 
     public static int generaGiro(int minuti, int secondi, int mSecondi) {
-        return (minuti * 60 + secondi) * 100 + mSecondi;
+        return (minuti * 60 + secondi) * 1000 + mSecondi;
     }
 
 }

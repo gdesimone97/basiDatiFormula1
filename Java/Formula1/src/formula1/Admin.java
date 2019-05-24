@@ -10,6 +10,8 @@ import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.Scanner;
 
 /**
  *
@@ -70,7 +72,7 @@ public class Admin {
         return pst.executeUpdate();
     }
 
-    // per inserire tempoGiro usrare il metodo statico della classe Tempogiro: TempoGiro.generaGiro
+    // Per inserire tempoGiro usrare il metodo statico della classe Tempogiro: TempoGiro.generaGiro
     public int aggiungiPista(String sedePista, String nomePista, int lunghezza, int numeroCureve, TempoGiro giro, int annoInaugurazione) throws SQLException {
         String q = "insert into piste values(?,?,?,?,?,?)";
         PreparedStatement pst = conn.prepareStatement(q);
@@ -106,6 +108,82 @@ public class Admin {
         pst.setString(4, motore);
         pst.setString(5, gomme);
         return pst.executeUpdate();
+    }
+
+    public void logOut(Admin admin) {
+        admin = null;
+    }
+
+    public void inserisciRisultati(String file) throws SQLException {
+        try {
+            int cont = 0;
+            Scanner sc = new Scanner(file);
+            sc.useDelimiter(":");
+            String qInsert_t = "insert into risultati_t values(?,?,?,?,?,?,?,?)";
+            String qInsert = "insert into risultati_attuali select * from risultati_t";
+            String qClear = "delete from risultati_t";
+
+            PreparedStatement pst = conn.prepareStatement(qInsert_t);
+            PreparedStatement pstTemporaryTable = conn.prepareStatement("create temporary table if not exists Risultati_t ("
+                    + "   SEDE_PISTA           VARCHAR(50)          not null,"
+                    + "   NOME_PISTA           VARCHAR(50)          not null,"
+                    + "   CODICE_PILOTA        CHAR(8)              not null,"
+                    + "   NUMERO_CAMPIONATO    INT                  not null,"
+                    + "   PUNTEGGIO            INT                  not null,"
+                    + "   MIGLIOR_TEMPO        TempoGiro            null,"
+                    + "   TEMPO_QUALIFICA      TempoGiro            null,"
+                    + "   RITIRO               BOOL                 not null);");
+
+            PreparedStatement pstInsertAttuali = conn.prepareStatement(qInsert);
+            PreparedStatement pstClear = conn.prepareStatement(qClear);
+
+            pstTemporaryTable.executeUpdate();
+
+            conn.setAutoCommit(false);
+            while (sc.hasNext() && cont < 20) {
+                pst.setString(1, sc.next());
+                pst.setString(2, sc.next());
+                pst.setString(3, sc.next());
+                pst.setInt(4, sc.nextInt());
+                pst.setInt(5, sc.nextInt());
+                int migliorTempo = TempoGiro.generaGiro(sc.nextInt(), sc.nextInt(), sc.nextInt());
+                int tempoQualifica = TempoGiro.generaGiro(sc.nextInt(), sc.nextInt(), sc.nextInt());
+                if (migliorTempo == 0) {
+                    pst.setNull(6, java.sql.Types.INTEGER); //Miglior tempo
+                } else {
+                    pst.setInt(6, migliorTempo);
+                }
+                if (tempoQualifica == 0) {
+                    pst.setNull(7, java.sql.Types.INTEGER); //Tempo Qualifica
+                } else {
+                    pst.setInt(7, tempoQualifica);
+                }
+                boolean attivo = sc.nextInt() == 0;
+                pst.setBoolean(8, attivo);
+                pst.executeUpdate();
+                sc.nextLine();
+                cont++;
+            }
+            pstInsertAttuali.executeUpdate();
+            pstClear.executeQuery();
+            conn.commit();
+            conn.setAutoCommit(true);
+        } catch (Exception ex) {
+            conn.rollback();
+            conn.setAutoCommit(true);
+            ex.printStackTrace();
+            throw new SQLException();
+        }
+    }
+
+    public void inserisciCalendario(String sedePista, String nomePista, int numeroCampionato, Date date, int numeroGiornata) throws SQLException {
+        String q = "insert into calendario values(?,?,?,?,?)";
+        PreparedStatement pst = conn.prepareStatement(q);
+        pst.setString(1, sedePista);
+        pst.setString(2, nomePista);
+        pst.setInt(3, numeroCampionato);
+        pst.setDate(4, date);
+        pst.setInt(5, numeroGiornata);
     }
 
 }

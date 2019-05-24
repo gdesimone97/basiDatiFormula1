@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 
 /**
  *
@@ -39,12 +40,15 @@ public class Query {
     public static ResultSet getClassificaPilotiAttuale() throws SQLException {
         String q = "select * from CLASSIFICA_PILOTI_ATTUALE ";
         Statement stm = conn.createStatement();
-        return stm.executeQuery(q);
+        ResultSet rst = stm.executeQuery(q);
+        return rst;
     }
 
-    public static ResultSet getClassifichePilotiPassati() throws SQLException {
-        String q = "select * from CLASSIFICHE_PILOTI_PASSATI";
-        return conn.createStatement().executeQuery(q);
+    public static ResultSet getClassifichePilotiPassati(int annoCampionato) throws SQLException {
+        String q = "select * from CLASSIFICHE_PILOTI_PASSATI where numero_campionato = ?";
+        PreparedStatement pstPilotiPassati = conn.prepareStatement(q);
+        pstPilotiPassati.setInt(1, annoCampionato);
+        return pstPilotiPassati.executeQuery();
     }
 
     public static ResultSet getClassificaScuderieAttuale() throws SQLException {
@@ -52,9 +56,11 @@ public class Query {
         return conn.createStatement().executeQuery(q);
     }
 
-    public static ResultSet getClassificheScuderiePassate() throws SQLException {
-        String q = "select * from CLASSIFICHE_COSTRUTTORI_PASSATE";
-        return conn.createStatement().executeQuery(q);
+    public static ResultSet getClassificheScuderiePassate(int annoCampionato) throws SQLException {
+        String q = "select * from CLASSIFICHE_COSTRUTTORI_PASSATE where numero_campionato=?";
+        PreparedStatement pst = conn.prepareStatement(q);
+        pst.setInt(1, annoCampionato);
+        return pst.executeQuery();
     }
 
     public static ResultSet selezionaPilota(int x) throws SQLException {
@@ -86,19 +92,48 @@ public class Query {
         return pstSelezionaScuderia.executeQuery();
     }
 
-    public static ResultSet selezionaAfferenza(int x) throws SQLException {
+    public static ResultSet selezionaAfferenza(int x, int annoCampionato) throws SQLException {
         String q = "select * from afferenza_piloti ";
         if (x >= 0 && x <= 19) {
-            q += "where codice_pilota = (select codice_pilota from CLASSIFICA_PILOTA_ATTUALE offset ? limit 1) and numero_campionato = (select max(numero_campionato) from campionati";
+            q += "where codice_pilota = (select codice_pilota from CLASSIFICA_PILOTI_ATTUALE offset ? limit 1) and numero_campionato = ?";
         } else if (x >= 20 && x <= 29) {
             x = x - 20;
-            q += "where nome_scuderia = (select nome_scuderia from CLASSIFICA_COSTRUTTORI_ATTUALE offset ? limit 1)";
+            q += "where nome_scuderia = (select nome_scuderia from CLASSIFICA_COSTRUTTORI_ATTUALE offset ? limit 1) and numero_campionato = ?";
         } else {
             System.out.println("Parametro errato nel metodo: \"selezionaAfferenza\" ");
         }
         PreparedStatement pstSelezionaAfferenza = conn.prepareStatement(q);
         pstSelezionaAfferenza.setInt(1, x);
+        pstSelezionaAfferenza.setInt(2, annoCampionato);
         return pstSelezionaAfferenza.executeQuery();
     }
 
+    public static boolean isCurrent(int numeroCampionato) {
+        int anno = numeroCampionato + 1950;
+        int dataAnnoCorrente = LocalDate.now().getYear();
+        return dataAnnoCorrente == anno;
+    }
+
+    public static ResultSet[] selezionaPersonale(int numeroCampionato, String nomeScuderia) throws SQLException {
+        String qPersonale = "select * from personale where codice_personale in (select codice_personale from afferenza_personale where numero_campionato = ? and nome_scuderia = ?)";
+        String qDirigente = "select * from personale where codice_personale in (select codice_personale from dirigenza where numero_campionato = ? and nome_scuderia = ?)";
+        ResultSet rst[] = new ResultSet[2];
+        PreparedStatement pstPersonale = conn.prepareStatement(qPersonale);
+        PreparedStatement pstDirigente = conn.prepareStatement(qDirigente);
+        pstPersonale.setInt(1, numeroCampionato);
+        pstPersonale.setString(2, nomeScuderia);
+        pstDirigente.setInt(1, numeroCampionato);
+        pstDirigente.setString(2, nomeScuderia);
+        rst[0] = pstDirigente.executeQuery();
+        rst[1] = pstPersonale.executeQuery();
+        return rst;
+    }
+
+    public static ResultSet selezionaPista(int numeroCampionato, int numeroGiornata) throws SQLException {
+        String q = "select sede_pista,nome_pista from calendario where numero_campionato= ? and numero_giornata = ?";
+        PreparedStatement pst = conn.prepareStatement(q);
+        pst.setInt(1, numeroCampionato);
+        pst.setInt(2, numeroGiornata);
+        return pst.executeQuery();
+    }
 }

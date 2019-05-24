@@ -171,6 +171,7 @@ public class Admin {
         } catch (Exception ex) {
             conn.rollback();
             conn.setAutoCommit(true);
+            ex.printStackTrace();
             throw new SQLException();
         }
     }

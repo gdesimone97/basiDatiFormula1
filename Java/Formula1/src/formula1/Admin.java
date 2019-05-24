@@ -161,7 +161,7 @@ public class Admin {
                 boolean attivo = sc.nextInt() == 0;
                 pst.setBoolean(8, attivo);
                 pst.executeUpdate();
-                sc.next();
+                sc.nextLine();
                 cont++;
             }
             pstInsertAttuali.executeUpdate();

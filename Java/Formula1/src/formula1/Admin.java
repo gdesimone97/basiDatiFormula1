@@ -173,9 +173,11 @@ public class Admin {
         } catch (FileNotFoundException ex) {
             conn.rollback();
             conn.setAutoCommit(true);
+            throw new SQLException();
         } catch (IOException ex) {
             conn.rollback();
             conn.setAutoCommit(true);
+            throw new SQLException();
         }
     }
 

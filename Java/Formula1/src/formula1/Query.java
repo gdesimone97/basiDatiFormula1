@@ -19,9 +19,9 @@ import java.time.LocalDate;
  */
 public class Query {
 
-    private static final String URL = "jdbc:postgresql://localhost/prova";
-    private static final String USER = "utente_generico";
-    private static final String PASS = "password";
+    private static final String URL = "jdbc:postgresql://localhost/formula";
+    private static final String USER = "postgres";
+    private static final String PASS = "gds2009";
     private static Connection conn;
 
     private static PreparedStatement pstSelezionaPilota = null;
@@ -113,4 +113,20 @@ public class Query {
         int dataAnnoCorrente = LocalDate.now().getYear();
         return dataAnnoCorrente == anno;
     }
+    
+    public static ResultSet[] selezionaPersonale(int numeroCampionato,String nomeScuderia) throws SQLException{
+        String qPersonale="select * from personale where codice_personale in (select codice_personale from afferenza_personale where numero_campionato = ? and nome_scuderia = ?)";
+        String qDirigente="select * from personale where codice_personale in (select codice_personale from dirigenza where numero_campionato = ? and nome_scuderia= ?)";
+        ResultSet rst[]=new ResultSet[2];
+        PreparedStatement pstPersonale=conn.prepareStatement(qPersonale);
+        PreparedStatement pstDirigente=conn.prepareStatement(qDirigente);
+        pstPersonale.setInt(1, numeroCampionato);
+        pstPersonale.setString(2, nomeScuderia);
+        pstDirigente.setInt(1, numeroCampionato);
+        pstDirigente.setString(2, nomeScuderia);
+        rst[0]= pstDirigente.executeQuery();
+        rst[1]=pstPersonale.executeQuery();
+        return rst;
+    }
+    
 }

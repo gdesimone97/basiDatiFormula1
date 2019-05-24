@@ -89,7 +89,7 @@ public class Query {
     public static ResultSet selezionaAfferenza(int x) throws SQLException {
         String q = "select * from afferenza_piloti ";
         if (x >= 0 && x <= 19) {
-            q += "where codice_pilota = (select codice_pilota from CLASSIFICA_PILOTA_ATTUALE offset ? limit 1)";
+            q += "where codice_pilota = (select codice_pilota from CLASSIFICA_PILOTA_ATTUALE offset ? limit 1) and numero_campionato = (select max(numero_campionato) from campionati";
         } else if (x >= 20 && x <= 29) {
             x = x - 20;
             q += "where nome_scuderia = (select nome_scuderia from CLASSIFICA_COSTRUTTORI_ATTUALE offset ? limit 1)";

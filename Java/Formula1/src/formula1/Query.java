@@ -20,8 +20,8 @@ import java.time.LocalDate;
 public class Query {
 
     private static final String URL = "jdbc:postgresql://localhost/prova";
-    private static final String USER = "postgres";
-    private static final String PASS = "gds2009";
+    private static final String USER = "utente_generico";
+    private static final String PASS = "password";
     private static Connection conn;
 
     private static PreparedStatement pstSelezionaPilota = null;

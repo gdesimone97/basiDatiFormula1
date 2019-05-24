@@ -104,7 +104,7 @@ public class Query {
         return pstSelezionaAfferenza.executeQuery();
     }
 
-    public static boolean isCurrent(int numeroCampionato) throws SQLException {
+    public static boolean isCurrent(int numeroCampionato){
         int anno = numeroCampionato + 1950;
         int dataAnnoCorrente = LocalDate.now().getYear();
         return dataAnnoCorrente == anno;

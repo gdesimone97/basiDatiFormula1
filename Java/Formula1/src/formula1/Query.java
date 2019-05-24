@@ -54,9 +54,11 @@ public class Query {
         return conn.createStatement().executeQuery(q);
     }
 
-    public static ResultSet getClassificheScuderiePassate() throws SQLException {
-        String q = "select * from CLASSIFICHE_COSTRUTTORI_PASSATE";
-        return conn.createStatement().executeQuery(q);
+    public static ResultSet getClassificheScuderiePassate(int annoCampionato) throws SQLException {
+        String q = "select * from CLASSIFICHE_COSTRUTTORI_PASSATE where numero_campionato=?";
+        PreparedStatement pst=conn.prepareStatement(q);
+        pst.setInt(1, annoCampionato);
+        return pst.executeQuery();
     }
 
     public static ResultSet selezionaPilota(int x) throws SQLException {

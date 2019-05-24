@@ -27,6 +27,7 @@ public class Query {
     private static PreparedStatement pstSelezionaPilota = null;
     private static PreparedStatement pstSelezionaScuderia = null;
     private static PreparedStatement pstSelezionaPilota2 = null;
+
     public Query() {
 
     }
@@ -39,12 +40,14 @@ public class Query {
     public static ResultSet getClassificaPilotiAttuale() throws SQLException {
         String q = "select * from CLASSIFICA_PILOTI_ATTUALE ";
         Statement stm = conn.createStatement();
-        return stm.executeQuery(q);
+        ResultSet rst= stm.executeQuery(q);
+        System.out.println(rst);
+        return rst;
     }
 
     public static ResultSet getClassifichePilotiPassati(int annoCampionato) throws SQLException {
         String q = "select * from CLASSIFICHE_PILOTI_PASSATI where numero_campionato = ?";
-        PreparedStatement pstPilotiPassati=conn.prepareStatement(q);
+        PreparedStatement pstPilotiPassati = conn.prepareStatement(q);
         pstPilotiPassati.setInt(1, annoCampionato);
         return pstPilotiPassati.executeQuery();
     }
@@ -56,7 +59,7 @@ public class Query {
 
     public static ResultSet getClassificheScuderiePassate(int annoCampionato) throws SQLException {
         String q = "select * from CLASSIFICHE_COSTRUTTORI_PASSATE where numero_campionato=?";
-        PreparedStatement pst=conn.prepareStatement(q);
+        PreparedStatement pst = conn.prepareStatement(q);
         pst.setInt(1, annoCampionato);
         return pst.executeQuery();
     }
@@ -106,7 +109,7 @@ public class Query {
         return pstSelezionaAfferenza.executeQuery();
     }
 
-    public static boolean isCurrent(int numeroCampionato){
+    public static boolean isCurrent(int numeroCampionato) {
         int anno = numeroCampionato + 1950;
         int dataAnnoCorrente = LocalDate.now().getYear();
         return dataAnnoCorrente == anno;

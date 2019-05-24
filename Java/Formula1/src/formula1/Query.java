@@ -27,6 +27,8 @@ public class Query {
     private static PreparedStatement pstSelezionaPilota = null;
     private static PreparedStatement pstSelezionaScuderia = null;
     private static PreparedStatement pstSelezionaPilota2 = null;
+    private static PreparedStatement pstSelezionaGiornata = null;
+    private static PreparedStatement pstSelezionaPista = null;
 
     public Query() {
 
@@ -60,6 +62,13 @@ public class Query {
         String q = "select * from CLASSIFICHE_COSTRUTTORI_PASSATE where numero_campionato=?";
         PreparedStatement pst = conn.prepareStatement(q);
         pst.setInt(1, annoCampionato);
+        return pst.executeQuery();
+    }
+    
+    public static ResultSet getCalendario(int numCampionato) throws SQLException {
+        String q = "select numero_giornata, sede_pista, nome_pista, data from CALENDARIO where numero_campionato = ? order by numero_giornata";
+        PreparedStatement pst = conn.prepareStatement(q);
+        pst.setInt(1, numCampionato);
         return pst.executeQuery();
     }
 
@@ -106,6 +115,26 @@ public class Query {
         pstSelezionaAfferenza.setInt(1, x);
         pstSelezionaAfferenza.setInt(2, annoCampionato);
         return pstSelezionaAfferenza.executeQuery();
+    }
+    
+    public static ResultSet selezionaGiornata(int numeroCampionato, int x) throws SQLException {
+        String q = "select * from CALENDARIO where numeroCampionato = ? and numero_giornata = ?";
+        if (pstSelezionaGiornata == null) {
+            pstSelezionaGiornata = conn.prepareStatement(q);
+        }
+        pstSelezionaGiornata.setInt(1, numeroCampionato);
+        pstSelezionaGiornata.setInt(2, x);
+        return pstSelezionaGiornata.executeQuery();
+    }
+    
+    public static ResultSet selezionaPista(String sedePista, String nomePista) throws SQLException {
+        String q = "select * from PISTE where sede_pista = ? and nome_pista = ?";
+        if (pstSelezionaPista == null) {
+            pstSelezionaPista = conn.prepareStatement(q);
+        }
+        pstSelezionaPista.setString(1, sedePista);
+        pstSelezionaPista.setString(2, nomePista);
+        return pstSelezionaPista.executeQuery();
     }
 
     public static boolean isCurrent(int numeroCampionato) {

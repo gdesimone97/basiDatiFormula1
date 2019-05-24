@@ -12,6 +12,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.io.*;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -168,7 +170,10 @@ public class Admin {
             pstClear.executeQuery();
             conn.commit();
             conn.setAutoCommit(true);
-        } catch (Exception ex) {
+        } catch (FileNotFoundException ex) {
+            conn.rollback();
+            conn.setAutoCommit(true);
+        } catch (IOException ex) {
             conn.rollback();
             conn.setAutoCommit(true);
         }

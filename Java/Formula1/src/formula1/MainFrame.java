@@ -198,6 +198,7 @@ public class MainFrame extends javax.swing.JFrame {
         cancellaTuttoButton = new javax.swing.JButton();
         cancellaRigaButton = new javax.swing.JButton();
         commitButton = new javax.swing.JButton();
+        scriviFileButton = new javax.swing.JButton();
         inserimentoPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         numeroCampionatoField = new javax.swing.JTextField();
@@ -577,6 +578,14 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        scriviFileButton.setText("Scrivi su file");
+        scriviFileButton.setEnabled(false);
+        scriviFileButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                scriviFileButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout verificaPanelLayout = new javax.swing.GroupLayout(verificaPanel);
         verificaPanel.setLayout(verificaPanelLayout);
         verificaPanelLayout.setHorizontalGroup(
@@ -586,22 +595,27 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(jScrollPane1)
                     .addGroup(verificaPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(commitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(cancellaRigaButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                        .addComponent(cancellaTuttoButton)))
+                        .addGroup(verificaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(commitButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(scriviFileButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(verificaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cancellaRigaButton, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cancellaTuttoButton, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
         );
         verificaPanelLayout.setVerticalGroup(
             verificaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(verificaPanelLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addGroup(verificaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(scriviFileButton)
+                    .addComponent(cancellaRigaButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(verificaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancellaTuttoButton)
-                    .addComponent(commitButton)
-                    .addComponent(cancellaRigaButton))
+                    .addComponent(commitButton))
                 .addGap(0, 11, Short.MAX_VALUE))
         );
 
@@ -899,30 +913,30 @@ public class MainFrame extends javax.swing.JFrame {
             String tempoQualifica = tempoQualificaField.getText();
             String sede_pista;
             String nome_pista;
-            
-            ResultSet rst = Query.selezionaPista(Integer.parseInt(numC), Integer.parseInt(numG));
-            rst.next();
-            sede_pista = rst.getString("sede_pista");
-            nome_pista = rst.getString("nome_pista");
-            
+
             if (numC.compareTo("") == 0 || numG.compareTo("") == 0 || codice.compareTo("") == 0 || punti.compareTo("") == 0
                     || migliorTempo.compareTo("") == 0 || tempoQualifica.compareTo("") == 0) {
                 JOptionPane.showMessageDialog(this, "Devi inserire tutti i campi");
-                
+
             } else {
-                dm.addElement(sede_pista + ":" + nome_pista + ":" + codice +  ":" + numC + ":" + punti + ":" + migliorTempo + ":" + tempoQualifica + ":"
+                ResultSet rst = Query.selezionaPista(Integer.parseInt(numC), Integer.parseInt(numG));
+                rst.next();
+                sede_pista = rst.getString("sede_pista");
+                nome_pista = rst.getString("nome_pista");
+
+                dm.addElement(sede_pista + ":" + nome_pista + ":" + codice + ":" + numC + ":" + punti + ":" + migliorTempo + ":" + tempoQualifica + ":"
                         + (!ritiroCheckBox.isSelected() ? "0:" : "1:"));
                 risultatiList.setModel(dm);
-                
+
                 codiceField.setText("");
                 punteggioField.setText("");
                 migliorTempoField.setText("");
                 tempoQualificaField.setText("");
                 ritiroCheckBox.setSelected(false);
-                
-                Integer count = Integer.parseInt(countRisultatiLabel2.getText())+1;
+
+                Integer count = Integer.parseInt(countRisultatiLabel2.getText()) + 1;
                 countRisultatiLabel2.setText(count.toString());
-                
+
                 if (dm.getSize() == 20) {
                     commitButton.setEnabled(true);
                     cancellaTuttoButton.setEnabled(true);
@@ -1021,15 +1035,6 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_personaleButtonActionPerformed
 
     private void commitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_commitButtonActionPerformed
-        try (BufferedWriter w = new BufferedWriter(new FileWriter("risultati.txt", true))) {
-            for (Object o : dm.toArray()) {
-                w.write(o.toString());
-                w.newLine();
-            }
-        } catch (IOException ex) {
-            JOptionPane.showMessageDialog(this, "Errore nell'apertura del file, riprova.");
-        }
-
         try {
             admin.inserisciRisultati("risultati.txt");
         } catch (SQLException ex) {
@@ -1056,25 +1061,47 @@ public class MainFrame extends javax.swing.JFrame {
         commitButton.setEnabled(false);
         countRisultatiLabel2.setText("0");
         inserisciButton.setEnabled(true);
-        
-        for (Object o: dm.toArray())
+
+        for (Object o : dm.toArray())
             dm.removeAllElements();
     }//GEN-LAST:event_cancellaTuttoButtonActionPerformed
 
     private void inserisciDaFileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inserisciDaFileButtonActionPerformed
         try {
+            Integer count = 0;
             int x = jFileChooser1.showOpenDialog(this);
             String nomeFile = "";
-            if(x == JFileChooser.APPROVE_OPTION)
+            if (x == JFileChooser.APPROVE_OPTION) {
                 nomeFile = jFileChooser1.getSelectedFile().getName();
-            
-            System.out.println(nomeFile);
+            }
+
             Scanner sc = new Scanner(new BufferedReader(new FileReader(nomeFile)));
-            sc.useDelimiter(":");
+            sc.useDelimiter("");
+            
+            while(sc.hasNext()) {
+                dm.addElement(sc.nextLine());
+                count++;
+            }
+            risultatiList.setModel(dm);
+            countRisultatiLabel2.setText(count.toString());
+            commitButton.setEnabled(true);
+            cancellaTuttoButton.setEnabled(true);
+            
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Errore nell'apertura del file.");
         }
     }//GEN-LAST:event_inserisciDaFileButtonActionPerformed
+
+    private void scriviFileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scriviFileButtonActionPerformed
+        try (BufferedWriter w = new BufferedWriter(new FileWriter("risultati.txt", true))) {
+            for (Object o : dm.toArray()) {
+                w.write(o.toString());
+                w.newLine();
+            }
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this, "Errore nell'apertura del file, riprova.");
+        }
+    }//GEN-LAST:event_scriviFileButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1168,6 +1195,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JList<String> risultatiList;
     private javax.swing.JLabel ritiratoLabel;
     private javax.swing.JCheckBox ritiroCheckBox;
+    private javax.swing.JButton scriviFileButton;
     private javax.swing.JTable tablePiloti;
     private javax.swing.JTable tableScuderie;
     private javax.swing.JTextField tempoQualificaField;

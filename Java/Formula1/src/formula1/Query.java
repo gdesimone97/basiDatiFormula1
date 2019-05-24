@@ -64,7 +64,7 @@ public class Query {
         pst.setInt(1, annoCampionato);
         return pst.executeQuery();
     }
-    
+
     public static ResultSet getCalendario(int numCampionato) throws SQLException {
         String q = "select numero_giornata, sede_pista, nome_pista, data from CALENDARIO where numero_campionato = ? order by numero_giornata";
         PreparedStatement pst = conn.prepareStatement(q);
@@ -91,14 +91,20 @@ public class Query {
         return pstSelezionaPilota2.executeQuery();
     }
 
-    public static ResultSet selezionaScuderia(int x) throws SQLException {
-        String q = "select * from scuderie where nome_scuderia = "
-                + "(select nome_scuderia from classifica_costruttori_attuale offset ? limit 1)";
-        if (pstSelezionaScuderia == null) {
-            pstSelezionaScuderia = conn.prepareStatement(q);
+    public static ResultSet selezionaScuderia(int x, int numeroCampionato) throws SQLException {
+        if (isCurrent(numeroCampionato)) {
+            String q = "select * from scuderie where nome_scuderia = "
+                    + "(select nome_scuderia from classifica_costruttori_attuale offset ? limit 1)";
+            PreparedStatement pst = conn.prepareStatement(q);
+            pst.setInt(1, x);
+            return pst.executeQuery();
         }
-        pstSelezionaScuderia.setInt(1, x);
-        return pstSelezionaScuderia.executeQuery();
+        
+        String q="select * from scuderie where nome_scuderia= (select * from classifiche_costruttori_passate where numero_campionato= ? offset ? limit 1 )";
+        PreparedStatement pst=conn.prepareStatement(q);
+        pst.setInt(1, numeroCampionato);
+        pst.setInt(2, x);
+        return pst.executeQuery();
     }
 
     public static ResultSet selezionaAfferenza(int x, int annoCampionato) throws SQLException {
@@ -116,7 +122,7 @@ public class Query {
         pstSelezionaAfferenza.setInt(2, annoCampionato);
         return pstSelezionaAfferenza.executeQuery();
     }
-    
+
     public static ResultSet selezionaGiornata(int numeroCampionato, int x) throws SQLException {
         String q = "select * from CALENDARIO where numero_campionato = ? and numero_giornata = ?";
         if (pstSelezionaGiornata == null) {
@@ -126,7 +132,7 @@ public class Query {
         pstSelezionaGiornata.setInt(2, x);
         return pstSelezionaGiornata.executeQuery();
     }
-    
+
     public static ResultSet selezionaPista(String sedePista, String nomePista) throws SQLException {
         String q = "select * from PISTE where sede_pista = ? and nome_pista = ?";
         if (pstSelezionaPista == null) {

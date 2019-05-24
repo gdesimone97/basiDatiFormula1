@@ -141,9 +141,7 @@ public class Admin {
 
             conn.setAutoCommit(false);
             while (sc.hasNext() && cont < 20) {
-                String str = sc.next();
-                pst.setString(1, str);
-                System.out.println(str);
+                pst.setString(1, sc.next());
                 pst.setString(2, sc.next());
                 pst.setString(3, sc.next());
                 pst.setInt(4, sc.nextInt());
@@ -166,6 +164,7 @@ public class Admin {
                 sc.nextLine();
                 cont++;
             }
+            System.out.println(cont);
             pstInsertAttuali.executeUpdate();
             pstClear.executeQuery();
             conn.commit();

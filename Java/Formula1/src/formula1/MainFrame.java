@@ -6,12 +6,20 @@
 package formula1;
 
 import java.awt.event.WindowEvent;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
@@ -37,6 +45,7 @@ public class MainFrame extends javax.swing.JFrame {
             settaTabellaPiloti();
             settaTabellaScuderie();
             aggiornaComboBox();
+            logoutButton.setVisible(false);
 
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, "Errore di connessione");
@@ -49,7 +58,7 @@ public class MainFrame extends javax.swing.JFrame {
         while (anno > 2018) {
             numCampionatoComboBox.addItem(Integer.toString(--anno));
         }
-        
+
         aggiornaTabellaPiloti();
         aggiornaTabellaScuderie();
     }
@@ -80,9 +89,9 @@ public class MainFrame extends javax.swing.JFrame {
             tablePiloti.setEnabled(false);
             tablePiloti.clearSelection();
         }
-        
+
         riga = 0;
-        
+
         ResultSet classifica;
 
         if (Query.isCurrent(numeroCampionato)) {
@@ -117,7 +126,7 @@ public class MainFrame extends javax.swing.JFrame {
         DefaultTableModel defaultModel = (DefaultTableModel) tableScuderie.getModel();
         tableScuderie.removeRowSelectionInterval(0, 9);
         int riga = 0;
-        
+
         while (riga < 10) {
             defaultModel.setValueAt("", riga, 0);
             defaultModel.setValueAt("", riga, 1);
@@ -126,7 +135,7 @@ public class MainFrame extends javax.swing.JFrame {
             tableScuderie.setEnabled(false);
             tableScuderie.clearSelection();
         }
-        
+
         riga = 0;
 
         ResultSet classifica;
@@ -149,6 +158,7 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFileChooser1 = new javax.swing.JFileChooser();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         PilotaPanel = new javax.swing.JPanel();
         classificaPilotaPanel = new javax.swing.JPanel();
@@ -180,10 +190,14 @@ public class MainFrame extends javax.swing.JFrame {
         titoliScuderiaTextField = new javax.swing.JTextField();
         afferenza1Label = new javax.swing.JLabel();
         afferenza2Label = new javax.swing.JLabel();
+        personaleButton = new javax.swing.JButton();
         RisultatiPanel = new javax.swing.JPanel();
         verificaPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         risultatiList = new javax.swing.JList<>();
+        cancellaTuttoButton = new javax.swing.JButton();
+        cancellaRigaButton = new javax.swing.JButton();
+        commitButton = new javax.swing.JButton();
         inserimentoPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         numeroCampionatoField = new javax.swing.JTextField();
@@ -200,11 +214,14 @@ public class MainFrame extends javax.swing.JFrame {
         ritiroCheckBox = new javax.swing.JCheckBox();
         inserisciButton = new javax.swing.JButton();
         cancellaButton = new javax.swing.JButton();
+        countRisultatiLabel = new javax.swing.JLabel();
+        countRisultatiLabel2 = new javax.swing.JLabel();
+        inserisciDaFileButton = new javax.swing.JButton();
         CampionatoPanel = new javax.swing.JPanel();
         numCampionatoComboBox = new javax.swing.JComboBox<>();
         numCampionatoLabel = new javax.swing.JLabel();
-        numCampionatoLabel1 = new javax.swing.JLabel();
         loginButton = new javax.swing.JButton();
+        logoutButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -369,7 +386,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(PilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(classificaPilotaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(infoPilotaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addGap(0, 19, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Piloti", PilotaPanel);
@@ -445,6 +462,13 @@ public class MainFrame extends javax.swing.JFrame {
         titoliScuderiaTextField.setEditable(false);
         titoliScuderiaTextField.setFocusable(false);
 
+        personaleButton.setText("Mostra Personale");
+        personaleButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                personaleButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout infoScuderiaPanelLayout = new javax.swing.GroupLayout(infoScuderiaPanel);
         infoScuderiaPanel.setLayout(infoScuderiaPanelLayout);
         infoScuderiaPanelLayout.setHorizontalGroup(
@@ -468,7 +492,8 @@ public class MainFrame extends javax.swing.JFrame {
                         .addGroup(infoScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nazionalitaLabel1)
                             .addComponent(afferenza1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(afferenza2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(afferenza2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(personaleButton))
                         .addGap(0, 139, Short.MAX_VALUE))))
         );
         infoScuderiaPanelLayout.setVerticalGroup(
@@ -492,7 +517,9 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(afferenza1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(afferenza2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(personaleButton)
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout ScuderiaPanelLayout = new javax.swing.GroupLayout(ScuderiaPanel);
@@ -511,55 +538,86 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(ScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(classificaScuderiaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(infoScuderiaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 25, Short.MAX_VALUE))
+                .addGap(0, 33, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Scuderie", ScuderiaPanel);
 
         verificaPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Verifica"));
 
+        risultatiList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        risultatiList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                risultatiListValueChanged(evt);
+            }
+        });
         jScrollPane1.setViewportView(risultatiList);
+
+        cancellaTuttoButton.setText("Cancella tutto");
+        cancellaTuttoButton.setEnabled(false);
+        cancellaTuttoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancellaTuttoButtonActionPerformed(evt);
+            }
+        });
+
+        cancellaRigaButton.setText("Cancella");
+        cancellaRigaButton.setEnabled(false);
+        cancellaRigaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancellaRigaButtonActionPerformed(evt);
+            }
+        });
+
+        commitButton.setText("Commit");
+        commitButton.setEnabled(false);
+        commitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                commitButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout verificaPanelLayout = new javax.swing.GroupLayout(verificaPanel);
         verificaPanel.setLayout(verificaPanelLayout);
         verificaPanelLayout.setHorizontalGroup(
             verificaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(verificaPanelLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)
+                .addGroup(verificaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
+                    .addGroup(verificaPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(commitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(cancellaRigaButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                        .addComponent(cancellaTuttoButton)))
                 .addContainerGap())
         );
         verificaPanelLayout.setVerticalGroup(
             verificaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(verificaPanelLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 39, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(verificaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cancellaTuttoButton)
+                    .addComponent(commitButton)
+                    .addComponent(cancellaRigaButton))
+                .addGap(0, 11, Short.MAX_VALUE))
         );
 
         inserimentoPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Inserimento"));
 
         jLabel1.setText("Numero Campionato: ");
 
-        numeroCampionatoField.setText(" ");
-
         jLabel2.setText("Numero Giornata: ");
 
-        numeroGiornataField.setText(" ");
-
         jLabel3.setText("Codice Pilota: ");
-
-        punteggioField.setText(" ");
-
-        migliorTempoField.setText(" ");
 
         jLabel5.setText("Punteggio:");
 
         jLabel4.setText("Miglior Tempo:");
 
-        tempoQualificaField.setText(" ");
-
         jLabel6.setText("Tempo Qualifica:");
-
-        codiceField.setText(" ");
 
         ritiroCheckBox.setText("Pilota Ritirato");
 
@@ -574,6 +632,17 @@ public class MainFrame extends javax.swing.JFrame {
         cancellaButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancellaButtonActionPerformed(evt);
+            }
+        });
+
+        countRisultatiLabel.setText("Risultati inseriti: ");
+
+        countRisultatiLabel2.setText("0");
+
+        inserisciDaFileButton.setText("Inserisci da file");
+        inserisciDaFileButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inserisciDaFileButtonActionPerformed(evt);
             }
         });
 
@@ -611,10 +680,17 @@ public class MainFrame extends javax.swing.JFrame {
                             .addComponent(codiceField, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(tempoQualificaField, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(inserimentoPanelLayout.createSequentialGroup()
+                        .addComponent(countRisultatiLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(countRisultatiLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(inserimentoPanelLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addComponent(inserisciButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(cancellaButton)))
+                        .addGroup(inserimentoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(inserisciDaFileButton)
+                            .addGroup(inserimentoPanelLayout.createSequentialGroup()
+                                .addComponent(inserisciButton)
+                                .addGap(18, 18, 18)
+                                .addComponent(cancellaButton)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         inserimentoPanelLayout.setVerticalGroup(
@@ -650,7 +726,13 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(inserimentoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inserisciButton)
                     .addComponent(cancellaButton))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(inserisciDaFileButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(inserimentoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(countRisultatiLabel)
+                    .addComponent(countRisultatiLabel2))
+                .addGap(21, 21, 21))
         );
 
         javax.swing.GroupLayout RisultatiPanelLayout = new javax.swing.GroupLayout(RisultatiPanel);
@@ -660,8 +742,8 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(RisultatiPanelLayout.createSequentialGroup()
                 .addComponent(inserimentoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(verificaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(verificaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         RisultatiPanelLayout.setVerticalGroup(
             RisultatiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -682,7 +764,7 @@ public class MainFrame extends javax.swing.JFrame {
         );
         CampionatoPanelLayout.setVerticalGroup(
             CampionatoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 382, Short.MAX_VALUE)
+            .addGap(0, 390, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Campionato", CampionatoPanel);
@@ -702,6 +784,13 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        logoutButton.setText("Logout Admin");
+        logoutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -712,26 +801,26 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(numCampionatoLabel)
                 .addGap(18, 18, 18)
                 .addComponent(numCampionatoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(numCampionatoLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(loginButton)
+                .addGap(18, 18, 18)
+                .addComponent(logoutButton)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(numCampionatoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(numCampionatoLabel))
-                        .addComponent(numCampionatoLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(loginButton))
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(numCampionatoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(numCampionatoLabel))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(loginButton)
+                        .addComponent(logoutButton)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         pack();
@@ -767,6 +856,7 @@ public class MainFrame extends javax.swing.JFrame {
             ResultSet rstAfferenza = Query.selezionaAfferenza(x + 20, numeroCampionato);
 
             while (rstScuderia.next()) {
+                personaleButton.setEnabled(true);
                 nomeScuderiaTextField.setText(rstScuderia.getString("nome_scuderia"));
                 nazionalitaScuderiaTextField.setText(rstScuderia.getString("nazionalita_scuderia"));
                 titoliScuderiaTextField.setText(rstScuderia.getString("num_campionati_vinti"));
@@ -800,29 +890,47 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_cancellaButtonActionPerformed
 
     private void inserisciButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inserisciButtonActionPerformed
-        String numC = numeroCampionatoField.getText();
-        String numG = numeroGiornataField.getText();
-        String codice = codiceField.getText();
-        String punti = punteggioField.getText();
-        String migliorTempo = migliorTempoField.getText();
-        String tempoQualifica = tempoQualificaField.getText();
-
-        if (numC.compareTo("") == 0 || numG.compareTo("") == 0 || codice.compareTo("") == 0 || punti.compareTo("") == 0
-                || migliorTempo.compareTo("") == 0 || tempoQualifica.compareTo("") == 0) {
-            JOptionPane.showMessageDialog(this, "Devi inserire tutti i campi");
-        } else {
-            //String sede_pista = Query.selezionaSedePista(numC, numG);
-            //String nome_pista = Query.selezionaNomePista(numC, numG);
-
-            dm.addElement(numC + ":" + numG + ":" + codice + ":" + punti + ":" + migliorTempo + ":" + tempoQualifica + ":"
-                    + (!ritiroCheckBox.isSelected() ? "0:" : "1:"));
-            risultatiList.setModel(dm);
-
-            codiceField.setText("");
-            punteggioField.setText("");
-            migliorTempoField.setText("");
-            tempoQualificaField.setText("");
-            ritiroCheckBox.setSelected(false);
+        try {
+            String numC = numeroCampionatoField.getText();
+            String numG = numeroGiornataField.getText();
+            String codice = codiceField.getText();
+            String punti = punteggioField.getText();
+            String migliorTempo = migliorTempoField.getText();
+            String tempoQualifica = tempoQualificaField.getText();
+            String sede_pista;
+            String nome_pista;
+            
+            ResultSet rst = Query.selezionaPista(Integer.parseInt(numC), Integer.parseInt(numG));
+            rst.next();
+            sede_pista = rst.getString("sede_pista");
+            nome_pista = rst.getString("nome_pista");
+            
+            if (numC.compareTo("") == 0 || numG.compareTo("") == 0 || codice.compareTo("") == 0 || punti.compareTo("") == 0
+                    || migliorTempo.compareTo("") == 0 || tempoQualifica.compareTo("") == 0) {
+                JOptionPane.showMessageDialog(this, "Devi inserire tutti i campi");
+                
+            } else {
+                dm.addElement(sede_pista + ":" + nome_pista + ":" + codice +  ":" + numC + ":" + punti + ":" + migliorTempo + ":" + tempoQualifica + ":"
+                        + (!ritiroCheckBox.isSelected() ? "0:" : "1:"));
+                risultatiList.setModel(dm);
+                
+                codiceField.setText("");
+                punteggioField.setText("");
+                migliorTempoField.setText("");
+                tempoQualificaField.setText("");
+                ritiroCheckBox.setSelected(false);
+                
+                Integer count = Integer.parseInt(countRisultatiLabel2.getText())+1;
+                countRisultatiLabel2.setText(count.toString());
+                
+                if (dm.getSize() == 20) {
+                    commitButton.setEnabled(true);
+                    cancellaTuttoButton.setEnabled(true);
+                    inserisciButton.setEnabled(false);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Non riesco a trovare la pista!");
         }
 
 
@@ -830,7 +938,20 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void numCampionatoComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_numCampionatoComboBoxItemStateChanged
         numeroCampionato = Integer.parseInt((String) numCampionatoComboBox.getSelectedItem()) - 1950;
-        numCampionatoLabel1.setText((Query.isCurrent(numeroCampionato) ? "Anno corrente selezionato" : "CIAO"));
+
+        nomeTextField.setText("");
+        cognomeTextField.setText("");
+        nazionalitaTextField.setText("");
+        dataTextField.setText("");
+        titoliTextField.setText("");
+        ritiratoLabel.setText("");
+        nomeScuderiaTextField.setText("");
+        nazionalitaScuderiaTextField.setText("");
+        titoliScuderiaTextField.setText("");
+        afferenzaScuderiaLabel.setText("");
+        afferenza1Label.setText("");
+        afferenza2Label.setText("");
+        personaleButton.setEnabled(false);
 
         try {
             aggiornaTabellaPiloti();
@@ -842,17 +963,118 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         String utente = JOptionPane.showInputDialog("Inserisci Utente: ");
-        String password = JOptionPane.showInputDialog("Inserisci Password: ");
-        try {
-            admin = Admin.adminConnection(utente, password);
-            JOptionPane.showMessageDialog(this, "Login effettuato con successo!");
-            //SBLOCCA LE SESSIONI PER ADMIN
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(this, "Errore di connessione, riprova!");
-        } catch (AdminLoginFailed ex) {
-            JOptionPane.showMessageDialog(this, "Credenziali errate!");
+        if (utente != null) {
+            String password = JOptionPane.showInputDialog("Inserisci Password: ");
+            if (password != null) {
+                try {
+                    admin = Admin.adminConnection(utente, password);
+                    JOptionPane.showMessageDialog(this, "Login effettuato con successo!");
+                    logoutButton.setVisible(true);
+                    //SBLOCCA LE SESSIONI PER ADMIN
+                } catch (SQLException ex) {
+                    JOptionPane.showMessageDialog(this, "Errore di connessione, riprova!");
+                } catch (AdminLoginFailed ex) {
+                    JOptionPane.showMessageDialog(this, "Credenziali errate!");
+                }
+            }
         }
     }//GEN-LAST:event_loginButtonActionPerformed
+
+    private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
+        admin = null;
+        logoutButton.setVisible(false);
+    }//GEN-LAST:event_logoutButtonActionPerformed
+
+    private void personaleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personaleButtonActionPerformed
+        try {
+            int x = tableScuderie.getSelectedRow();
+            ResultSet rstScuderia = Query.selezionaScuderia(x);
+            rstScuderia.next();
+            ResultSet rst[] = Query.selezionaPersonale(numeroCampionato, rstScuderia.getString("nome_scuderia"));
+
+            String str = "";
+            str += "AMMINISTRATORE DELEGATO SCUDERIA: \n";
+            while (rst[0].next()) {
+                str += rst[0].getString("nazionalita_personale") + " ";
+                str += rst[0].getString("data_nascita") + " ";
+                str += rst[0].getString("professione") + " ";
+                str += rst[0].getString("nome_personale") + " ";
+                str += rst[0].getString("cognome_personale") + "\n";
+            }
+
+            str += "\nPERSONALE SCUDERIA: \n";
+
+            while (rst[1].next()) {
+                str += rst[1].getString("nazionalita_personale") + " ";
+                str += rst[1].getString("data_nascita") + " ";
+                str += rst[1].getString("professione") + " ";
+                str += rst[1].getString("nome_personale") + " ";
+                str += rst[1].getString("cognome_personale") + "\n";
+            }
+
+            JOptionPane.showMessageDialog(this, str);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_personaleButtonActionPerformed
+
+    private void commitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_commitButtonActionPerformed
+        try (BufferedWriter w = new BufferedWriter(new FileWriter("risultati.txt", true))) {
+            for (Object o : dm.toArray()) {
+                w.write(o.toString());
+                w.newLine();
+            }
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this, "Errore nell'apertura del file, riprova.");
+        }
+
+        try {
+            admin.inserisciRisultati("risultati.txt");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Errore nell'inserimento su database. Riprova");
+        }
+    }//GEN-LAST:event_commitButtonActionPerformed
+
+    private void risultatiListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_risultatiListValueChanged
+        if (!risultatiList.isSelectionEmpty())
+            cancellaRigaButton.setEnabled(true);
+        else
+            cancellaRigaButton.setEnabled(false);
+    }//GEN-LAST:event_risultatiListValueChanged
+
+    private void cancellaRigaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancellaRigaButtonActionPerformed
+        dm.removeElementAt(risultatiList.getSelectedIndex());
+        Integer count = Integer.parseInt(countRisultatiLabel2.getText()) - 1;
+        countRisultatiLabel2.setText(count.toString());
+        inserisciButton.setEnabled(true);
+    }//GEN-LAST:event_cancellaRigaButtonActionPerformed
+
+    private void cancellaTuttoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancellaTuttoButtonActionPerformed
+        cancellaTuttoButton.setEnabled(false);
+        commitButton.setEnabled(false);
+        countRisultatiLabel2.setText("0");
+        inserisciButton.setEnabled(true);
+        
+        for (Object o: dm.toArray())
+            dm.removeAllElements();
+    }//GEN-LAST:event_cancellaTuttoButtonActionPerformed
+
+    private void inserisciDaFileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inserisciDaFileButtonActionPerformed
+        try {
+            int x = jFileChooser1.showOpenDialog(this);
+            String nomeFile = "";
+            if(x == JFileChooser.APPROVE_OPTION)
+                nomeFile = jFileChooser1.getSelectedFile().getName();
+            
+            System.out.println(nomeFile);
+            Scanner sc = new Scanner(new BufferedReader(new FileReader(nomeFile)));
+            sc.useDelimiter(":");
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_inserisciDaFileButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -898,17 +1120,24 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel afferenza2Label;
     private javax.swing.JLabel afferenzaScuderiaLabel;
     private javax.swing.JButton cancellaButton;
+    private javax.swing.JButton cancellaRigaButton;
+    private javax.swing.JButton cancellaTuttoButton;
     private javax.swing.JPanel classificaPilotaPanel;
     private javax.swing.JPanel classificaScuderiaPanel;
     private javax.swing.JTextField codiceField;
     private javax.swing.JLabel cognomeLabel;
     private javax.swing.JTextField cognomeTextField;
+    private javax.swing.JButton commitButton;
+    private javax.swing.JLabel countRisultatiLabel;
+    private javax.swing.JLabel countRisultatiLabel2;
     private javax.swing.JLabel dataLabel;
     private javax.swing.JTextField dataTextField;
     private javax.swing.JPanel infoPilotaPanel;
     private javax.swing.JPanel infoScuderiaPanel;
     private javax.swing.JPanel inserimentoPanel;
     private javax.swing.JButton inserisciButton;
+    private javax.swing.JButton inserisciDaFileButton;
+    private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -920,6 +1149,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton loginButton;
+    private javax.swing.JButton logoutButton;
     private javax.swing.JTextField migliorTempoField;
     private javax.swing.JLabel nazionalitaLabel;
     private javax.swing.JLabel nazionalitaLabel1;
@@ -931,9 +1161,9 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField nomeTextField;
     private javax.swing.JComboBox<String> numCampionatoComboBox;
     private javax.swing.JLabel numCampionatoLabel;
-    private javax.swing.JLabel numCampionatoLabel1;
     private javax.swing.JTextField numeroCampionatoField;
     private javax.swing.JTextField numeroGiornataField;
+    private javax.swing.JButton personaleButton;
     private javax.swing.JTextField punteggioField;
     private javax.swing.JList<String> risultatiList;
     private javax.swing.JLabel ritiratoLabel;

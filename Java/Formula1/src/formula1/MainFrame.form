@@ -32,6 +32,8 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="numCampionatoLabel1" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
+              <Component id="loginButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -39,16 +41,19 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="numCampionatoComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="numCampionatoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="numCampionatoComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="numCampionatoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="numCampionatoLabel1" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="numCampionatoLabel1" max="32767" attributes="0"/>
+                  <Component id="loginButton" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jTabbedPane1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="93" max="32767" attributes="0"/>
+              <EmptySpace pref="90" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -795,6 +800,14 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="numCampionatoLabel1">
+    </Component>
+    <Component class="javax.swing.JButton" name="loginButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Login Admin"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loginButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

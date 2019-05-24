@@ -10,6 +10,10 @@ import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.io.*;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -111,7 +115,38 @@ public class Admin {
     public void logOut(Admin admin) {
         admin = null;
     }
-    
-    
+
+    /**
+     * 
+     * @param file - file da leggere
+     * @return true se l'inserimento è andato a buon fine - false se ci sono stati errori
+     * @throws SQLException 
+     */
+    public boolean inserisciRisultati(String file) throws SQLException {
+        try (DataInputStream i = new DataInputStream(new BufferedInputStream(new FileInputStream(file)))) {
+            Scanner sc = new Scanner(file);
+            sc.useDelimiter(":");
+            String q = "insert into risultati_attuali values(?,?,?,?,?,?,?,?)";
+            PreparedStatement pst = conn.prepareStatement(q);
+            conn.setAutoCommit(false);
+            while (sc.hasNext()) {
+                pst.setString(1, sc.next());
+                pst.setString(2, sc.next());
+                pst.setString(3, sc.next());
+                pst.setInt(4, sc.nextInt());
+                pst.setInt(5, sc.nextInt());
+                pst.setObject(6, TempoGiro.generaGiro(sc.nextInt(), sc.nextInt(), sc.nextInt())); //Miglior tempo
+                pst.setObject(7, TempoGiro.generaGiro(sc.nextInt(), sc.nextInt(), sc.nextInt()));
+                boolean attivo = sc.nextInt() == 0;
+                pst.setBoolean(8, attivo);
+                pst.executeUpdate();
+            }
+        } catch (Exception ex) {
+            conn.rollback();
+            return false;
+        }
+        conn.setAutoCommit(true);
+        return true;
+    }
 
 }

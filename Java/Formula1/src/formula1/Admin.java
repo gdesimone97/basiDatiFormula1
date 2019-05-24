@@ -12,9 +12,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.io.*;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.lang.model.util.ElementFilter;
 
 /**
  *
@@ -117,13 +114,6 @@ public class Admin {
         admin = null;
     }
 
-    /**
-     *
-     * @param file - file da leggere
-     * @return true se l'inserimento è andato a buon fine - false se ci sono
-     * stati errori
-     * @throws SQLException
-     */
     public void inserisciRisultati(String file) throws SQLException {
         try (DataInputStream i = new DataInputStream(new BufferedInputStream(new FileInputStream(file)))) {
             int cont = 0;
@@ -174,7 +164,6 @@ public class Admin {
                 sc.next();
                 cont++;
             }
-            conn.commit();
             pstInsertAttuali.executeUpdate();
             pstClear.executeQuery();
             conn.commit();
@@ -183,7 +172,6 @@ public class Admin {
             conn.rollback();
             conn.setAutoCommit(true);
         }
-
     }
 
 }

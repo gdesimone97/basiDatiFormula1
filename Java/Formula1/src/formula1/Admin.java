@@ -117,7 +117,7 @@ public class Admin {
     }
 
     public void inserisciRisultati(String file) throws SQLException {
-        try{
+        try {
             int cont = 0;
             Scanner sc = new Scanner(file);
             sc.useDelimiter(":");
@@ -170,15 +170,10 @@ public class Admin {
             pstClear.executeQuery();
             conn.commit();
             conn.setAutoCommit(true);
-        } catch (FileNotFoundException ex) {
-            conn.rollback();
-            conn.setAutoCommit(true);
-            throw new SQLException();
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             conn.rollback();
             conn.setAutoCommit(true);
             throw new SQLException();
         }
     }
-
 }

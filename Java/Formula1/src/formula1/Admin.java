@@ -119,7 +119,7 @@ public class Admin {
     public void inserisciRisultati(String file) throws SQLException {
         try (DataInputStream i = new DataInputStream(new BufferedInputStream(new FileInputStream(file)))) {
             int cont = 0;
-            Scanner sc = new Scanner(file);
+            Scanner sc = new Scanner(i);
             sc.useDelimiter(":");
             String qInsert_t = "insert into risultati_t values(?,?,?,?,?,?,?,?)";
             String qInsert = "insert into risultati_attuali select * from risultati_t";

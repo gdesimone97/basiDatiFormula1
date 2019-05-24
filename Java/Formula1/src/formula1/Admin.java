@@ -37,7 +37,6 @@ public class Admin {
      * @throws SQLException Eventuali errori di connessione
      * @throws AdminLoginFailed Nome utente e password admin errati
      */
-    
     public static Admin adminConnection(String user, String password) throws SQLException, AdminLoginFailed {
         if (user.compareTo(USER_ADMIN) == 0 && password.compareTo(PASS_ADMIN) == 0) {
             conn = DriverManager.getConnection(URL, user, password);
@@ -108,5 +107,11 @@ public class Admin {
         pst.setString(5, gomme);
         return pst.executeUpdate();
     }
+
+    public void logOut(Admin admin) {
+        admin = null;
+    }
+    
+    
 
 }

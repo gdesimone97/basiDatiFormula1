@@ -116,7 +116,7 @@ public class Query {
 
     public static ResultSet[] selezionaPersonale(int numeroCampionato, String nomeScuderia) throws SQLException {
         String qPersonale = "select * from personale where codice_personale in (select codice_personale from afferenza_personale where numero_campionato = ? and nome_scuderia = ?)";
-        String qDirigente = "select * from personale where codice_personale in (select codice_personale from dirigenza where numero_campionato = ? and nome_scuderia= ?)";
+        String qDirigente = "select * from personale where codice_personale in (select codice_personale from dirigenza where numero_campionato = ? and nome_scuderia = ?)";
         ResultSet rst[] = new ResultSet[2];
         PreparedStatement pstPersonale = conn.prepareStatement(qPersonale);
         PreparedStatement pstDirigente = conn.prepareStatement(qDirigente);

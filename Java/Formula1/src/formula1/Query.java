@@ -27,7 +27,8 @@ public class Query {
     private static PreparedStatement pstSelezionaPilotaAttuale = null;
     private static PreparedStatement pstSelezionaScuderiaAttuale = null;
     private static PreparedStatement pstSelezionaScuderiaPassata = null;
-    private static PreparedStatement pstSelezionaPilota2 = null;
+    private static PreparedStatement pstSelezionaPilotaStringAttuale = null;
+    private static PreparedStatement pstSelezionaPilotaStringPassato = null;
     private static PreparedStatement pstSelezionaGiornata = null;
     private static PreparedStatement pstSelezionaPista = null;
     private static PreparedStatement pstSelezionaPilotaPassato;
@@ -84,7 +85,7 @@ public class Query {
             pstSelezionaPilotaAttuale.setInt(1, x);
             return pstSelezionaPilotaPassato.executeQuery();
         }
-        
+
         String q = "select * from piloti where codice_pilota= (select codice_pilota from CLASSIFICHE_PILOTI_PASSATI where numero_campionato = ? offset ? limit 1)";
         if (pstSelezionaPilotaPassato == null) {
             pstSelezionaPilotaPassato = conn.prepareStatement(q);
@@ -96,12 +97,21 @@ public class Query {
     }
 
     public static ResultSet selezionaPilota(String x, int annoCampionato) throws SQLException {
-        String q = "select * from piloti where codice_pilota = ?";
-        if (pstSelezionaPilota2 == null) {
-            pstSelezionaPilota2 = conn.prepareStatement(q);
+        if (isCurrent(annoCampionato)) {
+            String q = "select * from piloti where codice_pilota = ?";
+            if (pstSelezionaPilotaStringAttuale == null) {
+                pstSelezionaPilotaStringAttuale = conn.prepareStatement(q);
+            }
+            pstSelezionaPilotaStringAttuale.setString(1, x);
+            return pstSelezionaPilotaStringAttuale.executeQuery();
         }
-        pstSelezionaPilota2.setString(1, x);
-        return pstSelezionaPilota2.executeQuery();
+        String q = "select * from piloti where codice_pilota = (select codice_pilota from CLASSIFICHE_PILOTI_PASSATI where codice_pilota= ? and numero_campionato = ? )";
+        if (pstSelezionaPilotaStringPassato == null) {
+            pstSelezionaPilotaStringPassato = conn.prepareStatement(q);
+        }
+        pstSelezionaPilotaStringPassato.setString(1, x);
+        pstSelezionaPilotaStringPassato.setInt(2, annoCampionato);
+        return pstSelezionaPilotaStringPassato.executeQuery();
     }
 
     public static ResultSet selezionaScuderia(int x, int numeroCampionato) throws SQLException {

@@ -19,7 +19,7 @@ import java.time.LocalDate;
  */
 public class Query {
 
-    private static final String URL = "jdbc:postgresql://localhost/prova";
+    private static final String URL = "jdbc:postgresql://localhost/formula";
     private static final String USER = "utente_generico";
     private static final String PASS = "password";
     private static Connection conn;
@@ -31,7 +31,9 @@ public class Query {
     private static PreparedStatement pstSelezionaPilotaStringPassato = null;
     private static PreparedStatement pstSelezionaGiornata = null;
     private static PreparedStatement pstSelezionaPista = null;
-    private static PreparedStatement pstSelezionaPilotaPassato;
+    private static PreparedStatement pstSelezionaPilotaPassato = null;
+    private static PreparedStatement pstRisultatiAttuali = null;
+    private static PreparedStatement pstRisultatiPassati = null;
 
     public Query() {
 
@@ -105,6 +107,7 @@ public class Query {
             pstSelezionaPilotaStringAttuale.setString(1, x);
             return pstSelezionaPilotaStringAttuale.executeQuery();
         }
+
         String q = "select * from piloti where codice_pilota = (select codice_pilota from CLASSIFICHE_PILOTI_PASSATI where codice_pilota= ? and numero_campionato = ? )";
         if (pstSelezionaPilotaStringPassato == null) {
             pstSelezionaPilotaStringPassato = conn.prepareStatement(q);
@@ -198,4 +201,27 @@ public class Query {
         pst.setInt(2, numeroGiornata);
         return pst.executeQuery();
     }
+
+    public static ResultSet selezionaRisultati(int numeroCampionato, int numeroGiornata) throws SQLException {
+        String condizione = "where sede_pista=(select sede_pista from calendario where numero_Campionato= ? and  numero_giornata = ?) and nome_pista= (select nome_pista from calendario where numero_Campionato= ? and numero_giornata=?";
+        if (isCurrent(numeroCampionato)) {
+            String q = "select * from risultati_attuali " + condizione;
+            if (pstRisultatiAttuali == null) {
+                pstRisultatiAttuali = conn.prepareStatement(q);
+            }
+            pstRisultatiAttuali.setInt(1, numeroCampionato);
+            pstRisultatiAttuali.setInt(2, numeroGiornata);
+            pstRisultatiAttuali.setInt(3, numeroCampionato);
+            pstRisultatiAttuali.setInt(4, numeroGiornata);
+            return pstRisultatiAttuali.executeQuery();
+        }
+        String q = "select * from risultati_passati " + condizione;
+        pstRisultatiPassati = conn.prepareStatement(q);
+        pstRisultatiPassati.setInt(1, numeroCampionato);
+        pstRisultatiPassati.setInt(2, numeroGiornata);
+        pstRisultatiAttuali.setInt(3, numeroCampionato);
+        pstRisultatiPassati.setInt(4, numeroGiornata);
+        return pstRisultatiPassati.executeQuery();
+    }
+
 }

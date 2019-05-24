@@ -25,7 +25,7 @@ import javax.swing.table.TableModel;
 public class MainFrame extends javax.swing.JFrame {
 
     private DefaultListModel dm = new DefaultListModel();
-    private int numeroCampionato = 68; //LocalDate.now().getYear() - 1950;
+    private int numeroCampionato = LocalDate.now().getYear() - 1950;
 
     public MainFrame() {
         initComponents();
@@ -34,11 +34,8 @@ public class MainFrame extends javax.swing.JFrame {
             Query.InitConnection();
 
             //SETTO LE CLASSIFICHE
-            aggiornaTabellaPiloti();
-            aggiornaTabellaScuderie();
             settaTabellaPiloti();
             settaTabellaScuderie();
-
             aggiornaComboBox();
 
         } catch (SQLException ex) {
@@ -69,23 +66,30 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void aggiornaTabellaPiloti() throws SQLException {
         DefaultTableModel defaultModel = (DefaultTableModel) tablePiloti.getModel();
-        while (defaultModel.getRowCount() > 0) {
-            defaultModel.removeRow(0);
-        }
         tablePiloti.setModel(defaultModel);
 
         int riga = 0;
+        while (riga < 20) {
+            defaultModel.setValueAt("", riga, 0);
+            defaultModel.setValueAt("", riga, 1);
+            defaultModel.setValueAt("", riga, 2);
+            riga++;
+            tablePiloti.setEnabled(false);
+            tablePiloti.clearSelection();
+        }
+        
+        riga = 0;
+        
         ResultSet classifica;
 
         if (Query.isCurrent(numeroCampionato)) {
             classifica = Query.getClassificaPilotiAttuale();
         } else {
             classifica = Query.getClassifichePilotiPassati(numeroCampionato);
-            System.out.println("Porco dio");
         }
 
         while (classifica.next()) {
-            System.out.println("Porco dio");
+            tablePiloti.setEnabled(true);
             defaultModel.setValueAt(riga + 1, riga, 0);
             defaultModel.setValueAt(classifica.getString("nome_pilota") + " " + classifica.getString("cognome_pilota"), riga, 1);
             defaultModel.setValueAt(classifica.getInt("punteggio"), riga, 2);
@@ -107,9 +111,20 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     private void aggiornaTabellaScuderie() throws SQLException {
-        TableModel model = tableScuderie.getModel();
+        DefaultTableModel defaultModel = (DefaultTableModel) tableScuderie.getModel();
         tableScuderie.removeRowSelectionInterval(0, 9);
         int riga = 0;
+        
+        while (riga < 10) {
+            defaultModel.setValueAt("", riga, 0);
+            defaultModel.setValueAt("", riga, 1);
+            defaultModel.setValueAt("", riga, 2);
+            riga++;
+            tableScuderie.setEnabled(false);
+            tableScuderie.clearSelection();
+        }
+        
+        riga = 0;
 
         ResultSet classifica;
         if (Query.isCurrent(numeroCampionato)) {
@@ -119,9 +134,9 @@ public class MainFrame extends javax.swing.JFrame {
         }
 
         while (classifica.next()) {
-            model.setValueAt(riga + 1, riga, 0);
-            model.setValueAt(classifica.getString("nome_scuderia"), riga, 1);
-            model.setValueAt(classifica.getInt("punteggio"), riga, 2);
+            defaultModel.setValueAt(riga + 1, riga, 0);
+            defaultModel.setValueAt(classifica.getString("nome_scuderia"), riga, 1);
+            defaultModel.setValueAt(classifica.getInt("punteggio"), riga, 2);
             riga++;
         }
     }

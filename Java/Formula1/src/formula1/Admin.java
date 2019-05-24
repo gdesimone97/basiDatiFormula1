@@ -174,15 +174,15 @@ public class Admin {
             throw new SQLException();
         }
     }
-    
-    public void inserisciCalendario(String sedePista,String nomePista,int numeroCampionato,Date date,int numeroGiornata ) throws SQLException{
-        String q="insert into calendario values(?,?,?,?,?)";
-        PreparedStatement pst=conn.prepareStatement(q);
+
+    public void inserisciCalendario(String sedePista, String nomePista, int numeroCampionato, Date date, int numeroGiornata) throws SQLException {
+        String q = "insert into calendario values(?,?,?,?,?)";
+        PreparedStatement pst = conn.prepareStatement(q);
         pst.setString(1, sedePista);
         pst.setString(2, nomePista);
         pst.setInt(3, numeroCampionato);
         pst.setDate(4, date);
         pst.setInt(5, numeroGiornata);
     }
-    
+
 }

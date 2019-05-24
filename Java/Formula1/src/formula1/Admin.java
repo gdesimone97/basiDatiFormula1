@@ -5,12 +5,12 @@
  */
 package formula1;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.Scanner;
 
 /**
@@ -117,7 +117,7 @@ public class Admin {
     public void inserisciRisultati(String file) throws SQLException {
         try {
             int cont = 0;
-            Scanner sc = new Scanner(file);
+            Scanner sc = new Scanner(new File(file));
             sc.useDelimiter(":");
             String qInsert_t = "insert into risultati_t values(?,?,?,?,?,?,?,?)";
             String qInsert = "insert into risultati_attuali select * from risultati_t";

@@ -100,7 +100,7 @@ public class Query {
             return pst.executeQuery();
         }
         
-        String q="select * from scuderie where nome_scuderia= (select * from classifiche_costruttori_passate where numero_campionato= ? offset ? limit 1 )";
+        String q="select * from scuderie where nome_scuderia= (select nome_scuderia from classifiche_costruttori_passate where numero_campionato= ? offset ? limit 1 )";
         PreparedStatement pst=conn.prepareStatement(q);
         pst.setInt(1, numeroCampionato);
         pst.setInt(2, x);

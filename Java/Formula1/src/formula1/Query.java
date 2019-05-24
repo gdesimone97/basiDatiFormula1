@@ -27,7 +27,6 @@ public class Query {
     private static PreparedStatement pstSelezionaPilota = null;
     private static PreparedStatement pstSelezionaScuderia = null;
     private static PreparedStatement pstSelezionaPilota2 = null;
-
     public Query() {
 
     }
@@ -43,9 +42,11 @@ public class Query {
         return stm.executeQuery(q);
     }
 
-    public static ResultSet getClassifichePilotiPassati() throws SQLException {
-        String q = "select * from CLASSIFICHE_PILOTI_PASSATI";
-        return conn.createStatement().executeQuery(q);
+    public static ResultSet getClassifichePilotiPassati(int annoCampionato) throws SQLException {
+        String q = "select * from CLASSIFICHE_PILOTI_PASSATI where numero_campionato = ?";
+        PreparedStatement pstPilotiPassati=conn.prepareStatement(q);
+        pstPilotiPassati.setInt(1, annoCampionato);
+        return pstPilotiPassati.executeQuery();
     }
 
     public static ResultSet getClassificaScuderieAttuale() throws SQLException {

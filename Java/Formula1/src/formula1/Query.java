@@ -68,7 +68,7 @@ public class Query {
     }
 
     public static ResultSet selezionaPilota(String x) throws SQLException {
-        String q = "select * from piloti where codice_pilota = ? and ";
+        String q = "select * from piloti where codice_pilota = ? ";
         if (pstSelezionaPilota2 == null) {
             pstSelezionaPilota2 = conn.prepareStatement(q);
         }

@@ -19,7 +19,7 @@ import java.time.LocalDate;
  */
 public class Query {
 
-    private static final String URL = "jdbc:postgresql://localhost/prova";
+    private static final String URL = "jdbc:postgresql://localhost/formula";
     private static final String USER = "utente_generico";
     private static final String PASS = "password";
     private static Connection conn;
@@ -41,7 +41,6 @@ public class Query {
         String q = "select * from CLASSIFICA_PILOTI_ATTUALE ";
         Statement stm = conn.createStatement();
         ResultSet rst= stm.executeQuery(q);
-        System.out.println(rst);
         return rst;
     }
 

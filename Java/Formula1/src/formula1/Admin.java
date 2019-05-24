@@ -37,6 +37,7 @@ public class Admin {
      * @throws SQLException Eventuali errori di connessione
      * @throws AdminLoginFailed Nome utente e password admin errati
      */
+    
     public static Admin adminConnection(String user, String password) throws SQLException, AdminLoginFailed {
         if (user.compareTo(USER_ADMIN) == 0 && password.compareTo(PASS_ADMIN) == 0) {
             conn = DriverManager.getConnection(URL, user, password);
@@ -70,7 +71,7 @@ public class Admin {
         return pst.executeUpdate();
     }
 
-    // per inserire tempoGiro usrare il metodo statico della classe Tempogiro: TempoGiro.generaGiro
+    // Per inserire tempoGiro usrare il metodo statico della classe Tempogiro: TempoGiro.generaGiro
     public int aggiungiPista(String sedePista, String nomePista, int lunghezza, int numeroCureve, TempoGiro giro, int annoInaugurazione) throws SQLException {
         String q = "insert into piste values(?,?,?,?,?,?)";
         PreparedStatement pst = conn.prepareStatement(q);

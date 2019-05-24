@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 
 /**
  *
@@ -68,7 +69,7 @@ public class Query {
     }
 
     public static ResultSet selezionaPilota(String x) throws SQLException {
-        String q = "select * from piloti where codice_pilota = ? ";
+        String q = "select * from piloti where codice_pilota = ?";
         if (pstSelezionaPilota2 == null) {
             pstSelezionaPilota2 = conn.prepareStatement(q);
         }
@@ -86,19 +87,25 @@ public class Query {
         return pstSelezionaScuderia.executeQuery();
     }
 
-    public static ResultSet selezionaAfferenza(int x) throws SQLException {
+    public static ResultSet selezionaAfferenza(int x, int annoCampionato) throws SQLException {
         String q = "select * from afferenza_piloti ";
         if (x >= 0 && x <= 19) {
-            q += "where codice_pilota = (select codice_pilota from CLASSIFICA_PILOTI_ATTUALE offset ? limit 1) and numero_campionato = (select max(numero_campionato) from campionati)";
+            q += "where codice_pilota = (select codice_pilota from CLASSIFICA_PILOTI_ATTUALE offset ? limit 1) and numero_campionato = ?";
         } else if (x >= 20 && x <= 29) {
             x = x - 20;
-            q += "where nome_scuderia = (select nome_scuderia from CLASSIFICA_COSTRUTTORI_ATTUALE offset ? limit 1)";
+            q += "where nome_scuderia = (select nome_scuderia from CLASSIFICA_COSTRUTTORI_ATTUALE offset ? limit 1) and numero_campionato = ?";
         } else {
             System.out.println("Parametro errato nel metodo: \"selezionaAfferenza\" ");
         }
         PreparedStatement pstSelezionaAfferenza = conn.prepareStatement(q);
         pstSelezionaAfferenza.setInt(1, x);
+        pstSelezionaAfferenza.setInt(2, annoCampionato);
         return pstSelezionaAfferenza.executeQuery();
     }
 
+    public static boolean isCurrent(int numeroCampionato) throws SQLException {
+        int anno = numeroCampionato + 1950;
+        int dataAnnoCorrente = LocalDate.now().getYear();
+        return dataAnnoCorrente == anno;
+    }
 }

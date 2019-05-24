@@ -48,7 +48,6 @@ public class MainFrame extends javax.swing.JFrame {
             aggiornaComboBox();
             logoutButton.setVisible(false);
             
-            jTabbedPane1.getComponentAt(1).setVisible(false);
 
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, "Errore di connessione");
@@ -203,6 +202,38 @@ public class MainFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jFileChooser1 = new javax.swing.JFileChooser();
+        adminFrame = new javax.swing.JFrame();
+        logoutButton = new javax.swing.JButton();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        RisultatiPanel = new javax.swing.JPanel();
+        verificaPanel = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        risultatiList = new javax.swing.JList<>();
+        cancellaTuttoButton = new javax.swing.JButton();
+        cancellaRigaButton = new javax.swing.JButton();
+        commitButton = new javax.swing.JButton();
+        scriviFileButton = new javax.swing.JButton();
+        inserimentoPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        numeroCampionatoField = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        numeroGiornataField = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        punteggioField = new javax.swing.JTextField();
+        migliorTempoField = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        tempoQualificaField = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        codiceField = new javax.swing.JTextField();
+        ritiroCheckBox = new javax.swing.JCheckBox();
+        inserisciButton = new javax.swing.JButton();
+        cancellaButton = new javax.swing.JButton();
+        countRisultatiLabel = new javax.swing.JLabel();
+        countRisultatiLabel2 = new javax.swing.JLabel();
+        inserisciDaFileButton = new javax.swing.JButton();
+        CampionatoPanel = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         PilotaPanel = new javax.swing.JPanel();
         classificaPilotaPanel = new javax.swing.JPanel();
@@ -248,503 +279,24 @@ public class MainFrame extends javax.swing.JFrame {
         inaugurazioneTextField = new javax.swing.JTextField();
         recordLabel = new javax.swing.JLabel();
         recordTextField = new javax.swing.JTextField();
-        RisultatiPanel = new javax.swing.JPanel();
-        verificaPanel = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        risultatiList = new javax.swing.JList<>();
-        cancellaTuttoButton = new javax.swing.JButton();
-        cancellaRigaButton = new javax.swing.JButton();
-        commitButton = new javax.swing.JButton();
-        scriviFileButton = new javax.swing.JButton();
-        inserimentoPanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        numeroCampionatoField = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        numeroGiornataField = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        punteggioField = new javax.swing.JTextField();
-        migliorTempoField = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        tempoQualificaField = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        codiceField = new javax.swing.JTextField();
-        ritiroCheckBox = new javax.swing.JCheckBox();
-        inserisciButton = new javax.swing.JButton();
-        cancellaButton = new javax.swing.JButton();
-        countRisultatiLabel = new javax.swing.JLabel();
-        countRisultatiLabel2 = new javax.swing.JLabel();
-        inserisciDaFileButton = new javax.swing.JButton();
-        CampionatoPanel = new javax.swing.JPanel();
         numCampionatoComboBox = new javax.swing.JComboBox<>();
         numCampionatoLabel = new javax.swing.JLabel();
         loginButton = new javax.swing.JButton();
-        logoutButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        classificaPilotaPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Classifica Piloti"));
-
-        tablePiloti.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                " ", "Pilota", "Punti"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Short.class, java.lang.String.class, java.lang.Integer.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+        adminFrame.setResizable(false);
+        adminFrame.setSize(new java.awt.Dimension(574, 500));
+        adminFrame.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                adminFrameWindowClosing(evt);
             }
         });
-        tablePiloti.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        tablePiloti.setShowVerticalLines(false);
-        tablePiloti.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                tablePilotiMouseReleased(evt);
-            }
-        });
-        jScrollPane2.setViewportView(tablePiloti);
 
-        javax.swing.GroupLayout classificaPilotaPanelLayout = new javax.swing.GroupLayout(classificaPilotaPanel);
-        classificaPilotaPanel.setLayout(classificaPilotaPanelLayout);
-        classificaPilotaPanelLayout.setHorizontalGroup(
-            classificaPilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        classificaPilotaPanelLayout.setVerticalGroup(
-            classificaPilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-
-        infoPilotaPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Informazioni Pilota"));
-
-        nomeLabel.setText("Nome: ");
-
-        cognomeLabel.setText("Cognome: ");
-
-        nazionalitaLabel.setText("Nazionalità: ");
-
-        dataLabel.setText("Data di nascita: ");
-
-        titoliLabel.setText("Titoli vinti: ");
-
-        nomeTextField.setEditable(false);
-        nomeTextField.setFocusable(false);
-
-        cognomeTextField.setEditable(false);
-        cognomeTextField.setFocusable(false);
-
-        nazionalitaTextField.setEditable(false);
-        nazionalitaTextField.setFocusable(false);
-
-        titoliTextField.setEditable(false);
-        titoliTextField.setFocusable(false);
-
-        dataTextField.setEditable(false);
-        dataTextField.setFocusable(false);
-
-        javax.swing.GroupLayout infoPilotaPanelLayout = new javax.swing.GroupLayout(infoPilotaPanel);
-        infoPilotaPanel.setLayout(infoPilotaPanelLayout);
-        infoPilotaPanelLayout.setHorizontalGroup(
-            infoPilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(infoPilotaPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(infoPilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(infoPilotaPanelLayout.createSequentialGroup()
-                        .addGroup(infoPilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(titoliLabel)
-                            .addComponent(dataLabel)
-                            .addComponent(nazionalitaLabel)
-                            .addComponent(cognomeLabel)
-                            .addComponent(nomeLabel))
-                        .addGap(30, 30, 30)
-                        .addGroup(infoPilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(titoliTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dataTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nazionalitaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cognomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(52, 52, 52))
-                    .addGroup(infoPilotaPanelLayout.createSequentialGroup()
-                        .addComponent(ritiratoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())))
-        );
-        infoPilotaPanelLayout.setVerticalGroup(
-            infoPilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(infoPilotaPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(infoPilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nomeLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(infoPilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cognomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cognomeLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(infoPilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nazionalitaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nazionalitaLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(infoPilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dataTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dataLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(infoPilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(titoliTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(titoliLabel))
-                .addGap(18, 18, 18)
-                .addComponent(ritiratoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout PilotaPanelLayout = new javax.swing.GroupLayout(PilotaPanel);
-        PilotaPanel.setLayout(PilotaPanelLayout);
-        PilotaPanelLayout.setHorizontalGroup(
-            PilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PilotaPanelLayout.createSequentialGroup()
-                .addComponent(classificaPilotaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(infoPilotaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        PilotaPanelLayout.setVerticalGroup(
-            PilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PilotaPanelLayout.createSequentialGroup()
-                .addGroup(PilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(classificaPilotaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(infoPilotaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 136, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Piloti", PilotaPanel);
-
-        classificaScuderiaPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Classifica Scuderie"));
-
-        tableScuderie.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                " ", "Scuderia", "Punti"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Short.class, java.lang.String.class, java.lang.Integer.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tableScuderie.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        tableScuderie.setShowVerticalLines(false);
-        tableScuderie.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                tableScuderieMouseReleased(evt);
-            }
-        });
-        jScrollPane3.setViewportView(tableScuderie);
-
-        javax.swing.GroupLayout classificaScuderiaPanelLayout = new javax.swing.GroupLayout(classificaScuderiaPanel);
-        classificaScuderiaPanel.setLayout(classificaScuderiaPanelLayout);
-        classificaScuderiaPanelLayout.setHorizontalGroup(
-            classificaScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        classificaScuderiaPanelLayout.setVerticalGroup(
-            classificaScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-        );
-
-        infoScuderiaPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Informazioni Scuderia"));
-
-        nomeLabel1.setText("Nome: ");
-
-        nazionalitaLabel1.setText("Nazionalità: ");
-
-        titoliLabel1.setText("Titoli vinti: ");
-
-        nomeScuderiaTextField.setEditable(false);
-        nomeScuderiaTextField.setFocusable(false);
-
-        nazionalitaScuderiaTextField.setEditable(false);
-        nazionalitaScuderiaTextField.setFocusable(false);
-
-        titoliScuderiaTextField.setEditable(false);
-        titoliScuderiaTextField.setFocusable(false);
-
-        personaleButton.setText("Mostra Personale");
-        personaleButton.addActionListener(new java.awt.event.ActionListener() {
+        logoutButton.setText("Logout Admin");
+        logoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                personaleButtonActionPerformed(evt);
+                logoutButtonActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout infoScuderiaPanelLayout = new javax.swing.GroupLayout(infoScuderiaPanel);
-        infoScuderiaPanel.setLayout(infoScuderiaPanelLayout);
-        infoScuderiaPanelLayout.setHorizontalGroup(
-            infoScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(infoScuderiaPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(infoScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(afferenzaScuderiaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, infoScuderiaPanelLayout.createSequentialGroup()
-                        .addGroup(infoScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(titoliScuderiaTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nomeScuderiaTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, infoScuderiaPanelLayout.createSequentialGroup()
-                                .addGroup(infoScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(nomeLabel1)
-                                    .addComponent(titoliLabel1))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(nazionalitaScuderiaTextField, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addContainerGap())
-                    .addGroup(infoScuderiaPanelLayout.createSequentialGroup()
-                        .addGroup(infoScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nazionalitaLabel1)
-                            .addComponent(afferenza1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(afferenza2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(personaleButton))
-                        .addGap(0, 139, Short.MAX_VALUE))))
-        );
-        infoScuderiaPanelLayout.setVerticalGroup(
-            infoScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(infoScuderiaPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(nomeLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nomeScuderiaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(nazionalitaLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nazionalitaScuderiaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(titoliLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(titoliScuderiaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(afferenzaScuderiaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(afferenza1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(afferenza2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(personaleButton)
-                .addContainerGap(48, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout ScuderiaPanelLayout = new javax.swing.GroupLayout(ScuderiaPanel);
-        ScuderiaPanel.setLayout(ScuderiaPanelLayout);
-        ScuderiaPanelLayout.setHorizontalGroup(
-            ScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ScuderiaPanelLayout.createSequentialGroup()
-                .addComponent(classificaScuderiaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(infoScuderiaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        ScuderiaPanelLayout.setVerticalGroup(
-            ScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ScuderiaPanelLayout.createSequentialGroup()
-                .addGroup(ScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(classificaScuderiaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(infoScuderiaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 150, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Scuderie", ScuderiaPanel);
-
-        calendariPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Calendario"));
-
-        tableCalendario.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "", "Sede Pista", "Nome Pista"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Short.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tableCalendario.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        tableCalendario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                tableCalendarioMouseReleased(evt);
-            }
-        });
-        jScrollPane4.setViewportView(tableCalendario);
-
-        javax.swing.GroupLayout calendariPanelLayout = new javax.swing.GroupLayout(calendariPanel);
-        calendariPanel.setLayout(calendariPanelLayout);
-        calendariPanelLayout.setHorizontalGroup(
-            calendariPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        calendariPanelLayout.setVerticalGroup(
-            calendariPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-
-        infoPistaPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Informazioni Pista"));
-
-        lunghezzaPistaLabel.setText("Lunghezza:");
-
-        lunghezzaTextField.setEditable(false);
-
-        curveLabel.setText("Numero Curve:");
-
-        curveTextField.setEditable(false);
-
-        inaugurazioneLabel.setText("Anno Inaugurazione:");
-
-        inaugurazioneTextField.setEditable(false);
-
-        recordLabel.setText("Record Su Pista:");
-
-        recordTextField.setEditable(false);
-
-        javax.swing.GroupLayout infoPistaPanelLayout = new javax.swing.GroupLayout(infoPistaPanel);
-        infoPistaPanel.setLayout(infoPistaPanelLayout);
-        infoPistaPanelLayout.setHorizontalGroup(
-            infoPistaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(infoPistaPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(infoPistaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lunghezzaTextField)
-                    .addComponent(curveTextField)
-                    .addComponent(inaugurazioneTextField)
-                    .addGroup(infoPistaPanelLayout.createSequentialGroup()
-                        .addGroup(infoPistaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lunghezzaPistaLabel)
-                            .addComponent(curveLabel)
-                            .addComponent(inaugurazioneLabel)
-                            .addComponent(recordLabel))
-                        .addGap(0, 51, Short.MAX_VALUE))
-                    .addComponent(recordTextField))
-                .addContainerGap())
-        );
-        infoPistaPanelLayout.setVerticalGroup(
-            infoPistaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(infoPistaPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lunghezzaPistaLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lunghezzaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(curveLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(curveTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(inaugurazioneLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(inaugurazioneTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(recordLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(recordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout CalendarioPanelLayout = new javax.swing.GroupLayout(CalendarioPanel);
-        CalendarioPanel.setLayout(CalendarioPanelLayout);
-        CalendarioPanelLayout.setHorizontalGroup(
-            CalendarioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CalendarioPanelLayout.createSequentialGroup()
-                .addComponent(calendariPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(infoPistaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        CalendarioPanelLayout.setVerticalGroup(
-            CalendarioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CalendarioPanelLayout.createSequentialGroup()
-                .addGroup(CalendarioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(calendariPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(infoPistaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(136, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Calendario", CalendarioPanel);
 
         verificaPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Verifica"));
 
@@ -967,23 +519,519 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(RisultatiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(inserimentoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(verificaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 128, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Risultati", RisultatiPanel);
+        jTabbedPane2.addTab("Risultati", RisultatiPanel);
 
         javax.swing.GroupLayout CampionatoPanelLayout = new javax.swing.GroupLayout(CampionatoPanel);
         CampionatoPanel.setLayout(CampionatoPanelLayout);
         CampionatoPanelLayout.setHorizontalGroup(
             CampionatoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 574, Short.MAX_VALUE)
+            .addGap(0, 569, Short.MAX_VALUE)
         );
         CampionatoPanelLayout.setVerticalGroup(
             CampionatoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 507, Short.MAX_VALUE)
+            .addGap(0, 379, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Campionato", CampionatoPanel);
+        jTabbedPane2.addTab("Campionato", CampionatoPanel);
+
+        jLabel7.setText("Benvenuto nell'interfaccia amministratore!");
+
+        javax.swing.GroupLayout adminFrameLayout = new javax.swing.GroupLayout(adminFrame.getContentPane());
+        adminFrame.getContentPane().setLayout(adminFrameLayout);
+        adminFrameLayout.setHorizontalGroup(
+            adminFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminFrameLayout.createSequentialGroup()
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminFrameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(logoutButton)
+                .addContainerGap())
+        );
+        adminFrameLayout.setVerticalGroup(
+            adminFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminFrameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(adminFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(logoutButton)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+
+        classificaPilotaPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Classifica Piloti"));
+
+        tablePiloti.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                " ", "Pilota", "Punti"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Short.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablePiloti.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tablePiloti.setShowVerticalLines(false);
+        tablePiloti.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                tablePilotiMouseReleased(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tablePiloti);
+
+        javax.swing.GroupLayout classificaPilotaPanelLayout = new javax.swing.GroupLayout(classificaPilotaPanel);
+        classificaPilotaPanel.setLayout(classificaPilotaPanelLayout);
+        classificaPilotaPanelLayout.setHorizontalGroup(
+            classificaPilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        classificaPilotaPanelLayout.setVerticalGroup(
+            classificaPilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        infoPilotaPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Informazioni Pilota"));
+
+        nomeLabel.setText("Nome: ");
+
+        cognomeLabel.setText("Cognome: ");
+
+        nazionalitaLabel.setText("Nazionalità: ");
+
+        dataLabel.setText("Data di nascita: ");
+
+        titoliLabel.setText("Titoli vinti: ");
+
+        nomeTextField.setEditable(false);
+        nomeTextField.setFocusable(false);
+
+        cognomeTextField.setEditable(false);
+        cognomeTextField.setFocusable(false);
+
+        nazionalitaTextField.setEditable(false);
+        nazionalitaTextField.setFocusable(false);
+
+        titoliTextField.setEditable(false);
+        titoliTextField.setFocusable(false);
+
+        dataTextField.setEditable(false);
+        dataTextField.setFocusable(false);
+
+        javax.swing.GroupLayout infoPilotaPanelLayout = new javax.swing.GroupLayout(infoPilotaPanel);
+        infoPilotaPanel.setLayout(infoPilotaPanelLayout);
+        infoPilotaPanelLayout.setHorizontalGroup(
+            infoPilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(infoPilotaPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(infoPilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(infoPilotaPanelLayout.createSequentialGroup()
+                        .addGroup(infoPilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(titoliLabel)
+                            .addComponent(dataLabel)
+                            .addComponent(nazionalitaLabel)
+                            .addComponent(cognomeLabel)
+                            .addComponent(nomeLabel))
+                        .addGap(30, 30, 30)
+                        .addGroup(infoPilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(titoliTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dataTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nazionalitaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cognomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(52, 52, 52))
+                    .addGroup(infoPilotaPanelLayout.createSequentialGroup()
+                        .addComponent(ritiratoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
+        );
+        infoPilotaPanelLayout.setVerticalGroup(
+            infoPilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(infoPilotaPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(infoPilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nomeLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(infoPilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cognomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cognomeLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(infoPilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nazionalitaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nazionalitaLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(infoPilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dataTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dataLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(infoPilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(titoliTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(titoliLabel))
+                .addGap(18, 18, 18)
+                .addComponent(ritiratoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout PilotaPanelLayout = new javax.swing.GroupLayout(PilotaPanel);
+        PilotaPanel.setLayout(PilotaPanelLayout);
+        PilotaPanelLayout.setHorizontalGroup(
+            PilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PilotaPanelLayout.createSequentialGroup()
+                .addComponent(classificaPilotaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(infoPilotaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        PilotaPanelLayout.setVerticalGroup(
+            PilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PilotaPanelLayout.createSequentialGroup()
+                .addGroup(PilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(classificaPilotaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(infoPilotaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(136, 136, 136))
+        );
+
+        jTabbedPane1.addTab("Piloti", PilotaPanel);
+
+        classificaScuderiaPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Classifica Scuderie"));
+
+        tableScuderie.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                " ", "Scuderia", "Punti"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Short.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableScuderie.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tableScuderie.setShowVerticalLines(false);
+        tableScuderie.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                tableScuderieMouseReleased(evt);
+            }
+        });
+        jScrollPane3.setViewportView(tableScuderie);
+
+        javax.swing.GroupLayout classificaScuderiaPanelLayout = new javax.swing.GroupLayout(classificaScuderiaPanel);
+        classificaScuderiaPanel.setLayout(classificaScuderiaPanelLayout);
+        classificaScuderiaPanelLayout.setHorizontalGroup(
+            classificaScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        classificaScuderiaPanelLayout.setVerticalGroup(
+            classificaScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+        );
+
+        infoScuderiaPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Informazioni Scuderia"));
+
+        nomeLabel1.setText("Nome: ");
+
+        nazionalitaLabel1.setText("Nazionalità: ");
+
+        titoliLabel1.setText("Titoli vinti: ");
+
+        nomeScuderiaTextField.setEditable(false);
+        nomeScuderiaTextField.setFocusable(false);
+
+        nazionalitaScuderiaTextField.setEditable(false);
+        nazionalitaScuderiaTextField.setFocusable(false);
+
+        titoliScuderiaTextField.setEditable(false);
+        titoliScuderiaTextField.setFocusable(false);
+
+        personaleButton.setText("Mostra Personale");
+        personaleButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                personaleButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout infoScuderiaPanelLayout = new javax.swing.GroupLayout(infoScuderiaPanel);
+        infoScuderiaPanel.setLayout(infoScuderiaPanelLayout);
+        infoScuderiaPanelLayout.setHorizontalGroup(
+            infoScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(infoScuderiaPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(infoScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(afferenzaScuderiaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, infoScuderiaPanelLayout.createSequentialGroup()
+                        .addGroup(infoScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(titoliScuderiaTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nomeScuderiaTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, infoScuderiaPanelLayout.createSequentialGroup()
+                                .addGroup(infoScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(nomeLabel1)
+                                    .addComponent(titoliLabel1))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(nazionalitaScuderiaTextField, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addContainerGap())
+                    .addGroup(infoScuderiaPanelLayout.createSequentialGroup()
+                        .addGroup(infoScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nazionalitaLabel1)
+                            .addComponent(afferenza1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(afferenza2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(personaleButton))
+                        .addGap(0, 139, Short.MAX_VALUE))))
+        );
+        infoScuderiaPanelLayout.setVerticalGroup(
+            infoScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(infoScuderiaPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(nomeLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(nomeScuderiaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(nazionalitaLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(nazionalitaScuderiaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(titoliLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(titoliScuderiaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(afferenzaScuderiaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(afferenza1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(afferenza2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(personaleButton)
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout ScuderiaPanelLayout = new javax.swing.GroupLayout(ScuderiaPanel);
+        ScuderiaPanel.setLayout(ScuderiaPanelLayout);
+        ScuderiaPanelLayout.setHorizontalGroup(
+            ScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ScuderiaPanelLayout.createSequentialGroup()
+                .addComponent(classificaScuderiaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(infoScuderiaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        ScuderiaPanelLayout.setVerticalGroup(
+            ScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ScuderiaPanelLayout.createSequentialGroup()
+                .addGroup(ScuderiaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(classificaScuderiaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(infoScuderiaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 69, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Scuderie", ScuderiaPanel);
+
+        calendariPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Calendario"));
+
+        tableCalendario.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "", "Sede Pista", "Nome Pista"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Short.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableCalendario.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tableCalendario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                tableCalendarioMouseReleased(evt);
+            }
+        });
+        jScrollPane4.setViewportView(tableCalendario);
+
+        javax.swing.GroupLayout calendariPanelLayout = new javax.swing.GroupLayout(calendariPanel);
+        calendariPanel.setLayout(calendariPanelLayout);
+        calendariPanelLayout.setHorizontalGroup(
+            calendariPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        calendariPanelLayout.setVerticalGroup(
+            calendariPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(calendariPanelLayout.createSequentialGroup()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 19, Short.MAX_VALUE))
+        );
+
+        infoPistaPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Informazioni Pista"));
+
+        lunghezzaPistaLabel.setText("Lunghezza:");
+
+        lunghezzaTextField.setEditable(false);
+
+        curveLabel.setText("Numero Curve:");
+
+        curveTextField.setEditable(false);
+
+        inaugurazioneLabel.setText("Anno Inaugurazione:");
+
+        inaugurazioneTextField.setEditable(false);
+
+        recordLabel.setText("Record Su Pista:");
+
+        recordTextField.setEditable(false);
+
+        javax.swing.GroupLayout infoPistaPanelLayout = new javax.swing.GroupLayout(infoPistaPanel);
+        infoPistaPanel.setLayout(infoPistaPanelLayout);
+        infoPistaPanelLayout.setHorizontalGroup(
+            infoPistaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(infoPistaPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(infoPistaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lunghezzaTextField)
+                    .addComponent(curveTextField)
+                    .addComponent(inaugurazioneTextField)
+                    .addGroup(infoPistaPanelLayout.createSequentialGroup()
+                        .addGroup(infoPistaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lunghezzaPistaLabel)
+                            .addComponent(curveLabel)
+                            .addComponent(inaugurazioneLabel)
+                            .addComponent(recordLabel))
+                        .addGap(0, 51, Short.MAX_VALUE))
+                    .addComponent(recordTextField))
+                .addContainerGap())
+        );
+        infoPistaPanelLayout.setVerticalGroup(
+            infoPistaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(infoPistaPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lunghezzaPistaLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lunghezzaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(curveLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(curveTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(inaugurazioneLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(inaugurazioneTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(recordLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(recordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout CalendarioPanelLayout = new javax.swing.GroupLayout(CalendarioPanel);
+        CalendarioPanel.setLayout(CalendarioPanelLayout);
+        CalendarioPanelLayout.setHorizontalGroup(
+            CalendarioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CalendarioPanelLayout.createSequentialGroup()
+                .addComponent(calendariPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(infoPistaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        CalendarioPanelLayout.setVerticalGroup(
+            CalendarioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CalendarioPanelLayout.createSequentialGroup()
+                .addGroup(CalendarioPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(calendariPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(infoPistaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Calendario", CalendarioPanel);
 
         numCampionatoComboBox.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -1000,13 +1048,6 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        logoutButton.setText("Logout Admin");
-        logoutButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logoutButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1019,23 +1060,19 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(numCampionatoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(loginButton)
-                .addGap(18, 18, 18)
-                .addComponent(logoutButton)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(numCampionatoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(numCampionatoLabel))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(loginButton)
-                        .addComponent(logoutButton)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(numCampionatoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(numCampionatoLabel)
+                    .addComponent(loginButton))
+                .addGap(7, 7, 7)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 454, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -1192,6 +1229,8 @@ public class MainFrame extends javax.swing.JFrame {
                     logoutButton.setVisible(true);
                     loginButton.setVisible(false);
                     //SBLOCCA LE SESSIONI PER ADMIN
+                    adminFrame.setVisible(true);
+                    
                 } catch (SQLException ex) {
                     JOptionPane.showMessageDialog(this, "Errore di connessione, riprova!");
                 } catch (AdminLoginFailed ex) {
@@ -1205,6 +1244,8 @@ public class MainFrame extends javax.swing.JFrame {
         admin.logOut(admin);
         logoutButton.setVisible(false);
         loginButton.setVisible(true);
+        adminFrame.setVisible(false);
+        
     }//GEN-LAST:event_logoutButtonActionPerformed
 
     private void personaleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personaleButtonActionPerformed
@@ -1351,6 +1392,13 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tableCalendarioMouseReleased
 
+    private void adminFrameWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_adminFrameWindowClosing
+        admin.logOut(admin);
+        logoutButton.setVisible(false);
+        loginButton.setVisible(true);
+        adminFrame.setVisible(false);
+    }//GEN-LAST:event_adminFrameWindowClosing
+
     /**
      * @param args the command line arguments
      */
@@ -1392,6 +1440,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel PilotaPanel;
     private javax.swing.JPanel RisultatiPanel;
     private javax.swing.JPanel ScuderiaPanel;
+    private javax.swing.JFrame adminFrame;
     private javax.swing.JLabel afferenza1Label;
     private javax.swing.JLabel afferenza2Label;
     private javax.swing.JLabel afferenzaScuderiaLabel;
@@ -1426,11 +1475,13 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JButton loginButton;
     private javax.swing.JButton logoutButton;
     private javax.swing.JLabel lunghezzaPistaLabel;

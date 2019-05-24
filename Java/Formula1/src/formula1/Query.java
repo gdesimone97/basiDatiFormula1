@@ -25,7 +25,8 @@ public class Query {
     private static Connection conn;
 
     private static PreparedStatement pstSelezionaPilota = null;
-    private static PreparedStatement pstSelezionaScuderia = null;
+    private static PreparedStatement pstSelezionaScuderiaAttuale = null;
+    private static PreparedStatement pstSelezionaScuderiaPassata = null;
     private static PreparedStatement pstSelezionaPilota2 = null;
     private static PreparedStatement pstSelezionaGiornata = null;
     private static PreparedStatement pstSelezionaPista = null;
@@ -82,7 +83,7 @@ public class Query {
         return pstSelezionaPilota.executeQuery();
     }
 
-    public static ResultSet selezionaPilota(String x) throws SQLException {
+    public static ResultSet selezionaPilota(String x, int annoCampionato) throws SQLException {
         String q = "select * from piloti where codice_pilota = ?";
         if (pstSelezionaPilota2 == null) {
             pstSelezionaPilota2 = conn.prepareStatement(q);
@@ -95,16 +96,20 @@ public class Query {
         if (isCurrent(numeroCampionato)) {
             String q = "select * from scuderie where nome_scuderia = "
                     + "(select nome_scuderia from classifica_costruttori_attuale offset ? limit 1)";
-            PreparedStatement pst = conn.prepareStatement(q);
-            pst.setInt(1, x);
-            return pst.executeQuery();
+            if (pstSelezionaScuderiaAttuale == null) {
+                pstSelezionaScuderiaAttuale = conn.prepareStatement(q);
+            }
+            pstSelezionaScuderiaAttuale.setInt(1, x);
+            return pstSelezionaScuderiaAttuale.executeQuery();
         }
-        
-        String q="select * from scuderie where nome_scuderia= (select nome_scuderia from classifiche_costruttori_passate where numero_campionato= ? offset ? limit 1 )";
-        PreparedStatement pst=conn.prepareStatement(q);
-        pst.setInt(1, numeroCampionato);
-        pst.setInt(2, x);
-        return pst.executeQuery();
+
+        String q = "select * from scuderie where nome_scuderia= (select nome_scuderia from classifiche_costruttori_passate where numero_campionato= ? offset ? limit 1 )";
+        if (pstSelezionaScuderiaPassata == null) {
+            pstSelezionaScuderiaPassata = conn.prepareStatement(q);
+        }
+        pstSelezionaScuderiaPassata.setInt(1, numeroCampionato);
+        pstSelezionaScuderiaPassata.setInt(2, x);
+        return pstSelezionaScuderiaPassata.executeQuery();
     }
 
     public static ResultSet selezionaAfferenza(int x, int annoCampionato) throws SQLException {

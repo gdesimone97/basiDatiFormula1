@@ -16,7 +16,6 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableColumnModel;
-import javax.swing.table.TableModel;
 
 /**
  *
@@ -26,6 +25,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private DefaultListModel dm = new DefaultListModel();
     private int numeroCampionato = LocalDate.now().getYear() - 1950;
+    private Admin admin;
 
     public MainFrame() {
         initComponents();
@@ -44,11 +44,14 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }
 
-    private void aggiornaComboBox() {
+    private void aggiornaComboBox() throws SQLException {
         int anno = 2020;
         while (anno > 2018) {
             numCampionatoComboBox.addItem(Integer.toString(--anno));
         }
+        
+        aggiornaTabellaPiloti();
+        aggiornaTabellaScuderie();
     }
 
     private void settaTabellaPiloti() {
@@ -134,6 +137,7 @@ public class MainFrame extends javax.swing.JFrame {
         }
 
         while (classifica.next()) {
+            tableScuderie.setEnabled(true);
             defaultModel.setValueAt(riga + 1, riga, 0);
             defaultModel.setValueAt(classifica.getString("nome_scuderia"), riga, 1);
             defaultModel.setValueAt(classifica.getInt("punteggio"), riga, 2);
@@ -200,6 +204,7 @@ public class MainFrame extends javax.swing.JFrame {
         numCampionatoComboBox = new javax.swing.JComboBox<>();
         numCampionatoLabel = new javax.swing.JLabel();
         numCampionatoLabel1 = new javax.swing.JLabel();
+        loginButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -690,6 +695,13 @@ public class MainFrame extends javax.swing.JFrame {
 
         numCampionatoLabel.setText("Seleziona Campionato:");
 
+        loginButton.setText("Login Admin");
+        loginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -702,20 +714,24 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(numCampionatoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(numCampionatoLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(loginButton)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(numCampionatoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(numCampionatoLabel))
-                    .addComponent(numCampionatoLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(numCampionatoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(numCampionatoLabel))
+                        .addComponent(numCampionatoLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(loginButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         pack();
@@ -824,6 +840,20 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_numCampionatoComboBoxItemStateChanged
 
+    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
+        String utente = JOptionPane.showInputDialog("Inserisci Utente: ");
+        String password = JOptionPane.showInputDialog("Inserisci Password: ");
+        try {
+            admin = Admin.adminConnection(utente, password);
+            JOptionPane.showMessageDialog(this, "Login effettuato con successo!");
+            //SBLOCCA LE SESSIONI PER ADMIN
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Errore di connessione, riprova!");
+        } catch (AdminLoginFailed ex) {
+            JOptionPane.showMessageDialog(this, "Credenziali errate!");
+        }
+    }//GEN-LAST:event_loginButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -889,6 +919,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JButton loginButton;
     private javax.swing.JTextField migliorTempoField;
     private javax.swing.JLabel nazionalitaLabel;
     private javax.swing.JLabel nazionalitaLabel1;

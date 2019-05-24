@@ -24,12 +24,13 @@ public class Query {
     private static final String PASS = "password";
     private static Connection conn;
 
-    private static PreparedStatement pstSelezionaPilota = null;
+    private static PreparedStatement pstSelezionaPilotaAttuale = null;
     private static PreparedStatement pstSelezionaScuderiaAttuale = null;
     private static PreparedStatement pstSelezionaScuderiaPassata = null;
     private static PreparedStatement pstSelezionaPilota2 = null;
     private static PreparedStatement pstSelezionaGiornata = null;
     private static PreparedStatement pstSelezionaPista = null;
+    private static PreparedStatement pstSelezionaPilotaPassato;
 
     public Query() {
 
@@ -73,14 +74,25 @@ public class Query {
         return pst.executeQuery();
     }
 
-    public static ResultSet selezionaPilota(int x) throws SQLException {
-        String q = "select * from piloti where codice_pilota = "
-                + "(select codice_pilota from classifica_piloti_attuale offset ? limit 1)";
-        if (pstSelezionaPilota == null) {
-            pstSelezionaPilota = conn.prepareStatement(q);
+    public static ResultSet selezionaPilota(int x, int numeroCampionato) throws SQLException {
+        if (isCurrent(numeroCampionato)) {
+            String q = "select * from piloti where codice_pilota = "
+                    + "(select codice_pilota from classifica_piloti_attuale  offset ? limit 1)";
+            if (pstSelezionaPilotaAttuale == null) {
+                pstSelezionaPilotaAttuale = conn.prepareStatement(q);
+            }
+            pstSelezionaPilotaAttuale.setInt(1, x);
+            return pstSelezionaPilotaPassato.executeQuery();
         }
-        pstSelezionaPilota.setInt(1, x);
-        return pstSelezionaPilota.executeQuery();
+        
+        String q = "select * from piloti where codice_pilota= (select codice_pilota from CLASSIFICHE_PILOTI_PASSATI where numero_campionato = ? offset ? limit 1)";
+        if (pstSelezionaPilotaPassato == null) {
+            pstSelezionaPilotaPassato = conn.prepareStatement(q);
+        }
+
+        pstSelezionaPilotaPassato.setInt(1, numeroCampionato);
+        pstSelezionaPilotaPassato.setInt(2, x);
+        return pstSelezionaPilotaPassato.executeQuery();
     }
 
     public static ResultSet selezionaPilota(String x, int annoCampionato) throws SQLException {

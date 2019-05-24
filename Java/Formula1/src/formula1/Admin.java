@@ -181,7 +181,7 @@ public class Admin {
             conn.setAutoCommit(true);
         } catch (Exception ex) {
             conn.rollback();
-            conn.setAutoCommit(false);
+            conn.setAutoCommit(true);
         }
 
     }

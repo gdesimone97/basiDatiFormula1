@@ -1532,7 +1532,7 @@ public class MainFrame extends javax.swing.JFrame {
     private void numGiornataComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_numGiornataComboBoxItemStateChanged
         try {
             Integer numeroGiornata = numGiornataComboBox.getSelectedIndex();
-            
+
             if (numeroGiornata != 0) {
                 ResultSet rstPista = Query.selezionaPista(numeroCampionato, numeroGiornata);
                 pistaNumGiornata.setText("");
@@ -1549,6 +1549,8 @@ public class MainFrame extends javax.swing.JFrame {
 //            
 //            if(count==0)
 //                JOptionPane.showMessageDialog(this, "Spiacenti, non ho trovato risultati per questa giornata");
+            } else {
+                pistaNumGiornata.setText("");
             }
         } catch (SQLException ex) {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);

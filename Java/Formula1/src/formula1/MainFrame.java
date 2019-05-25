@@ -211,7 +211,7 @@ public class MainFrame extends javax.swing.JFrame {
         tableheader.setReorderingAllowed(false);
         tableRisultati.setTableHeader(tableheader);
     }
-    
+
     private void aggiornaTabellaRisultati() {
         DefaultTableModel defaultModel = (DefaultTableModel) tableRisultati.getModel();
         tableRisultati.removeRowSelectionInterval(0, 19);
@@ -1335,7 +1335,6 @@ public class MainFrame extends javax.swing.JFrame {
         curveTextField.setText("");
         inaugurazioneTextField.setText("");
         recordTextField.setText("");
-        
 
         try {
             aggiornaTabellaPiloti();
@@ -1532,12 +1531,14 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void numGiornataComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_numGiornataComboBoxItemStateChanged
         try {
-            Integer numeroGiornata = Integer.parseInt(numGiornataComboBox.getItemAt(numGiornataComboBox.getSelectedIndex()));
-            ResultSet rstPista = Query.selezionaPista(numeroCampionato, numeroGiornata);
-            pistaNumGiornata.setText("");
-            while (rstPista.next()) {
-                pistaNumGiornata.setText("Città: " + rstPista.getString("sede_pista") + "           Pista: " + rstPista.getString("nome_pista"));
-            }
+            Integer numeroGiornata = numGiornataComboBox.getSelectedIndex();
+            
+            if (numeroGiornata != 0) {
+                ResultSet rstPista = Query.selezionaPista(numeroCampionato, numeroGiornata);
+                pistaNumGiornata.setText("");
+                while (rstPista.next()) {
+                    pistaNumGiornata.setText("Città: " + rstPista.getString("sede_pista") + "           Pista: " + rstPista.getString("nome_pista"));
+                }
 
 //            ResultSet risultati = Query.getRisultati(numeroCampionato, numeroGiornata);
 //            int count = 0;
@@ -1548,6 +1549,7 @@ public class MainFrame extends javax.swing.JFrame {
 //            
 //            if(count==0)
 //                JOptionPane.showMessageDialog(this, "Spiacenti, non ho trovato risultati per questa giornata");
+            }
         } catch (SQLException ex) {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }

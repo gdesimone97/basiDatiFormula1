@@ -1539,7 +1539,8 @@ public class MainFrame extends javax.swing.JFrame {
                 while (rstPista.next()) {
                     pistaNumGiornata.setText("Città: " + rstPista.getString("sede_pista") + "           Pista: " + rstPista.getString("nome_pista"));
                 }
-
+                
+                //AGGIORNA I RISULTATI NELLA TABELLA!
 //            ResultSet risultati = Query.getRisultati(numeroCampionato, numeroGiornata);
 //            int count = 0;
 //            while(risultati.next()) {

@@ -45,9 +45,9 @@ public class MainFrame extends javax.swing.JFrame {
             settaTabellaPiloti();
             settaTabellaScuderie();
             settaTabellaCalendario();
+            settaTabellaRisultati();
             aggiornaComboBox();
             logoutButton.setVisible(false);
-            
 
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, "Errore di connessione");
@@ -197,6 +197,37 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }
 
+    private void settaTabellaRisultati() {
+        TableColumnModel columnModel = tableRisultati.getColumnModel();
+        columnModel.getColumn(0).setPreferredWidth(200);
+        columnModel.getColumn(1).setPreferredWidth(50);
+        columnModel.getColumn(2).setPreferredWidth(50);
+        columnModel.getColumn(3).setPreferredWidth(20);
+        columnModel.getColumn(4).setPreferredWidth(10);
+        tableRisultati.setColumnModel(columnModel);
+
+        JTableHeader tableheader = tableRisultati.getTableHeader();
+        tableheader.setResizingAllowed(false);
+        tableheader.setReorderingAllowed(false);
+        tableRisultati.setTableHeader(tableheader);
+    }
+    
+    private void aggiornaTabellaRisultati() {
+        DefaultTableModel defaultModel = (DefaultTableModel) tableRisultati.getModel();
+        tableRisultati.removeRowSelectionInterval(0, 19);
+        int riga = 0;
+        while (riga < 20) {
+            defaultModel.setValueAt("", riga, 0);
+            defaultModel.setValueAt("", riga, 1);
+            defaultModel.setValueAt("", riga, 2);
+            defaultModel.setValueAt("", riga, 3);
+            defaultModel.setValueAt(false, riga, 4);
+            riga++;
+            tableRisultati.clearSelection();
+        }
+        numGiornataComboBox.setSelectedIndex(0);
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -205,7 +236,7 @@ public class MainFrame extends javax.swing.JFrame {
         adminFrame = new javax.swing.JFrame();
         logoutButton = new javax.swing.JButton();
         jTabbedPane2 = new javax.swing.JTabbedPane();
-        RisultatiPanel = new javax.swing.JPanel();
+        RisultatiAdminPanel = new javax.swing.JPanel();
         verificaPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         risultatiList = new javax.swing.JList<>();
@@ -232,7 +263,7 @@ public class MainFrame extends javax.swing.JFrame {
         countRisultatiLabel = new javax.swing.JLabel();
         countRisultatiLabel2 = new javax.swing.JLabel();
         inserisciDaFileButton = new javax.swing.JButton();
-        CampionatoPanel = new javax.swing.JPanel();
+        CampionatoAdminPanel = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         PilotaPanel = new javax.swing.JPanel();
@@ -279,6 +310,12 @@ public class MainFrame extends javax.swing.JFrame {
         inaugurazioneTextField = new javax.swing.JTextField();
         recordLabel = new javax.swing.JLabel();
         recordTextField = new javax.swing.JTextField();
+        RisultatiPanel = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        numGiornataComboBox = new javax.swing.JComboBox<>();
+        pistaNumGiornata = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tableRisultati = new javax.swing.JTable();
         numCampionatoComboBox = new javax.swing.JComboBox<>();
         numCampionatoLabel = new javax.swing.JLabel();
         loginButton = new javax.swing.JButton();
@@ -503,39 +540,39 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(21, 21, 21))
         );
 
-        javax.swing.GroupLayout RisultatiPanelLayout = new javax.swing.GroupLayout(RisultatiPanel);
-        RisultatiPanel.setLayout(RisultatiPanelLayout);
-        RisultatiPanelLayout.setHorizontalGroup(
-            RisultatiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(RisultatiPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout RisultatiAdminPanelLayout = new javax.swing.GroupLayout(RisultatiAdminPanel);
+        RisultatiAdminPanel.setLayout(RisultatiAdminPanelLayout);
+        RisultatiAdminPanelLayout.setHorizontalGroup(
+            RisultatiAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RisultatiAdminPanelLayout.createSequentialGroup()
                 .addComponent(inserimentoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(verificaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        RisultatiPanelLayout.setVerticalGroup(
-            RisultatiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(RisultatiPanelLayout.createSequentialGroup()
-                .addGroup(RisultatiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+        RisultatiAdminPanelLayout.setVerticalGroup(
+            RisultatiAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RisultatiAdminPanelLayout.createSequentialGroup()
+                .addGroup(RisultatiAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(inserimentoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(verificaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("Risultati", RisultatiPanel);
+        jTabbedPane2.addTab("Risultati", RisultatiAdminPanel);
 
-        javax.swing.GroupLayout CampionatoPanelLayout = new javax.swing.GroupLayout(CampionatoPanel);
-        CampionatoPanel.setLayout(CampionatoPanelLayout);
-        CampionatoPanelLayout.setHorizontalGroup(
-            CampionatoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout CampionatoAdminPanelLayout = new javax.swing.GroupLayout(CampionatoAdminPanel);
+        CampionatoAdminPanel.setLayout(CampionatoAdminPanelLayout);
+        CampionatoAdminPanelLayout.setHorizontalGroup(
+            CampionatoAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 569, Short.MAX_VALUE)
         );
-        CampionatoPanelLayout.setVerticalGroup(
-            CampionatoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        CampionatoAdminPanelLayout.setVerticalGroup(
+            CampionatoAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 379, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab("Campionato", CampionatoPanel);
+        jTabbedPane2.addTab("Campionato", CampionatoAdminPanel);
 
         jLabel7.setText("Benvenuto nell'interfaccia amministratore!");
 
@@ -1033,6 +1070,92 @@ public class MainFrame extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Calendario", CalendarioPanel);
 
+        jLabel8.setText("Seleziona una giornata: ");
+
+        numGiornataComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELEZIONA", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21" }));
+        numGiornataComboBox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                numGiornataComboBoxItemStateChanged(evt);
+            }
+        });
+
+        tableRisultati.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Pilota", "Miglior Tempo", "Tempo Qualifica", "Punti", "Ritiro"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Boolean.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableRisultati.setRowSelectionAllowed(false);
+        jScrollPane5.setViewportView(tableRisultati);
+
+        javax.swing.GroupLayout RisultatiPanelLayout = new javax.swing.GroupLayout(RisultatiPanel);
+        RisultatiPanel.setLayout(RisultatiPanelLayout);
+        RisultatiPanelLayout.setHorizontalGroup(
+            RisultatiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RisultatiPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(RisultatiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
+                    .addComponent(pistaNumGiornata, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, RisultatiPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(18, 18, 18)
+                        .addComponent(numGiornataComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        RisultatiPanelLayout.setVerticalGroup(
+            RisultatiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RisultatiPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(RisultatiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(numGiornataComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pistaNumGiornata, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Risultati", RisultatiPanel);
+
         numCampionatoComboBox.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 numCampionatoComboBoxItemStateChanged(evt);
@@ -1080,7 +1203,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void tablePilotiMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablePilotiMouseReleased
         try {
-            ResultSet rst = Query.selezionaPilota(tablePiloti.getSelectedRow());
+            ResultSet rst = Query.selezionaPilota(tablePiloti.getSelectedRow(), numeroCampionato);
 
             while (rst.next()) {
                 nomeTextField.setText(rst.getString("nome_pilota"));
@@ -1098,13 +1221,15 @@ public class MainFrame extends javax.swing.JFrame {
 
         } catch (SQLException ex) {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NullPointerException ex) {
+            JOptionPane.showMessageDialog(this, "Spiacenti, non sono presenti informazioni per questo campionato!");
         }
     }//GEN-LAST:event_tablePilotiMouseReleased
 
     private void tableScuderieMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableScuderieMouseReleased
         try {
             int x = tableScuderie.getSelectedRow();
-            ResultSet rstScuderia = Query.selezionaScuderia(x);
+            ResultSet rstScuderia = Query.selezionaScuderia(x, numeroCampionato);
             ResultSet rstAfferenza = Query.selezionaAfferenza(x + 20, numeroCampionato);
 
             while (rstScuderia.next()) {
@@ -1128,6 +1253,8 @@ public class MainFrame extends javax.swing.JFrame {
 
         } catch (SQLException ex) {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NullPointerException ex) {
+            JOptionPane.showMessageDialog(this, "Spiacenti, non sono presenti informazioni per questo campionato!");
         }
     }//GEN-LAST:event_tableScuderieMouseReleased
 
@@ -1208,11 +1335,13 @@ public class MainFrame extends javax.swing.JFrame {
         curveTextField.setText("");
         inaugurazioneTextField.setText("");
         recordTextField.setText("");
+        
 
         try {
             aggiornaTabellaPiloti();
             aggiornaTabellaScuderie();
             aggiornaCalendario();
+            aggiornaTabellaRisultati();
         } catch (SQLException ex) {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -1228,9 +1357,8 @@ public class MainFrame extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "Login effettuato con successo!");
                     logoutButton.setVisible(true);
                     loginButton.setVisible(false);
-                    //SBLOCCA LE SESSIONI PER ADMIN
                     adminFrame.setVisible(true);
-                    
+
                 } catch (SQLException ex) {
                     JOptionPane.showMessageDialog(this, "Errore di connessione, riprova!");
                 } catch (AdminLoginFailed ex) {
@@ -1245,13 +1373,13 @@ public class MainFrame extends javax.swing.JFrame {
         logoutButton.setVisible(false);
         loginButton.setVisible(true);
         adminFrame.setVisible(false);
-        
+
     }//GEN-LAST:event_logoutButtonActionPerformed
 
     private void personaleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personaleButtonActionPerformed
         try {
             int x = tableScuderie.getSelectedRow();
-            ResultSet rstScuderia = Query.selezionaScuderia(x);
+            ResultSet rstScuderia = Query.selezionaScuderia(x, numeroCampionato);
             rstScuderia.next();
             ResultSet rst[] = Query.selezionaPersonale(numeroCampionato, rstScuderia.getString("nome_scuderia"));
 
@@ -1383,12 +1511,15 @@ public class MainFrame extends javax.swing.JFrame {
                     Integer secondi = (record / 1000) % 60;
                     Integer minuti = (record / 1000) / 60;
                     recordTextField.setText(minuti.toString() + ":" + (secondi < 10 ? "0" + secondi : secondi) + ":" + millisec);
+                } else {
+                    recordTextField.setText("Nessun record");
                 }
-                else recordTextField.setText("Nessun record");
             }
 
         } catch (SQLException ex) {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NullPointerException ex) {
+            JOptionPane.showMessageDialog(this, "Spiacenti, non sono presenti informazioni per questo campionato!");
         }
     }//GEN-LAST:event_tableCalendarioMouseReleased
 
@@ -1398,6 +1529,29 @@ public class MainFrame extends javax.swing.JFrame {
         loginButton.setVisible(true);
         adminFrame.setVisible(false);
     }//GEN-LAST:event_adminFrameWindowClosing
+
+    private void numGiornataComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_numGiornataComboBoxItemStateChanged
+        try {
+            Integer numeroGiornata = Integer.parseInt(numGiornataComboBox.getItemAt(numGiornataComboBox.getSelectedIndex()));
+            ResultSet rstPista = Query.selezionaPista(numeroCampionato, numeroGiornata);
+            pistaNumGiornata.setText("");
+            while (rstPista.next()) {
+                pistaNumGiornata.setText("Città: " + rstPista.getString("sede_pista") + "           Pista: " + rstPista.getString("nome_pista"));
+            }
+
+//            ResultSet risultati = Query.getRisultati(numeroCampionato, numeroGiornata);
+//            int count = 0;
+//            while(risultati.next()) {
+//                aggiornaTabellaRisultati();
+//                count++;
+//            }
+//            
+//            if(count==0)
+//                JOptionPane.showMessageDialog(this, "Spiacenti, non ho trovato risultati per questa giornata");
+        } catch (SQLException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_numGiornataComboBoxItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -1436,8 +1590,9 @@ public class MainFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CalendarioPanel;
-    private javax.swing.JPanel CampionatoPanel;
+    private javax.swing.JPanel CampionatoAdminPanel;
     private javax.swing.JPanel PilotaPanel;
+    private javax.swing.JPanel RisultatiAdminPanel;
     private javax.swing.JPanel RisultatiPanel;
     private javax.swing.JPanel ScuderiaPanel;
     private javax.swing.JFrame adminFrame;
@@ -1476,10 +1631,12 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JButton loginButton;
@@ -1497,9 +1654,11 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField nomeTextField;
     private javax.swing.JComboBox<String> numCampionatoComboBox;
     private javax.swing.JLabel numCampionatoLabel;
+    private javax.swing.JComboBox<String> numGiornataComboBox;
     private javax.swing.JTextField numeroCampionatoField;
     private javax.swing.JTextField numeroGiornataField;
     private javax.swing.JButton personaleButton;
+    private javax.swing.JLabel pistaNumGiornata;
     private javax.swing.JTextField punteggioField;
     private javax.swing.JLabel recordLabel;
     private javax.swing.JTextField recordTextField;
@@ -1509,6 +1668,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton scriviFileButton;
     private javax.swing.JTable tableCalendario;
     private javax.swing.JTable tablePiloti;
+    private javax.swing.JTable tableRisultati;
     private javax.swing.JTable tableScuderie;
     private javax.swing.JTextField tempoQualificaField;
     private javax.swing.JLabel titoliLabel;

@@ -19,7 +19,7 @@ import java.time.LocalDate;
  */
 public class Query {
 
-    private static final String URL = "jdbc:postgresql://localhost/formula";
+    private static final String URL = "jdbc:postgresql://localhost/prova";
     private static final String USER = "utente_generico";
     private static final String PASS = "password";
     private static Connection conn;
@@ -27,8 +27,7 @@ public class Query {
     private static PreparedStatement pstSelezionaPilotaAttuale = null;
     private static PreparedStatement pstSelezionaScuderiaAttuale = null;
     private static PreparedStatement pstSelezionaScuderiaPassata = null;
-    private static PreparedStatement pstSelezionaPilotaStringAttuale = null;
-    private static PreparedStatement pstSelezionaPilotaStringPassato = null;
+    private static PreparedStatement pstSelezionaPilotaString = null;
     private static PreparedStatement pstSelezionaGiornata = null;
     private static PreparedStatement pstSelezionaPista = null;
     private static PreparedStatement pstSelezionaPilotaPassato = null;
@@ -85,7 +84,7 @@ public class Query {
                 pstSelezionaPilotaAttuale = conn.prepareStatement(q);
             }
             pstSelezionaPilotaAttuale.setInt(1, x);
-            return pstSelezionaPilotaPassato.executeQuery();
+            return pstSelezionaPilotaAttuale.executeQuery();
         }
 
         String q = "select * from piloti where codice_pilota= (select codice_pilota from CLASSIFICHE_PILOTI_PASSATI where numero_campionato = ? offset ? limit 1)";
@@ -98,23 +97,13 @@ public class Query {
         return pstSelezionaPilotaPassato.executeQuery();
     }
 
-    public static ResultSet selezionaPilota(String x, int annoCampionato) throws SQLException {
-        if (isCurrent(annoCampionato)) {
-            String q = "select * from piloti where codice_pilota = ?";
-            if (pstSelezionaPilotaStringAttuale == null) {
-                pstSelezionaPilotaStringAttuale = conn.prepareStatement(q);
-            }
-            pstSelezionaPilotaStringAttuale.setString(1, x);
-            return pstSelezionaPilotaStringAttuale.executeQuery();
+    public static ResultSet selezionaPilota(String x) throws SQLException {
+        String q = "select * from piloti where codice_pilota = ?";
+        if (pstSelezionaPilotaString == null) {
+            pstSelezionaPilotaString = conn.prepareStatement(q);
         }
-
-        String q = "select * from piloti where codice_pilota = (select codice_pilota from CLASSIFICHE_PILOTI_PASSATI where codice_pilota= ? and numero_campionato = ? )";
-        if (pstSelezionaPilotaStringPassato == null) {
-            pstSelezionaPilotaStringPassato = conn.prepareStatement(q);
-        }
-        pstSelezionaPilotaStringPassato.setString(1, x);
-        pstSelezionaPilotaStringPassato.setInt(2, annoCampionato);
-        return pstSelezionaPilotaStringPassato.executeQuery();
+        pstSelezionaPilotaString.setString(1, x);
+        return pstSelezionaPilotaString.executeQuery();
     }
 
     public static ResultSet selezionaScuderia(int x, int numeroCampionato) throws SQLException {

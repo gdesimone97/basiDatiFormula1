@@ -1772,6 +1772,8 @@ public class MainFrame extends javax.swing.JFrame {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, "Errore nell'inserimento su database. Riprova");
             ex.printStackTrace();
+        } catch (FileNotFoundException ex) {
+            JOptionPane.showMessageDialog(this, "Non ho trovato il file");
         }
     }//GEN-LAST:event_commitButtonActionPerformed
 

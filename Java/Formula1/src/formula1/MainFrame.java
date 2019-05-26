@@ -13,6 +13,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -284,8 +285,6 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         numCampionatoTextField = new javax.swing.JTextField();
-        dataInizioTextField = new javax.swing.JTextField();
-        dataFineTextField = new javax.swing.JTextField();
         motoreTextField = new javax.swing.JTextField();
         gommeTextField = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
@@ -316,6 +315,8 @@ public class MainFrame extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
+        dataInizioTextField = new javax.swing.JFormattedTextField();
+        dataFineTextField = new javax.swing.JFormattedTextField();
         jLabel7 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         PilotaPanel = new javax.swing.JPanel();
@@ -373,7 +374,7 @@ public class MainFrame extends javax.swing.JFrame {
         loginButton = new javax.swing.JButton();
 
         adminFrame.setResizable(false);
-        adminFrame.setSize(new java.awt.Dimension(575, 650));
+        adminFrame.setSize(new java.awt.Dimension(600, 650));
         adminFrame.addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 adminFrameWindowClosing(evt);
@@ -715,6 +716,10 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel16.setText("* (I FILE DEVONO STARE NELLA CARTELLA DEL PROGRAMMA)");
 
+        dataInizioTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("yyyy-MM-dd"))));
+
+        dataFineTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("yyyy-MM-dd"))));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -723,94 +728,93 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel9)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(numCampionatoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(37, 37, 37)
-                                    .addComponent(jLabel10)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(dataInizioTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jLabel11)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(dataFineTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(motoreTextField)
-                                        .addComponent(gommeTextField))))
-                            .addComponent(jLabel14)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING))))
+                                .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(fileAffPersonaleButton)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(fileAffPersonaleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(fileScuderieButton)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(fileScuderieLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING)))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                .addGap(0, 0, Short.MAX_VALUE)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING))))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(fileAffPersonaleButton)
+                                                .addComponent(filePisteButton)
                                                 .addGap(18, 18, 18)
-                                                .addComponent(fileAffPersonaleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(fileScuderieButton)
-                                                    .addGap(18, 18, 18)
-                                                    .addComponent(fileScuderieLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addComponent(filePisteButton)
-                                                        .addGap(18, 18, 18)
-                                                        .addComponent(filePisteLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                        .addComponent(filePersonaleButton)
-                                                        .addGap(18, 18, 18)
-                                                        .addComponent(filePersonaleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(filePilotiButton)
-                                                    .addGap(18, 18, 18)
-                                                    .addComponent(filePilotiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(fileCalendarioButton)
-                                                    .addGap(18, 18, 18)
-                                                    .addComponent(fileCalendarioLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(fileAffPilotiButton)
-                                                    .addGap(18, 18, 18)
-                                                    .addComponent(fileAffPilotiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(jLabel29)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(fileDirigenzaButton)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(fileDirigenzaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(103, 103, 103)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addComponent(filePisteLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                .addComponent(filePersonaleButton)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(filePersonaleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                            .addComponent(filePilotiButton)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(filePilotiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                            .addComponent(fileCalendarioButton)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(fileCalendarioLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                            .addComponent(fileAffPilotiButton)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(fileAffPilotiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel29)
+                                .addGap(18, 18, 18)
+                                .addComponent(fileDirigenzaButton)
+                                .addGap(18, 18, 18)
+                                .addComponent(fileDirigenzaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(103, 103, 103))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel16)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                         .addComponent(jButton11)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton9)
-                        .addContainerGap())))
+                        .addComponent(jButton9))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(motoreTextField)
+                                    .addComponent(gommeTextField)))
+                            .addComponent(jLabel14)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(numCampionatoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(23, 23, 23)
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(dataInizioTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(dataFineTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -820,8 +824,8 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(jLabel9)
                     .addComponent(numCampionatoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
-                    .addComponent(dataInizioTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11)
+                    .addComponent(dataInizioTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dataFineTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -934,7 +938,7 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(logoutButton)
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1679,7 +1683,7 @@ public class MainFrame extends javax.swing.JFrame {
         inaugurazioneTextField.setText("");
         recordTextField.setText("");
         numGiornataComboBox.setSelectedIndex(0);
-        
+
         try {
             aggiornaTabellaPiloti();
             aggiornaTabellaScuderie();
@@ -1886,13 +1890,13 @@ public class MainFrame extends javax.swing.JFrame {
                 while (rstPista.next()) {
                     pistaNumGiornata.setText("Città: " + rstPista.getString("sede_pista") + "           Pista: " + rstPista.getString("nome_pista"));
                 }
-                
+
                 ResultSet risultati = Query.selezionaRisultati(numeroCampionato, numeroGiornata);
-                
+
                 DefaultTableModel defaultModel = (DefaultTableModel) tableRisultati.getModel();
                 int riga = 0;
                 while (risultati.next()) {
-                    
+
                     String pilota = risultati.getString("codice_pilota");
                     ResultSet rstPilota = Query.selezionaPilota(pilota);
                     while (rstPilota.next()) {
@@ -1901,7 +1905,7 @@ public class MainFrame extends javax.swing.JFrame {
                         defaultModel.setValueAt(convertTime(risultati.getInt("tempo_qualifica")), riga, 2);
                         defaultModel.setValueAt(risultati.getInt("punteggio"), riga, 3);
                         defaultModel.setValueAt(risultati.getBoolean("ritiro"), riga, 4);
-                        
+
                     }
                     riga++;
                 }
@@ -2004,6 +2008,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        System.out.print(Date.valueOf(dataInizioTextField.getText()));
         if (numCampionatoTextField.getText().compareTo("") != 0
                 & dataInizioTextField.getText().compareTo("") != 0
                 & dataFineTextField.getText().compareTo("") != 0
@@ -2017,7 +2022,19 @@ public class MainFrame extends javax.swing.JFrame {
                 & fileAffPilotiLabel.getText().compareTo("") != 0
                 & fileAffPersonaleLabel.getText().compareTo("") != 0
                 & fileDirigenzaLabel.getText().compareTo("") != 0) {
-            //INVOCA FUNZIONE DI PEPPE
+            
+            try {
+                admin.inserisci(Integer.parseInt(numCampionatoTextField.getText()), Date.valueOf(dataInizioTextField.getText()), Date.valueOf(dataFineTextField.getText()),
+                        motoreTextField.getText(), gommeTextField.getText(), filePisteLabel.getText(),
+                        filePilotiLabel.getText(), fileCalendarioLabel.getText(), fileScuderieLabel.getText(),
+                        filePersonaleLabel.getText(), fileAffPilotiLabel.getText(), fileAffPersonaleLabel.getText(), fileDirigenzaLabel.getText());
+            } catch (FileNotFoundException ex) {
+                JOptionPane.showMessageDialog(this, "Errore nell'apertura di un file!\nControlla che siano tutti nella giusta cartella.");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(this, "Errore nei dati inseriti\n" + ex.getMessage());
+            } catch (IllegalArgumentException ex) {
+                JOptionPane.showMessageDialog(this, "La data deve essere nel formato yyyy-mm-dd");
+            }
         } else
             JOptionPane.showMessageDialog(this, "Compila tutti i campi");
     }//GEN-LAST:event_jButton11ActionPerformed
@@ -2082,8 +2099,8 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel countRisultatiLabel2;
     private javax.swing.JLabel curveLabel;
     private javax.swing.JTextField curveTextField;
-    private javax.swing.JTextField dataFineTextField;
-    private javax.swing.JTextField dataInizioTextField;
+    private javax.swing.JFormattedTextField dataFineTextField;
+    private javax.swing.JFormattedTextField dataInizioTextField;
     private javax.swing.JLabel dataLabel;
     private javax.swing.JTextField dataTextField;
     private javax.swing.JButton fileAffPersonaleButton;

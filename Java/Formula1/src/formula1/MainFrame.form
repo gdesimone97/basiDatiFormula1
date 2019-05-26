@@ -8,7 +8,7 @@
       <Properties>
         <Property name="resizable" type="boolean" value="false"/>
         <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[575, 650]"/>
+          <Dimension value="[600, 650]"/>
         </Property>
       </Properties>
       <Events>
@@ -37,7 +37,7 @@
                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jTabbedPane2" pref="529" max="32767" attributes="0"/>
+                  <Component id="jTabbedPane2" pref="587" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -457,113 +457,81 @@
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="numCampionatoTextField" min="-2" pref="35" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                                                  <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="dataInizioTextField" min="-2" pref="70" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="dataFineTextField" min="-2" pref="70" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                      <Component id="jLabel13" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="jLabel12" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace min="10" max="32767" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="jLabel21" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel25" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel27" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
                                                   </Group>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="motoreTextField" max="32767" attributes="0"/>
-                                                      <Component id="gommeTextField" max="32767" attributes="0"/>
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="jLabel17" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel19" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
+                                                          <Component id="jLabel23" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel15" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Component id="fileAffPersonaleButton" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                      <Component id="fileAffPersonaleLabel" min="-2" pref="140" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="fileScuderieButton" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                          <Component id="fileScuderieLabel" min="-2" pref="140" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="filePisteButton" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                              <Component id="filePisteLabel" min="-2" pref="140" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Group type="102" alignment="1" attributes="0">
+                                                              <Component id="filePersonaleButton" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                              <Component id="filePersonaleLabel" min="-2" pref="140" max="-2" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
+                                                      <Group type="102" alignment="1" attributes="0">
+                                                          <Component id="filePilotiButton" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                          <Component id="filePilotiLabel" min="-2" pref="140" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Group type="102" alignment="1" attributes="0">
+                                                          <Component id="fileCalendarioButton" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                          <Component id="fileCalendarioLabel" min="-2" pref="140" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Group type="102" alignment="1" attributes="0">
+                                                          <Component id="fileAffPilotiButton" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                          <Component id="fileAffPilotiLabel" min="-2" pref="140" max="-2" attributes="0"/>
+                                                      </Group>
                                                   </Group>
                                               </Group>
                                           </Group>
-                                          <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Group type="102" attributes="0">
-                                                              <EmptySpace min="10" max="32767" attributes="0"/>
-                                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                                  <Component id="jLabel21" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel25" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel27" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                              </Group>
-                                                          </Group>
-                                                          <Group type="102" alignment="1" attributes="0">
-                                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                                  <Component id="jLabel17" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel19" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel23" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel15" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                              </Group>
-                                                          </Group>
-                                                      </Group>
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="1" attributes="0">
-                                                          <Group type="102" alignment="1" attributes="0">
-                                                              <Component id="fileAffPersonaleButton" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                              <Component id="fileAffPersonaleLabel" min="-2" pref="140" max="-2" attributes="0"/>
-                                                          </Group>
-                                                          <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                                              <Group type="102" alignment="0" attributes="0">
-                                                                  <Component id="fileScuderieButton" min="-2" max="-2" attributes="0"/>
-                                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                                  <Component id="fileScuderieLabel" min="-2" pref="140" max="-2" attributes="0"/>
-                                                              </Group>
-                                                              <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                                                  <Group type="102" alignment="0" attributes="0">
-                                                                      <Component id="filePisteButton" min="-2" max="-2" attributes="0"/>
-                                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                                      <Component id="filePisteLabel" min="-2" pref="140" max="-2" attributes="0"/>
-                                                                  </Group>
-                                                                  <Group type="102" alignment="1" attributes="0">
-                                                                      <Component id="filePersonaleButton" min="-2" max="-2" attributes="0"/>
-                                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                                      <Component id="filePersonaleLabel" min="-2" pref="140" max="-2" attributes="0"/>
-                                                                  </Group>
-                                                              </Group>
-                                                              <Group type="102" alignment="1" attributes="0">
-                                                                  <Component id="filePilotiButton" min="-2" max="-2" attributes="0"/>
-                                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                                  <Component id="filePilotiLabel" min="-2" pref="140" max="-2" attributes="0"/>
-                                                              </Group>
-                                                              <Group type="102" alignment="1" attributes="0">
-                                                                  <Component id="fileCalendarioButton" min="-2" max="-2" attributes="0"/>
-                                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                                  <Component id="fileCalendarioLabel" min="-2" pref="140" max="-2" attributes="0"/>
-                                                              </Group>
-                                                              <Group type="102" alignment="1" attributes="0">
-                                                                  <Component id="fileAffPilotiButton" min="-2" max="-2" attributes="0"/>
-                                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                                  <Component id="fileAffPilotiLabel" min="-2" pref="140" max="-2" attributes="0"/>
-                                                              </Group>
-                                                          </Group>
-                                                      </Group>
-                                                  </Group>
-                                                  <Group type="102" attributes="0">
-                                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                                      <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="fileDirigenzaButton" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="fileDirigenzaLabel" min="-2" pref="140" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="fileDirigenzaButton" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="fileDirigenzaLabel" min="-2" pref="140" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
@@ -571,9 +539,39 @@
                                       <Component id="jButton11" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="jButton9" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                  <Component id="jLabel13" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="jLabel12" alignment="0" max="32767" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="motoreTextField" max="32767" attributes="0"/>
+                                                  <Component id="gommeTextField" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="numCampionatoTextField" min="-2" pref="35" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="dataInizioTextField" min="-2" pref="65" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="dataFineTextField" min="-2" pref="70" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -585,8 +583,8 @@
                                   <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="numCampionatoTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="dataInizioTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="dataInizioTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="dataFineTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -710,10 +708,6 @@
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="numCampionatoTextField">
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="dataInizioTextField">
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="dataFineTextField">
                     </Component>
                     <Component class="javax.swing.JTextField" name="motoreTextField">
                     </Component>
@@ -863,6 +857,20 @@
                     <Component class="javax.swing.JLabel" name="jLabel16">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="* (I FILE DEVONO STARE NELLA CARTELLA DEL PROGRAMMA)"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JFormattedTextField" name="dataInizioTextField">
+                      <Properties>
+                        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                          <Format format="yyyy-MM-dd" subtype="-1" type="1"/>
+                        </Property>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JFormattedTextField" name="dataFineTextField">
+                      <Properties>
+                        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                          <Format format="yyyy-MM-dd" subtype="-1" type="1"/>
+                        </Property>
                       </Properties>
                     </Component>
                   </SubComponents>

@@ -210,7 +210,7 @@ public class Query {
         }
         pstRisultatiPassati.setInt(1, numeroCampionato);
         pstRisultatiPassati.setInt(2, numeroGiornata);
-        pstRisultatiAttuali.setInt(3, numeroCampionato);
+        pstRisultatiPassati.setInt(3, numeroCampionato);
         pstRisultatiPassati.setInt(4, numeroGiornata);
         return pstRisultatiPassati.executeQuery();
     }

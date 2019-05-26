@@ -1,0 +1,100 @@
+Melbourne:Melbourne Grand Prix Circuit:VB280889:69:26:1:25:580:1:20:598:0:
+Melbourne:Melbourne Grand Prix Circuit:LH070185:69:18:1:26:057:1:20:486:0:
+Melbourne:Melbourne Grand Prix Circuit:MV300997:69:15:1:26:256:1:21:320:0:
+Melbourne:Melbourne Grand Prix Circuit:SV030789:69:12:1:27:954:1:21:190:0:
+Melbourne:Melbourne Grand Prix Circuit:CL161097:69:10:1:26:926:1:21:442:0:
+Melbourne:Melbourne Grand Prix Circuit:KM051092:69:8:1:28:182:1:22:099:0:
+Melbourne:Melbourne Grand Prix Circuit:NH190887:69:6:1:28:444:1:22:562:0:
+Melbourne:Melbourne Grand Prix Circuit:KR171079:69:4:1:28:270:1:22:314:0:
+Melbourne:Melbourne Grand Prix Circuit:LS191089:69:2:1:27:568:1:23:017:0:
+Melbourne:Melbourne Grand Prix Circuit:DK260494:69:1:1:27:448:1:22:774:0:
+Melbourne:Melbourne Grand Prix Circuit:PG070296:69:0:1:27:229:1:23:020:0:
+Melbourne:Melbourne Grand Prix Circuit:LN131199:69:0:1:28:555:1:22:304:0:
+Melbourne:Melbourne Grand Prix Circuit:SP261289:69:0:1:28:485:1:22:781:0:
+Melbourne:Melbourne Grand Prix Circuit:AA230396:69:0:1:28:188:1:22:636:0:
+Melbourne:Melbourne Grand Prix Circuit:AG141293:69:0:1:28:479:1:22:714:0:
+Melbourne:Melbourne Grand Prix Circuit:GR150298:69:0:1:28:713:1:24:360:0:
+Melbourne:Melbourne Grand Prix Circuit:RK071284:69:0:1:29:284:1:26:067:0:
+Melbourne:Melbourne Grand Prix Circuit:RG170486:69:0:1:28:462:1:21:826:1:
+Melbourne:Melbourne Grand Prix Circuit:DR010789:69:0:1:29:848:1:22:570:1:
+Melbourne:Melbourne Grand Prix Circuit:CS010994:69:0:1:30:899:1:23:084:1:
+Sakhir:Barhain International Circuit:LH070185:69:25:1:33:411:1:20:486:0:
+Sakhir:Barhain International Circuit:VB280889:69:18:1:34:209:1:20:598:0:
+Sakhir:Barhain International Circuit:CL161097:69:16:1:33:411:1:21:442:0:
+Sakhir:Barhain International Circuit:MV300997:69:12:1:35:311:1:21:320:0:
+Sakhir:Barhain International Circuit:SV030789:69:10:1:34:895:1:21:190:0:
+Sakhir:Barhain International Circuit:LN131199:69:8:1:35:777:1:22:304:0:
+Sakhir:Barhain International Circuit:KR171079:69:6:1:35:589:1:22:314:0:
+Sakhir:Barhain International Circuit:PG070296:69:4:1:35:291:1:23:084:0:
+Sakhir:Barhain International Circuit:AA230396:69:2:1:36:752:1:22:636:0:
+Sakhir:Barhain International Circuit:SP261289:69:1:1:36:330:1:22:781:0:
+Sakhir:Barhain International Circuit:AG141293:69:0:1:35:237:1:22:714:0:
+Sakhir:Barhain International Circuit:DK260494:69:0:1:34:934:1:22:774:0:
+Sakhir:Barhain International Circuit:KM051092:69:0:1:35:892:1:22:099:0:
+Sakhir:Barhain International Circuit:LS191089:69:0:1:37:037:1:23:017:0:
+Sakhir:Barhain International Circuit:GR150298:69:0:1:37:313:1:24:360:0:
+Sakhir:Barhain International Circuit:RK071284:69:0:1:37:903:1:26:067:0:
+Sakhir:Barhain International Circuit:NH190887:69:0:1:35:215:1:22:562:0:
+Sakhir:Barhain International Circuit:DR010789:69:0:1:36:697:1:22:570:0:
+Sakhir:Barhain International Circuit:CS010994:69:0:1:35:586:1:23:084:0:
+Sakhir:Barhain International Circuit:RG170486:69:0:1:37:262:1:21:826:1:
+Shanghai:Shanghai International Circuit:LH070185:69:25:1:35:892:1:31:547:0:
+Shanghai:Shanghai International Circuit:VB280889:69:18:1:34:872:1:31:570:0:
+Shanghai:Shanghai International Circuit:SV030789:69:15:1:34:836:1:31:848:0:
+Shanghai:Shanghai International Circuit:MV300997:69:12:1:36:143:1:32:089:0:
+Shanghai:Shanghai International Circuit:CL161097:69:10:1:34:860:1:31:865:0:
+Shanghai:Shanghai International Circuit:PG070296:69:9:1:34:742:1:32:930:0:
+Shanghai:Shanghai International Circuit:DR010789:69:6:1:38:632:1:32:958:0:
+Shanghai:Shanghai International Circuit:SP261289:69:4:1:38:702:1:33:299:0:
+Shanghai:Shanghai International Circuit:KR171079:69:2:1:37:812:1:33:419:0:
+Shanghai:Shanghai International Circuit:AA230396:69:1:1:38:901:0:0:0:0:
+Shanghai:Shanghai International Circuit:RG170486:69:0:1:36:873:1:33:156:1:
+Shanghai:Shanghai International Circuit:LS191089:69:0:1:36:678:1:34:292:1:
+Shanghai:Shanghai International Circuit:KM051092:69:0:1:37:471:1:33:151:1:
+Shanghai:Shanghai International Circuit:CS010994:69:0:1:37:502:1:33:523:1:
+Shanghai:Shanghai International Circuit:AG141293:69:0:1:38:048:0:0:0:1:
+Shanghai:Shanghai International Circuit:GR150298:69:0:1:37:253:1:35:253:1:
+Shanghai:Shanghai International Circuit:RK071284:69:0:1:39:772:1:35:281:1:
+Shanghai:Shanghai International Circuit:LN131199:69:0:1:38:346:1:33:967:0:
+Shanghai:Shanghai International Circuit:DK260494:69:0:1:37:957:1:33:236:0:
+Shanghai:Shanghai International Circuit:NH190887:69:0:1:39:677:1:32:962:0:
+Baku:Baku City Circuit:VB280889:69:25:1:44:014:1:40:495:0:
+Baku:Baku City Circuit:LH070185:69:18:1:44:166:1:40:554:0:
+Baku:Baku City Circuit:MV300997:69:12:1:44:794:1:41:069:0:
+Baku:Baku City Circuit:SV030789:69:15:1:44:629:1:40:797:0:
+Baku:Baku City Circuit:CL161097:69:11:1:43:009:1:41:995:0:
+Baku:Baku City Circuit:KM051092:69:0:1:46:682:1:42:699:0:
+Baku:Baku City Circuit:NH190887:69:0:1:47:407:1:43:427:0:
+Baku:Baku City Circuit:KR171079:69:1:1:46:479:1:43:068:0:
+Baku:Baku City Circuit:LS191089:69:2:1:46:009:1:42:630:0:
+Baku:Baku City Circuit:DK260494:69:0:1:47:681:1:41:681:1:
+Baku:Baku City Circuit:PG070296:69:0:1:45:712:1:41:335:1:
+Baku:Baku City Circuit:LN131199:69:4:1:45:394:1:41:886:0:
+Baku:Baku City Circuit:SP261289:69:8:1:45:524:1:41:593:0:
+Baku:Baku City Circuit:AA230396:69:0:1:45:754:1:42:494:0:
+Baku:Baku City Circuit:AG141293:69:0:1:45:969:1:42:424:0:
+Baku:Baku City Circuit:GR150298:69:0:1:47:251:1:45:062:0:
+Baku:Baku City Circuit:RK071284:69:0:1:47:709:1:45:455:0:
+Baku:Baku City Circuit:RG170486:69:0:1:48:517:1:43:407:1:
+Baku:Baku City Circuit:DR010789:69:0:1:46:767:1:42:477:1:
+Baku:Baku City Circuit:CS010994:69:6:1:45:807:1:42:398:0:
+Barcellona:Circuit de Barcelona-Catalunya:VB280889:69:18:1:18:737:1:15:406:0:
+Barcellona:Circuit de Barcelona-Catalunya:LH070185:69:26:1:18:492:1:16:040:0:
+Barcellona:Circuit de Barcelona-Catalunya:MV300997:69:15:1:19:769:1:16:357:0:
+Barcellona:Circuit de Barcelona-Catalunya:SV030789:69:12:1:19:820:1:16:272:0:
+Barcellona:Circuit de Barcelona-Catalunya:CL161097:69:10:1:20:002:1:16:588:0:
+Barcellona:Circuit de Barcelona-Catalunya:KM051092:69:6:1:20:770:1:16:922:0:
+Barcellona:Circuit de Barcelona-Catalunya:NH190887:69:0:1:21:282:1:18:404:0:
+Barcellona:Circuit de Barcelona-Catalunya:KR171079:69:0:1:21:382:1:17:788:0:
+Barcellona:Circuit de Barcelona-Catalunya:LS191089:69:0:1:23:226:1:18:471:1:
+Barcellona:Circuit de Barcelona-Catalunya:DK260494:69:2:1:20:726:1:17:573:0:
+Barcellona:Circuit de Barcelona-Catalunya:PG070296:69:8:1:20:536:1:16:708:0:
+Barcellona:Circuit de Barcelona-Catalunya:LN131199:69:0:1:22:561:1:17:338:1:
+Barcellona:Circuit de Barcelona-Catalunya:SP261289:69:0:1:21:859:1:17:886:0:
+Barcellona:Circuit de Barcelona-Catalunya:AA230396:69:0:1:21:028:1:17:445:0:
+Barcellona:Circuit de Barcelona-Catalunya:AG141293:69:0:1:21:833:1:18:664:0:
+Barcellona:Circuit de Barcelona-Catalunya:GR150298:69:0:1:22:382:1:19:072:0:
+Barcellona:Circuit de Barcelona-Catalunya:RK071284:69:0:1:23:202:1:20:254:0:
+Barcellona:Circuit de Barcelona-Catalunya:RG170486:69:1:1:21:057:1:16:911:0:
+Barcellona:Circuit de Barcelona-Catalunya:DR010789:69:0:1:20:615:1:18:106:0:
+Barcellona:Circuit de Barcelona-Catalunya:CS010994:69:4:1:20:859:1:17:599:0:

@@ -277,6 +277,7 @@ public class MainFrame extends javax.swing.JFrame {
         countRisultatiLabel = new javax.swing.JLabel();
         countRisultatiLabel2 = new javax.swing.JLabel();
         inserisciDaFileButton = new javax.swing.JButton();
+        nomeFileLabel = new javax.swing.JLabel();
         CampionatoAdminPanel = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -460,7 +461,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(verificaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancellaTuttoButton)
                     .addComponent(commitButton))
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         inserimentoPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Inserimento"));
@@ -504,6 +505,8 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        nomeFileLabel.setText(" ");
+
         javax.swing.GroupLayout inserimentoPanelLayout = new javax.swing.GroupLayout(inserimentoPanel);
         inserimentoPanel.setLayout(inserimentoPanelLayout);
         inserimentoPanelLayout.setHorizontalGroup(
@@ -543,12 +546,13 @@ public class MainFrame extends javax.swing.JFrame {
                         .addComponent(countRisultatiLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(inserimentoPanelLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addGroup(inserimentoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(inserisciDaFileButton)
+                        .addGroup(inserimentoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(inserimentoPanelLayout.createSequentialGroup()
                                 .addComponent(inserisciButton)
                                 .addGap(18, 18, 18)
-                                .addComponent(cancellaButton)))))
+                                .addComponent(cancellaButton))
+                            .addComponent(inserisciDaFileButton)
+                            .addComponent(nomeFileLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         inserimentoPanelLayout.setVerticalGroup(
@@ -587,6 +591,8 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(inserisciDaFileButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(nomeFileLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(inserimentoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(countRisultatiLabel)
                     .addComponent(countRisultatiLabel2))
@@ -1613,6 +1619,7 @@ public class MainFrame extends javax.swing.JFrame {
         migliorTempoField.setText("");
         tempoQualificaField.setText("");
         ritiroCheckBox.setSelected(false);
+        nomeFileLabel.setText("");
     }//GEN-LAST:event_cancellaButtonActionPerformed
 
     private void inserisciButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inserisciButtonActionPerformed
@@ -1760,9 +1767,11 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void commitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_commitButtonActionPerformed
         try {
-            admin.inserisciRisultati("risultati.txt");
+            admin.inserisciRisultati(nomeFileLabel.getText());
+            nomeFileLabel.setText("");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, "Errore nell'inserimento su database. Riprova");
+            ex.printStackTrace();
         }
     }//GEN-LAST:event_commitButtonActionPerformed
 
@@ -1801,6 +1810,7 @@ public class MainFrame extends javax.swing.JFrame {
             String nomeFile = "";
             if (x == JFileChooser.APPROVE_OPTION) {
                 nomeFile = jFileChooser1.getSelectedFile().getName();
+                nomeFileLabel.setText(nomeFile);
             }
 
             Scanner sc = new Scanner(new BufferedReader(new FileReader(nomeFile)));
@@ -1821,11 +1831,12 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_inserisciDaFileButtonActionPerformed
 
     private void scriviFileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scriviFileButtonActionPerformed
-        try (BufferedWriter w = new BufferedWriter(new FileWriter("risultati.txt", true))) {
+        try (BufferedWriter w = new BufferedWriter(new FileWriter("risultatiTEMPORANEI.txt", true))) {
             for (Object o : dm.toArray()) {
                 w.write(o.toString());
                 w.newLine();
             }
+            JOptionPane.showMessageDialog(this, "Ho salvato il file temporaneamente in risultatiTEMPORANEI.txt");
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(this, "Errore nell'apertura del file, riprova.");
         }
@@ -2021,16 +2032,32 @@ public class MainFrame extends javax.swing.JFrame {
                 & fileAffPilotiLabel.getText().compareTo("") != 0
                 & fileAffPersonaleLabel.getText().compareTo("") != 0
                 & fileDirigenzaLabel.getText().compareTo("") != 0) {
-            
+
             try {
                 admin.inserisci(Integer.parseInt(numCampionatoTextField.getText()), Date.valueOf(dataInizioTextField.getText()), Date.valueOf(dataFineTextField.getText()),
                         motoreTextField.getText(), gommeTextField.getText(), filePisteLabel.getText(),
                         filePilotiLabel.getText(), fileCalendarioLabel.getText(), fileScuderieLabel.getText(),
                         filePersonaleLabel.getText(), fileAffPilotiLabel.getText(), fileAffPersonaleLabel.getText(), fileDirigenzaLabel.getText());
+
+                numCampionatoTextField.setText("");
+                dataInizioTextField.setText("");
+                dataFineTextField.setText("");
+                motoreTextField.setText("");
+                gommeTextField.setText("");
+                filePisteLabel.setText("");
+                filePilotiLabel.setText("");
+                fileScuderieLabel.setText("");
+                fileCalendarioLabel.setText("");
+                filePersonaleLabel.setText("");
+                fileAffPilotiLabel.setText("");
+                fileAffPersonaleLabel.setText("");
+                fileDirigenzaLabel.setText("");
+                JOptionPane.showMessageDialog(this, "Operazione andata a buon fine!");
             } catch (FileNotFoundException ex) {
                 JOptionPane.showMessageDialog(this, "Errore nell'apertura di un file!\nControlla che siano tutti nella giusta cartella.");
             } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(this, "Errore nei dati inseriti\n" + ex.getMessage());
+                JOptionPane.showMessageDialog(this, "Errore nei dati inseriti\n");
+                ex.printStackTrace();
             } catch (IllegalArgumentException ex) {
                 JOptionPane.showMessageDialog(this, "La data deve essere nel formato yyyy-mm-dd");
             }
@@ -2171,6 +2198,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel nazionalitaLabel1;
     private javax.swing.JTextField nazionalitaScuderiaTextField;
     private javax.swing.JTextField nazionalitaTextField;
+    private javax.swing.JLabel nomeFileLabel;
     private javax.swing.JLabel nomeLabel;
     private javax.swing.JLabel nomeLabel1;
     private javax.swing.JTextField nomeScuderiaTextField;

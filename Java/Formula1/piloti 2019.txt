@@ -1,0 +1,20 @@
+LH070185:Lewis:Hamilton:Inglese:1985-01-07:5:1:0
+VB280889:Valtteri:Bottas:Fillandese:1989-08-28:0:1:0
+SV030789:Sebastian:Vettel:Tedesco:1987-07-03:4:1:0
+CL161097:Charles:Leclerc:Principato di Monaco:1997-10-16:0:1:0
+MV300997:Max:Verstappen:Belga:1997-09-30:0:1:0
+PG070296:Pierre:Gasly:Francese:1996-02-07:0:1:0
+DR010789:Daniel:Ricciardo:Inglese:1989-07-01:0:1:0
+NH190887:Nico:Hulkenberg:Tedesco:1987-08-19:0:1:0
+KM051092:Kevin:Magnussen:Danese:1992-10-05:0:1:0
+RG170486:Romain:Grosjean:Svizzero:1986-04-17-0:1:0
+CS010994:Carlos:Sainz:Spagnolo:1994-09-01:0:1:0
+LN131199:Lando:Norris:Inglese:1999-11-13:0:1:0
+SP261289:Sergio:Perez:Messicano:1989-12-26:0:1:0
+LS191089:Lance:Stroll:Canadese:1998-10-19:0:1:0
+KR171079:Kimi:Raikkonen:Fillandese:1979-10-17:1:1:0
+AG141293:Antonio:Giovinazzi:Italiano:1993-12-14:0:1:0
+DK260494:Daniil:Kvyat:Russo:1994-04-26:0:1:0
+AA230396:Alexander:Albon:Inglese:1996-03-23:0:1:0
+RK071284:Robert:Kubica:Polacco:1984-12-07:0:1:0
+GR150298:George:Russell:Inglese:1998-02-15:0:1:0

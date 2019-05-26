@@ -76,7 +76,7 @@ public class PopolaFormula1 {
 
     public static void main(String[] args) throws SQLException {
         String nome = "postgres";
-        String pass = "abc123";
+        String pass = "gds2009";
         Connection conn = null;
 
         Personale pers;
@@ -85,7 +85,7 @@ public class PopolaFormula1 {
         int y = 0;
 
         //DATABASE
-        String url = "jdbc:postgresql://localhost:5432/formula1";
+        String url = "jdbc:postgresql://localhost:5432/formula";
         try {
 //******CONNESSIONE & STATEMENT
             Class.forName("org.postgresql.Driver");
@@ -169,12 +169,12 @@ public class PopolaFormula1 {
             System.out.println();
 
 //******INSERIMENTO CAMPIONATO 2019
-            Campionati.insert(conn, "campionati2019.txt");
-            System.out.println("Campionato 2019 Inserito");
+//            Campionati.insert(conn, "campionati2019.txt");
+//            System.out.println("Campionato 2019 Inserito");
 
 //******INSERIMENTO CALENDARIO 2019
-            Calendario.insert(conn, "calendario2019.txt");
-            System.out.println("Calendario 2019 Inserito");
+//            Calendario.insert(conn, "calendario2019.txt");
+//            System.out.println("Calendario 2019 Inserito");
             
             conn.commit();
 

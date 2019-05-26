@@ -6,12 +6,15 @@
 package formula1;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -59,7 +62,11 @@ public class Admin {
         pst.setDate(5, date);
         pst.setInt(6, titoliVinti);
         pst.setBoolean(7, attivo);
-        pst.setInt(8, dataRitiro);
+        if (dataRitiro == 0) {
+            pst.setNull(8, java.sql.Types.INTEGER);
+        } else {
+            pst.setInt(8, dataRitiro);
+        }
         return pst.executeUpdate();
     }
 
@@ -73,14 +80,14 @@ public class Admin {
     }
 
     // Per inserire tempoGiro usrare il metodo statico della classe Tempogiro: TempoGiro.generaGiro
-    public int aggiungiPista(String sedePista, String nomePista, int lunghezza, int numeroCureve, TempoGiro giro, int annoInaugurazione) throws SQLException {
+    public int aggiungiPista(String sedePista, String nomePista, int lunghezza, int numeroCureve, int giro, int annoInaugurazione) throws SQLException {
         String q = "insert into piste values(?,?,?,?,?,?)";
         PreparedStatement pst = conn.prepareStatement(q);
         pst.setString(1, sedePista);
         pst.setString(2, nomePista);
         pst.setInt(3, lunghezza);
         pst.setInt(4, numeroCureve);
-        pst.setObject(5, giro); //controllare qui
+        pst.setInt(5, giro);
         pst.setInt(6, annoInaugurazione);
         return pst.executeUpdate();
     }
@@ -184,6 +191,70 @@ public class Admin {
         pst.setInt(3, numeroCampionato);
         pst.setDate(4, date);
         pst.setInt(5, numeroGiornata);
+    }
+
+    public void inserisci(int numeroCampionato, Date dataInizio, Date dataFine, String motore, String gomme, String... file) throws FileNotFoundException, SQLException, ErroreFormattazioneFileException {
+
+        Scanner scPiste = new Scanner(new File(file[0]));
+        Scanner scPiloti = new Scanner(new File(file[1]));
+        Scanner scCalendario = new Scanner(new File(file[2]));
+        Scanner scScuderie = new Scanner(new File(file[3]));
+        Scanner scPersonale = new Scanner(new File(file[4]));
+        Scanner scAfferenzaPiloti = new Scanner(new File(file[5]));
+        Scanner afferenzaPersonale = new Scanner(new File(file[6]));
+
+        scPiste.useDelimiter(":");
+        scPiloti.useDelimiter(":");
+        scCalendario.useDelimiter(":");
+        scScuderie.useDelimiter(":");
+        scPersonale.useDelimiter(":");
+        scAfferenzaPiloti.useDelimiter(":");
+        afferenzaPersonale.useDelimiter(":");
+
+        try {
+            conn.setAutoCommit(false);
+
+            int cont = 1;
+            while (scPiste.hasNext() && cont <= 21) {
+                String sedePista = scPiste.next();
+                String nomePista = scPiste.next();
+                int lunghezza = scPiste.nextInt();
+                int numCurve = scPiste.nextInt();
+                int giroVeloce = scPiste.nextInt();
+                int anno = scPiste.nextInt();
+                scPiste.nextLine();
+                aggiungiPista(sedePista, nomePista, lunghezza, numCurve, giroVeloce, anno);
+                cont++;
+            }
+
+            if (cont != 21) {
+                throw new ErroreFormattazioneFileException();
+            }
+
+            cont = 1;
+            while (scPiloti.hasNext() && cont <= 20) {
+                aggiungiPilota(scPiloti.next(), scPiloti.next(), scPiloti.next(), scPiloti.next(), Date.valueOf(scPiloti.next()), scPiloti.nextInt(), scPiloti.nextInt() == 1, scPiloti.nextInt());
+                cont++;
+            }
+            
+            if (cont != 20) {
+                throw new ErroreFormattazioneFileException();
+            }
+
+            conn.commit();
+            conn.setAutoCommit(true);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            conn.rollback();
+            conn.setAutoCommit(true);
+            throw new SQLException();
+        } catch (ErroreFormattazioneFileException ex) {
+            ex.printStackTrace();
+            conn.rollback();
+            conn.setAutoCommit(true);
+            throw new ErroreFormattazioneFileException();
+        }
+
     }
 
 }

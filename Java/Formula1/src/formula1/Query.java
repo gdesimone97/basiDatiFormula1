@@ -205,8 +205,9 @@ public class Query {
             return pstRisultatiAttuali.executeQuery();
         }
         String q = "select * from risultati_passati " + condizione;
-        if(pstRisultatiPassati==null)
+        if (pstRisultatiPassati == null) {
             pstRisultatiPassati = conn.prepareStatement(q);
+        }
         pstRisultatiPassati.setInt(1, numeroCampionato);
         pstRisultatiPassati.setInt(2, numeroGiornata);
         pstRisultatiAttuali.setInt(3, numeroCampionato);

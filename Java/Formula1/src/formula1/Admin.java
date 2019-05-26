@@ -13,8 +13,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -52,7 +50,7 @@ public class Admin {
     }
 
     //Per inserire la data usare il metodo statico della classe Date: Date.valueOf
-    public int aggiungiPilota(String codicePilota, String nomePilota, String cognomePilota, String nazionalita, Date date, int titoliVinti, boolean attivo, int dataRitiro) throws SQLException {
+    private int aggiungiPilota(String codicePilota, String nomePilota, String cognomePilota, String nazionalita, Date date, int titoliVinti, boolean attivo, int dataRitiro) throws SQLException {
         String q = "inser into piloti values(?,?;?,?,?,?,?,?)";
         PreparedStatement pst = conn.prepareStatement(q);
         pst.setString(1, codicePilota);
@@ -70,7 +68,7 @@ public class Admin {
         return pst.executeUpdate();
     }
 
-    public int aggiungiScuderia(String nomeScuderia, String nazionalitaScuderia, int numeroCampionatiVinti) throws SQLException {
+    private int aggiungiScuderia(String nomeScuderia, String nazionalitaScuderia, int numeroCampionatiVinti) throws SQLException {
         String q = "insert into scuderie values(?,?,?)";
         PreparedStatement pst = conn.prepareStatement(q);
         pst.setString(1, nomeScuderia);
@@ -79,8 +77,7 @@ public class Admin {
         return pst.executeUpdate();
     }
 
-    // Per inserire tempoGiro usrare il metodo statico della classe Tempogiro: TempoGiro.generaGiro
-    public int aggiungiPista(String sedePista, String nomePista, int lunghezza, int numeroCureve, int giro, int annoInaugurazione) throws SQLException {
+    private int aggiungiPista(String sedePista, String nomePista, int lunghezza, int numeroCureve, int giro, int annoInaugurazione) throws SQLException {
         String q = "insert into piste values(?,?,?,?,?,?)";
         PreparedStatement pst = conn.prepareStatement(q);
         pst.setString(1, sedePista);
@@ -93,7 +90,7 @@ public class Admin {
     }
 
     //Per inserire la data usare il metodo statico della classe Date: Date.valueOf
-    public int aggiungiPersonale(String codicePersonale, String nomePersonale, String cognomePersonale, String nazionalitaPersonale, Date date, String professione) throws SQLException {
+    private int aggiungiPersonale(String codicePersonale, String nomePersonale, String cognomePersonale, String nazionalitaPersonale, Date date, String professione) throws SQLException {
         String q = "insert into personale values(?,?,?,?,?,?)";
         PreparedStatement pst = conn.prepareStatement(q);
         pst.setString(1, codicePersonale);
@@ -106,7 +103,7 @@ public class Admin {
     }
 
     //Per inserire la data usare il metodo statico della classe Date: Date.valueOf
-    public int aggiungiCampionato(int numeroCampionato, Date dataInizio, Date dataFine, String motore, String gomme) throws SQLException {
+    private int aggiungiCampionato(int numeroCampionato, Date dataInizio, Date dataFine, String motore, String gomme) throws SQLException {
         String q = "insert into campionati values(?,?,?,?,?)";
         PreparedStatement pst = conn.prepareStatement(q);
         pst.setInt(1, numeroCampionato);
@@ -183,7 +180,7 @@ public class Admin {
         }
     }
 
-    public void inserisciCalendario(String sedePista, String nomePista, int numeroCampionato, Date date, int numeroGiornata) throws SQLException {
+    private void aggiungiCalendario(String sedePista, String nomePista, int numeroCampionato, Date date, int numeroGiornata) throws SQLException {
         String q = "insert into calendario values(?,?,?,?,?)";
         PreparedStatement pst = conn.prepareStatement(q);
         pst.setString(1, sedePista);
@@ -191,9 +188,37 @@ public class Admin {
         pst.setInt(3, numeroCampionato);
         pst.setDate(4, date);
         pst.setInt(5, numeroGiornata);
+        pst.executeUpdate();
     }
 
-    public void inserisci(int numeroCampionato, Date dataInizio, Date dataFine, String motore, String gomme, String... file) throws FileNotFoundException, SQLException, ErroreFormattazioneFileException {
+    private int aggiungiAfferenzaPiloti(String codice, int numeroCampionato, String nomeScuderia) throws SQLException {
+        String q = "insert into afferenza_piloti values(?,?,?)";
+        PreparedStatement pst = conn.prepareStatement(q);
+        pst.setString(1, codice);
+        pst.setInt(2, numeroCampionato);
+        pst.setString(3, nomeScuderia);
+        return pst.executeUpdate();
+    }
+
+    private int aggiungiAfferenzaPersonale(String nomeScuderia, String codice, int numero) throws SQLException {
+        String q = "insert into afferenza_personale values(?,?,?)";
+        PreparedStatement pst = conn.prepareStatement(q);
+        pst.setString(1, nomeScuderia);
+        pst.setString(2, codice);
+        pst.setInt(3, numero);
+        return pst.executeUpdate();
+    }
+
+    private int aggiungiDirigente(int numeroCampionato, String codice, String nomeScuderia) throws SQLException {
+        String q = "insert into dirigenza values(?,?,?)";
+        PreparedStatement pst = conn.prepareStatement(q);
+        pst.setInt(1, numeroCampionato);
+        pst.setString(2, codice);
+        pst.setString(3, nomeScuderia);
+        return pst.executeUpdate();
+    }
+
+    public void inserisci(int numeroCampionato, Date dataInizio, Date dataFine, String motore, String gomme, String... file) throws FileNotFoundException, SQLException {
 
         Scanner scPiste = new Scanner(new File(file[0]));
         Scanner scPiloti = new Scanner(new File(file[1]));
@@ -201,7 +226,8 @@ public class Admin {
         Scanner scScuderie = new Scanner(new File(file[3]));
         Scanner scPersonale = new Scanner(new File(file[4]));
         Scanner scAfferenzaPiloti = new Scanner(new File(file[5]));
-        Scanner afferenzaPersonale = new Scanner(new File(file[6]));
+        Scanner scAfferenzaPersonale = new Scanner(new File(file[6]));
+        Scanner scDirigenza = new Scanner(new File(file[7]));
 
         scPiste.useDelimiter(":");
         scPiloti.useDelimiter(":");
@@ -209,36 +235,57 @@ public class Admin {
         scScuderie.useDelimiter(":");
         scPersonale.useDelimiter(":");
         scAfferenzaPiloti.useDelimiter(":");
-        afferenzaPersonale.useDelimiter(":");
+        scAfferenzaPersonale.useDelimiter(":");
+        scDirigenza.useDelimiter(":");
 
-        try {
+        try (PreparedStatement pst = conn.prepareStatement("insert into campionati values(?,?,?,?,?)")) {
             conn.setAutoCommit(false);
 
-            int cont = 1;
-            while (scPiste.hasNext() && cont <= 21) {
-                String sedePista = scPiste.next();
-                String nomePista = scPiste.next();
-                int lunghezza = scPiste.nextInt();
-                int numCurve = scPiste.nextInt();
-                int giroVeloce = scPiste.nextInt();
-                int anno = scPiste.nextInt();
+            pst.setInt(1, numeroCampionato);
+            pst.setDate(2, dataInizio);
+            pst.setDate(3, dataFine);
+            pst.setString(4, motore);
+            pst.setString(5, gomme);
+            pst.executeUpdate();
+
+            while (scPiste.hasNext()) {
+                aggiungiPista(scPiste.next(), scPiste.next(), scPiste.nextInt(), scPiste.nextInt(), scPiste.nextInt(), scPiste.nextInt());
                 scPiste.nextLine();
-                aggiungiPista(sedePista, nomePista, lunghezza, numCurve, giroVeloce, anno);
-                cont++;
             }
 
-            if (cont != 21) {
-                throw new ErroreFormattazioneFileException();
-            }
-
-            cont = 1;
-            while (scPiloti.hasNext() && cont <= 20) {
+            while (scPiloti.hasNext()) {
                 aggiungiPilota(scPiloti.next(), scPiloti.next(), scPiloti.next(), scPiloti.next(), Date.valueOf(scPiloti.next()), scPiloti.nextInt(), scPiloti.nextInt() == 1, scPiloti.nextInt());
-                cont++;
+                scPiloti.nextLine();
             }
-            
-            if (cont != 20) {
-                throw new ErroreFormattazioneFileException();
+
+            while (scCalendario.hasNext()) {
+                aggiungiCalendario(scCalendario.next(), scCalendario.next(), scCalendario.nextInt(), Date.valueOf(scCalendario.next()), scCalendario.nextInt());
+                scCalendario.nextLine();
+            }
+
+            while (scScuderie.hasNext()) {
+                aggiungiScuderia(scScuderie.next(), scScuderie.next(), scScuderie.nextInt());
+                scScuderie.nextLine();
+            }
+
+            while (scPersonale.hasNext()) {
+                aggiungiPersonale(scPersonale.next(), scPersonale.next(), scPersonale.next(), scPersonale.next(), Date.valueOf(scPersonale.next()), scPersonale.next());
+                scPersonale.nextLine();
+            }
+
+            while (scAfferenzaPiloti.hasNext()) {
+                aggiungiAfferenzaPiloti(scAfferenzaPiloti.next(), scAfferenzaPiloti.nextInt(), scAfferenzaPiloti.next());
+                scAfferenzaPiloti.nextLine();
+            }
+
+            while (scAfferenzaPersonale.hasNext()) {
+                aggiungiAfferenzaPersonale(scAfferenzaPersonale.next(), scAfferenzaPersonale.next(), scAfferenzaPersonale.nextInt());
+                scAfferenzaPersonale.nextLine();
+            }
+
+            while (scDirigenza.hasNext()) {
+                aggiungiDirigente(scDirigenza.nextInt(), scDirigenza.next(), scDirigenza.next());
+                scDirigenza.nextLine();
             }
 
             conn.commit();
@@ -248,11 +295,6 @@ public class Admin {
             conn.rollback();
             conn.setAutoCommit(true);
             throw new SQLException();
-        } catch (ErroreFormattazioneFileException ex) {
-            ex.printStackTrace();
-            conn.rollback();
-            conn.setAutoCommit(true);
-            throw new ErroreFormattazioneFileException();
         }
 
     }

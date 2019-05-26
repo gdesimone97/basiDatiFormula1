@@ -1607,7 +1607,9 @@ public class MainFrame extends javax.swing.JFrame {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+            afferenzaScuderiaLabel.setText("");
+            afferenza1Label.setText("");
+            afferenza2Label.setText("");
         }
     }//GEN-LAST:event_tableScuderieMouseReleased
 
@@ -1769,7 +1771,7 @@ public class MainFrame extends javax.swing.JFrame {
         try {
             int volte = Integer.parseInt(countRisultatiLabel2.getText()) / 20;
             int x = 0;
-            String[] str = null;
+            String[] str = new String[20];
             while (x < volte) {
                 str[x] = (String) dm.remove(x);
                 admin.inserisciRisultati(str);
@@ -1792,6 +1794,14 @@ public class MainFrame extends javax.swing.JFrame {
         } else {
             cancellaRigaButton.setEnabled(false);
             scriviFileButton.setEnabled(false);
+        }
+
+        if (!dm.isEmpty()) {
+            scriviFileButton.setEnabled(true);
+            cancellaTuttoButton.setEnabled(true);
+        } else {
+            scriviFileButton.setEnabled(false);
+            cancellaTuttoButton.setEnabled(false);
         }
 
     }//GEN-LAST:event_risultatiListValueChanged
@@ -1841,12 +1851,12 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_inserisciDaFileButtonActionPerformed
 
     private void scriviFileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scriviFileButtonActionPerformed
-        try (BufferedWriter w = new BufferedWriter(new FileWriter("risultatiTEMPORANEI.txt", true))) {
+        String nomeFile = JOptionPane.showInputDialog("Inserisci il nome del file in cui salvare: ");
+        try (BufferedWriter w = new BufferedWriter(new FileWriter(nomeFile, true))) {
             for (Object o : dm.toArray()) {
                 w.write(o.toString());
                 w.newLine();
             }
-            JOptionPane.showMessageDialog(this, "Ho salvato il file temporaneamente in risultatiTEMPORANEI.txt");
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(this, "Errore nell'apertura del file, riprova.");
         }

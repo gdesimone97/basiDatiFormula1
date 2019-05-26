@@ -1,0 +1,10 @@
+68:AM040490:Mercedes AMG Petronas Motorsport:
+68:AG041163:Scuderia Ferrari:
+68:AE061024:Aston Martin Red Bull Racing:
+68:LP120871:Sahara Force India F1 Team:
+68:BS300371:Williams Martini Racing:
+68:FD090824:Renault Sport Formula One Team:
+68:MP241139:Red Bull Toro Rosso Honda:
+68:LP310139:Haas F1 Team:
+68:RC220822:McLaren F1 Team:
+68:SM011089:Alfa Romeo Sauber F1 Team:

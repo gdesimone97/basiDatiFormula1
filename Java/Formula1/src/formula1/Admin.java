@@ -21,8 +21,8 @@ import java.util.Scanner;
 public class Admin {
 
     private static final String USER_ADMIN = "postgres";
-    private static final String PASS_ADMIN = "abc123";
-    private static final String URL = "jdbc:postgresql://localhost/prova";
+    private static final String PASS_ADMIN = "gds2009";
+    private static final String URL = "jdbc:postgresql://localhost/formula";
     private static Connection conn;
 
     private Admin() {
@@ -122,7 +122,7 @@ public class Admin {
         admin = null;
     }
 
-    public int inserisciRisultati(String file,int numero) throws SQLException, FileNotFoundException {
+    public void inserisciRisultati(String file) throws SQLException, FileNotFoundException {
         try {
             int cont = 0;
             Scanner sc = new Scanner(new File(file));
@@ -148,7 +148,7 @@ public class Admin {
             pstTemporaryTable.executeUpdate();
 
             conn.setAutoCommit(false);
-            while (sc.hasNext() && cont < numero) {
+            while (sc.hasNext() && cont < 20) {
                 pst.setString(1, sc.next());
                 pst.setString(2, sc.next());
                 pst.setString(3, sc.next());
@@ -175,7 +175,6 @@ public class Admin {
             pstClear.executeUpdate();
             conn.commit();
             conn.setAutoCommit(true);
-            return cont;
         } catch (SQLException ex) {
             conn.rollback();
             conn.setAutoCommit(true);
@@ -242,7 +241,7 @@ public class Admin {
         scAfferenzaPersonale.useDelimiter(":");
         scDirigenza.useDelimiter(":");
 
-        try  {
+        try {
             conn.setAutoCommit(false);
 
             aggiungiCampionato(numeroCampionato, dataInizio, dataFine, motore, gomme);

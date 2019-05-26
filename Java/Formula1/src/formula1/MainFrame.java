@@ -1767,7 +1767,8 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void commitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_commitButtonActionPerformed
         try {
-            admin.inserisciRisultati(nomeFileLabel.getText());
+            int count = admin.inserisciRisultati(nomeFileLabel.getText(), Integer.parseInt(countRisultatiLabel2.getText()));
+            JOptionPane.showMessageDialog(this, "Ho inserito " + count + " risultati");
             nomeFileLabel.setText("");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, "Errore nell'inserimento su database. Riprova");

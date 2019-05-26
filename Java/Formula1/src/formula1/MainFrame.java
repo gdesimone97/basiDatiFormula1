@@ -1769,11 +1769,13 @@ public class MainFrame extends javax.swing.JFrame {
         try {
             int volte = Integer.parseInt(countRisultatiLabel2.getText()) / 20;
             int x = 0;
+            String[] str;
             while (x < volte) {
-                admin.inserisciRisultati(nomeFileLabel.getText());
+                str[x] = (String) dm.remove(x);
+                admin.inserisciRisultati(str);
                 x++;
             }
-            JOptionPane.showMessageDialog(this, "Operazione avvenuta con successo!")
+            JOptionPane.showMessageDialog(this, "Operazione avvenuta con successo!");
             nomeFileLabel.setText("");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, "Errore nell'inserimento su database. Riprova");

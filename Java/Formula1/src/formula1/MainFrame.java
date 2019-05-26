@@ -1771,9 +1771,14 @@ public class MainFrame extends javax.swing.JFrame {
         try {
             int volte = Integer.parseInt(countRisultatiLabel2.getText()) / 20;
             int x = 0;
+            int y = 0;
             String[] str = new String[20];
             while (x < volte) {
-                str[x] = (String) dm.remove(x);
+                while(y < 20) {
+                    str[y] = (String) dm.remove(x);
+                    y++;
+                }
+                y = 0;
                 admin.inserisciRisultati(str);
                 x++;
             }

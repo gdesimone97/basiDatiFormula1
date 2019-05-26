@@ -313,7 +313,7 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
         fileDirigenzaButton = new javax.swing.JButton();
         fileDirigenzaLabel = new javax.swing.JLabel();
-        jButton9 = new javax.swing.JButton();
+        svuotaTuttoButton = new javax.swing.JButton();
         commitCampionatoButton = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         dataInizioTextField = new javax.swing.JFormattedTextField();
@@ -452,8 +452,8 @@ public class MainFrame extends javax.swing.JFrame {
         verificaPanelLayout.setVerticalGroup(
             verificaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(verificaPanelLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(verificaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(scriviFileButton)
                     .addComponent(cancellaRigaButton))
@@ -706,10 +706,10 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton9.setText("Svuota Tutto");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        svuotaTuttoButton.setText("Svuota Tutto");
+        svuotaTuttoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                svuotaTuttoButtonActionPerformed(evt);
             }
         });
 
@@ -734,29 +734,49 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(motoreTextField)
+                                    .addComponent(gommeTextField)))
+                            .addComponent(jLabel14)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(numCampionatoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(23, 23, 23)
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(dataInizioTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(dataFineTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING)))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING))))
-                                .addGap(18, 18, 18)
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel29)
+                                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel21)
+                                    .addComponent(jLabel17)
+                                    .addComponent(jLabel15)
+                                    .addComponent(jLabel23)
+                                    .addComponent(jLabel25)
+                                    .addComponent(jLabel27))
+                                .addGap(28, 28, 28)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(fileAffPersonaleButton)
                                         .addGap(18, 18, 18)
                                         .addComponent(fileAffPersonaleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                             .addComponent(fileScuderieButton)
                                             .addGap(18, 18, 18)
@@ -781,45 +801,17 @@ public class MainFrame extends javax.swing.JFrame {
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                             .addComponent(fileAffPilotiButton)
                                             .addGap(18, 18, 18)
-                                            .addComponent(fileAffPilotiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                            .addComponent(fileAffPilotiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(fileDirigenzaButton)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(fileDirigenzaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel29)
-                                .addGap(18, 18, 18)
-                                .addComponent(fileDirigenzaButton)
-                                .addGap(18, 18, 18)
-                                .addComponent(fileDirigenzaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(103, 103, 103))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel16)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                        .addComponent(commitCampionatoButton)
+                                .addComponent(jLabel16)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                                .addComponent(commitCampionatoButton)))
                         .addGap(18, 18, 18)
-                        .addComponent(jButton9))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(motoreTextField)
-                                    .addComponent(gommeTextField)))
-                            .addComponent(jLabel14)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(numCampionatoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(23, 23, 23)
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(dataInizioTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(dataFineTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(svuotaTuttoButton)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -843,12 +835,12 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(gommeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(filePisteButton)
                         .addComponent(jLabel15))
-                    .addComponent(filePisteLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(filePisteLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(filePilotiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -887,19 +879,16 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(fileAffPersonaleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(fileDirigenzaButton)
-                                .addComponent(jLabel29))
-                            .addComponent(fileDirigenzaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton9)
-                            .addComponent(commitCampionatoButton)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel16)))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(fileDirigenzaButton)
+                        .addComponent(jLabel29))
+                    .addComponent(fileDirigenzaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(svuotaTuttoButton)
+                        .addComponent(commitCampionatoButton))
+                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
 
@@ -944,8 +933,8 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(logoutButton)
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1637,7 +1626,7 @@ public class MainFrame extends javax.swing.JFrame {
 
             if (numC.compareTo("") == 0 || numG.compareTo("") == 0 || codice.compareTo("") == 0 || punti.compareTo("") == 0
                     || migliorTempo.compareTo("") == 0 || tempoQualifica.compareTo("") == 0) {
-                JOptionPane.showMessageDialog(this, "Devi inserire tutti i campi");
+                JOptionPane.showMessageDialog(adminFrame, "Devi inserire tutti i campi");
 
             } else {
                 ResultSet rst = Query.selezionaPista(Integer.parseInt(numC), Integer.parseInt(numG));
@@ -1645,9 +1634,10 @@ public class MainFrame extends javax.swing.JFrame {
                 sede_pista = rst.getString("sede_pista");
                 nome_pista = rst.getString("nome_pista");
 
+                risultatiList.setModel(dm);
                 dm.addElement(sede_pista + ":" + nome_pista + ":" + codice + ":" + numC + ":" + punti + ":" + migliorTempo + ":" + tempoQualifica + ":"
                         + (!ritiroCheckBox.isSelected() ? "0:" : "1:"));
-                risultatiList.setModel(dm);
+                
 
                 codiceField.setText("");
                 punteggioField.setText("");
@@ -1665,7 +1655,7 @@ public class MainFrame extends javax.swing.JFrame {
                 }
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(this, "Non riesco a trovare la pista!");
+            JOptionPane.showMessageDialog(adminFrame, "Non riesco a trovare la pista!");
         }
 
 
@@ -1774,7 +1764,7 @@ public class MainFrame extends javax.swing.JFrame {
             int y = 0;
             String[] str = new String[20];
             while (x < volte) {
-                while(y < 20) {
+                while (y < 20) {
                     str[y] = (String) dm.remove(0);
                     y++;
                 }
@@ -1782,13 +1772,13 @@ public class MainFrame extends javax.swing.JFrame {
                 admin.inserisciRisultati(str);
                 x++;
             }
-            JOptionPane.showMessageDialog(this, "Operazione avvenuta con successo!");
+            JOptionPane.showMessageDialog(adminFrame, "Operazione avvenuta con successo!");
             nomeFileLabel.setText("");
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(this, "Errore nell'inserimento su database. Riprova");
+            JOptionPane.showMessageDialog(adminFrame, "Errore nell'inserimento su database. Riprova");
             ex.printStackTrace();
         } catch (FileNotFoundException ex) {
-            JOptionPane.showMessageDialog(this, "Non ho trovato il file");
+            JOptionPane.showMessageDialog(adminFrame, "Non ho trovato il file");
         }
     }//GEN-LAST:event_commitButtonActionPerformed
 
@@ -1831,7 +1821,7 @@ public class MainFrame extends javax.swing.JFrame {
     private void inserisciDaFileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inserisciDaFileButtonActionPerformed
         try {
             Integer count = 0;
-            int x = jFileChooser1.showOpenDialog(this);
+            int x = jFileChooser1.showOpenDialog(adminFrame);
             String nomeFile = "";
             if (x == JFileChooser.APPROVE_OPTION) {
                 nomeFile = jFileChooser1.getSelectedFile().getName();
@@ -1851,20 +1841,21 @@ public class MainFrame extends javax.swing.JFrame {
             cancellaTuttoButton.setEnabled(true);
 
         } catch (FileNotFoundException ex) {
-            JOptionPane.showMessageDialog(this, "Errore nell'apertura del file.");
+            JOptionPane.showMessageDialog(adminFrame, "Errore nell'apertura del file.");
         }
     }//GEN-LAST:event_inserisciDaFileButtonActionPerformed
 
     private void scriviFileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scriviFileButtonActionPerformed
         String nomeFile = JOptionPane.showInputDialog("Inserisci il nome del file in cui salvare: ");
-        try (BufferedWriter w = new BufferedWriter(new FileWriter(nomeFile, true))) {
-            for (Object o : dm.toArray()) {
-                w.write(o.toString());
-                w.newLine();
+        if (nomeFile != null)
+            try (BufferedWriter w = new BufferedWriter(new FileWriter(nomeFile + ".txt", true))) {
+                for (Object o : dm.toArray()) {
+                    w.write(o.toString());
+                    w.newLine();
+                }
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(adminFrame, "Errore nell'apertura del file, riprova.");
             }
-        } catch (IOException ex) {
-            JOptionPane.showMessageDialog(this, "Errore nell'apertura del file, riprova.");
-        }
     }//GEN-LAST:event_scriviFileButtonActionPerformed
 
     private void tableCalendarioMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableCalendarioMouseReleased
@@ -1956,7 +1947,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_numGiornataComboBoxItemStateChanged
 
     private void filePisteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filePisteButtonActionPerformed
-        int x = jFileChooser1.showOpenDialog(this);
+        int x = jFileChooser1.showOpenDialog(adminFrame);
         String file = "";
         if (x == JFileChooser.APPROVE_OPTION) {
             file = jFileChooser1.getSelectedFile().getName();
@@ -1965,7 +1956,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_filePisteButtonActionPerformed
 
     private void filePilotiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filePilotiButtonActionPerformed
-        int x = jFileChooser1.showOpenDialog(this);
+        int x = jFileChooser1.showOpenDialog(adminFrame);
         String file = "";
         if (x == JFileChooser.APPROVE_OPTION) {
             file = jFileChooser1.getSelectedFile().getName();
@@ -1974,7 +1965,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_filePilotiButtonActionPerformed
 
     private void fileCalendarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fileCalendarioButtonActionPerformed
-        int x = jFileChooser1.showOpenDialog(this);
+        int x = jFileChooser1.showOpenDialog(adminFrame);
         String file = "";
         if (x == JFileChooser.APPROVE_OPTION) {
             file = jFileChooser1.getSelectedFile().getName();
@@ -1983,7 +1974,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_fileCalendarioButtonActionPerformed
 
     private void fileScuderieButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fileScuderieButtonActionPerformed
-        int x = jFileChooser1.showOpenDialog(this);
+        int x = jFileChooser1.showOpenDialog(adminFrame);
         String file = "";
         if (x == JFileChooser.APPROVE_OPTION) {
             file = jFileChooser1.getSelectedFile().getName();
@@ -1992,7 +1983,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_fileScuderieButtonActionPerformed
 
     private void filePersonaleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filePersonaleButtonActionPerformed
-        int x = jFileChooser1.showOpenDialog(this);
+        int x = jFileChooser1.showOpenDialog(adminFrame);
         String file = "";
         if (x == JFileChooser.APPROVE_OPTION) {
             file = jFileChooser1.getSelectedFile().getName();
@@ -2001,7 +1992,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_filePersonaleButtonActionPerformed
 
     private void fileAffPilotiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fileAffPilotiButtonActionPerformed
-        int x = jFileChooser1.showOpenDialog(this);
+        int x = jFileChooser1.showOpenDialog(adminFrame);
         String file = "";
         if (x == JFileChooser.APPROVE_OPTION) {
             file = jFileChooser1.getSelectedFile().getName();
@@ -2010,7 +2001,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_fileAffPilotiButtonActionPerformed
 
     private void fileAffPersonaleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fileAffPersonaleButtonActionPerformed
-        int x = jFileChooser1.showOpenDialog(this);
+        int x = jFileChooser1.showOpenDialog(adminFrame);
         String file = "";
         if (x == JFileChooser.APPROVE_OPTION) {
             file = jFileChooser1.getSelectedFile().getName();
@@ -2019,7 +2010,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_fileAffPersonaleButtonActionPerformed
 
     private void fileDirigenzaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fileDirigenzaButtonActionPerformed
-        int x = jFileChooser1.showOpenDialog(this);
+        int x = jFileChooser1.showOpenDialog(adminFrame);
         String file = "";
         if (x == JFileChooser.APPROVE_OPTION) {
             file = jFileChooser1.getSelectedFile().getName();
@@ -2027,7 +2018,7 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_fileDirigenzaButtonActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void svuotaTuttoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_svuotaTuttoButtonActionPerformed
         numCampionatoTextField.setText("");
         dataInizioTextField.setText("");
         dataFineTextField.setText("");
@@ -2041,7 +2032,7 @@ public class MainFrame extends javax.swing.JFrame {
         fileAffPilotiLabel.setText("");
         fileAffPersonaleLabel.setText("");
         fileDirigenzaLabel.setText("");
-    }//GEN-LAST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_svuotaTuttoButtonActionPerformed
 
     private void commitCampionatoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_commitCampionatoButtonActionPerformed
         if (numCampionatoTextField.getText().compareTo("") != 0
@@ -2077,17 +2068,17 @@ public class MainFrame extends javax.swing.JFrame {
                 fileAffPilotiLabel.setText("");
                 fileAffPersonaleLabel.setText("");
                 fileDirigenzaLabel.setText("");
-                JOptionPane.showMessageDialog(this, "Operazione andata a buon fine!");
+                JOptionPane.showMessageDialog(adminFrame, "Operazione andata a buon fine!");
             } catch (FileNotFoundException ex) {
-                JOptionPane.showMessageDialog(this, "Errore nell'apertura di un file!\nControlla che siano tutti nella giusta cartella.");
+                JOptionPane.showMessageDialog(adminFrame, "Errore nell'apertura di un file!\nControlla che siano tutti nella giusta cartella.");
             } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(this, "Errore nei dati inseriti\n");
+                JOptionPane.showMessageDialog(adminFrame, "Errore nei dati inseriti\n");
                 ex.printStackTrace();
             } catch (IllegalArgumentException ex) {
-                JOptionPane.showMessageDialog(this, "La data deve essere nel formato yyyy-mm-dd");
+                JOptionPane.showMessageDialog(adminFrame, "La data deve essere nel formato yyyy-mm-dd");
             }
         } else
-            JOptionPane.showMessageDialog(this, "Compila tutti i campi");
+            JOptionPane.showMessageDialog(adminFrame, "Compila tutti i campi");
     }//GEN-LAST:event_commitCampionatoButtonActionPerformed
 
     /**
@@ -2180,7 +2171,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel inserimentoPanel;
     private javax.swing.JButton inserisciButton;
     private javax.swing.JButton inserisciDaFileButton;
-    private javax.swing.JButton jButton9;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -2243,6 +2233,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel ritiratoLabel;
     private javax.swing.JCheckBox ritiroCheckBox;
     private javax.swing.JButton scriviFileButton;
+    private javax.swing.JButton svuotaTuttoButton;
     private javax.swing.JTable tableCalendario;
     private javax.swing.JTable tablePiloti;
     private javax.swing.JTable tableRisultati;

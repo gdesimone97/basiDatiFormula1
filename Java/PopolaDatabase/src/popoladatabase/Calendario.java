@@ -38,7 +38,7 @@ public class Calendario {
             pst.setString(2, sc.next());
             pst.setInt(3, sc.nextInt());
             pst.setDate(4, Date.valueOf(sc.next()));
-            pst.setInt(5, ++cont);
+            pst.setInt(5, sc.nextInt());
 
             sc.nextLine();
             pst.executeUpdate();

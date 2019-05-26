@@ -173,7 +173,7 @@ public class Admin {
             }
             System.out.println(cont);
             pstInsertAttuali.executeUpdate();
-            pstClear.executeQuery();
+            pstClear.executeUpdate();
             conn.commit();
             conn.setAutoCommit(true);
         } catch (SQLException ex) {

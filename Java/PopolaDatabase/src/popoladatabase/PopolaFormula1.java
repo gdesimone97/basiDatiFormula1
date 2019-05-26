@@ -76,7 +76,7 @@ public class PopolaFormula1 {
 
     public static void main(String[] args) throws SQLException {
         String nome = "postgres";
-        String pass = "gds2009";
+        String pass = "abc123";
         Connection conn = null;
 
         Personale pers;
@@ -85,7 +85,7 @@ public class PopolaFormula1 {
         int y = 0;
 
         //DATABASE
-        String url = "jdbc:postgresql://localhost:5432/formula";
+        String url = "jdbc:postgresql://localhost:5432/prova";
         try {
 //******CONNESSIONE & STATEMENT
             Class.forName("org.postgresql.Driver");
@@ -149,13 +149,14 @@ public class PopolaFormula1 {
 
 //******INSERIMENTO RISULTATI 2018
             Scanner scIn = new Scanner(System.in);
-            System.out.print("Caricare risultati da file? [S/N] : ");
+            System.out.print("Caricare risultati per campionato 2018 da file? [S/N] : ");
             String risposta = scIn.nextLine();
+            int count = 0;
             
             while (true) {
                 if (risposta.toUpperCase().compareTo("S") == 0) {
                     Risultati_temp.insert(conn, scRisultati2018);
-                    System.out.print("Risultati Inseriti, vuoi caricare un'altra giornata? [S/N]: ");
+                    System.out.print("Risultati inseriti per Giornata " + ++count + ", vuoi caricare un'altra giornata? [S/N]: ");
                     risposta = scIn.nextLine();
                 } else if (risposta.toUpperCase().compareTo("N") == 0) {
                     break;
@@ -169,23 +170,24 @@ public class PopolaFormula1 {
             System.out.println();
 
 //******INSERIMENTO CAMPIONATO 2019
-//            Campionati.insert(conn, "campionati2019.txt");
-//            System.out.println("Campionato 2019 Inserito");
+            Campionati.insert(conn, "campionati2019.txt");
+            System.out.println("Campionato 2019 Inserito");
 
 //******INSERIMENTO CALENDARIO 2019
-//            Calendario.insert(conn, "calendario2019.txt");
-//            System.out.println("Calendario 2019 Inserito");
+            Calendario.insert(conn, "calendario2019.txt");
+            System.out.println("Calendario 2019 Inserito");
             
             conn.commit();
 
 //******INSERIMENTO RISULTATI 2019
-            System.out.print("Caricare risultati da file? [S/N] : ");
+            System.out.print("Caricare risultati per campionato 2019 da file? [S/N] : ");
             risposta = scIn.nextLine();
+            count = 0;
             
             while (true) {
                 if (risposta.toUpperCase().compareTo("S") == 0) {
                     Risultati_temp.insert(conn, scRisultati2019);
-                    System.out.print("Risultati Inseriti, vuoi caricare un'altra giornata? [S/N]: ");
+                    System.out.print("Risultati inseriti per Giornata " + ++count + ", vuoi caricare un'altra giornata? [S/N]: ");
                     risposta = scIn.nextLine();
                 } else if (risposta.toUpperCase().compareTo("N") == 0) {
                     break;

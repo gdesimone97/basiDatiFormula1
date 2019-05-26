@@ -192,7 +192,7 @@ public class Query {
     }
 
     public static ResultSet selezionaRisultati(int numeroCampionato, int numeroGiornata) throws SQLException {
-        String condizione = "where sede_pista=(select sede_pista from calendario where numero_Campionato= ? and  numero_giornata = ?) and nome_pista= (select nome_pista from calendario where numero_Campionato= ? and numero_giornata=?)";
+        String condizione = "where sede_pista=(select sede_pista from calendario where numero_campionato= ? and  numero_giornata = ?) and nome_pista= (select nome_pista from calendario where numero_campionato= ? and numero_giornata=?)";
         if (isCurrent(numeroCampionato)) {
             String q = "select * from risultati_attuali " + condizione;
             if (pstRisultatiAttuali == null) {

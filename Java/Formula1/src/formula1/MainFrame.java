@@ -1769,7 +1769,7 @@ public class MainFrame extends javax.swing.JFrame {
         try {
             int volte = Integer.parseInt(countRisultatiLabel2.getText()) / 20;
             int x = 0;
-            String[] str;
+            String[] str = null;
             while (x < volte) {
                 str[x] = (String) dm.remove(x);
                 admin.inserisciRisultati(str);

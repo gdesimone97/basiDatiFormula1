@@ -242,15 +242,10 @@ public class Admin {
         scAfferenzaPersonale.useDelimiter(":");
         scDirigenza.useDelimiter(":");
 
-        try (PreparedStatement pst = conn.prepareStatement("insert into campionati values(?,?,?,?,?)")) {
+        try  {
             conn.setAutoCommit(false);
 
-            pst.setInt(1, numeroCampionato);
-            pst.setDate(2, dataInizio);
-            pst.setDate(3, dataFine);
-            pst.setString(4, motore);
-            pst.setString(5, gomme);
-            pst.executeUpdate();
+            aggiungiCampionato(numeroCampionato, dataInizio, dataFine, motore, gomme);
 
             while (scPiste.hasNext()) {
                 aggiungiPista(scPiste.next(), scPiste.next(), scPiste.nextInt(), scPiste.nextInt(), scPiste.nextInt(), scPiste.nextInt());

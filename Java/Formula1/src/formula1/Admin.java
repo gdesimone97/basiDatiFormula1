@@ -122,7 +122,7 @@ public class Admin {
         admin = null;
     }
 
-    public void inserisciRisultati(String file) throws SQLException, FileNotFoundException {
+    public int inserisciRisultati(String file,int numero) throws SQLException, FileNotFoundException {
         try {
             int cont = 0;
             Scanner sc = new Scanner(new File(file));
@@ -148,7 +148,7 @@ public class Admin {
             pstTemporaryTable.executeUpdate();
 
             conn.setAutoCommit(false);
-            while (sc.hasNext() && cont < 20) {
+            while (sc.hasNext() && cont < numero) {
                 pst.setString(1, sc.next());
                 pst.setString(2, sc.next());
                 pst.setString(3, sc.next());
@@ -171,11 +171,11 @@ public class Admin {
                 sc.nextLine();
                 cont++;
             }
-            System.out.println(cont);
             pstInsertAttuali.executeUpdate();
             pstClear.executeUpdate();
             conn.commit();
             conn.setAutoCommit(true);
+            return cont;
         } catch (SQLException ex) {
             conn.rollback();
             conn.setAutoCommit(true);

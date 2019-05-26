@@ -313,7 +313,7 @@ public class MainFrame extends javax.swing.JFrame {
         fileDirigenzaButton = new javax.swing.JButton();
         fileDirigenzaLabel = new javax.swing.JLabel();
         jButton9 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
+        commitCampionatoButton = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         dataInizioTextField = new javax.swing.JFormattedTextField();
         dataFineTextField = new javax.swing.JFormattedTextField();
@@ -707,10 +707,10 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton11.setText("Commit");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
+        commitCampionatoButton.setText("Commit");
+        commitCampionatoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
+                commitCampionatoButtonActionPerformed(evt);
             }
         });
 
@@ -787,7 +787,7 @@ public class MainFrame extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel16)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                        .addComponent(jButton11)
+                        .addComponent(commitCampionatoButton)
                         .addGap(18, 18, 18)
                         .addComponent(jButton9))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -890,7 +890,7 @@ public class MainFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton9)
-                            .addComponent(jButton11)))
+                            .addComponent(commitCampionatoButton)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel16)))
@@ -2007,8 +2007,7 @@ public class MainFrame extends javax.swing.JFrame {
         fileDirigenzaLabel.setText("");
     }//GEN-LAST:event_jButton9ActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        System.out.print(Date.valueOf(dataInizioTextField.getText()));
+    private void commitCampionatoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_commitCampionatoButtonActionPerformed
         if (numCampionatoTextField.getText().compareTo("") != 0
                 & dataInizioTextField.getText().compareTo("") != 0
                 & dataFineTextField.getText().compareTo("") != 0
@@ -2037,7 +2036,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         } else
             JOptionPane.showMessageDialog(this, "Compila tutti i campi");
-    }//GEN-LAST:event_jButton11ActionPerformed
+    }//GEN-LAST:event_commitCampionatoButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2095,6 +2094,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel cognomeLabel;
     private javax.swing.JTextField cognomeTextField;
     private javax.swing.JButton commitButton;
+    private javax.swing.JButton commitCampionatoButton;
     private javax.swing.JLabel countRisultatiLabel;
     private javax.swing.JLabel countRisultatiLabel2;
     private javax.swing.JLabel curveLabel;
@@ -2128,7 +2128,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel inserimentoPanel;
     private javax.swing.JButton inserisciButton;
     private javax.swing.JButton inserisciDaFileButton;
-    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton9;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;

@@ -1775,7 +1775,7 @@ public class MainFrame extends javax.swing.JFrame {
             String[] str = new String[20];
             while (x < volte) {
                 while(y < 20) {
-                    str[y] = (String) dm.remove(x);
+                    str[y] = (String) dm.remove(0);
                     y++;
                 }
                 y = 0;

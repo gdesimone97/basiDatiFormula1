@@ -51,7 +51,7 @@ public class Admin {
 
     //Per inserire la data usare il metodo statico della classe Date: Date.valueOf
     private int aggiungiPilota(String codicePilota, String nomePilota, String cognomePilota, String nazionalita, Date date, int titoliVinti, boolean attivo, int dataRitiro) throws SQLException {
-        String q = "inser into piloti values(?,?;?,?,?,?,?,?)";
+        String q = "insert into piloti values(?,?,?,?,?,?,?,?)ON CONFLICT DO NOTHING";
         PreparedStatement pst = conn.prepareStatement(q);
         pst.setString(1, codicePilota);
         pst.setString(2, nomePilota);
@@ -69,7 +69,7 @@ public class Admin {
     }
 
     private int aggiungiScuderia(String nomeScuderia, String nazionalitaScuderia, int numeroCampionatiVinti) throws SQLException {
-        String q = "insert into scuderie values(?,?,?)";
+        String q = "insert into scuderie values(?,?,?)ON CONFLICT DO NOTHING";
         PreparedStatement pst = conn.prepareStatement(q);
         pst.setString(1, nomeScuderia);
         pst.setString(2, nazionalitaScuderia);
@@ -78,7 +78,7 @@ public class Admin {
     }
 
     private int aggiungiPista(String sedePista, String nomePista, int lunghezza, int numeroCureve, int giro, int annoInaugurazione) throws SQLException {
-        String q = "insert into piste values(?,?,?,?,?,?)";
+        String q = "insert into piste values(?,?,?,?,?,?) ON CONFLICT DO NOTHING";
         PreparedStatement pst = conn.prepareStatement(q);
         pst.setString(1, sedePista);
         pst.setString(2, nomePista);
@@ -95,7 +95,7 @@ public class Admin {
 
     //Per inserire la data usare il metodo statico della classe Date: Date.valueOf
     private int aggiungiPersonale(String codicePersonale, String nomePersonale, String cognomePersonale, String nazionalitaPersonale, Date date, String professione) throws SQLException {
-        String q = "insert into personale values(?,?,?,?,?,?)";
+        String q = "insert into personale values(?,?,?,?,?,?)ON CONFLICT DO NOTHING";
         PreparedStatement pst = conn.prepareStatement(q);
         pst.setString(1, codicePersonale);
         pst.setString(2, nomePersonale);

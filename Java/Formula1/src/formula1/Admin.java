@@ -122,11 +122,9 @@ public class Admin {
         admin = null;
     }
 
-    public void inserisciRisultati(String file) throws SQLException, FileNotFoundException {
+    public void inserisciRisultati(String[] str) throws SQLException, FileNotFoundException {
         try {
             int cont = 0;
-            Scanner sc = new Scanner(new File(file));
-            sc.useDelimiter(":");
             String qInsert_t = "insert into risultati_t values(?,?,?,?,?,?,?,?)";
             String qInsert = "insert into risultati_attuali select * from risultati_t";
             String qClear = "delete from risultati_t";
@@ -148,7 +146,11 @@ public class Admin {
             pstTemporaryTable.executeUpdate();
 
             conn.setAutoCommit(false);
-            while (sc.hasNext() && cont < 20) {
+            while (cont < 20) {
+                Scanner sc = new Scanner(str[cont]);
+                if(!sc.hasNext())
+                    break;
+                sc.useDelimiter(":");
                 pst.setString(1, sc.next());
                 pst.setString(2, sc.next());
                 pst.setString(3, sc.next());

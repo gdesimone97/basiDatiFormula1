@@ -1767,8 +1767,13 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void commitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_commitButtonActionPerformed
         try {
-            int count = admin.inserisciRisultati(nomeFileLabel.getText(), Integer.parseInt(countRisultatiLabel2.getText()));
-            JOptionPane.showMessageDialog(this, "Ho inserito " + count + " risultati");
+            int volte = Integer.parseInt(countRisultatiLabel2.getText()) / 20;
+            int x = 0;
+            while (x < volte) {
+                admin.inserisciRisultati(nomeFileLabel.getText());
+                x++;
+            }
+            JOptionPane.showMessageDialog(this, "Operazione avvenuta con successo!")
             nomeFileLabel.setText("");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, "Errore nell'inserimento su database. Riprova");

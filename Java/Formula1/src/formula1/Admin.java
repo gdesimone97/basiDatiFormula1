@@ -84,7 +84,11 @@ public class Admin {
         pst.setString(2, nomePista);
         pst.setInt(3, lunghezza);
         pst.setInt(4, numeroCureve);
-        pst.setInt(5, giro);
+        if (giro == 0) {
+            pst.setNull(5, java.sql.Types.INTEGER);
+        } else {
+            pst.setInt(5, giro);
+        }
         pst.setInt(6, annoInaugurazione);
         return pst.executeUpdate();
     }

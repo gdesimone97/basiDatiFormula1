@@ -122,7 +122,7 @@ public class Admin {
         admin = null;
     }
 
-    public void inserisciRisultati(String file) throws SQLException {
+    public void inserisciRisultati(String file) throws SQLException, FileNotFoundException {
         try {
             int cont = 0;
             Scanner sc = new Scanner(new File(file));
@@ -176,7 +176,7 @@ public class Admin {
             pstClear.executeQuery();
             conn.commit();
             conn.setAutoCommit(true);
-        } catch (Exception ex) {
+        } catch (SQLException ex) {
             conn.rollback();
             conn.setAutoCommit(true);
             ex.printStackTrace();

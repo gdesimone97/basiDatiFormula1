@@ -126,7 +126,7 @@ public class Query {
         return pstSelezionaScuderiaPassata.executeQuery();
     }
 
-    public static ResultSet selezionaAfferenza(String nomeScuderia, int numeroCampionato) throws SQLException {
+    public static ResultSet selezionaAfferenzaScuderia(String nomeScuderia, int numeroCampionato) throws SQLException {
         String q = "select * from afferenza_piloti where nome_scuderia = ? and numero_campionato = ? ";
         PreparedStatement pst = conn.prepareStatement(q);
         pst.setString(1, nomeScuderia);

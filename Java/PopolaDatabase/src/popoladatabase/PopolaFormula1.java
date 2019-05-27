@@ -122,12 +122,11 @@ public class PopolaFormula1 {
             Scanner scRisultati2019 = new Scanner(new BufferedReader(new FileReader("risultati2019.txt")));
             scRisultati2019.useDelimiter(":");
 
-            
 //******SVUOTAMENTO DATABASE
             Statement deleteStm = conn.createStatement();
             deleteStm.executeUpdate("TRUNCATE piloti, scuderie, campionati, personale, piste, calendario, risultati_attuali, risultati_passati, "
-                                    + "afferenza_piloti, afferenza_personale, dirigenza CASCADE;");
-            
+                    + "afferenza_piloti, afferenza_personale, dirigenza CASCADE;");
+
             conn.setAutoCommit(false);
 
 //******INSERIMENTO PISTE
@@ -151,18 +150,11 @@ public class PopolaFormula1 {
             Scanner scIn = new Scanner(System.in);
             System.out.print("Caricare risultati per campionato 2018 da file? [S/N] : ");
             String risposta = scIn.nextLine();
-            int count = 0;
-            
-            while (true) {
-                if (risposta.toUpperCase().compareTo("S") == 0) {
+            if (risposta.toUpperCase().compareTo("S") == 0) {
+                int count = 0;
+                while (count < 21) {
                     Risultati_temp.insert(conn, scRisultati2018);
-                    System.out.print("Risultati inseriti per Giornata " + ++count + ", vuoi caricare un'altra giornata? [S/N]: ");
-                    risposta = scIn.nextLine();
-                } else if (risposta.toUpperCase().compareTo("N") == 0) {
-                    break;
-                } else {
-                    System.out.print("Risposta non valida, reinserisci: ");
-                    risposta = scIn.nextLine();
+                    System.out.print("Risultati inseriti per Giornata " + ++count +"\n");
                 }
             }
 
@@ -176,14 +168,14 @@ public class PopolaFormula1 {
 //******INSERIMENTO CALENDARIO 2019
             Calendario.insert(conn, "calendario2019.txt");
             System.out.println("Calendario 2019 Inserito");
-            
+
             conn.commit();
 
 //******INSERIMENTO RISULTATI 2019
             System.out.print("Caricare risultati per campionato 2019 da file? [S/N] : ");
             risposta = scIn.nextLine();
-            count = 0;
-            
+            int count = 0;
+
             while (true) {
                 if (risposta.toUpperCase().compareTo("S") == 0) {
                     Risultati_temp.insert(conn, scRisultati2019);
@@ -200,8 +192,8 @@ public class PopolaFormula1 {
             conn.commit();
 
             System.out.println();
-            System.out.println();       
-     
+            System.out.println();
+
 //******INSERIMENTO DI SCUDERIE E PERSONALE
             System.out.print("INSERISCI NUMERO DI CAMPIONATO (END PER USCIRE): ");
             String risp = scIn.nextLine();
@@ -281,15 +273,14 @@ public class PopolaFormula1 {
                     System.out.println();
                     x++;
                 }
-                
+
                 //INSERISCO L'AFFERENZA PILOTI PER QUESTO CAMPIONATO
                 AfferenzaPiloti.insert(conn, "afferenzapiloti" + numCampionato + ".txt");
                 System.out.println("Ho inserito le afferenze piloti per le scuderie del campionato " + numCampionato);
                 System.out.print("\nINSERISCI NUMERO DI CAMPIONATO (END PER USCIRE): ");
                 risp = scIn.nextLine();
-                x=0;
+                x = 0;
             }
-
 
             conn.commit();
 

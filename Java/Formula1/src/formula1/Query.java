@@ -126,31 +126,23 @@ public class Query {
         return pstSelezionaScuderiaPassata.executeQuery();
     }
 
-    public static ResultSet selezionaAfferenza(int x, int annoCampionato) throws SQLException {
-        String q = "select * from afferenza_piloti ";
-        if (x >= 0 && x <= 19) {
-            q += "where codice_pilota = (select codice_pilota from CLASSIFICA_PILOTI_ATTUALE offset ? limit 1) and numero_campionato = ?";
-        } else if (x >= 20 && x <= 29) {
-            x = x - 20;
-            q += "where nome_scuderia = (select nome_scuderia from CLASSIFICA_COSTRUTTORI_ATTUALE offset ? limit 1) and numero_campionato = ?";
-        } else {
-            System.out.println("Parametro errato nel metodo: \"selezionaAfferenza\" ");
-        }
-        PreparedStatement pstSelezionaAfferenza = conn.prepareStatement(q);
-        pstSelezionaAfferenza.setInt(1, x);
-        pstSelezionaAfferenza.setInt(2, annoCampionato);
-        return pstSelezionaAfferenza.executeQuery();
+    public static ResultSet selezionaAfferenza(String nomeScuderia, int numeroCampionato) throws SQLException {
+        String q = "select * from afferenza_piloti where nome_scuderia = ? and numero_campionato = ? ";
+        PreparedStatement pst = conn.prepareStatement(q);
+        pst.setString(1, nomeScuderia);
+        pst.setInt(2, numeroCampionato);
+        return pst.executeQuery();
     }
-    
+
     public static ResultSet selezionaAfferenzaPiloti(String codicePilota, int numeroCampionato) throws SQLException {
         String q = "select * from afferenza_piloti where codice_pilota = ? and numero_campionato = ?";
         PreparedStatement pstSelezionaAfferenzaPiloti = conn.prepareStatement(q);
         pstSelezionaAfferenzaPiloti.setString(1, codicePilota);
         pstSelezionaAfferenzaPiloti.setInt(2, numeroCampionato);
         return pstSelezionaAfferenzaPiloti.executeQuery();
-        
+
     }
-    
+
     public static ResultSet selezionaGiornata(int numeroCampionato, int x) throws SQLException {
         String q = "select * from CALENDARIO where numero_campionato = ? and numero_giornata = ?";
         if (pstSelezionaGiornata == null) {

@@ -1,7 +1,7 @@
 --comandi DCL
 revoke create on schema public from public;
-drop role amministratore;
-drop role utente_generico;
+drop role if exists amministratore;
+drop role  if exists utente_generico;
 create role amministratore superuser login password 'abc123';
 create role utente_generico login password 'abc123';
 

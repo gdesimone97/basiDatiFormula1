@@ -336,6 +336,8 @@ public class MainFrame extends javax.swing.JFrame {
         nazionalitaTextField = new javax.swing.JTextField();
         titoliTextField = new javax.swing.JTextField();
         dataTextField = new javax.swing.JTextField();
+        afferenzaPilotiLabel = new javax.swing.JLabel();
+        afferenzaPilotiLabel2 = new javax.swing.JLabel();
         ScuderiaPanel = new javax.swing.JPanel();
         classificaScuderiaPanel = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -1053,9 +1055,11 @@ public class MainFrame extends javax.swing.JFrame {
                             .addComponent(cognomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(nomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(52, 52, 52))
-                    .addGroup(infoPilotaPanelLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, infoPilotaPanelLayout.createSequentialGroup()
                         .addComponent(ritiratoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addComponent(afferenzaPilotiLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(afferenzaPilotiLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         infoPilotaPanelLayout.setVerticalGroup(
             infoPilotaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1082,6 +1086,10 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(titoliLabel))
                 .addGap(18, 18, 18)
                 .addComponent(ritiratoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59)
+                .addComponent(afferenzaPilotiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(afferenzaPilotiLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1537,11 +1545,15 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void tablePilotiMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablePilotiMouseReleased
         try {
+            String codicePilota;
             boolean flag = false;
             ResultSet rst = Query.selezionaPilota(tablePiloti.getSelectedRow(), numeroCampionato);
 
             while (rst.next()) {
                 flag = true;
+                codicePilota = rst.getString("codice_pilota");
+                ResultSet rstAfferenza = Query.selezionaAfferenzaPiloti(codicePilota, numeroCampionato);
+                
                 nomeTextField.setText(rst.getString("nome_pilota"));
                 cognomeTextField.setText(rst.getString("cognome_pilota"));
                 nazionalitaTextField.setText(rst.getString("nazionalita"));
@@ -1553,6 +1565,10 @@ public class MainFrame extends javax.swing.JFrame {
                 } else {
                     ritiratoLabel.setText("Questo pilota si è ritirato nel: " + rst.getInt("data_ritiro"));
                 }
+                
+                rstAfferenza.next();
+                afferenzaPilotiLabel.setText("Questo pilota afferisce alla scuderia: ");
+                afferenzaPilotiLabel.setText(rstAfferenza.getString("nome_scuderia"));
             }
 
             if (!flag) {
@@ -1569,12 +1585,12 @@ public class MainFrame extends javax.swing.JFrame {
             boolean flag = false;
             int x = tableScuderie.getSelectedRow();
             ResultSet rstScuderia = Query.selezionaScuderia(x, numeroCampionato);
-            ResultSet rstAfferenza = Query.selezionaAfferenza(x + 20, numeroCampionato);
 
             while (rstScuderia.next()) {
                 flag = true;
                 personaleButton.setEnabled(true);
                 nomeScuderiaTextField.setText(rstScuderia.getString("nome_scuderia"));
+                ResultSet rstAfferenza = Query.selezionaAfferenzaScuderia(nomeScuderiaTextField.getText(), numeroCampionato);
                 nazionalitaScuderiaTextField.setText(rstScuderia.getString("nazionalita_scuderia"));
                 titoliScuderiaTextField.setText(rstScuderia.getString("num_campionati_vinti"));
 
@@ -2126,6 +2142,8 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JFrame adminFrame;
     private javax.swing.JLabel afferenza1Label;
     private javax.swing.JLabel afferenza2Label;
+    private javax.swing.JLabel afferenzaPilotiLabel;
+    private javax.swing.JLabel afferenzaPilotiLabel2;
     private javax.swing.JLabel afferenzaScuderiaLabel;
     private javax.swing.JPanel calendariPanel;
     private javax.swing.JButton cancellaButton;

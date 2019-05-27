@@ -1568,7 +1568,7 @@ public class MainFrame extends javax.swing.JFrame {
                 
                 rstAfferenza.next();
                 afferenzaPilotiLabel.setText("Questo pilota afferisce alla scuderia: ");
-                afferenzaPilotiLabel.setText(rstAfferenza.getString("nome_scuderia"));
+                afferenzaPilotiLabel2.setText(rstAfferenza.getString("nome_scuderia"));
             }
 
             if (!flag) {
@@ -1698,6 +1698,8 @@ public class MainFrame extends javax.swing.JFrame {
         inaugurazioneTextField.setText("");
         recordTextField.setText("");
         numGiornataComboBox.setSelectedIndex(0);
+        afferenzaPilotiLabel.setText("");
+        afferenzaPilotiLabel2.setText("");
 
         try {
             aggiornaTabellaPiloti();

@@ -10,3 +10,7 @@ Java/Formula1/build/classes/formula1/MainFrame$2.class
 Java/Formula1/build/classes/formula1/MainFrame$1.class
 /Java/Formula1/dist/
 *.class
+Java/PopolaDatabase/src/popoladatabase/PopolaFormula1.java
+Java/PopolaDatabase/nbproject/private/private.properties
+Java/PopolaDatabase/build/classes/popoladatabase/PopolaFormula1.class
+Java/Formula1/nbproject/private/private.properties

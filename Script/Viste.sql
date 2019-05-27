@@ -1,7 +1,7 @@
 
 	-- creazione di viste necessarie alla corretta determinazione delle posizioni in classifica
 	drop view if exists tmp_RISULTATI cascade;
-	create temporary view tmp_RISULTATI(nome_pista, sede_pista, codice_pilota, miglior_tempo, numero_campionato, punteggio) as
+	create view tmp_RISULTATI(nome_pista, sede_pista, codice_pilota, miglior_tempo, numero_campionato, punteggio) as
 		select RA.nome_pista, RA.sede_pista, RA.codice_pilota, RA.miglior_tempo, (select max(numero_campionato) from campionati) as numero_campionato, RA.punteggio
 		from risultati_attuali as RA	
 			union
@@ -9,14 +9,14 @@
 		from risultati_passati;
 
 	drop view if exists numero_vittorie_tmp cascade;
-	create temporary view numero_vittorie_tmp (codice_pilota, numero_vittorie, numero_campionato) as
+	create view numero_vittorie_tmp (codice_pilota, numero_vittorie, numero_campionato) as
 		select codice_pilota, count(*) as numero_vittorie, numero_campionato
 		from tmp_RISULTATI
 		where punteggio = 25 or punteggio = 26
 		group by numero_campionato, codice_pilota;
 	
 	drop view if exists numero_vittorie cascade;
-	create temporary view numero_vittorie(codice_pilota, numero_vittorie, numero_campionato) as
+	create view numero_vittorie(codice_pilota, numero_vittorie, numero_campionato) as
 		select AP.codice_pilota, 0, AP.numero_campionato
 		from afferenza_piloti as AP
 		where AP.codice_pilota not in (select codice_pilota from numero_vittorie_tmp as NVT where NVT.numero_campionato = AP.numero_campionato )

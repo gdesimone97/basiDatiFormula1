@@ -85,7 +85,7 @@ public class PopolaFormula1 {
         int y = 0;
 
         //DATABASE
-        String url = "jdbc:postgresql://localhost:5432/prova";
+        String url = "jdbc:postgresql://localhost:5432/formula1";
         try {
 //******CONNESSIONE & STATEMENT
             Class.forName("org.postgresql.Driver");

@@ -141,7 +141,16 @@ public class Query {
         pstSelezionaAfferenza.setInt(2, annoCampionato);
         return pstSelezionaAfferenza.executeQuery();
     }
-
+    
+    public static ResultSet selezionaAfferenzaPiloti(String codicePilota, int numeroCampionato) throws SQLException {
+        String q = "select * from afferenza_piloti where codice_pilota = ? and numero_campionato = ?";
+        PreparedStatement pstSelezionaAfferenzaPiloti = conn.prepareStatement(q);
+        pstSelezionaAfferenzaPiloti.setString(1, codicePilota);
+        pstSelezionaAfferenzaPiloti.setInt(2, numeroCampionato);
+        return pstSelezionaAfferenzaPiloti.executeQuery();
+        
+    }
+    
     public static ResultSet selezionaGiornata(int numeroCampionato, int x) throws SQLException {
         String q = "select * from CALENDARIO where numero_campionato = ? and numero_giornata = ?";
         if (pstSelezionaGiornata == null) {

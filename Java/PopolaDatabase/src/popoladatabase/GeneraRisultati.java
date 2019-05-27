@@ -29,7 +29,7 @@ public class GeneraRisultati {
         Connection conn = null;
 
         //DATABASE
-        String url = "jdbc:postgresql://localhost:5432/formula1";
+        String url = "jdbc:postgresql://localhost:5432/prova";
         //******CONNESSIONE & STATEMENT
         try {
             Class.forName("org.postgresql.Driver");

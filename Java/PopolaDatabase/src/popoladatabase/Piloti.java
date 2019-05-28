@@ -26,7 +26,8 @@ public class Piloti {
         if (pst == null) {
             pst = conn.prepareStatement("insert into piloti "
                     + "(Codice_Pilota, Nome_Pilota, Cognome_Pilota, Nazionalita, Data_Nascita, Titoli_Vinti, Attivo, Data_Ritiro) "
-                    + "values (?, ?, ?, ?, ?, ?, ?, ?);");
+                    + "values (?, ?, ?, ?, ?, ?, ?, ?)"
+                    + "ON CONFLICT DO NOTHING;");
         }
 
         Scanner sc = new Scanner(new BufferedReader(new FileReader(nomeFile)));

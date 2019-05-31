@@ -195,6 +195,7 @@ public class PopolaFormula1 {
             System.out.println();
 
 //******INSERIMENTO DI SCUDERIE E PERSONALE
+			System.out.println("INSERIMENTO SCUDERIE E PERSONALE");
             System.out.print("INSERISCI NUMERO DI CAMPIONATO (END PER USCIRE): ");
             String risp = scIn.nextLine();
 

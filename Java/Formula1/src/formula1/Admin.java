@@ -16,7 +16,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author desio
+ * @author gruppo05
  */
 public class Admin {
 
@@ -36,7 +36,7 @@ public class Admin {
      *
      * @param user
      * @param password
-     * @return
+     * @return Admin
      * @throws SQLException Eventuali errori di connessione
      * @throws AdminLoginFailed Nome utente e password admin errati
      */
@@ -49,7 +49,6 @@ public class Admin {
         throw new AdminLoginFailed();
     }
 
-    //Per inserire la data usare il metodo statico della classe Date: Date.valueOf
     private int aggiungiPilota(String codicePilota, String nomePilota, String cognomePilota, String nazionalita, Date date, int titoliVinti, boolean attivo, int dataRitiro) throws SQLException {
         String q = "insert into piloti values(?,?,?,?,?,?,?,?)ON CONFLICT DO NOTHING";
         PreparedStatement pst = conn.prepareStatement(q);
@@ -93,7 +92,6 @@ public class Admin {
         return pst.executeUpdate();
     }
 
-    //Per inserire la data usare il metodo statico della classe Date: Date.valueOf
     private int aggiungiPersonale(String codicePersonale, String nomePersonale, String cognomePersonale, String nazionalitaPersonale, Date date, String professione) throws SQLException {
         String q = "insert into personale values(?,?,?,?,?,?)ON CONFLICT DO NOTHING";
         PreparedStatement pst = conn.prepareStatement(q);
@@ -106,7 +104,6 @@ public class Admin {
         return pst.executeUpdate();
     }
 
-    //Per inserire la data usare il metodo statico della classe Date: Date.valueOf
     private int aggiungiCampionato(int numeroCampionato, Date dataInizio, Date dataFine, String motore, String gomme) throws SQLException {
         String q = "insert into campionati values(?,?,?,?,?)";
         PreparedStatement pst = conn.prepareStatement(q);
@@ -118,10 +115,25 @@ public class Admin {
         return pst.executeUpdate();
     }
 
+    /**
+     * Metodo che permette di effuttuare il LogOut da parte dell'utente Admin
+     *
+     * @param admin
+     */
     public void logOut(Admin admin) {
         admin = null;
     }
 
+    /**
+     * Questo metodo riceve una stringa formattata contenente il singolo
+     * risulatato da cui estrarre le informazioni. L'acquisizione termina quando
+     * sono stati raccolti i 20 risultati. Le informazioni vengono raccolte in
+     * una tabella teporanea e successivamente trasferite al DBMS.
+     *
+     * @param str Stringa formattata in ingresso
+     * @throws SQLException
+     * @throws FileNotFoundException
+     */
     public void inserisciRisultati(String[] str) throws SQLException, FileNotFoundException {
         try {
             int cont = 0;
@@ -148,8 +160,9 @@ public class Admin {
             conn.setAutoCommit(false);
             while (cont < 20) {
                 Scanner sc = new Scanner(str[cont]);
-                if(!sc.hasNext())
+                if (!sc.hasNext()) {
                     break;
+                }
                 sc.useDelimiter(":");
                 pst.setString(1, sc.next());
                 pst.setString(2, sc.next());
@@ -223,6 +236,19 @@ public class Admin {
         return pst.executeUpdate();
     }
 
+    /**
+     * Questo metodo permette di inseriere un nuovo campionato specificando le
+     * informazioni richieste dallo stesso.
+     *
+     * @param numeroCampionato
+     * @param dataInizio
+     * @param dataFine
+     * @param motore
+     * @param gomme
+     * @param file
+     * @throws FileNotFoundException
+     * @throws SQLException
+     */
     public void inserisci(int numeroCampionato, Date dataInizio, Date dataFine, String motore, String gomme, String... file) throws FileNotFoundException, SQLException {
 
         Scanner scPiste = new Scanner(new File(file[0]));

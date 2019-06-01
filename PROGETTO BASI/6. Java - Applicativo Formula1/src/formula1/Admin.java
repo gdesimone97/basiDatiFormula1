@@ -20,9 +20,9 @@ import java.util.Scanner;
  */
 public class Admin {
 
-    private static final String USER_ADMIN = "postgres";
+    private static final String USER_ADMIN = "amministratore";
     private static final String PASS_ADMIN = "abc123";
-    private static final String URL = "jdbc:postgresql://localhost/prova";
+    private static final String URL = "jdbc:postgresql://localhost/formula1";
     private static Connection conn;
 
     private Admin() {

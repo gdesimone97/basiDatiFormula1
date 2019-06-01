@@ -1707,9 +1707,9 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_numCampionatoComboBoxItemStateChanged
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        String utente = JOptionPane.showInputDialog("Inserisci Utente: ");
+        String utente = JOptionPane.showInputDialog("Inserisci Utente:\n(PER PROF: DIGITARE amministratore)");
         if (utente != null) {
-            String password = JOptionPane.showInputDialog("Inserisci Password: ");
+            String password = JOptionPane.showInputDialog("Inserisci Password:\n(PER PROF: DIGITARE abc123)");
             if (password != null) {
                 try {
                     admin = Admin.adminConnection(utente, password);

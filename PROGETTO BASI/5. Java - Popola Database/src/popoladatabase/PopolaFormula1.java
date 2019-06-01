@@ -167,7 +167,7 @@ public class PopolaFormula1 {
 
 //******INSERIMENTO RISULTATI 2019
             count = 0;
-            while (count < 5) {
+            while (count < 6) {
                 System.out.println(count); 
                 Risultati_temp.insert(conn, scRisultati2019);
                 count ++;

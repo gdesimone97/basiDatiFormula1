@@ -1,0 +1,400 @@
+VD170832:Vincenzo:De Simone:KO:1932-08-17:staffmuretto:
+PC310823:Paola:Coppola:MA:1923-08-31:staffmuretto:
+RS180148:Roberto:Smith:IN:1948-01-18:staffmuretto:
+AB150845:Augusto:Bianchi:CN:1945-08-15:staffmuretto:
+SF070778:Sergio:Faruolo:KO:1978-07-07:staffmuretto:
+AC270140:Alfonso:Caio:CN:1940-01-27:staffmuretto:
+GW230537:Gennaro:Wesson:PL:1937-05-23:staffmuretto:
+EB150979:Enzo:Bianchi:IT:1979-09-15:staffmuretto:
+MG080474:Marco:Galdi:PL:1974-04-08:staffmuretto:
+MD240153:Massimo:d'Acierno:CH:1953-01-24:staffmuretto:
+FC080728:Fiorella:Chianese:IN:1928-07-08:staffmuretto:
+AD170889:Alfonso:De Simone:EN:1989-08-17:staffmuretto:
+TB010383:Tiziano:Barrasso:ES:1983-03-01:staffmuretto:
+CG190820:Ciccio:Giaquinto:PT:1920-08-19:staffmuretto:
+TG160558:Tiziano:Giaquinto:FR:1958-05-16:staffmuretto:
+AP081292:Alfonso:Picariello:JN:1992-12-08:staffmuretto:
+MG231034:Mario:Guccini:PL:1934-10-23:staffmuretto:
+AS020626:Angelo:Sempronio:MA:1926-06-02:staffmuretto:
+EP180788:Enzo:Picariello:TN:1988-07-18:staffmuretto:
+NB081296:Nicola:Bianchi:US:1996-12-08:staffmuretto:
+AW281154:Alfonso:Wesson:EN:1954-11-28:staffmuretto:
+CS270523:Clelia:Smith:TN:1923-05-27:staffmuretto:
+MG191160:Mariano:Guccini:JN:1960-11-19:staffmuretto:
+GM130736:Gennaro:Marcelli:JN:1936-07-13:staffmuretto:
+CC180661:Clelia:Chianese:KO:1961-06-18:staffmuretto:
+FM081174:Francesco:Moscato:FR:1974-11-08:staffmuretto:
+RE300320:Rosa:Esposito:EN:1920-03-30:staffmuretto:
+MP190851:Marco:Paoli:MA:1951-08-19:staffmuretto:
+LC161165:Luigi:Cappella:KO:1965-11-16:staffmuretto:
+ED150963:Ettore:Di Marzio:KO:1963-09-15:staffmuretto:
+MC270285:Marco:Canonico:ZA:1985-02-27:staffmuretto:
+PC201139:Paolo:Cipriano:CH:1939-11-20:staffmuretto:
+EB010281:Enzo:Bennato:MA:1981-02-01:staffmuretto:
+MD130922:Massimo:d'Acierno:DZ:1922-09-13:staffmuretto:
+AB210373:Angelo:Battiato:GR:1973-03-21:staffmuretto:
+FR090129:Fiorella:Russo:EG:1929-01-09:staffmuretto:
+EB190862:Ettore:Barrasso:JN:1962-08-19:staffmuretto:
+GC220860:Giovanni:Cipriano:GR:1960-08-22:staffmuretto:
+VC170654:Vito:Coppola:US:1954-06-17:staffmuretto:
+SB131088:Simone:Bennato:ES:1988-10-13:staffmuretto:
+EE020853:Enzo:Esposito:DA:1953-08-02:staffmuretto:
+SW170231:Salvatore:Wesson:IN:1931-02-17:staffmuretto:
+VB070491:Vito:Battiato:MA:1991-04-07:staffmuretto:
+SS041154:Sergio:Sempronio:CA:1954-11-04:staffmuretto:
+TR160758:Tiziana:Rossi:ID:1958-07-16:staffmuretto:
+FD081224:Federico:De Santo:MA:1924-12-08:staffmuretto:
+GB260126:Giuseppe:Barrasso:PT:1926-01-26:staffmuretto:
+VC090436:Valentina:Coppola:PL:1936-04-09:staffmuretto:
+FG180759:Fiorella:Guccini:MA:1959-07-18:staffmuretto:
+MW130338:Marco:Wesson:EG:1938-03-13:staffmuretto:
+ER220220:Enzo:Russo:IT:1920-02-22:staffmuretto:
+MB021150:Mario:Battiato:EN:1950-11-02:staffmuretto:
+RP290384:Roberto:Paolino:IN:1984-03-29:staffmuretto:
+MC030498:Michele:Cipriano:PT:1998-04-03:staffmuretto:
+FC100723:Federico:Cipriano:GR:1923-07-10:staffmuretto:
+FF070935:Fiorella:Faggiano:DZ:1935-09-07:staffmuretto:
+LC300640:Luigi:Cappella:IN:1940-06-30:staffmuretto:
+MC070980:Mariano:Coppola:CH:1980-09-07:staffmuretto:
+SG071170:Stefano:Giaquinto:DA:1970-11-07:staffmuretto:
+GD210884:Giuseppe:De Masi:KO:1984-08-21:staffmuretto:
+MG201141:Michele:Guccini:KO:1941-11-20:staffmuretto:
+VP141264:Vincenzo:Paolino:KO:1964-12-14:staffmuretto:
+RB301027:Rosa:Bianchi:DE:1927-10-30:staffmuretto:
+AG110137:Angelo:Giaquinto:CN:1937-01-11:staffmuretto:
+SC041165:Sergio:Canonico:DE:1965-11-04:staffmuretto:
+LW021043:Luigi:Wesson:US:1943-10-02:staffmuretto:
+SP031251:Salvatore:Paolino:FR:1951-12-03:staffmuretto:
+FD040858:Federico:d'Acierno:CA:1958-08-04:staffmuretto:
+MM040333:Michele:Marcelli:TN:1933-03-04:staffmuretto:
+CC290951:Ciccio:Cipriano:IN:1951-09-29:staffmuretto:
+VI270656:Valerio:Iandolo:DZ:1956-06-27:staffmuretto:
+LM050146:Luigi:Moscato:CA:1946-01-05:staffmuretto:
+VC170336:Vincenzo:Coppola:KO:1936-03-17:staffmuretto:
+SP011180:Salvatore:Picariello:PT:1980-11-01:staffmuretto:
+FM100793:Federico:Moscato:CH:1993-07-10:staffmuretto:
+MF180263:Michele:Faruolo:ES:1963-02-18:staffmuretto:
+RD100484:Roberto:De Santo:US:1984-04-10:staffmuretto:
+SI030336:Simone:Iandolo:IN:1936-03-03:staffmuretto:
+LM250794:Loredana:Moscato:DE:1994-07-25:staffmuretto:
+ES280422:Enzo:Smith:JN:1922-04-28:staffmuretto:
+GP070256:Giovanni:Paolino:GR:1956-02-07:staffmuretto:
+PC250579:Pietro:Cipriano:IT:1979-05-25:staffmuretto:
+LR100969:Loredana:Rossi:EG:1969-09-10:staffmuretto:
+MB290732:Mariano:Bianchi:DE:1932-07-29:staffmuretto:
+SF311032:Sergio:Faruolo:FR:1932-10-31:staffmuretto:
+SB190366:Sergio:Bianchi:EN:1966-03-19:staffmuretto:
+EC221085:Ettore:Coppola:TN:1985-10-22:staffmuretto:
+GG020297:Giuseppe:Galdi:FR:1997-02-02:staffmuretto:
+SV291272:Sergio:Vietri:GR:1972-12-29:staffmuretto:
+MS080680:Mario:Sempronio:PL:1980-06-08:staffmuretto:
+MC280826:Mario:Canonico:CA:1926-08-28:staffmuretto:
+NB120930:Nicola:Battiato:CH:1930-09-12:staffmuretto:
+MB070980:Mariano:Battiano:CN:1980-09-07:staffmuretto:
+VE020325:Vittorio:Esposito:PT:1925-03-02:staffmuretto:
+VE150948:Valerio:Esposito:DZ:1948-09-15:staffmuretto:
+FD301052:Francesco:De Santo:CA:1952-10-30:staffmuretto:
+ME050951:Michele:Esposito:FR:1951-09-05:staffmuretto:
+AE231158:Angelo:Esposito:IR:1958-11-23:staffmuretto:
+EP090942:Ettore:Paolino:GR:1942-09-09:staffmuretto:
+VC090998:Vittorio:Caio:ID:1998-09-09:staffmuretto:
+FC061042:Federico:Canonico:EG:1942-10-06:staffmuretto:
+LB070191:Loredana:Bianchi:CA:1991-01-07:staffmuretto:
+VL070883:Valentina:Lionetti:ZA:1983-08-07:staffmuretto:
+NG180692:Nicola:Giaquinto:CA:1992-06-18:staffmuretto:
+LE070178:Luigi:Esposito:TN:1978-01-07:staffmuretto:
+NP190588:Nicola:Paoli:CA:1988-05-19:staffmuretto:
+TD130383:Tiziano:Di Marzio:KO:1983-03-13:staffmuretto:
+SP161091:Stefano:Paoli:JN:1991-10-16:staffmuretto:
+BP310846:Beatrice:Paolino:DA:1946-08-31:staffmuretto:
+FB070630:Francesco:Bianchi:EG:1930-06-07:staffmuretto:
+AD230172:Augusto:d'Acierno:MA:1972-01-23:staffmuretto:
+NC080273:Nicola:Caio:DE:1973-02-08:staffmuretto:
+PC020664:Paola:Chianese:ES:1964-06-02:staffmuretto:
+LC070159:Loredana:Cappella:IN:1959-01-07:staffmuretto:
+CC111096:Carmine:Caio:PL:1996-10-11:staffmuretto:
+FC161041:Federico:Coppola:MA:1941-10-16:staffmuretto:
+FB210589:Fiorella:Barrasso:ES:1989-05-21:staffmuretto:
+SB240170:Stefano:Bianchi:ID:1970-01-24:staffmuretto:
+PG150225:Paola:Guccini:PL:1925-02-15:staffmuretto:
+SC020552:Sergio:Chianese:EN:1952-05-02:staffmuretto:
+VD080576:Vincenzo:De Santo:ID:1976-05-08:staffmuretto:
+GV040143:Giovanni:Vietri:KO:1943-01-04:staffmuretto:
+EG160848:Enzo:Galdi:PT:1948-08-16:staffmuretto:
+MD300551:Massimo:De Simone:ZA:1951-05-30:staffmuretto:
+MD300840:Marco:d'Acierno:US:1940-08-30:staffmuretto:
+EW220581:Enzo:Wesson:PT:1981-05-22:staffmuretto:
+SC261244:Simone:Caio:ZA:1944-12-26:staffmuretto:
+VD050130:Valerio:d'Acierno:DA:1930-01-05:staffmuretto:
+NB220848:Nicola:Bianchi:EG:1948-08-22:staffmuretto:
+AF070595:Augusto:Faruolo:ID:1995-05-07:staffmuretto:
+MG080824:Mariano:Giaquinto:IR:1924-08-08:staffmuretto:
+VB110849:Vito:Battiato:CH:1949-08-11:staffmuretto:
+PR070782:Pietro:Rossi:JN:1982-07-07:staffmuretto:
+GE140295:Gianna:Esposito:ES:1995-02-14:staffmuretto:
+EG261020:Enzo:Giaquinto:ID:1920-10-26:staffmuretto:
+VB050657:Vincenzo:Barrasso:IN:1957-06-05:staffmuretto:
+TS100727:Tiziana:Sempronio:EG:1927-07-10:staffmuretto:
+TD270371:Tiziano:d'Acierno:EN:1971-03-27:staffmuretto:
+GI161227:Giuseppe:Iandolo:CA:1927-12-16:staffmuretto:
+FD150740:Filomena:Di Marzio:TN:1940-07-15:staffmuretto:
+FP080428:Francesco:Picariello:US:1928-04-08:staffmuretto:
+MC080586:Massimo:Chianese:DE:1986-05-08:staffmuretto:
+MI041173:Mariano:Iandolo:IN:1973-11-04:staffmuretto:
+VD180886:Vincenzo:De Santo:FR:1986-08-18:staffmuretto:
+SW250467:Salvatore:Wesson:FR:1967-04-25:staffmuretto:
+FC080427:Francesco:Cappella:DA:1927-04-08:staffmuretto:
+EI301162:Enzo:Iandolo:GR:1962-11-30:staffmuretto:
+TP200751:Tiziano:Paolino:DZ:1951-07-20:staffmuretto:
+MD300454:Mariano:De Santo:TN:1954-04-30:staffmuretto:
+FD140948:Francesco:De Simone:CA:1948-09-14:staffmuretto:
+CC091149:Ciccio:Chianese:FR:1949-11-09:staffmuretto:
+BP110980:Beatrice:Paoli:IN:1980-09-11:staffmuretto:
+AB051096:Angelo:Bennato:DE:1996-10-05:staffmuretto:
+FD120576:Federico:Di Marzio:TN:1976-05-12:staffmuretto:
+SR220321:Stefano:Rossi:CH:1921-03-22:staffmuretto:
+MC140176:Michele:Chianese:FR:1976-01-14:staffmuretto:
+VC311273:Vincenzo:Canonico:ES:1973-12-31:staffmuretto:
+SC071290:Simone:Cipriano:DE:1990-12-07:staffmuretto:
+PP100498:Paolo:Paoli:ZA:1998-04-10:staffmuretto:
+FE210599:Federico:Esposito:IR:1999-05-21:staffmuretto:
+GP100629:Gennaro:Paolino:CA:1929-06-10:staffmuretto:
+MB061058:Massimo:Bennato:ES:1958-10-06:staffmuretto:
+MB040184:Mario:Barrasso:ZA:1984-01-04:staffmuretto:
+SG261123:Salvatore:Giaquinto:DZ:1923-11-26:staffmuretto:
+AL050550:Antonio:Lionetti:DZ:1950-05-05:staffmuretto:
+CC220377:Ciccio:Cipriano:IT:1977-03-22:staffmuretto:
+LD070484:Luigi:De Simone:TN:1984-04-07:staffmuretto:
+RE060330:Rosa:Esposito:US:1930-03-06:staffmuretto:
+GM180830:Giuseppe:Moscato:IN:1930-08-18:staffmuretto:
+LC080752:Loredana:Cipriano:FR:1952-07-08:staffmuretto:
+VF140956:Vincenzo:Faruolo:EN:1956-09-14:staffmuretto:
+CG040455:Carmine:Giaquinto:PL:1955-04-04:staffmuretto:
+GG011174:Gianna:Guccini:DZ:1974-11-01:staffmuretto:
+AB271167:Augusto:Battiato:CN:1967-11-27:staffmuretto:
+PG130549:Paola:Giaquinto:ID:1949-05-13:staffmuretto:
+AD110452:Anna:Di Marzio:ID:1952-04-11:staffmuretto:
+LC250962:Luigi:Chianese:TN:1962-09-25:staffmuretto:
+SB271149:Salvatore:Barrasso:DZ:1949-11-27:staffmuretto:
+PM200899:Paola:Marcelli:EG:1999-08-20:staffmuretto:
+ED250748:Enzo:De Simone:ES:1948-07-25:staffmuretto:
+FD090266:Fiorella:d'Acierno:DA:1966-02-09:staffmuretto:
+PE211038:Paola:Esposito:CH:1938-10-21:staffmuretto:
+AW270341:Angelo:Wesson:DZ:1941-03-27:staffmuretto:
+SB050244:Simone:Barrasso:JN:1944-02-05:staffmuretto:
+EF050644:Enzo:Faggiano:GR:1944-06-05:staffmuretto:
+CP270868:Carmine:Paolino:EN:1968-08-27:staffmuretto:
+GC021297:Gianna:Chianese:DA:1997-12-02:staffmuretto:
+SS251144:Stefano:Sempronio:CA:1944-11-25:staffmuretto:
+MB150334:Massimo:Bennato:IN:1934-03-15:staffmuretto:
+AE290358:Angelo:Esposito:ZA:1958-03-29:staffmuretto:
+SD150353:Salvatore:De Masi:TN:1953-03-15:staffmuretto:
+AG170773:Angelo:Giaquinto:PT:1973-07-17:staffmuretto:
+NP100748:Nicola:Paolino:EG:1948-07-10:staffmuretto:
+CB080557:Ciccio:Barrasso:DE:1957-05-08:staffmuretto:
+PG170270:Pietro:Guccini:MA:1970-02-17:staffmuretto:
+FB110922:Federico:Battiato:DE:1922-09-11:staffmuretto:
+AC310889:Alfonso:Cappella:JN:1989-08-31:staffmuretto:
+MF300993:Massimo:Faruolo:CA:1993-09-30:staffmuretto:
+VD231249:Vittorio:De Simone:IR:1949-12-23:staffmuretto:
+MB050540:Mario:Battiato:CA:1940-05-05:staffmuretto:
+GI060629:Giovanni:Iandolo:JN:1929-06-06:staffmuretto:
+PC220892:Pietro:Cappella:ID:1992-08-22:staffmuretto:
+MD010862:Michele:De Masi:IN:1962-08-01:staffmuretto:
+TB270823:Tiziana:Barrasso:GR:1923-08-27:staffmuretto:
+MD011067:Michele:De Masi:TN:1967-10-01:staffmuretto:
+PF230444:Paola:Faruolo:IT:1944-04-23:staffmuretto:
+AR011232:Antonio:Russo:DA:1932-12-01:staffmuretto:
+FG210137:Federico:Guccini:PT:1937-01-21:staffmuretto:
+AC070747:Augusto:Cipriano:EG:1947-07-07:staffmuretto:
+RR160645:Roberto:Russo:CH:1945-06-16:staffmuretto:
+LS230790:Luigi:Smith:GR:1990-07-23:staffmuretto:
+FP280967:Fiorella:Paolino:DA:1967-09-28:staffmuretto:
+TE111170:Tiziano:Esposito:JN:1970-11-11:staffmuretto:
+EC050148:Ettore:Cappella:PL:1948-01-05:staffmuretto:
+PE060229:Pietro:Esposito:KO:1929-02-06:staffmuretto:
+SS280990:Stefano:Smith:FR:1990-09-28:staffmuretto:
+VD030871:Valentina:De Masi:CA:1971-08-03:staffmuretto:
+NP220455:Nicola:Paoli:ZA:1955-04-22:staffmuretto:
+GC280323:Giuseppe:Coppola:TN:1923-03-28:staffmuretto:
+FV050753:Fiorella:Vietri:DZ:1953-07-05:staffmuretto:
+NC100470:Nicola:Coppola:KO:1970-04-10:staffmuretto:
+FD180776:Francesco:d'Acierno:PT:1976-07-18:staffmuretto:
+CM210157:Clelia:Marcelli:CN:1957-01-21:staffmuretto:
+GE050665:Giuseppe:Esposito:FR:1965-06-05:staffmuretto:
+AC311095:Antonio:Cappella:IT:1995-10-31:staffmuretto:
+PB020477:Paolo:Bennato:ID:1977-04-02:staffmuretto:
+EB060837:Ettore:Battiato:IT:1937-08-06:staffmuretto:
+MC210193:Mario:Coppola:JN:1993-01-21:staffmuretto:
+TD240754:Tiziano:De Masi:ZA:1954-07-24:staffmuretto:
+BM080330:Beatrice:Moscato:PL:1930-03-08:staffmuretto:
+MC270667:Massimo:Chianese:DA:1967-06-27:staffmuretto:
+VC200544:Vincenzo:Canonico:EN:1944-05-20:staffmuretto:
+AL091163:Anna:Lionetti:KO:1963-11-09:staffmuretto:
+MF301228:Mario:Faggiano:KO:1928-12-30:staffmuretto:
+VP200532:Vito:Paoli:PT:1932-05-20:staffmuretto:
+LM270289:Luigi:Moscato:IN:1989-02-27:staffmuretto:
+RD251049:Roberto:De Simone:ID:1949-10-25:staffmuretto:
+MP250753:Michele:Picariello:IT:1953-07-25:staffmuretto:
+ED250368:Ettore:Di Marzio:EN:1968-03-25:staffmuretto:
+FB150479:Fiorella:Barrasso:CN:1979-04-15:staffmuretto:
+CR120331:Clelia:Rossi:IR:1931-03-12:staffmuretto:
+AE221295:Alfonso:Esposito:CN:1995-12-22:staffmuretto:
+LI081155:Luigi:Iandolo:ID:1955-11-08:staffmuretto:
+SI211052:Simone:Iandolo:DE:1952-10-21:staffmuretto:
+FP130464:Federico:Paolino:IT:1964-04-13:staffmuretto:
+VV040282:Vito:Vietri:DE:1982-02-04:staffmuretto:
+AF240990:Alfonso:Faruolo:IT:1990-09-24:staffmuretto:
+LF080265:Luigi:Faggiano:PT:1965-02-08:staffmuretto:
+FC101225:Francesco:Chianese:IN:1925-12-10:staffmuretto:
+MD080899:Michele:De Santo:DZ:1999-08-08:staffmuretto:
+VF260940:Vittorio:Faruolo:US:1940-09-26:staffmuretto:
+CS180954:Carmine:Sempronio:ZA:1954-09-18:staffmuretto:
+EG100424:Ettore:Guccini:ES:1924-04-10:staffmuretto:
+VC221054:Vittorio:Cappella:ID:1954-10-22:staffmuretto:
+PF101290:Paola:Faggiano:JN:1990-12-10:staffmuretto:
+MR140621:Mario:Rossi:TN:1921-06-14:staffmuretto:
+MC260470:Marco:Coppola:GR:1970-04-26:staffmuretto:
+AL060946:Antonio:Lionetti:IN:1946-09-06:staffmuretto:
+RW060249:Rosa:Wesson:PT:1949-02-06:staffmuretto:
+MD090870:Mario:De Masi:KO:1970-08-09:staffmuretto:
+VC050590:Vittorio:Coppola:DE:1990-05-05:staffmuretto:
+MG040534:Mariano:Giaquinto:IR:1934-05-04:staffmuretto:
+BP290363:Beatrice:Paolino:MA:1963-03-29:staffmuretto:
+GM031277:Giuseppe:Marcelli:CN:1977-12-03:staffmuretto:
+AM011182:Alfonso:Marcelli:DA:1982-11-01:staffmuretto:
+BG251124:Beatrice:Guccini:JN:1924-11-25:staffmuretto:
+FB150847:Francesco:Bianchi:DE:1947-08-15:staffmuretto:
+SC171220:Stefano:Canonico:FR:1920-12-17:staffmuretto:
+MC290191:Michele:Canonico:MA:1991-01-29:staffmuretto:
+MD281027:Michele:De Santo:DA:1927-10-28:staffmuretto:
+MD090529:Michele:d'Acierno:GR:1929-05-09:staffmuretto:
+VP221293:Vito:Picariello:MA:1993-12-22:staffmuretto:
+GD070241:Gennaro:d'Acierno:DZ:1941-02-07:staffmuretto:
+LB230750:Luigi:Bianchi:DA:1950-07-23:staffmuretto:
+MB160589:Mariano:Bennato:GR:1989-05-16:staffmuretto:
+SR060878:Salvatore:Rossi:CA:1978-08-06:staffmuretto:
+AB220925:Augusto:Battiato:DE:1925-09-22:staffmuretto:
+AE191031:Alfonso:Esposito:EG:1931-10-19:staffmuretto:
+SB210685:Salvatore:Bianchi:FR:1985-06-21:staffmuretto:
+AD200737:Alfonso:d'Acierno:ZA:1937-07-20:staffmuretto:
+VC220821:Vittorio:Coppola:FR:1921-08-22:staffmuretto:
+SS050982:Salvatore:Smith:PT:1982-09-05:staffmuretto:
+RM171083:Roberto:Moscato:IT:1983-10-17:staffmuretto:
+PV200449:Paola:Vietri:IT:1949-04-20:staffmuretto:
+RS300687:Rosa:Sempronio:ID:1987-06-30:staffmuretto:
+RG060448:Rosa:Guccini:JN:1948-04-06:staffmuretto:
+VP270387:Vito:Paolino:KO:1987-03-27:staffmuretto:
+CC230830:Clelia:Cipriano:ID:1930-08-23:staffmuretto:
+RG050928:Rossella:Galdi:ES:1928-09-05:staffmuretto:
+VD170234:Vincenzo:De Santo:US:1934-02-17:staffmuretto:
+RE240747:Rosa:Esposito:DE:1947-07-24:staffmuretto:
+LC161197:Loredana:Cipriano:FR:1997-11-16:staffmuretto:
+FR230199:Francesco:Russo:ID:1999-01-23:staffmuretto:
+MV090638:Mariano:Vietri:ID:1938-06-09:staffmuretto:
+CD270149:Ciccio:Di Marzio:DE:1949-01-27:staffmuretto:
+AM250844:Augusto:Moscato:KO:1944-08-25:staffmuretto:
+MD150125:Massimo:De Simone:CN:1925-01-15:staffmuretto:
+BB121040:Beatrice:Barrasso:US:1940-10-12:staffmuretto:
+AP081062:Alfonso:Picariello:JN:1962-10-08:staffmuretto:
+SC260562:Stefano:Chianese:CA:1962-05-26:staffmuretto:
+RD041044:Rosa:d'Acierno:PT:1944-10-04:staffmuretto:
+VC241081:Vittorio:Coppola:JN:1981-10-24:staffmuretto:
+TW100787:Tiziana:Wesson:DE:1987-07-10:staffmuretto:
+SD220339:Stefano:De Simone:CA:1939-03-22:staffmuretto:
+AC070287:Alfonso:Cipriano:GR:1987-02-07:staffmuretto:
+VF241287:Vincenzo:Faruolo:TN:1987-12-24:staffmuretto:
+GG220650:Giuseppe:Guccini:EG:1950-06-22:staffmuretto:
+GP210759:Gennaro:Picariello:DE:1959-07-21:staffmuretto:
+ED211251:Ettore:De Masi:EN:1951-12-21:staffmuretto:
+PG121237:Paolo:Galdi:ID:1937-12-12:staffmuretto:
+LL250953:Loredana:Lionetti:EG:1953-09-25:staffmuretto:
+ME241086:Michele:Esposito:IR:1986-10-24:staffmuretto:
+TR170377:Tiziano:Rossi:FR:1977-03-17:staffmuretto:
+GB121144:Gianna:Bennato:MA:1944-11-12:staffmuretto:
+AB200184:Augusto:Bennato:ES:1984-01-20:staffmuretto:
+FP230834:Francesco:Paoli:EG:1934-08-23:staffmuretto:
+RS131224:Roberto:Smith:JN:1924-12-13:staffmuretto:
+VG091129:Valerio:Galdi:CH:1929-11-09:staffmuretto:
+PD161084:Pietro:De Santo:IT:1984-10-16:staffmuretto:
+FB250657:Filomena:Barrasso:DE:1957-06-25:staffmuretto:
+SB210892:Salvatore:Barrasso:CA:1992-08-21:staffmuretto:
+PD041033:Paola:d'Acierno:EG:1933-10-04:staffmuretto:
+VD090851:Vincenzo:De Simone:FR:1951-08-09:staffmuretto:
+RC060136:Rossella:Caio:GR:1936-01-06:staffmuretto:
+VB271047:Vito:Bennato:ID:1947-10-27:staffmuretto:
+VP201083:Valerio:Picariello:US:1983-10-20:staffmuretto:
+EI110184:Ettore:Iandolo:TN:1984-01-11:staffmuretto:
+EB070192:Enzo:Battiato:KO:1992-01-07:staffmuretto:
+GF010189:Gennaro:Faggiano:PL:1989-01-01:staffmuretto:
+SC051053:Stefano:Cappella:DA:1953-10-05:staffmuretto:
+SD030992:Salvatore:De Masi:US:1992-09-03:staffmuretto:
+PI100382:Paolo:Iandolo:IT:1982-03-10:staffmuretto:
+LI181046:Luigi:Iandolo:PL:1946-10-18:staffmuretto:
+TB271065:Tiziano:Battiato:CA:1965-10-27:staffmuretto:
+CR010294:Ciccio:Rossi:FR:1994-02-01:staffmuretto:
+VD190561:Vincenzo:De Simone:JN:1961-05-19:staffmuretto:
+VD160399:Vito:Di Marzio:FR:1999-03-16:staffmuretto:
+AF260757:Antonio:Faruolo:ID:1957-07-26:staffmuretto:
+CC090365:Carmine:Coppola:ZA:1965-03-09:staffmuretto:
+GE040878:Giuseppe:Esposito:FR:1978-08-04:staffmuretto:
+AG050179:Augusto:Giaquinto:DE:1979-01-05:staffmuretto:
+CP051137:Ciccio:Paolino:JN:1937-11-05:staffmuretto:
+VC231161:Valentina:Cipriano:FR:1961-11-23:staffmuretto:
+MF291028:Mario:Faggiano:ID:1928-10-29:staffmuretto:
+PC071165:Pietro:Coppola:MA:1965-11-07:staffmuretto:
+GD210277:Gianna:Di Marzio:ID:1977-02-21:staffmuretto:
+SE300154:Sergio:Esposito:JN:1954-01-30:staffmuretto:
+VP280229:Vito:Paoli:US:1929-02-28:staffmuretto:
+PB260353:Paola:Battiato:ID:1953-03-26:staffmuretto:
+GS180580:Gennaro:Smith:FR:1980-05-18:staffmuretto:
+MG081227:Mario:Guccini:DZ:1927-12-08:staffmuretto:
+GM071261:Gennaro:Marcelli:IR:1961-12-07:staffmuretto:
+PC080478:Paolo:Canonico:EN:1978-04-08:staffmuretto:
+AR030832:Augusto:Russo:CH:1932-08-03:staffmuretto:
+PD220894:Paola:De Masi:IR:1994-08-22:staffmuretto:
+RC301095:Rossella:Cipriano:EG:1995-10-30:staffmuretto:
+VD230169:Vito:De Simone:FR:1969-01-23:staffmuretto:
+RD051043:Rosa:De Santo:EN:1943-10-05:staffmuretto:
+RD161268:Roberto:De Masi:ZA:1968-12-16:staffmuretto:
+SM171283:Stefano:Moscato:ES:1983-12-17:staffmuretto:
+CI200793:Carmine:Iandolo:EN:1993-07-20:staffmuretto:
+SG240263:Sergio:Guccini:US:1963-02-24:staffmuretto:
+GV280462:Giovanni:Vietri:MA:1962-04-28:staffmuretto:
+MI141131:Massimo:Iandolo:GR:1931-11-14:staffmuretto:
+GE160427:Gennaro:Esposito:CN:1927-04-16:staffmuretto:
+PC240172:Paola:Caio:PL:1972-01-24:staffmuretto:
+GI030379:Gennaro:Iandolo:DZ:1979-03-03:staffmuretto:
+PI250557:Pietro:Iandolo:TN:1957-05-25:staffmuretto:
+CV110668:Ciccio:Vietri:CA:1968-06-11:staffmuretto:
+SB160327:Stefano:Bennato:ID:1927-03-16:staffmuretto:
+VG211286:Vito:Giaquinto:EN:1986-12-21:staffmuretto:
+RG100292:Roberto:Giaquinto:CN:1992-02-10:staffmuretto:
+MB311070:Mariano:Bennato:DE:1970-10-31:staffmuretto:
+RG031271:Roberto:Guccini:PT:1971-12-03:staffmuretto:
+PE240586:Paola:Esposito:ZA:1986-05-24:staffmuretto:
+RM150292:Roberto:Moscato:US:1992-02-15:staffmuretto:
+FE260297:Fiorella:Esposito:EG:1997-02-26:staffmuretto:
+VB121192:Valerio:Bianchi:DA:1992-11-12:staffmuretto:
+CE190341:Carmine:Esposito:JN:1941-03-19:staffmuretto:
+LG100988:Luigi:Galdi:IN:1988-09-10:staffmuretto:
+EC300832:Ettore:Canonico:MA:1932-08-30:staffmuretto:
+AI220652:Angelo:Iandolo:DZ:1952-06-22:staffmuretto:
+SC130934:Simone:Chianese:CN:1934-09-13:staffmuretto:
+AC260781:Antonio:Canonico:IT:1981-07-26:staffmuretto:
+VC250630:Valentina:Cipriano:KO:1930-06-25:staffmuretto:
+PD281078:Paolo:De Masi:PT:1978-10-28:staffmuretto:
+MV221071:Michele:Vietri:GR:1971-10-22:staffmuretto:
+VC270932:Valerio:Coppola:CN:1932-09-27:staffmuretto:
+MP151120:Mario:Paolino:CN:1920-11-15:staffmuretto:
+FD170140:Fiorella:De Santo:JN:1940-01-17:staffmuretto:
+FG200336:Francesco:Galdi:DA:1936-03-20:staffmuretto:
+GS290145:Giovanni:Sempronio:IT:1945-01-29:staffmuretto:
+MG250127:Michele:Galdi:ZA:1927-01-25:staffmuretto:
+GC020828:Gianna:Cappella:CN:1928-08-02:staffmuretto:
+FR141282:Filomena:Russo:TN:1982-12-14:staffmuretto:
+FC161056:Federico:Coppola:DA:1956-10-16:staffmuretto:
+CF060583:Ciccio:Faggiano:ES:1983-05-06:staffmuretto:
+GC180396:Giuseppe:Cipriano:IR:1996-03-18:staffmuretto:
+EC230284:Ettore:Chianese:US:1984-02-23:staffmuretto:
+MD061139:Massimo:d'Acierno:CA:1939-11-06:staffmuretto:

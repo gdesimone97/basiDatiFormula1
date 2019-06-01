@@ -1838,11 +1838,11 @@ public class MainFrame extends javax.swing.JFrame {
             String nomeFile = "";
             if (x == JFileChooser.APPROVE_OPTION) {
                 nomeFile = jFileChooser1.getSelectedFile().getName();
-                nomeFileLabel.setText(nomeFile);
             }
 
             Scanner sc = new Scanner(new BufferedReader(new FileReader(nomeFile)));
             sc.useDelimiter("");
+            nomeFileLabel.setText(nomeFile);
 
             while (sc.hasNext()) {
                 dm.addElement(sc.nextLine());

@@ -105,7 +105,8 @@ begin
 		set giro_veloce =  miglior_tempo_TMP
 		where sede_pista = sede_pista_TMP and nome_pista = nome_pista_TMP;
 	end if;
-			   
+	refresh materialized view CLASSIFICA_PILOTI_ATTUALE;
+	refresh materialized view CLASSIFICA_COSTRUTTORI_ATTUALE;
 return NULL;
 end $$ language plpgsql;
 
@@ -142,7 +143,8 @@ begin
 											
 	insert into risultati_passati select * from risultati_attuali;
 	delete from risultati_attuali;
-	
+	refresh materialized view CLASSIFICHE_PILOTI_PASSATI;
+	refresh materialized view CLASSIFICHE_COSTRUTTORI_PASSATE;
 end if;
 return NEW;
 end $$ language plpgsql;

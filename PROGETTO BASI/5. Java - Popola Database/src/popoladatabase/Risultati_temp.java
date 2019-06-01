@@ -92,7 +92,7 @@ public class Risultati_temp {
         
         //cancello tutte le righe di Risultati_t
         pst4.executeUpdate();
-        
+        conn.commit();
         //se il file ha raggiunto la Fine, restituisce eccezione
         if (cont == 0) {
             throw new FineException();

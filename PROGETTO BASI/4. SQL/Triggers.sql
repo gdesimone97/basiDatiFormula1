@@ -1,8 +1,10 @@
 drop trigger if exists CONTROLLO_CARDINALITA_PERSONALE on personale cascade;
 drop trigger if exists CONTROLLO_CARDINALITA_SCUDERIE on scuderie cascade;
 drop trigger if exists CONTROLLO_AMMINISTRATORE on dirigenza cascade;
-drop trigger if exists CONTROLLO_PUNTEGGI on risultati_attuali cascade;
 drop trigger if exists AGGIORNAMENTO_CAMPIONATO on campionati cascade;
+drop trigger if exists AGGIORNAMENTO_RISULTATI on risultati_attuali cascade;
+drop trigger if exists CONTROLLO_CANCELLAZIONE_RISULTATI on risultati_attuali cascade;
+drop trigger if exists UPDATE_VIEWS on risultati_attuali cascade;
 
 -- trigger per esprimere la cardinalità minima 1 su scuderie
 create or replace function CONTROLLO_CARDINALITA_SCUDERIE() returns trigger as $$
@@ -105,8 +107,6 @@ begin
 		set giro_veloce =  miglior_tempo_TMP
 		where sede_pista = sede_pista_TMP and nome_pista = nome_pista_TMP;
 	end if;
-	refresh materialized view CLASSIFICA_PILOTI_ATTUALE;
-	refresh materialized view CLASSIFICA_COSTRUTTORI_ATTUALE;
 return NULL;
 end $$ language plpgsql;
 
@@ -116,11 +116,11 @@ referencing new table as NUOVI_RISULTATI
 for each statement
 execute procedure AGGIORNAMENTO_RISULTATI();
 
--- query per aggiornare campionati
+-- trigger per aggiornare campionati
 create or replace function AGGIORNAMENTO_CAMPIONATO() returns trigger as $$
 begin	
 	if(exists(select * from campionati where numero_campionato = new.numero_campionato-1)  
-	and ( 420 <= (select count(*) from risultati_attuali)))
+		and ( 420 <= (select count(*) from risultati_attuali)))
 	then
 	
 	update Piloti
@@ -143,9 +143,7 @@ begin
 											
 	insert into risultati_passati select * from risultati_attuali;
 	delete from risultati_attuali;
-	refresh materialized view CLASSIFICHE_PILOTI_PASSATI;
-	refresh materialized view CLASSIFICHE_COSTRUTTORI_PASSATE;
-end if;
+	end if;
 return NEW;
 end $$ language plpgsql;
 											   
@@ -178,9 +176,24 @@ begin
 return OLD;
 end $$ language plpgsql;
 
-
 create trigger CONTROLLO_CANCELLAZIONE_RISULTATI
 after delete on risultati_attuali
 for each row
 WHEN (pg_trigger_depth() < 1)
-execute procedure CONTROLLO_CANCELLAZIONE_RISULTATI()
+execute procedure CONTROLLO_CANCELLAZIONE_RISULTATI();
+
+
+-- trigger per propagare le modifiche alla tabella risultati_attuali nelle classifiche
+create or replace function UPDATE_VIEWS() returns trigger as $$
+begin
+	refresh materialized view CLASSIFICHE_PILOTI_PASSATI;
+	refresh materialized view CLASSIFICHE_COSTRUTTORI_PASSATE;
+	refresh materialized view CLASSIFICA_PILOTI_ATTUALE;
+	refresh materialized view CLASSIFICA_COSTRUTTORI_ATTUALE;
+return NULL;
+end $$ language plpgsql;
+
+create trigger UPDATE_VIEWS
+after insert or delete on risultati_attuali			
+for each statement
+execute procedure UPDATE_VIEWS();

@@ -67,5 +67,3 @@ create materialized view if not exists CLASSIFICHE_COSTRUTTORI_PASSATE (numero_c
 			C.numero_campionato = NV.numero_campionato
 	group by C.numero_campionato, A.nome_scuderia
 	order by punti desc, sum(NV.numero_vittorie) desc;
-
-

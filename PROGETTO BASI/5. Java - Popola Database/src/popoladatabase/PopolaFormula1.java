@@ -147,18 +147,13 @@ public class PopolaFormula1 {
             System.out.println("Calendario 2018 Inserito");
 
 //******INSERIMENTO RISULTATI 2018
-            Scanner scIn = new Scanner(System.in);
-            System.out.print("Caricare risultati per campionato 2018 da file? [S/N] : ");
-            String risposta = scIn.nextLine();
-            if (risposta.toUpperCase().compareTo("S") == 0) {
-                int count = 0;
-                while (count < 21) {
-                    Risultati_temp.insert(conn, scRisultati2018);
-                    System.out.print("Risultati inseriti per Giornata " + ++count +"\n");
-                }
+            int count = 0;
+            while (count < 21) {
+                Risultati_temp.insert(conn, scRisultati2018);
+                count ++;
             }
+            System.out.println("Risultati inseriti per campionato 2018");
 
-            System.out.println();
             System.out.println();
 
 //******INSERIMENTO CAMPIONATO 2019
@@ -169,40 +164,24 @@ public class PopolaFormula1 {
             Calendario.insert(conn, "calendario2019.txt");
             System.out.println("Calendario 2019 Inserito");
 
-            conn.commit();
 
 //******INSERIMENTO RISULTATI 2019
-            System.out.print("Caricare risultati per campionato 2019 da file? [S/N] : ");
-            risposta = scIn.nextLine();
-            int count = 0;
-
-            while (true) {
-                if (risposta.toUpperCase().compareTo("S") == 0) {
-                    Risultati_temp.insert(conn, scRisultati2019);
-                    System.out.print("Risultati inseriti per Giornata " + ++count + ", vuoi caricare un'altra giornata? [S/N]: ");
-                    risposta = scIn.nextLine();
-                } else if (risposta.toUpperCase().compareTo("N") == 0) {
-                    break;
-                } else {
-                    System.out.print("Risposta non valida, reinserisci: ");
-                    risposta = scIn.nextLine();
-                }
+            count = 0;
+            while (count < 5) {
+                System.out.println(count); 
+                Risultati_temp.insert(conn, scRisultati2019);
+                count ++;
             }
-
-            conn.commit();
-
-            System.out.println();
+            System.out.println("Risultati inseriti per campionato 2019");
+            
             System.out.println();
 
 //******INSERIMENTO DI SCUDERIE E PERSONALE
-			System.out.println("INSERIMENTO SCUDERIE E PERSONALE");
-            System.out.print("INSERISCI NUMERO DI CAMPIONATO (END PER USCIRE): ");
-            String risp = scIn.nextLine();
+            System.out.println("INSERIMENTO SCUDERIE E PERSONALE");
+            int numCampionato = 68;
 
-            while (risp.toUpperCase().compareTo("END") != 0) {
-                int numCampionato = Integer.parseInt(risp);
-
-                //PER x SCUDERIE
+            while (numCampionato < 70) {
+                //PER 10 SCUDERIE
                 while (x < 10) {
                     Scuderia scuderia = null;
                     //LEGGO 1 SCUDERIA
@@ -278,8 +257,7 @@ public class PopolaFormula1 {
                 //INSERISCO L'AFFERENZA PILOTI PER QUESTO CAMPIONATO
                 AfferenzaPiloti.insert(conn, "afferenzapiloti" + numCampionato + ".txt");
                 System.out.println("Ho inserito le afferenze piloti per le scuderie del campionato " + numCampionato);
-                System.out.print("\nINSERISCI NUMERO DI CAMPIONATO (END PER USCIRE): ");
-                risp = scIn.nextLine();
+                numCampionato++;
                 x = 0;
             }
 
@@ -293,7 +271,8 @@ public class PopolaFormula1 {
             Logger.getLogger(PopolaFormula1.class.getName()).log(Level.SEVERE, null, ex);
             conn.rollback();
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(PopolaFormula1.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Manca un file!");
+            ex.getMessage();
         } catch (FineException ex) {
             conn.rollback();
             System.out.println("ERRORE DI FILE!");

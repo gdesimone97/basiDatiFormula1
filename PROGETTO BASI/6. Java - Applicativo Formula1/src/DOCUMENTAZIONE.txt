@@ -1,0 +1,29 @@
+****************************************FORMULA 1****************************************
+*****************************************************************************************
+*											*
+*	Questo programma client permette di interagire con il database Formula1 	*
+*	in due modalità: 								*
+*											*
+*	1)	Il frame principale si apre successivamente alla connessione con	*
+*	il database, tramite utente GENERICO, che ha i permessi di sola 		*
+*	visualizzazione delle tabelle nello schema.					*
+*	In questo frame si possono guardare:						*
+*		- le classifiche piloti e costruttori di ogni campionato, 		*
+*		compreso quello attuale; 						*
+*		- il calendario relativo ad ogni campionato; 				*
+*		- i risultati per ogni gara e per ogni campionato.			*
+*											*
+*	2) 	Tramite il pulsante "Login Admin" è possibile accedere al pannello 	*
+*	amministratore, inserendo NOME UTENTE (amministratore) e PASSWORD (abc123)	*
+*	di un utente che ha i permessi di superuser.					*
+*	Questo frame consente di: 							*
+*		- inserire nuovi risultati relativi ad una (o più) giornate		*
+*		compilando i campi necessari o caricandoli da un file (formattato	*
+*		accuratamente). 							*
+*		L'operazione può non andare a buon fine in base	a diversi fattori,	*
+*		come ad esempio se il numero di risultati inseriti è minore di 20.	*
+*		- al termine del campionato attuale, è possibile inserire un nuovo 	*
+*		campionato, inserendo tutti i campi relativi al Campionato stesso	*
+*		e allegando un file per ogni entità necessaria.				*
+*											*
+*****************************************************************************************

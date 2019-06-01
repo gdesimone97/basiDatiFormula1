@@ -1,0 +1,23 @@
+*************************************POPOLA DATABASE*************************************
+*											*
+*	Eseguire la java main class "PopolaFormula1";					*
+*											*
+*****************************************************************************************
+*											*
+*	Nel package popoladatabase sono presenti diverse classi java,			*
+*	ciascuna delle quali ha un metodo principale che svolge il compito di 		*
+*	inserire nelle specifiche tabelle del database le occorrenze di dati		*
+*	presenti sui file, contenuti in questa stessa cartella.				*
+*											*
+*	La classe PopolaFormula1 contenente il metodo Main, richiama i metodi		*
+*	delle altre classi e svolge il compito di POPOLARE INTERAMENTE il database	*
+*	"formula1" con informazioni REALI relative agli anni 2018 e 2019.		*
+*											*
+*	Le uniche informazioni generate RANDOM, per comodità, sono quelle relative	*
+*	all'entità PERSONALE, e di conseguenza, anche AfferenzaPersonale e 		*
+* 	Dirigenza.									*
+*	Infatti nel package è presente una main class GeneraPersonaleRandom.java	*
+*	che genera un file per ogni ruolo (Ingegnere, Meccanico, Staff Muretto e	*
+*	Dirigente) contenente un numero di tot occorrenze.				*
+*											*
+*****************************************************************************************

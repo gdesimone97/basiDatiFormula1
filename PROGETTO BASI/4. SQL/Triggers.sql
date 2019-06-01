@@ -29,7 +29,7 @@ begin
 	then
 		raise exception 'Cardinalità personale non rispettata.';
 	end if;
-return null;
+	return null;
 end $$ language plpgsql;
 
 create constraint trigger CONTROLLO_CARDINALITA_PERSONALE
@@ -43,6 +43,10 @@ create or replace function CONTROLLO_AMMINISTRATORE() returns trigger as $$
 begin
 	if(not exists (select professione from personale where codice_personale = NEW.codice_personale and professione = 'dirigente')) then
 	raise exception 'Amministratore Delegato inserito non è un dirigente.';
+	end if;
+	if ( not exists ( select * from afferenza_personale where codice_personale = NEW.codice_personale and
+						nome_scuderia = NEW.nome_scuderia and numero_campionato = NEW.numero_campionato))
+	then raise exception 'Amministratore Delegato non fa parte del personale della scuderia.';
 	end if;
 return NEW;
 end $$ language plpgsql;

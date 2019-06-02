@@ -23,9 +23,10 @@
 		union
 		select * from numero_vittorie_tmp;
 
--- le due viste "attuali" vengono aggiornate ad ogni inserimento su risultati_attuali (refresh della vista nel trigger di inserimento)
-	
-create materialized view if not exists CLASSIFICA_PILOTI_ATTUALE(codice_pilota, nome_pilota, cognome_pilota, punteggio) as 
+-- le due viste "attuali" vengono aggiornate ad ogni inserimento su risultati_attuali
+drop view if exists CLASSIFICA_PILOTI_ATTUALE cascade;
+create view CLASSIFICA_PILOTI_ATTUALE(codice_pilota, nome_pilota, cognome_pilota, punteggio) 
+	with toast_tuple_target = 8160 as
 	select P.codice_pilota, P.nome_pilota, P.cognome_pilota, sum(punteggio) as punti
 	from risultati_attuali as A, piloti as P, numero_vittorie as NV
 	where NV.numero_campionato = ( select max(numero_campionato)
@@ -35,7 +36,8 @@ create materialized view if not exists CLASSIFICA_PILOTI_ATTUALE(codice_pilota, 
 	group by P.codice_pilota, NV.numero_vittorie
 	order by punti desc, NV.numero_vittorie desc;
 
-create materialized view if not exists CLASSIFICA_COSTRUTTORI_ATTUALE (nome_scuderia, punteggio) as
+drop view if exists CLASSIFICA_COSTRUTTORI_ATTUALE cascade;
+create view CLASSIFICA_COSTRUTTORI_ATTUALE (nome_scuderia, punteggio) as
 	select nome_scuderia, sum(C.punteggio) as punti
 	from CLASSIFICA_PILOTI_ATTUALE as C, AFFERENZA_PILOTI as A, numero_vittorie as NV
 	where A.numero_campionato = ( select max(numero_campionato)
@@ -47,9 +49,9 @@ create materialized view if not exists CLASSIFICA_COSTRUTTORI_ATTUALE (nome_scud
 	order by punti desc, sum(NV.numero_vittorie) desc;
 	
 -- le due viste "passate" vengono ricalcolate ogni volta che il campionato termina
--- (ovvero dopo che il trigger sposta i 420 risultati_attuali in risultati_passati e fa un refresh della vista) (operazione costosa ma fatta 1 V/A)
-
-create materialized view if not exists CLASSIFICHE_PILOTI_PASSATI(numero_campionato, codice_pilota,nome_pilota,cognome_pilota, punteggio) as 
+-- (ovvero dopo che il trigger sposta i 420 risultati_attuali in risultati_passati) (operazione costosa ma fatta 1 V/A)
+drop view if exists CLASSIFICHE_PILOTI_PASSATI cascade;
+create view CLASSIFICHE_PILOTI_PASSATI(numero_campionato, codice_pilota,nome_pilota,cognome_pilota, punteggio) as 
 	select A.numero_campionato, p.codice_pilota, P.nome_pilota, P.cognome_pilota, sum(punteggio) as punti
 	from risultati_passati as A, piloti as P, numero_vittorie as NV
 	where	A.codice_pilota = P.codice_pilota and
@@ -57,8 +59,9 @@ create materialized view if not exists CLASSIFICHE_PILOTI_PASSATI(numero_campion
 			A.numero_campionato = NV.numero_campionato
 	group by A.numero_campionato, p.codice_pilota, NV.numero_vittorie
 	order by punti desc, NV.numero_vittorie desc;
-	
-create materialized view if not exists CLASSIFICHE_COSTRUTTORI_PASSATE (numero_campionato, nome_scuderia, punteggio) as
+
+drop view if exists CLASSIFICHE_COSTRUTTORI_PASSATE cascade;
+create view CLASSIFICHE_COSTRUTTORI_PASSATE (numero_campionato, nome_scuderia, punteggio) as
 	select C.numero_campionato, A.nome_scuderia, sum(cast(C.punteggio as INT)) as punti
 	from CLASSIFICHE_PILOTI_PASSATI as C, AFFERENZA_PILOTI as A, numero_vittorie as NV
 	where	C.codice_pilota = A.codice_pilota and

@@ -183,17 +183,3 @@ WHEN (pg_trigger_depth() < 1)
 execute procedure CONTROLLO_CANCELLAZIONE_RISULTATI();
 
 
--- trigger per propagare le modifiche alla tabella risultati_attuali nelle classifiche
-create or replace function UPDATE_VIEWS() returns trigger as $$
-begin
-	refresh materialized view CLASSIFICHE_PILOTI_PASSATI;
-	refresh materialized view CLASSIFICHE_COSTRUTTORI_PASSATE;
-	refresh materialized view CLASSIFICA_PILOTI_ATTUALE;
-	refresh materialized view CLASSIFICA_COSTRUTTORI_ATTUALE;
-return NULL;
-end $$ language plpgsql;
-
-create trigger UPDATE_VIEWS
-after insert or delete on risultati_attuali			
-for each statement
-execute procedure UPDATE_VIEWS();

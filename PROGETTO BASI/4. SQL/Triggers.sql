@@ -4,7 +4,6 @@ drop trigger if exists CONTROLLO_AMMINISTRATORE on dirigenza cascade;
 drop trigger if exists AGGIORNAMENTO_CAMPIONATO on campionati cascade;
 drop trigger if exists AGGIORNAMENTO_RISULTATI on risultati_attuali cascade;
 drop trigger if exists CONTROLLO_CANCELLAZIONE_RISULTATI on risultati_attuali cascade;
-drop trigger if exists UPDATE_VIEWS on risultati_attuali cascade;
 
 -- trigger per esprimere la cardinalità minima 1 su scuderie
 create or replace function CONTROLLO_CARDINALITA_SCUDERIE() returns trigger as $$

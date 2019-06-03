@@ -25,8 +25,7 @@
 
 -- le due viste "attuali" vengono aggiornate ad ogni inserimento su risultati_attuali
 drop view if exists CLASSIFICA_PILOTI_ATTUALE cascade;
-create view CLASSIFICA_PILOTI_ATTUALE(codice_pilota, nome_pilota, cognome_pilota, punteggio) 
-	with toast_tuple_target = 8160 as
+create view CLASSIFICA_PILOTI_ATTUALE(codice_pilota, nome_pilota, cognome_pilota, punteggio) as
 	select P.codice_pilota, P.nome_pilota, P.cognome_pilota, sum(punteggio) as punti
 	from risultati_attuali as A, piloti as P, numero_vittorie as NV
 	where NV.numero_campionato = ( select max(numero_campionato)

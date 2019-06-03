@@ -15,6 +15,8 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 /**
+ * Questa classe definisce metodi ed attributi per consentire all'utente admin
+ * di effettuare operazioni di inserimento sulla base dati
  *
  * @author gruppo05
  */

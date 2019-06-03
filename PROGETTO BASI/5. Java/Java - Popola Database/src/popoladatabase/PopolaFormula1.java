@@ -83,6 +83,8 @@ public class PopolaFormula1 {
 
         int x = 0;
         int y = 0;
+        
+        String path = "./FILES/";
 
         //DATABASE
         String url = "jdbc:postgresql://localhost:5432/formula1";
@@ -105,21 +107,21 @@ public class PopolaFormula1 {
                     + "values (?, ?, ?);");
 
 //******FILE & SCANNER
-            Scanner scScuderie68 = new Scanner(new BufferedReader(new FileReader("scuderie2018.txt")));
+            Scanner scScuderie68 = new Scanner(new BufferedReader(new FileReader(path + "scuderie2018.txt")));
             scScuderie68.useDelimiter(":");
-            Scanner scScuderie69 = new Scanner(new BufferedReader(new FileReader("scuderie2019.txt")));
+            Scanner scScuderie69 = new Scanner(new BufferedReader(new FileReader(path + "scuderie2019.txt")));
             scScuderie69.useDelimiter(":");
-            Scanner scDirigente = new Scanner(new BufferedReader(new FileReader("dirigente.txt")));
+            Scanner scDirigente = new Scanner(new BufferedReader(new FileReader(path + "dirigente.txt")));
             scDirigente.useDelimiter(":");
-            Scanner scIngegnere = new Scanner(new BufferedReader(new FileReader("ingegnere.txt")));
+            Scanner scIngegnere = new Scanner(new BufferedReader(new FileReader(path + "ingegnere.txt")));
             scIngegnere.useDelimiter(":");
-            Scanner scMeccanico = new Scanner(new BufferedReader(new FileReader("meccanico.txt")));
+            Scanner scMeccanico = new Scanner(new BufferedReader(new FileReader(path + "meccanico.txt")));
             scMeccanico.useDelimiter(":");
-            Scanner scStaffMuretto = new Scanner(new BufferedReader(new FileReader("staffmuretto.txt")));
+            Scanner scStaffMuretto = new Scanner(new BufferedReader(new FileReader(path + "staffmuretto.txt")));
             scStaffMuretto.useDelimiter(":");
-            Scanner scRisultati2018 = new Scanner(new BufferedReader(new FileReader("risultati2018.txt")));
+            Scanner scRisultati2018 = new Scanner(new BufferedReader(new FileReader(path + "risultati2018.txt")));
             scRisultati2018.useDelimiter(":");
-            Scanner scRisultati2019 = new Scanner(new BufferedReader(new FileReader("risultati2019.txt")));
+            Scanner scRisultati2019 = new Scanner(new BufferedReader(new FileReader(path + "risultati2019.txt")));
             scRisultati2019.useDelimiter(":");
 
 //******SVUOTAMENTO DATABASE
@@ -130,20 +132,20 @@ public class PopolaFormula1 {
             conn.setAutoCommit(false);
 
 //******INSERIMENTO PISTE
-            Piste.insert(conn, "piste 2019.txt");
+            Piste.insert(conn, path + "piste 2019.txt");
             System.out.println("Piste Inserite");
 
 //******INSERIMENTO PILOTI
-            Piloti.insert(conn, "piloti 2019.txt");
-            Piloti.insert(conn, "piloti 2018.txt");
+            Piloti.insert(conn, path + "piloti 2019.txt");
+            Piloti.insert(conn, path + "piloti 2018.txt");
             System.out.println("Piloti Inseriti");
 
 //******INSERIMENTO CAMPIONATO 2018
-            Campionati.insert(conn, "campionati2018.txt");
+            Campionati.insert(conn, path + "campionati2018.txt");
             System.out.println("Campionato 2018 Inserito");
 
 //******INSERIMENTO CALENDARIO 2018
-            Calendario.insert(conn, "calendario2018.txt");
+            Calendario.insert(conn, path + "calendario2018.txt");
             System.out.println("Calendario 2018 Inserito");
 
 //******INSERIMENTO RISULTATI 2018
@@ -157,11 +159,11 @@ public class PopolaFormula1 {
             System.out.println();
 
 //******INSERIMENTO CAMPIONATO 2019
-            Campionati.insert(conn, "campionati2019.txt");
+            Campionati.insert(conn, path + "campionati2019.txt");
             System.out.println("Campionato 2019 Inserito");
 
 //******INSERIMENTO CALENDARIO 2019
-            Calendario.insert(conn, "calendario2019.txt");
+            Calendario.insert(conn, path + "calendario2019.txt");
             System.out.println("Calendario 2019 Inserito");
 
 
@@ -255,7 +257,7 @@ public class PopolaFormula1 {
                 }
 
                 //INSERISCO L'AFFERENZA PILOTI PER QUESTO CAMPIONATO
-                AfferenzaPiloti.insert(conn, "afferenzapiloti" + numCampionato + ".txt");
+                AfferenzaPiloti.insert(conn, path + "afferenzapiloti" + numCampionato + ".txt");
                 System.out.println("Ho inserito le afferenze piloti per le scuderie del campionato " + numCampionato);
                 numCampionato++;
                 x = 0;

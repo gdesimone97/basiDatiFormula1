@@ -46,7 +46,9 @@ public class MainFrame extends javax.swing.JFrame {
 
         try {
             Query.InitConnection();
-
+            
+            
+            
             //SETTO LE CLASSIFICHE
             settaTabellaPiloti();
             settaTabellaScuderie();
@@ -931,6 +933,11 @@ public class MainFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         classificaPilotaPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Classifica Piloti"));
 
@@ -1723,10 +1730,14 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
-        admin.logOut(admin);
-        logoutButton.setVisible(false);
-        loginButton.setVisible(true);
-        adminFrame.setVisible(false);
+        try {
+            admin.logOut(admin);
+            logoutButton.setVisible(false);
+            loginButton.setVisible(true);
+            adminFrame.setVisible(false);
+        } catch (SQLException ex) {
+            JOptionPane.showConfirmDialog(this, "Errore nella chiusura della connessione di admin!");
+        }
 
     }//GEN-LAST:event_logoutButtonActionPerformed
 
@@ -1929,10 +1940,14 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_tableCalendarioMouseReleased
 
     private void adminFrameWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_adminFrameWindowClosing
-        admin.logOut(admin);
-        logoutButton.setVisible(false);
-        loginButton.setVisible(true);
-        adminFrame.setVisible(false);
+        try {
+            admin.logOut(admin);
+            logoutButton.setVisible(false);
+            loginButton.setVisible(true);
+            adminFrame.setVisible(false);
+        } catch (SQLException ex) {
+            JOptionPane.showConfirmDialog(this, "Errore nella chiusura della connessione di admin!");
+        }
     }//GEN-LAST:event_adminFrameWindowClosing
 
     private void numGiornataComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_numGiornataComboBoxItemStateChanged
@@ -2109,6 +2124,14 @@ public class MainFrame extends javax.swing.JFrame {
         } else
             JOptionPane.showMessageDialog(adminFrame, "Compila tutti i campi");
     }//GEN-LAST:event_commitCampionatoButtonActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        try {
+            Query.closeConnection();
+        } catch (SQLException ex) {
+            JOptionPane.showConfirmDialog(this, "Errore nella chiusura della connessione!");
+        }
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments

@@ -1,4 +1,3 @@
-
 package formula1;
 
 import java.awt.event.WindowEvent;
@@ -31,6 +30,16 @@ public class MainFrame extends javax.swing.JFrame {
     private DefaultListModel dm = new DefaultListModel();
     private int numeroCampionato = LocalDate.now().getYear() - 1950;
     private Admin admin;
+
+    private String pathPiste = null;
+    private String pathPiloti = null;
+    private String pathCalendario = null;
+    private String pathScuderie = null;
+    private String pathPersonale = null;
+    private String pathAffPiloti = null;
+    private String pathAffPersonale = null;
+    private String pathDirigenza = null;
+    private String pathRisultati = null;
 
     public MainFrame() {
         initComponents();
@@ -272,7 +281,6 @@ public class MainFrame extends javax.swing.JFrame {
         countRisultatiLabel = new javax.swing.JLabel();
         countRisultatiLabel2 = new javax.swing.JLabel();
         inserisciDaFileButton = new javax.swing.JButton();
-        nomeFileLabel = new javax.swing.JLabel();
         CampionatoAdminPanel = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -310,7 +318,6 @@ public class MainFrame extends javax.swing.JFrame {
         fileDirigenzaLabel = new javax.swing.JLabel();
         svuotaTuttoButton = new javax.swing.JButton();
         commitCampionatoButton = new javax.swing.JButton();
-        jLabel16 = new javax.swing.JLabel();
         dataInizioTextField = new javax.swing.JFormattedTextField();
         dataFineTextField = new javax.swing.JFormattedTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -458,7 +465,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(verificaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancellaTuttoButton)
                     .addComponent(commitButton))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 12, Short.MAX_VALUE))
         );
 
         inserimentoPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Inserimento"));
@@ -502,8 +509,6 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        nomeFileLabel.setText(" ");
-
         javax.swing.GroupLayout inserimentoPanelLayout = new javax.swing.GroupLayout(inserimentoPanel);
         inserimentoPanel.setLayout(inserimentoPanelLayout);
         inserimentoPanelLayout.setHorizontalGroup(
@@ -543,13 +548,12 @@ public class MainFrame extends javax.swing.JFrame {
                         .addComponent(countRisultatiLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(inserimentoPanelLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addGroup(inserimentoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(inserimentoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(inserimentoPanelLayout.createSequentialGroup()
                                 .addComponent(inserisciButton)
                                 .addGap(18, 18, 18)
                                 .addComponent(cancellaButton))
-                            .addComponent(inserisciDaFileButton)
-                            .addComponent(nomeFileLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(inserisciDaFileButton))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         inserimentoPanelLayout.setVerticalGroup(
@@ -588,8 +592,6 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(inserisciDaFileButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(nomeFileLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(inserimentoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(countRisultatiLabel)
                     .addComponent(countRisultatiLabel2))
@@ -612,7 +614,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(RisultatiAdminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(inserimentoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(verificaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 109, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Risultati", RisultatiAdminPanel);
@@ -717,8 +719,6 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel16.setText("* (I FILE DEVONO STARE NELLA CARTELLA DEL PROGRAMMA)");
-
         dataInizioTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("yyyy-MM-dd"))));
 
         dataFineTextField.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("yyyy-MM-dd"))));
@@ -755,9 +755,9 @@ public class MainFrame extends javax.swing.JFrame {
                                 .addComponent(dataFineTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 44, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel29)
                                     .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -803,10 +803,7 @@ public class MainFrame extends javax.swing.JFrame {
                                         .addComponent(fileDirigenzaButton)
                                         .addGap(18, 18, 18)
                                         .addComponent(fileDirigenzaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel16)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                                .addComponent(commitCampionatoButton)))
+                            .addComponent(commitCampionatoButton))
                         .addGap(18, 18, 18)
                         .addComponent(svuotaTuttoButton)))
                 .addContainerGap())
@@ -881,11 +878,9 @@ public class MainFrame extends javax.swing.JFrame {
                         .addComponent(jLabel29))
                     .addComponent(fileDirigenzaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(svuotaTuttoButton)
-                        .addComponent(commitCampionatoButton))
-                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(svuotaTuttoButton)
+                    .addComponent(commitCampionatoButton))
                 .addContainerGap())
         );
 
@@ -1548,7 +1543,7 @@ public class MainFrame extends javax.swing.JFrame {
                 flag = true;
                 codicePilota = rst.getString("codice_pilota");
                 ResultSet rstAfferenza = Query.selezionaAfferenzaPiloti(codicePilota, numeroCampionato);
-                
+
                 nomeTextField.setText(rst.getString("nome_pilota"));
                 cognomeTextField.setText(rst.getString("cognome_pilota"));
                 nazionalitaTextField.setText(rst.getString("nazionalita"));
@@ -1560,7 +1555,7 @@ public class MainFrame extends javax.swing.JFrame {
                 } else {
                     ritiratoLabel.setText("Questo pilota si è ritirato nel: " + rst.getInt("data_ritiro"));
                 }
-                
+
                 rstAfferenza.next();
                 afferenzaPilotiLabel.setText("Questo pilota afferisce alla scuderia: ");
                 afferenzaPilotiLabel2.setText(rstAfferenza.getString("nome_scuderia"));
@@ -1621,7 +1616,6 @@ public class MainFrame extends javax.swing.JFrame {
         migliorTempoField.setText("");
         tempoQualificaField.setText("");
         ritiroCheckBox.setSelected(false);
-        nomeFileLabel.setText("");
     }//GEN-LAST:event_cancellaButtonActionPerformed
 
     private void inserisciButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inserisciButtonActionPerformed
@@ -1648,7 +1642,6 @@ public class MainFrame extends javax.swing.JFrame {
                 risultatiList.setModel(dm);
                 dm.addElement(sede_pista + ":" + nome_pista + ":" + codice + ":" + numC + ":" + punti + ":" + migliorTempo + ":" + tempoQualifica + ":"
                         + (!ritiroCheckBox.isSelected() ? "0:" : "1:"));
-                
 
                 codiceField.setText("");
                 punteggioField.setText("");
@@ -1659,11 +1652,13 @@ public class MainFrame extends javax.swing.JFrame {
                 Integer count = Integer.parseInt(countRisultatiLabel2.getText()) + 1;
                 countRisultatiLabel2.setText(count.toString());
 
-                if (dm.getSize() == 20) {
-                    commitButton.setEnabled(true);
+                if (count != 0) {
                     cancellaTuttoButton.setEnabled(true);
-                    inserisciButton.setEnabled(false);
+                    if (count >= 20) {
+                        commitButton.setEnabled(true);
+                    }
                 }
+
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(adminFrame, "Non riesco a trovare la pista!");
@@ -1786,13 +1781,26 @@ public class MainFrame extends javax.swing.JFrame {
                 x++;
             }
             JOptionPane.showMessageDialog(adminFrame, "Operazione avvenuta con successo!");
-            nomeFileLabel.setText("");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(adminFrame, "Errore nell'inserimento su database. Riprova");
             ex.printStackTrace();
         } catch (FileNotFoundException ex) {
             JOptionPane.showMessageDialog(adminFrame, "Non ho trovato il file");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(adminFrame, "C'è un errore nella formattazione del file!\nProbabilmente hai inserito un file non corretto");
         }
+        
+        Integer count = Integer.parseInt(countRisultatiLabel2.getText()) - 20;
+        countRisultatiLabel2.setText(count.toString());
+        
+        if (count != 0) {
+            cancellaTuttoButton.setEnabled(true);
+            if (count >= 20) {
+                commitButton.setEnabled(true);
+            }
+            else commitButton.setEnabled(false);
+        }
+
     }//GEN-LAST:event_commitButtonActionPerformed
 
     private void risultatiListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_risultatiListValueChanged
@@ -1805,6 +1813,11 @@ public class MainFrame extends javax.swing.JFrame {
         }
 
         if (!dm.isEmpty()) {
+            if (dm.getSize() >= 20) {
+                commitButton.setEnabled(true);
+            } else {
+                commitButton.setEnabled(false);
+            }
             scriviFileButton.setEnabled(true);
             cancellaTuttoButton.setEnabled(true);
         } else {
@@ -1837,8 +1850,7 @@ public class MainFrame extends javax.swing.JFrame {
             int x = jFileChooser1.showOpenDialog(adminFrame);
             String nomeFile = "";
             if (x == JFileChooser.APPROVE_OPTION) {
-                nomeFile = jFileChooser1.getSelectedFile().getName();
-                nomeFileLabel.setText(nomeFile);
+                nomeFile = jFileChooser1.getSelectedFile().getPath();
             }
 
             Scanner sc = new Scanner(new BufferedReader(new FileReader(nomeFile)));
@@ -1849,9 +1861,15 @@ public class MainFrame extends javax.swing.JFrame {
                 count++;
             }
             risultatiList.setModel(dm);
+            count += Integer.parseInt(countRisultatiLabel2.getText());
             countRisultatiLabel2.setText(count.toString());
-            commitButton.setEnabled(true);
-            cancellaTuttoButton.setEnabled(true);
+
+            if (count != 0) {
+                cancellaTuttoButton.setEnabled(true);
+                if (count >= 20) {
+                    commitButton.setEnabled(true);
+                }
+            }
 
         } catch (FileNotFoundException ex) {
             JOptionPane.showMessageDialog(adminFrame, "Errore nell'apertura del file.");
@@ -1961,73 +1979,65 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void filePisteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filePisteButtonActionPerformed
         int x = jFileChooser1.showOpenDialog(adminFrame);
-        String file = "";
         if (x == JFileChooser.APPROVE_OPTION) {
-            file = jFileChooser1.getSelectedFile().getName();
-            filePisteLabel.setText(file);
+            pathPiste = jFileChooser1.getSelectedFile().getPath();
+            filePisteLabel.setText("Ok!");
         }
     }//GEN-LAST:event_filePisteButtonActionPerformed
 
     private void filePilotiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filePilotiButtonActionPerformed
         int x = jFileChooser1.showOpenDialog(adminFrame);
-        String file = "";
         if (x == JFileChooser.APPROVE_OPTION) {
-            file = jFileChooser1.getSelectedFile().getName();
-            filePilotiLabel.setText(file);
+            pathPiloti = jFileChooser1.getSelectedFile().getPath();
+            filePilotiLabel.setText("Ok!");
         }
     }//GEN-LAST:event_filePilotiButtonActionPerformed
 
     private void fileCalendarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fileCalendarioButtonActionPerformed
         int x = jFileChooser1.showOpenDialog(adminFrame);
-        String file = "";
         if (x == JFileChooser.APPROVE_OPTION) {
-            file = jFileChooser1.getSelectedFile().getName();
-            fileCalendarioLabel.setText(file);
+            pathCalendario = jFileChooser1.getSelectedFile().getPath();
+            fileCalendarioLabel.setText("Ok!");
         }
     }//GEN-LAST:event_fileCalendarioButtonActionPerformed
 
     private void fileScuderieButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fileScuderieButtonActionPerformed
         int x = jFileChooser1.showOpenDialog(adminFrame);
-        String file = "";
         if (x == JFileChooser.APPROVE_OPTION) {
-            file = jFileChooser1.getSelectedFile().getName();
-            fileScuderieLabel.setText(file);
+            pathScuderie = jFileChooser1.getSelectedFile().getPath();
+            fileScuderieLabel.setText("Ok!");
         }
     }//GEN-LAST:event_fileScuderieButtonActionPerformed
 
     private void filePersonaleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filePersonaleButtonActionPerformed
         int x = jFileChooser1.showOpenDialog(adminFrame);
-        String file = "";
         if (x == JFileChooser.APPROVE_OPTION) {
-            file = jFileChooser1.getSelectedFile().getName();
-            filePersonaleLabel.setText(file);
+            pathPersonale = jFileChooser1.getSelectedFile().getPath();
+            filePersonaleLabel.setText("Ok!");
         }
     }//GEN-LAST:event_filePersonaleButtonActionPerformed
 
     private void fileAffPilotiButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fileAffPilotiButtonActionPerformed
         int x = jFileChooser1.showOpenDialog(adminFrame);
-        String file = "";
         if (x == JFileChooser.APPROVE_OPTION) {
-            file = jFileChooser1.getSelectedFile().getName();
-            fileAffPilotiLabel.setText(file);
+            pathAffPiloti = jFileChooser1.getSelectedFile().getPath();
+            fileAffPilotiLabel.setText("Ok!");
         }
     }//GEN-LAST:event_fileAffPilotiButtonActionPerformed
 
     private void fileAffPersonaleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fileAffPersonaleButtonActionPerformed
         int x = jFileChooser1.showOpenDialog(adminFrame);
-        String file = "";
         if (x == JFileChooser.APPROVE_OPTION) {
-            file = jFileChooser1.getSelectedFile().getName();
-            fileAffPersonaleLabel.setText(file);
+            pathAffPersonale = jFileChooser1.getSelectedFile().getPath();
+            fileAffPersonaleLabel.setText("Ok!");
         }
     }//GEN-LAST:event_fileAffPersonaleButtonActionPerformed
 
     private void fileDirigenzaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fileDirigenzaButtonActionPerformed
         int x = jFileChooser1.showOpenDialog(adminFrame);
-        String file = "";
         if (x == JFileChooser.APPROVE_OPTION) {
-            file = jFileChooser1.getSelectedFile().getName();
-            fileDirigenzaLabel.setText(file);
+            pathDirigenza = jFileChooser1.getSelectedFile().getPath();
+            fileDirigenzaLabel.setText("Ok!");
         }
     }//GEN-LAST:event_fileDirigenzaButtonActionPerformed
 
@@ -2045,28 +2055,26 @@ public class MainFrame extends javax.swing.JFrame {
         fileAffPilotiLabel.setText("");
         fileAffPersonaleLabel.setText("");
         fileDirigenzaLabel.setText("");
+
+        pathPiste = null;
+        pathPiloti = null;
+        pathCalendario = null;
+        pathScuderie = null;
+        pathPersonale = null;
+        pathAffPiloti = null;
+        pathAffPersonale = null;
+        pathDirigenza = null;
     }//GEN-LAST:event_svuotaTuttoButtonActionPerformed
 
     private void commitCampionatoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_commitCampionatoButtonActionPerformed
-        if (numCampionatoTextField.getText().compareTo("") != 0
-                & dataInizioTextField.getText().compareTo("") != 0
-                & dataFineTextField.getText().compareTo("") != 0
-                & motoreTextField.getText().compareTo("") != 0
-                & gommeTextField.getText().compareTo("") != 0
-                & filePisteLabel.getText().compareTo("") != 0
-                & filePilotiLabel.getText().compareTo("") != 0
-                & fileScuderieLabel.getText().compareTo("") != 0
-                & fileCalendarioLabel.getText().compareTo("") != 0
-                & filePersonaleLabel.getText().compareTo("") != 0
-                & fileAffPilotiLabel.getText().compareTo("") != 0
-                & fileAffPersonaleLabel.getText().compareTo("") != 0
-                & fileDirigenzaLabel.getText().compareTo("") != 0) {
+        if (pathPiste != null & pathPiloti != null & pathCalendario != null
+                & pathScuderie != null & pathPersonale != null & pathAffPiloti != null
+                & pathAffPersonale != null & pathDirigenza != null) {
 
             try {
                 admin.inserisci(Integer.parseInt(numCampionatoTextField.getText()), Date.valueOf(dataInizioTextField.getText()), Date.valueOf(dataFineTextField.getText()),
-                        motoreTextField.getText(), gommeTextField.getText(), filePisteLabel.getText(),
-                        filePilotiLabel.getText(), fileCalendarioLabel.getText(), fileScuderieLabel.getText(),
-                        filePersonaleLabel.getText(), fileAffPilotiLabel.getText(), fileAffPersonaleLabel.getText(), fileDirigenzaLabel.getText());
+                        motoreTextField.getText(), gommeTextField.getText(), pathPiste, pathPiloti, pathCalendario, pathScuderie,
+                        pathPersonale, pathAffPiloti, pathAffPersonale, pathDirigenza);
 
                 numCampionatoTextField.setText("");
                 dataInizioTextField.setText("");
@@ -2081,6 +2089,14 @@ public class MainFrame extends javax.swing.JFrame {
                 fileAffPilotiLabel.setText("");
                 fileAffPersonaleLabel.setText("");
                 fileDirigenzaLabel.setText("");
+                pathPiste = null;
+                pathPiloti = null;
+                pathCalendario = null;
+                pathScuderie = null;
+                pathPersonale = null;
+                pathAffPiloti = null;
+                pathAffPersonale = null;
+                pathDirigenza = null;
                 JOptionPane.showMessageDialog(adminFrame, "Operazione andata a buon fine!");
             } catch (FileNotFoundException ex) {
                 JOptionPane.showMessageDialog(adminFrame, "Errore nell'apertura di un file!\nControlla che siano tutti nella giusta cartella.");
@@ -2194,7 +2210,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
@@ -2228,7 +2243,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel nazionalitaLabel1;
     private javax.swing.JTextField nazionalitaScuderiaTextField;
     private javax.swing.JTextField nazionalitaTextField;
-    private javax.swing.JLabel nomeFileLabel;
     private javax.swing.JLabel nomeLabel;
     private javax.swing.JLabel nomeLabel1;
     private javax.swing.JTextField nomeScuderiaTextField;

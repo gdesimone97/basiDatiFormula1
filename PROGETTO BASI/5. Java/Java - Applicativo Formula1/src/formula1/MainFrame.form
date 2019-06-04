@@ -83,7 +83,7 @@
                               <Component id="inserimentoPanel" alignment="0" max="32767" attributes="0"/>
                               <Component id="verificaPanel" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="109" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -135,7 +135,7 @@
                                   <Component id="cancellaTuttoButton" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="commitButton" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -260,14 +260,13 @@
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
                                               <Component id="inserisciButton" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Component id="cancellaButton" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="inserisciDaFileButton" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="nomeFileLabel" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -318,8 +317,6 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="inserisciDaFileButton" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="nomeFileLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="countRisultatiLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="countRisultatiLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -411,11 +408,6 @@
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inserisciDaFileButtonActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="nomeFileLabel">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value=" "/>
-                      </Properties>
-                    </Component>
                   </SubComponents>
                 </Container>
               </SubComponents>
@@ -496,9 +488,9 @@
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="0" pref="44" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                               <Group type="103" groupAlignment="1" attributes="0">
                                                   <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jLabel19" min="-2" pref="55" max="-2" attributes="0"/>
@@ -557,11 +549,7 @@
                                                   </Group>
                                               </Group>
                                           </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace pref="44" max="32767" attributes="0"/>
-                                              <Component id="commitCampionatoButton" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="commitCampionatoButton" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="svuotaTuttoButton" min="-2" max="-2" attributes="0"/>
@@ -660,12 +648,9 @@
                                   <Component id="fileDirigenzaLabel" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                                      <Component id="svuotaTuttoButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="commitCampionatoButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jLabel16" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="svuotaTuttoButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="commitCampionatoButton" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -844,11 +829,6 @@
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="commitCampionatoButtonActionPerformed"/>
                       </Events>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel16">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="* (I FILE DEVONO STARE NELLA CARTELLA DEL PROGRAMMA)"/>
-                      </Properties>
                     </Component>
                     <Component class="javax.swing.JFormattedTextField" name="dataInizioTextField">
                       <Properties>

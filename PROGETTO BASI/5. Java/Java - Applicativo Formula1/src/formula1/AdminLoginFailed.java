@@ -7,7 +7,7 @@ package formula1;
 
 /**
  *
- * @author desio
+ * @author gruppo05
  */
 public class AdminLoginFailed extends Exception {
 

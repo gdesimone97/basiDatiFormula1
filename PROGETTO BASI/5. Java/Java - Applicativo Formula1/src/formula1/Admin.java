@@ -122,8 +122,9 @@ public class Admin {
      *
      * @param admin
      */
-    public void logOut(Admin admin) {
+    public void logOut(Admin admin) throws SQLException {
         admin = null;
+        this.closeAdminConnection();
     }
 
     /**

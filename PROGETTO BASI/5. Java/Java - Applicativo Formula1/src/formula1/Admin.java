@@ -327,4 +327,7 @@ public class Admin {
 
     }
 
+    private void closeAdminConnection() throws SQLException {
+        conn.close();
+    }
 }

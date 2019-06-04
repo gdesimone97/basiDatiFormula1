@@ -169,7 +169,8 @@ public class Query {
      * Seleziona le informazioni della singola scuderia rispetto l' anno
      * campionato
      *
-     * @param x Parametro di tipo intero usato come offset all'interno della query
+     * @param x Parametro di tipo intero usato come offset all'interno della
+     * query
      * @param numeroCampionato Anno campionato
      * @return ResultSet
      * @throws SQLException
@@ -355,6 +356,10 @@ public class Query {
         pstRisultatiPassati.setInt(3, numeroCampionato);
         pstRisultatiPassati.setInt(4, numeroGiornata);
         return pstRisultatiPassati.executeQuery();
+    }
+
+    public static void closeConnection() throws SQLException {
+        conn.close();
     }
 
 }

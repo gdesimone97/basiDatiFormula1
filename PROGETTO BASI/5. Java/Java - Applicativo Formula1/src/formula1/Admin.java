@@ -118,7 +118,8 @@ public class Admin {
     }
 
     /**
-     * Metodo che permette di effuttuare il LogOut da parte dell'utente Admin
+     * Metodo che permette di effuttuare il LogOut da parte dell'utente Admin La
+     * connessione viene chiusa
      *
      * @param admin
      */

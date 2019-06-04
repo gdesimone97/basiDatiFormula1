@@ -75,7 +75,7 @@ public class PopolaFormula1 {
     }
 
     public static void main(String[] args) throws SQLException {
-        String nome = "postgres";
+        String nome = "amministratore";
         String pass = "abc123";
         Connection conn = null;
 
